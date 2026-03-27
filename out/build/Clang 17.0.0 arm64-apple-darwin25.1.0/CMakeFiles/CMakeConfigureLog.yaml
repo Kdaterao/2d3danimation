@@ -20,18 +20,60 @@ events:
     names:
       - "uname"
     candidate_directories:
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/opt/homebrew/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/opt/llvm/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
-      - "/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
+    searched_directories:
+      - "/opt/homebrew/bin/uname"
+      - "/opt/homebrew/sbin/uname"
+      - "/opt/homebrew/uname"
+      - "/Users/krish/.local/bin/uname"
+      - "/opt/anaconda3/bin/uname"
+      - "/opt/anaconda3/condabin/uname"
+      - "/opt/homebrew/opt/llvm/bin/uname"
+      - "/opt/homebrew/bin/uname"
+      - "/opt/homebrew/sbin/uname"
+      - "/usr/local/bin/uname"
+      - "/System/Cryptexes/App/usr/bin/uname"
     found: "/usr/bin/uname"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "message-v1"
@@ -61,22 +103,80 @@ events:
       - "make"
       - "smake"
     candidate_directories:
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/opt/homebrew/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/opt/llvm/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
     searched_directories:
+      - "/opt/homebrew/bin/gmake"
+      - "/opt/homebrew/sbin/gmake"
+      - "/opt/homebrew/gmake"
+      - "/Users/krish/.local/bin/gmake"
+      - "/opt/anaconda3/bin/gmake"
+      - "/opt/anaconda3/condabin/gmake"
+      - "/opt/homebrew/opt/llvm/bin/gmake"
+      - "/opt/homebrew/bin/gmake"
+      - "/opt/homebrew/sbin/gmake"
+      - "/usr/local/bin/gmake"
+      - "/System/Cryptexes/App/usr/bin/gmake"
       - "/usr/bin/gmake"
       - "/bin/gmake"
       - "/usr/sbin/gmake"
       - "/sbin/gmake"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/gmake"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/gmake"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/gmake"
+      - "/opt/pmk/env/global/bin/gmake"
+      - "/Library/Apple/usr/bin/gmake"
+      - "/opt/homebrew/bin/make"
+      - "/opt/homebrew/sbin/make"
+      - "/opt/homebrew/make"
+      - "/Users/krish/.local/bin/make"
+      - "/opt/anaconda3/bin/make"
+      - "/opt/anaconda3/condabin/make"
+      - "/opt/homebrew/opt/llvm/bin/make"
+      - "/opt/homebrew/bin/make"
+      - "/opt/homebrew/sbin/make"
+      - "/usr/local/bin/make"
+      - "/System/Cryptexes/App/usr/bin/make"
     found: "/usr/bin/make"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "find-v1"
@@ -104,11 +204,26 @@ events:
       - "/opt/homebrew/share/cmake/Modules/"
     found: "/opt/homebrew/share/cmake/Modules/CMakeCCompilerId.c.in"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "message-v1"
@@ -194,19 +309,47 @@ events:
       - "ar"
     candidate_directories:
       - "/opt/homebrew/opt/llvm/bin/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
     searched_directories:
       - "/opt/homebrew/opt/llvm/bin/ar"
-    found: "/usr/bin/ar"
+      - "/Users/krish/.local/bin/ar"
+    found: "/opt/anaconda3/bin/ar"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "find-v1"
@@ -230,17 +373,44 @@ events:
       - "ranlib"
     candidate_directories:
       - "/opt/homebrew/opt/llvm/bin/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
     found: "/opt/homebrew/opt/llvm/bin/llvm-ranlib"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "find-v1"
@@ -263,19 +433,47 @@ events:
       - "strip"
     candidate_directories:
       - "/opt/homebrew/opt/llvm/bin/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
     searched_directories:
       - "/opt/homebrew/opt/llvm/bin/strip"
-    found: "/usr/bin/strip"
+      - "/Users/krish/.local/bin/strip"
+    found: "/opt/anaconda3/bin/strip"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "find-v1"
@@ -298,19 +496,47 @@ events:
       - "ld"
     candidate_directories:
       - "/opt/homebrew/opt/llvm/bin/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
     searched_directories:
       - "/opt/homebrew/opt/llvm/bin/ld"
-    found: "/usr/bin/ld"
+      - "/Users/krish/.local/bin/ld"
+    found: "/opt/anaconda3/bin/ld"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "find-v1"
@@ -334,17 +560,44 @@ events:
       - "nm"
     candidate_directories:
       - "/opt/homebrew/opt/llvm/bin/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
     found: "/opt/homebrew/opt/llvm/bin/llvm-nm"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "find-v1"
@@ -368,17 +621,44 @@ events:
       - "objdump"
     candidate_directories:
       - "/opt/homebrew/opt/llvm/bin/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
     found: "/opt/homebrew/opt/llvm/bin/llvm-objdump"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "find-v1"
@@ -402,17 +682,44 @@ events:
       - "objcopy"
     candidate_directories:
       - "/opt/homebrew/opt/llvm/bin/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
     found: "/opt/homebrew/opt/llvm/bin/llvm-objcopy"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "find-v1"
@@ -436,17 +743,44 @@ events:
       - "readelf"
     candidate_directories:
       - "/opt/homebrew/opt/llvm/bin/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
     found: "/opt/homebrew/opt/llvm/bin/llvm-readelf"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "find-v1"
@@ -470,17 +804,44 @@ events:
       - "dlltool"
     candidate_directories:
       - "/opt/homebrew/opt/llvm/bin/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
     found: "/opt/homebrew/opt/llvm/bin/llvm-dlltool"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "find-v1"
@@ -504,17 +865,44 @@ events:
       - "addr2line"
     candidate_directories:
       - "/opt/homebrew/opt/llvm/bin/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
     found: "/opt/homebrew/opt/llvm/bin/llvm-addr2line"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "find-v1"
@@ -537,23 +925,62 @@ events:
       - "tapi"
     candidate_directories:
       - "/opt/homebrew/opt/llvm/bin/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
     searched_directories:
       - "/opt/homebrew/opt/llvm/bin/tapi"
+      - "/Users/krish/.local/bin/tapi"
+      - "/opt/anaconda3/bin/tapi"
+      - "/opt/anaconda3/condabin/tapi"
+      - "/opt/homebrew/bin/tapi"
+      - "/opt/homebrew/sbin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/System/Cryptexes/App/usr/bin/tapi"
       - "/usr/bin/tapi"
       - "/bin/tapi"
       - "/usr/sbin/tapi"
       - "/sbin/tapi"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/tapi"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/tapi"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/tapi"
+      - "/opt/pmk/env/global/bin/tapi"
+      - "/Library/Apple/usr/bin/tapi"
     found: false
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "find-v1"
@@ -580,36 +1007,99 @@ events:
     candidate_directories:
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/"
       - "/opt/homebrew/opt/llvm/bin/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
     searched_directories:
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/llvm-ar-21.1"
       - "/opt/homebrew/opt/llvm/bin/llvm-ar-21.1"
+      - "/Users/krish/.local/bin/llvm-ar-21.1"
+      - "/opt/anaconda3/bin/llvm-ar-21.1"
+      - "/opt/anaconda3/condabin/llvm-ar-21.1"
+      - "/opt/homebrew/bin/llvm-ar-21.1"
+      - "/opt/homebrew/sbin/llvm-ar-21.1"
+      - "/usr/local/bin/llvm-ar-21.1"
+      - "/System/Cryptexes/App/usr/bin/llvm-ar-21.1"
       - "/usr/bin/llvm-ar-21.1"
       - "/bin/llvm-ar-21.1"
       - "/usr/sbin/llvm-ar-21.1"
       - "/sbin/llvm-ar-21.1"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/llvm-ar-21.1"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/llvm-ar-21.1"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/llvm-ar-21.1"
+      - "/opt/pmk/env/global/bin/llvm-ar-21.1"
+      - "/Library/Apple/usr/bin/llvm-ar-21.1"
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/llvm-ar-21"
       - "/opt/homebrew/opt/llvm/bin/llvm-ar-21"
+      - "/Users/krish/.local/bin/llvm-ar-21"
+      - "/opt/anaconda3/bin/llvm-ar-21"
+      - "/opt/anaconda3/condabin/llvm-ar-21"
+      - "/opt/homebrew/bin/llvm-ar-21"
+      - "/opt/homebrew/sbin/llvm-ar-21"
+      - "/usr/local/bin/llvm-ar-21"
+      - "/System/Cryptexes/App/usr/bin/llvm-ar-21"
       - "/usr/bin/llvm-ar-21"
       - "/bin/llvm-ar-21"
       - "/usr/sbin/llvm-ar-21"
       - "/sbin/llvm-ar-21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/llvm-ar-21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/llvm-ar-21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/llvm-ar-21"
+      - "/opt/pmk/env/global/bin/llvm-ar-21"
+      - "/Library/Apple/usr/bin/llvm-ar-21"
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/llvm-ar21"
       - "/opt/homebrew/opt/llvm/bin/llvm-ar21"
+      - "/Users/krish/.local/bin/llvm-ar21"
+      - "/opt/anaconda3/bin/llvm-ar21"
+      - "/opt/anaconda3/condabin/llvm-ar21"
+      - "/opt/homebrew/bin/llvm-ar21"
+      - "/opt/homebrew/sbin/llvm-ar21"
+      - "/usr/local/bin/llvm-ar21"
+      - "/System/Cryptexes/App/usr/bin/llvm-ar21"
       - "/usr/bin/llvm-ar21"
       - "/bin/llvm-ar21"
       - "/usr/sbin/llvm-ar21"
       - "/sbin/llvm-ar21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/llvm-ar21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/llvm-ar21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/llvm-ar21"
+      - "/opt/pmk/env/global/bin/llvm-ar21"
+      - "/Library/Apple/usr/bin/llvm-ar21"
     found: "/opt/homebrew/Cellar/llvm/21.1.8/bin/llvm-ar"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "find-v1"
@@ -636,36 +1126,99 @@ events:
     candidate_directories:
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/"
       - "/opt/homebrew/opt/llvm/bin/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
     searched_directories:
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/llvm-ranlib-21.1"
       - "/opt/homebrew/opt/llvm/bin/llvm-ranlib-21.1"
+      - "/Users/krish/.local/bin/llvm-ranlib-21.1"
+      - "/opt/anaconda3/bin/llvm-ranlib-21.1"
+      - "/opt/anaconda3/condabin/llvm-ranlib-21.1"
+      - "/opt/homebrew/bin/llvm-ranlib-21.1"
+      - "/opt/homebrew/sbin/llvm-ranlib-21.1"
+      - "/usr/local/bin/llvm-ranlib-21.1"
+      - "/System/Cryptexes/App/usr/bin/llvm-ranlib-21.1"
       - "/usr/bin/llvm-ranlib-21.1"
       - "/bin/llvm-ranlib-21.1"
       - "/usr/sbin/llvm-ranlib-21.1"
       - "/sbin/llvm-ranlib-21.1"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/llvm-ranlib-21.1"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/llvm-ranlib-21.1"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/llvm-ranlib-21.1"
+      - "/opt/pmk/env/global/bin/llvm-ranlib-21.1"
+      - "/Library/Apple/usr/bin/llvm-ranlib-21.1"
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/llvm-ranlib-21"
       - "/opt/homebrew/opt/llvm/bin/llvm-ranlib-21"
+      - "/Users/krish/.local/bin/llvm-ranlib-21"
+      - "/opt/anaconda3/bin/llvm-ranlib-21"
+      - "/opt/anaconda3/condabin/llvm-ranlib-21"
+      - "/opt/homebrew/bin/llvm-ranlib-21"
+      - "/opt/homebrew/sbin/llvm-ranlib-21"
+      - "/usr/local/bin/llvm-ranlib-21"
+      - "/System/Cryptexes/App/usr/bin/llvm-ranlib-21"
       - "/usr/bin/llvm-ranlib-21"
       - "/bin/llvm-ranlib-21"
       - "/usr/sbin/llvm-ranlib-21"
       - "/sbin/llvm-ranlib-21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/llvm-ranlib-21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/llvm-ranlib-21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/llvm-ranlib-21"
+      - "/opt/pmk/env/global/bin/llvm-ranlib-21"
+      - "/Library/Apple/usr/bin/llvm-ranlib-21"
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/llvm-ranlib21"
       - "/opt/homebrew/opt/llvm/bin/llvm-ranlib21"
+      - "/Users/krish/.local/bin/llvm-ranlib21"
+      - "/opt/anaconda3/bin/llvm-ranlib21"
+      - "/opt/anaconda3/condabin/llvm-ranlib21"
+      - "/opt/homebrew/bin/llvm-ranlib21"
+      - "/opt/homebrew/sbin/llvm-ranlib21"
+      - "/usr/local/bin/llvm-ranlib21"
+      - "/System/Cryptexes/App/usr/bin/llvm-ranlib21"
       - "/usr/bin/llvm-ranlib21"
       - "/bin/llvm-ranlib21"
       - "/usr/sbin/llvm-ranlib21"
       - "/sbin/llvm-ranlib21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/llvm-ranlib21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/llvm-ranlib21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/llvm-ranlib21"
+      - "/opt/pmk/env/global/bin/llvm-ranlib21"
+      - "/Library/Apple/usr/bin/llvm-ranlib21"
     found: "/opt/homebrew/Cellar/llvm/21.1.8/bin/llvm-ranlib"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "find-v1"
@@ -692,36 +1245,99 @@ events:
     candidate_directories:
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/"
       - "/opt/homebrew/opt/llvm/bin/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
     searched_directories:
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-scan-deps-21.1"
       - "/opt/homebrew/opt/llvm/bin/clang-scan-deps-21.1"
+      - "/Users/krish/.local/bin/clang-scan-deps-21.1"
+      - "/opt/anaconda3/bin/clang-scan-deps-21.1"
+      - "/opt/anaconda3/condabin/clang-scan-deps-21.1"
+      - "/opt/homebrew/bin/clang-scan-deps-21.1"
+      - "/opt/homebrew/sbin/clang-scan-deps-21.1"
+      - "/usr/local/bin/clang-scan-deps-21.1"
+      - "/System/Cryptexes/App/usr/bin/clang-scan-deps-21.1"
       - "/usr/bin/clang-scan-deps-21.1"
       - "/bin/clang-scan-deps-21.1"
       - "/usr/sbin/clang-scan-deps-21.1"
       - "/sbin/clang-scan-deps-21.1"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/clang-scan-deps-21.1"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/clang-scan-deps-21.1"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/clang-scan-deps-21.1"
+      - "/opt/pmk/env/global/bin/clang-scan-deps-21.1"
+      - "/Library/Apple/usr/bin/clang-scan-deps-21.1"
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-scan-deps-21"
       - "/opt/homebrew/opt/llvm/bin/clang-scan-deps-21"
+      - "/Users/krish/.local/bin/clang-scan-deps-21"
+      - "/opt/anaconda3/bin/clang-scan-deps-21"
+      - "/opt/anaconda3/condabin/clang-scan-deps-21"
+      - "/opt/homebrew/bin/clang-scan-deps-21"
+      - "/opt/homebrew/sbin/clang-scan-deps-21"
+      - "/usr/local/bin/clang-scan-deps-21"
+      - "/System/Cryptexes/App/usr/bin/clang-scan-deps-21"
       - "/usr/bin/clang-scan-deps-21"
       - "/bin/clang-scan-deps-21"
       - "/usr/sbin/clang-scan-deps-21"
       - "/sbin/clang-scan-deps-21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/clang-scan-deps-21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/clang-scan-deps-21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/clang-scan-deps-21"
+      - "/opt/pmk/env/global/bin/clang-scan-deps-21"
+      - "/Library/Apple/usr/bin/clang-scan-deps-21"
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-scan-deps21"
       - "/opt/homebrew/opt/llvm/bin/clang-scan-deps21"
+      - "/Users/krish/.local/bin/clang-scan-deps21"
+      - "/opt/anaconda3/bin/clang-scan-deps21"
+      - "/opt/anaconda3/condabin/clang-scan-deps21"
+      - "/opt/homebrew/bin/clang-scan-deps21"
+      - "/opt/homebrew/sbin/clang-scan-deps21"
+      - "/usr/local/bin/clang-scan-deps21"
+      - "/System/Cryptexes/App/usr/bin/clang-scan-deps21"
       - "/usr/bin/clang-scan-deps21"
       - "/bin/clang-scan-deps21"
       - "/usr/sbin/clang-scan-deps21"
       - "/sbin/clang-scan-deps21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/clang-scan-deps21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/clang-scan-deps21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/clang-scan-deps21"
+      - "/opt/pmk/env/global/bin/clang-scan-deps21"
+      - "/Library/Apple/usr/bin/clang-scan-deps21"
     found: "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-scan-deps"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "find-v1"
@@ -749,11 +1365,26 @@ events:
       - "/opt/homebrew/share/cmake/Modules/"
     found: "/opt/homebrew/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "message-v1"
@@ -843,36 +1474,99 @@ events:
     candidate_directories:
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/"
       - "/opt/homebrew/opt/llvm/bin/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
     searched_directories:
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/llvm-ar-21.1"
       - "/opt/homebrew/opt/llvm/bin/llvm-ar-21.1"
+      - "/Users/krish/.local/bin/llvm-ar-21.1"
+      - "/opt/anaconda3/bin/llvm-ar-21.1"
+      - "/opt/anaconda3/condabin/llvm-ar-21.1"
+      - "/opt/homebrew/bin/llvm-ar-21.1"
+      - "/opt/homebrew/sbin/llvm-ar-21.1"
+      - "/usr/local/bin/llvm-ar-21.1"
+      - "/System/Cryptexes/App/usr/bin/llvm-ar-21.1"
       - "/usr/bin/llvm-ar-21.1"
       - "/bin/llvm-ar-21.1"
       - "/usr/sbin/llvm-ar-21.1"
       - "/sbin/llvm-ar-21.1"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/llvm-ar-21.1"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/llvm-ar-21.1"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/llvm-ar-21.1"
+      - "/opt/pmk/env/global/bin/llvm-ar-21.1"
+      - "/Library/Apple/usr/bin/llvm-ar-21.1"
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/llvm-ar-21"
       - "/opt/homebrew/opt/llvm/bin/llvm-ar-21"
+      - "/Users/krish/.local/bin/llvm-ar-21"
+      - "/opt/anaconda3/bin/llvm-ar-21"
+      - "/opt/anaconda3/condabin/llvm-ar-21"
+      - "/opt/homebrew/bin/llvm-ar-21"
+      - "/opt/homebrew/sbin/llvm-ar-21"
+      - "/usr/local/bin/llvm-ar-21"
+      - "/System/Cryptexes/App/usr/bin/llvm-ar-21"
       - "/usr/bin/llvm-ar-21"
       - "/bin/llvm-ar-21"
       - "/usr/sbin/llvm-ar-21"
       - "/sbin/llvm-ar-21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/llvm-ar-21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/llvm-ar-21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/llvm-ar-21"
+      - "/opt/pmk/env/global/bin/llvm-ar-21"
+      - "/Library/Apple/usr/bin/llvm-ar-21"
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/llvm-ar21"
       - "/opt/homebrew/opt/llvm/bin/llvm-ar21"
+      - "/Users/krish/.local/bin/llvm-ar21"
+      - "/opt/anaconda3/bin/llvm-ar21"
+      - "/opt/anaconda3/condabin/llvm-ar21"
+      - "/opt/homebrew/bin/llvm-ar21"
+      - "/opt/homebrew/sbin/llvm-ar21"
+      - "/usr/local/bin/llvm-ar21"
+      - "/System/Cryptexes/App/usr/bin/llvm-ar21"
       - "/usr/bin/llvm-ar21"
       - "/bin/llvm-ar21"
       - "/usr/sbin/llvm-ar21"
       - "/sbin/llvm-ar21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/llvm-ar21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/llvm-ar21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/llvm-ar21"
+      - "/opt/pmk/env/global/bin/llvm-ar21"
+      - "/Library/Apple/usr/bin/llvm-ar21"
     found: "/opt/homebrew/Cellar/llvm/21.1.8/bin/llvm-ar"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "find-v1"
@@ -899,36 +1593,99 @@ events:
     candidate_directories:
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/"
       - "/opt/homebrew/opt/llvm/bin/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
     searched_directories:
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/llvm-ranlib-21.1"
       - "/opt/homebrew/opt/llvm/bin/llvm-ranlib-21.1"
+      - "/Users/krish/.local/bin/llvm-ranlib-21.1"
+      - "/opt/anaconda3/bin/llvm-ranlib-21.1"
+      - "/opt/anaconda3/condabin/llvm-ranlib-21.1"
+      - "/opt/homebrew/bin/llvm-ranlib-21.1"
+      - "/opt/homebrew/sbin/llvm-ranlib-21.1"
+      - "/usr/local/bin/llvm-ranlib-21.1"
+      - "/System/Cryptexes/App/usr/bin/llvm-ranlib-21.1"
       - "/usr/bin/llvm-ranlib-21.1"
       - "/bin/llvm-ranlib-21.1"
       - "/usr/sbin/llvm-ranlib-21.1"
       - "/sbin/llvm-ranlib-21.1"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/llvm-ranlib-21.1"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/llvm-ranlib-21.1"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/llvm-ranlib-21.1"
+      - "/opt/pmk/env/global/bin/llvm-ranlib-21.1"
+      - "/Library/Apple/usr/bin/llvm-ranlib-21.1"
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/llvm-ranlib-21"
       - "/opt/homebrew/opt/llvm/bin/llvm-ranlib-21"
+      - "/Users/krish/.local/bin/llvm-ranlib-21"
+      - "/opt/anaconda3/bin/llvm-ranlib-21"
+      - "/opt/anaconda3/condabin/llvm-ranlib-21"
+      - "/opt/homebrew/bin/llvm-ranlib-21"
+      - "/opt/homebrew/sbin/llvm-ranlib-21"
+      - "/usr/local/bin/llvm-ranlib-21"
+      - "/System/Cryptexes/App/usr/bin/llvm-ranlib-21"
       - "/usr/bin/llvm-ranlib-21"
       - "/bin/llvm-ranlib-21"
       - "/usr/sbin/llvm-ranlib-21"
       - "/sbin/llvm-ranlib-21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/llvm-ranlib-21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/llvm-ranlib-21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/llvm-ranlib-21"
+      - "/opt/pmk/env/global/bin/llvm-ranlib-21"
+      - "/Library/Apple/usr/bin/llvm-ranlib-21"
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/llvm-ranlib21"
       - "/opt/homebrew/opt/llvm/bin/llvm-ranlib21"
+      - "/Users/krish/.local/bin/llvm-ranlib21"
+      - "/opt/anaconda3/bin/llvm-ranlib21"
+      - "/opt/anaconda3/condabin/llvm-ranlib21"
+      - "/opt/homebrew/bin/llvm-ranlib21"
+      - "/opt/homebrew/sbin/llvm-ranlib21"
+      - "/usr/local/bin/llvm-ranlib21"
+      - "/System/Cryptexes/App/usr/bin/llvm-ranlib21"
       - "/usr/bin/llvm-ranlib21"
       - "/bin/llvm-ranlib21"
       - "/usr/sbin/llvm-ranlib21"
       - "/sbin/llvm-ranlib21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/llvm-ranlib21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/llvm-ranlib21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/llvm-ranlib21"
+      - "/opt/pmk/env/global/bin/llvm-ranlib21"
+      - "/Library/Apple/usr/bin/llvm-ranlib21"
     found: "/opt/homebrew/Cellar/llvm/21.1.8/bin/llvm-ranlib"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "find-v1"
@@ -955,36 +1712,99 @@ events:
     candidate_directories:
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/"
       - "/opt/homebrew/opt/llvm/bin/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
     searched_directories:
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-scan-deps-21.1"
       - "/opt/homebrew/opt/llvm/bin/clang-scan-deps-21.1"
+      - "/Users/krish/.local/bin/clang-scan-deps-21.1"
+      - "/opt/anaconda3/bin/clang-scan-deps-21.1"
+      - "/opt/anaconda3/condabin/clang-scan-deps-21.1"
+      - "/opt/homebrew/bin/clang-scan-deps-21.1"
+      - "/opt/homebrew/sbin/clang-scan-deps-21.1"
+      - "/usr/local/bin/clang-scan-deps-21.1"
+      - "/System/Cryptexes/App/usr/bin/clang-scan-deps-21.1"
       - "/usr/bin/clang-scan-deps-21.1"
       - "/bin/clang-scan-deps-21.1"
       - "/usr/sbin/clang-scan-deps-21.1"
       - "/sbin/clang-scan-deps-21.1"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/clang-scan-deps-21.1"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/clang-scan-deps-21.1"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/clang-scan-deps-21.1"
+      - "/opt/pmk/env/global/bin/clang-scan-deps-21.1"
+      - "/Library/Apple/usr/bin/clang-scan-deps-21.1"
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-scan-deps-21"
       - "/opt/homebrew/opt/llvm/bin/clang-scan-deps-21"
+      - "/Users/krish/.local/bin/clang-scan-deps-21"
+      - "/opt/anaconda3/bin/clang-scan-deps-21"
+      - "/opt/anaconda3/condabin/clang-scan-deps-21"
+      - "/opt/homebrew/bin/clang-scan-deps-21"
+      - "/opt/homebrew/sbin/clang-scan-deps-21"
+      - "/usr/local/bin/clang-scan-deps-21"
+      - "/System/Cryptexes/App/usr/bin/clang-scan-deps-21"
       - "/usr/bin/clang-scan-deps-21"
       - "/bin/clang-scan-deps-21"
       - "/usr/sbin/clang-scan-deps-21"
       - "/sbin/clang-scan-deps-21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/clang-scan-deps-21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/clang-scan-deps-21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/clang-scan-deps-21"
+      - "/opt/pmk/env/global/bin/clang-scan-deps-21"
+      - "/Library/Apple/usr/bin/clang-scan-deps-21"
       - "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-scan-deps21"
       - "/opt/homebrew/opt/llvm/bin/clang-scan-deps21"
+      - "/Users/krish/.local/bin/clang-scan-deps21"
+      - "/opt/anaconda3/bin/clang-scan-deps21"
+      - "/opt/anaconda3/condabin/clang-scan-deps21"
+      - "/opt/homebrew/bin/clang-scan-deps21"
+      - "/opt/homebrew/sbin/clang-scan-deps21"
+      - "/usr/local/bin/clang-scan-deps21"
+      - "/System/Cryptexes/App/usr/bin/clang-scan-deps21"
       - "/usr/bin/clang-scan-deps21"
       - "/bin/clang-scan-deps21"
       - "/usr/sbin/clang-scan-deps21"
       - "/sbin/clang-scan-deps21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/clang-scan-deps21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/clang-scan-deps21"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/clang-scan-deps21"
+      - "/opt/pmk/env/global/bin/clang-scan-deps21"
+      - "/Library/Apple/usr/bin/clang-scan-deps21"
     found: "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-scan-deps"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "find-v1"
@@ -1006,17 +1826,53 @@ events:
     names:
       - "install_name_tool"
     candidate_directories:
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/opt/homebrew/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/opt/llvm/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
-    found: "/usr/bin/install_name_tool"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
+    searched_directories:
+      - "/opt/homebrew/bin/install_name_tool"
+      - "/opt/homebrew/sbin/install_name_tool"
+      - "/opt/homebrew/install_name_tool"
+      - "/Users/krish/.local/bin/install_name_tool"
+    found: "/opt/anaconda3/bin/install_name_tool"
     search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
   -
     kind: "try_compile-v1"
@@ -1027,8 +1883,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-6Sp3lf"
-      binary: "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-6Sp3lf"
+      source: "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-R5EXl2"
+      binary: "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-R5EXl2"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-scan-deps"
       CMAKE_C_FLAGS: ""
@@ -1041,12 +1897,12 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-6Sp3lf'
+        Change Dir: '/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-R5EXl2'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e3183/fast
-        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_e3183.dir/build.make CMakeFiles/cmTC_e3183.dir/build
-        Building C object CMakeFiles/cmTC_e3183.dir/CMakeCCompilerABI.c.o
-        /opt/homebrew/opt/llvm/bin/clang   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_e3183.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_e3183.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_e3183.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8c975/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_8c975.dir/build.make CMakeFiles/cmTC_8c975.dir/build
+        Building C object CMakeFiles/cmTC_8c975.dir/CMakeCCompilerABI.c.o
+        /opt/homebrew/opt/llvm/bin/clang   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_8c975.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_8c975.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_8c975.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
         Homebrew clang version 21.1.8
         Target: arm64-apple-darwin25.1.0
         Thread model: posix
@@ -1056,7 +1912,7 @@ events:
         User configuration file directory: /Users/krish/.config/clang
         clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
          (in-process)
-         "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-21" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=1 -target-sdk-version=26.2 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.4a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb "-fdebug-compilation-dir=/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-6Sp3lf" -target-linker-version 1230.1 -v "-fcoverage-compilation-dir=/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-6Sp3lf" -resource-dir /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21 -dependency-file CMakeFiles/cmTC_e3183.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_e3183.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/local/include -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/Library/Frameworks -ferror-limit 19 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_e3183.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+         "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-21" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=1 -target-sdk-version=26.2 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.4a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb "-fdebug-compilation-dir=/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-R5EXl2" -target-linker-version 1230.1 -v "-fcoverage-compilation-dir=/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-R5EXl2" -resource-dir /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21 -dependency-file CMakeFiles/cmTC_8c975.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_8c975.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/local/include -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/Library/Frameworks -ferror-limit 19 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_8c975.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
         clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target arm64-apple-darwin25.1.0
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/Library/Frameworks"
@@ -1067,8 +1923,8 @@ events:
          /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks (framework directory)
          /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/SubFrameworks (framework directory)
         End of search list.
-        Linking C executable cmTC_e3183
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e3183.dir/link.txt --verbose=1
+        Linking C executable cmTC_8c975
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c975.dir/link.txt --verbose=1
         Homebrew clang version 21.1.8
         Target: arm64-apple-darwin25.1.0
         Thread model: posix
@@ -1076,19 +1932,15 @@ events:
         Configuration file: /opt/homebrew/etc/clang/arm64-apple-darwin25.cfg
         System configuration file directory: /opt/homebrew/etc/clang
         User configuration file directory: /Users/krish/.config/clang
-         "/usr/bin/ld" -demangle -lto_library /opt/homebrew/Cellar/llvm/21.1.8/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_e3183 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_e3183.dir/CMakeCCompilerABI.c.o -lSystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a
-        @(#)PROGRAM:ld PROJECT:ld-1230.1
-        BUILD 06:36:05 Dec  2 2025
-        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
-        will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
-        LTO support using: LLVM version 21.1.8 (static support for 29, runtime is 30)
-        TAPI support using: Apple TAPI version 17.0.0 (tapi-1700.3.8)
+         "/opt/anaconda3/bin/ld" -demangle -lto_library /opt/homebrew/Cellar/llvm/21.1.8/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_8c975 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_8c975.dir/CMakeCCompilerABI.c.o -lSystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a
+        @(#)PROGRAM:ld  PROJECT:ld64-954.16
+        BUILD 16:20:08 Aug 25 2025
+        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
         Library search paths:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib
-        	/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib/swift
         Framework search paths:
-        	/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks
-        /opt/homebrew/opt/llvm/bin/clang  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_e3183.dir/CMakeCCompilerABI.c.o -o cmTC_e3183
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks/
+        /opt/homebrew/opt/llvm/bin/clang  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_8c975.dir/CMakeCCompilerABI.c.o -o cmTC_8c975
         
       exitCode: 0
   -
@@ -1128,12 +1980,12 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-6Sp3lf']
+        ignore line: [Change Dir: '/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-R5EXl2']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e3183/fast]
-        ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_e3183.dir/build.make CMakeFiles/cmTC_e3183.dir/build]
-        ignore line: [Building C object CMakeFiles/cmTC_e3183.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/opt/homebrew/opt/llvm/bin/clang   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_e3183.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_e3183.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_e3183.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8c975/fast]
+        ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_8c975.dir/build.make CMakeFiles/cmTC_8c975.dir/build]
+        ignore line: [Building C object CMakeFiles/cmTC_8c975.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/opt/homebrew/opt/llvm/bin/clang   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_8c975.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_8c975.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_8c975.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Homebrew clang version 21.1.8]
         ignore line: [Target: arm64-apple-darwin25.1.0]
         ignore line: [Thread model: posix]
@@ -1143,7 +1995,7 @@ events:
         ignore line: [User configuration file directory: /Users/krish/.config/clang]
         ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
         ignore line: [ (in-process)]
-        ignore line: [ "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-21" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=1 -target-sdk-version=26.2 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.4a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb "-fdebug-compilation-dir=/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-6Sp3lf" -target-linker-version 1230.1 -v "-fcoverage-compilation-dir=/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-6Sp3lf" -resource-dir /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21 -dependency-file CMakeFiles/cmTC_e3183.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_e3183.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/local/include -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/Library/Frameworks -ferror-limit 19 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_e3183.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [ "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-21" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=1 -target-sdk-version=26.2 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.4a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb "-fdebug-compilation-dir=/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-R5EXl2" -target-linker-version 1230.1 -v "-fcoverage-compilation-dir=/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-R5EXl2" -resource-dir /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21 -dependency-file CMakeFiles/cmTC_8c975.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_8c975.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/local/include -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/Library/Frameworks -ferror-limit 19 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_8c975.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target arm64-apple-darwin25.1.0]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/Library/Frameworks"]
@@ -1154,8 +2006,8 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/SubFrameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking C executable cmTC_e3183]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e3183.dir/link.txt --verbose=1]
+        ignore line: [Linking C executable cmTC_8c975]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c975.dir/link.txt --verbose=1]
         ignore line: [Homebrew clang version 21.1.8]
         ignore line: [Target: arm64-apple-darwin25.1.0]
         ignore line: [Thread model: posix]
@@ -1163,8 +2015,8 @@ events:
         ignore line: [Configuration file: /opt/homebrew/etc/clang/arm64-apple-darwin25.cfg]
         ignore line: [System configuration file directory: /opt/homebrew/etc/clang]
         ignore line: [User configuration file directory: /Users/krish/.config/clang]
-        link line: [ "/usr/bin/ld" -demangle -lto_library /opt/homebrew/Cellar/llvm/21.1.8/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_e3183 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_e3183.dir/CMakeCCompilerABI.c.o -lSystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a]
-          arg [/usr/bin/ld] ==> ignore
+        link line: [ "/opt/anaconda3/bin/ld" -demangle -lto_library /opt/homebrew/Cellar/llvm/21.1.8/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_8c975 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_8c975.dir/CMakeCCompilerABI.c.o -lSystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a]
+          arg [/opt/anaconda3/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
           arg [/opt/homebrew/Cellar/llvm/21.1.8/lib/libLTO.dylib] ==> skip value of -lto_library
@@ -1180,24 +2032,23 @@ events:
           arg [-mllvm] ==> ignore
           arg [-enable-linkonceodr-outlining] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_e3183] ==> ignore
+          arg [cmTC_8c975] ==> ignore
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_e3183.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_8c975.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lSystem] ==> lib [System]
           arg [/opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a] ==> lib [/opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a]
-        linker tool for 'C': /usr/bin/ld
-        Library search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib/swift]
-        Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks]
+        linker tool for 'C': /opt/anaconda3/bin/ld
+        Library search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib]
+        Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks/]
         remove lib [System]
         remove lib [/opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a]
         collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib]
-        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib/swift] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib/swift]
-        collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks]
+        collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks/] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks]
         implicit libs: []
         implicit objs: []
-        implicit dirs: [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib/swift]
+        implicit dirs: [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib]
         implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks]
       
       
@@ -1209,13 +2060,12 @@ events:
       - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:4 (project)"
     message: |
-      Running the C compiler's linker: "/usr/bin/ld" "-v"
-      @(#)PROGRAM:ld PROJECT:ld-1230.1
-      BUILD 06:36:05 Dec  2 2025
-      configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
-      will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
-      LTO support using: LLVM version 17.0.0 (static support for 29, runtime is 29)
-      TAPI support using: Apple TAPI version 17.0.0 (tapi-1700.3.8)
+      Running the C compiler's linker: "/opt/anaconda3/bin/ld" "-v"
+      @(#)PROGRAM:ld  PROJECT:ld64-954.16
+      BUILD 16:20:08 Aug 25 2025
+      configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+      LTO support using: LLVM version 20.1.8 (static support for 29, runtime is 29)
+      TAPI support using: TAPI version 11.0.0 (tapi-1100.0.11)
   -
     kind: "try_compile-v1"
     backtrace:
@@ -1225,8 +2075,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-dlkaNl"
-      binary: "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-dlkaNl"
+      source: "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-TNBABO"
+      binary: "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-TNBABO"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-scan-deps"
       CMAKE_CXX_FLAGS: ""
@@ -1240,12 +2090,12 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-dlkaNl'
+        Change Dir: '/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-TNBABO'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_bd012/fast
-        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_bd012.dir/build.make CMakeFiles/cmTC_bd012.dir/build
-        Building CXX object CMakeFiles/cmTC_bd012.dir/CMakeCXXCompilerABI.cpp.o
-        /opt/homebrew/opt/llvm/bin/clang++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_bd012.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_bd012.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_bd012.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0a180/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_0a180.dir/build.make CMakeFiles/cmTC_0a180.dir/build
+        Building CXX object CMakeFiles/cmTC_0a180.dir/CMakeCXXCompilerABI.cpp.o
+        /opt/homebrew/opt/llvm/bin/clang++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_0a180.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_0a180.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_0a180.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Homebrew clang version 21.1.8
         Target: arm64-apple-darwin25.1.0
         Thread model: posix
@@ -1255,7 +2105,7 @@ events:
         User configuration file directory: /Users/krish/.config/clang
         clang++: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
          (in-process)
-         "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-21" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=1 -target-sdk-version=26.2 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.4a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb "-fdebug-compilation-dir=/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-dlkaNl" -target-linker-version 1230.1 -v "-fcoverage-compilation-dir=/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-dlkaNl" -resource-dir /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21 -dependency-file CMakeFiles/cmTC_bd012.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_bd012.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/local/include -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/Library/Frameworks -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_bd012.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+         "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-21" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=1 -target-sdk-version=26.2 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.4a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb "-fdebug-compilation-dir=/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-TNBABO" -target-linker-version 1230.1 -v "-fcoverage-compilation-dir=/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-TNBABO" -resource-dir /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21 -dependency-file CMakeFiles/cmTC_0a180.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_0a180.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/local/include -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/Library/Frameworks -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_0a180.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target arm64-apple-darwin25.1.0
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/Library/Frameworks"
@@ -1267,8 +2117,8 @@ events:
          /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks (framework directory)
          /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/SubFrameworks (framework directory)
         End of search list.
-        Linking CXX executable cmTC_bd012
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bd012.dir/link.txt --verbose=1
+        Linking CXX executable cmTC_0a180
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0a180.dir/link.txt --verbose=1
         Homebrew clang version 21.1.8
         Target: arm64-apple-darwin25.1.0
         Thread model: posix
@@ -1276,19 +2126,15 @@ events:
         Configuration file: /opt/homebrew/etc/clang/arm64-apple-darwin25.cfg
         System configuration file directory: /opt/homebrew/etc/clang
         User configuration file directory: /Users/krish/.config/clang
-         "/usr/bin/ld" -demangle -lto_library /opt/homebrew/Cellar/llvm/21.1.8/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_bd012 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_bd012.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a
-        @(#)PROGRAM:ld PROJECT:ld-1230.1
-        BUILD 06:36:05 Dec  2 2025
-        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
-        will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
-        LTO support using: LLVM version 21.1.8 (static support for 29, runtime is 30)
-        TAPI support using: Apple TAPI version 17.0.0 (tapi-1700.3.8)
+         "/opt/anaconda3/bin/ld" -demangle -lto_library /opt/homebrew/Cellar/llvm/21.1.8/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_0a180 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_0a180.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a
+        @(#)PROGRAM:ld  PROJECT:ld64-954.16
+        BUILD 16:20:08 Aug 25 2025
+        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
         Library search paths:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib
-        	/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib/swift
         Framework search paths:
-        	/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks
-        /opt/homebrew/opt/llvm/bin/clang++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_bd012.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_bd012
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks/
+        /opt/homebrew/opt/llvm/bin/clang++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_0a180.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_0a180
         
       exitCode: 0
   -
@@ -1330,12 +2176,12 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-dlkaNl']
+        ignore line: [Change Dir: '/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-TNBABO']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_bd012/fast]
-        ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_bd012.dir/build.make CMakeFiles/cmTC_bd012.dir/build]
-        ignore line: [Building CXX object CMakeFiles/cmTC_bd012.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/opt/homebrew/opt/llvm/bin/clang++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_bd012.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_bd012.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_bd012.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0a180/fast]
+        ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_0a180.dir/build.make CMakeFiles/cmTC_0a180.dir/build]
+        ignore line: [Building CXX object CMakeFiles/cmTC_0a180.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/opt/homebrew/opt/llvm/bin/clang++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_0a180.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_0a180.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_0a180.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Homebrew clang version 21.1.8]
         ignore line: [Target: arm64-apple-darwin25.1.0]
         ignore line: [Thread model: posix]
@@ -1345,7 +2191,7 @@ events:
         ignore line: [User configuration file directory: /Users/krish/.config/clang]
         ignore line: [clang++: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
         ignore line: [ (in-process)]
-        ignore line: [ "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-21" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=1 -target-sdk-version=26.2 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.4a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb "-fdebug-compilation-dir=/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-dlkaNl" -target-linker-version 1230.1 -v "-fcoverage-compilation-dir=/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-dlkaNl" -resource-dir /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21 -dependency-file CMakeFiles/cmTC_bd012.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_bd012.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/local/include -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/Library/Frameworks -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_bd012.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [ "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-21" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=1 -target-sdk-version=26.2 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.4a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb "-fdebug-compilation-dir=/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-TNBABO" -target-linker-version 1230.1 -v "-fcoverage-compilation-dir=/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-TNBABO" -resource-dir /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21 -dependency-file CMakeFiles/cmTC_0a180.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_0a180.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/local/include -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/Library/Frameworks -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_0a180.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target arm64-apple-darwin25.1.0]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/Library/Frameworks"]
@@ -1357,8 +2203,8 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/SubFrameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking CXX executable cmTC_bd012]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bd012.dir/link.txt --verbose=1]
+        ignore line: [Linking CXX executable cmTC_0a180]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0a180.dir/link.txt --verbose=1]
         ignore line: [Homebrew clang version 21.1.8]
         ignore line: [Target: arm64-apple-darwin25.1.0]
         ignore line: [Thread model: posix]
@@ -1366,8 +2212,8 @@ events:
         ignore line: [Configuration file: /opt/homebrew/etc/clang/arm64-apple-darwin25.cfg]
         ignore line: [System configuration file directory: /opt/homebrew/etc/clang]
         ignore line: [User configuration file directory: /Users/krish/.config/clang]
-        link line: [ "/usr/bin/ld" -demangle -lto_library /opt/homebrew/Cellar/llvm/21.1.8/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_bd012 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_bd012.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a]
-          arg [/usr/bin/ld] ==> ignore
+        link line: [ "/opt/anaconda3/bin/ld" -demangle -lto_library /opt/homebrew/Cellar/llvm/21.1.8/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_0a180 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_0a180.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a]
+          arg [/opt/anaconda3/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
           arg [/opt/homebrew/Cellar/llvm/21.1.8/lib/libLTO.dylib] ==> skip value of -lto_library
@@ -1383,25 +2229,24 @@ events:
           arg [-mllvm] ==> ignore
           arg [-enable-linkonceodr-outlining] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_bd012] ==> ignore
+          arg [cmTC_0a180] ==> ignore
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_bd012.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_0a180.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lc++] ==> lib [c++]
           arg [-lSystem] ==> lib [System]
           arg [/opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a] ==> lib [/opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a]
-        linker tool for 'CXX': /usr/bin/ld
-        Library search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib/swift]
-        Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks]
+        linker tool for 'CXX': /opt/anaconda3/bin/ld
+        Library search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib]
+        Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks/]
         remove lib [System]
         remove lib [/opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a]
         collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib]
-        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib/swift] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib/swift]
-        collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks]
+        collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks/] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks]
         implicit libs: [c++]
         implicit objs: []
-        implicit dirs: [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib/swift]
+        implicit dirs: [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib]
         implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks]
       
       
@@ -1413,13 +2258,12 @@ events:
       - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:4 (project)"
     message: |
-      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
-      @(#)PROGRAM:ld PROJECT:ld-1230.1
-      BUILD 06:36:05 Dec  2 2025
-      configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
-      will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
-      LTO support using: LLVM version 17.0.0 (static support for 29, runtime is 29)
-      TAPI support using: Apple TAPI version 17.0.0 (tapi-1700.3.8)
+      Running the CXX compiler's linker: "/opt/anaconda3/bin/ld" "-v"
+      @(#)PROGRAM:ld  PROJECT:ld64-954.16
+      BUILD 16:20:08 Aug 25 2025
+      configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+      LTO support using: LLVM version 20.1.8 (static support for 29, runtime is 29)
+      TAPI support using: TAPI version 11.0.0 (tapi-1100.0.11)
   -
     kind: "try_compile-v1"
     backtrace:
@@ -1432,12 +2276,12 @@ events:
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6Dependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6Config.cmake:192 (include)"
-      - "CMakeLists.txt:19 (find_package)"
+      - "CMakeLists.txt:41 (find_package)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-JwuXdK"
-      binary: "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-JwuXdK"
+      source: "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-FdSvoS"
+      binary: "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-FdSvoS"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-scan-deps"
       CMAKE_C_FLAGS: ""
@@ -1451,15 +2295,15 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-JwuXdK'
+        Change Dir: '/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-FdSvoS'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c2fff/fast
-        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_c2fff.dir/build.make CMakeFiles/cmTC_c2fff.dir/build
-        Building C object CMakeFiles/cmTC_c2fff.dir/src.c.o
-        /opt/homebrew/opt/llvm/bin/clang -DCMAKE_HAVE_LIBC_PTHREAD  -arch arm64 -MD -MT CMakeFiles/cmTC_c2fff.dir/src.c.o -MF CMakeFiles/cmTC_c2fff.dir/src.c.o.d -o CMakeFiles/cmTC_c2fff.dir/src.c.o -c "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-JwuXdK/src.c"
-        Linking C executable cmTC_c2fff
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c2fff.dir/link.txt --verbose=1
-        /opt/homebrew/opt/llvm/bin/clang  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_c2fff.dir/src.c.o -o cmTC_c2fff
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_04ba3/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_04ba3.dir/build.make CMakeFiles/cmTC_04ba3.dir/build
+        Building C object CMakeFiles/cmTC_04ba3.dir/src.c.o
+        /opt/homebrew/opt/llvm/bin/clang -DCMAKE_HAVE_LIBC_PTHREAD  -arch arm64 -MD -MT CMakeFiles/cmTC_04ba3.dir/src.c.o -MF CMakeFiles/cmTC_04ba3.dir/src.c.o.d -o CMakeFiles/cmTC_04ba3.dir/src.c.o -c "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-FdSvoS/src.c"
+        Linking C executable cmTC_04ba3
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04ba3.dir/link.txt --verbose=1
+        /opt/homebrew/opt/llvm/bin/clang  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_04ba3.dir/src.c.o -o cmTC_04ba3
         
       exitCode: 0
   -
@@ -1472,7 +2316,7 @@ events:
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:42 (_qt_internal_find_tool_dependencies)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:19 (find_package)"
+      - "CMakeLists.txt:41 (find_package)"
     name: "Qt6CoreTools"
     configs:
       -
@@ -1518,6 +2362,14 @@ events:
         mode: "config"
         reason: "no_exist"
       -
+        path: "/opt/homebrew/Qt6CoreToolsConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/qt6coretools-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
         path: "/Users/krish/codingStuff/qt6-build/Qt6CoreToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
@@ -1531,12 +2383,26 @@ events:
       version: "6.12.0"
     search_context:
       CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
         - "/Users/krish/codingStuff/qt6-build"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
@@ -1571,7 +2437,7 @@ events:
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:42 (_qt_internal_find_tool_dependencies)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:19 (find_package)"
+      - "CMakeLists.txt:41 (find_package)"
     name: "Qt6GuiTools"
     configs:
       -
@@ -1617,6 +2483,14 @@ events:
         mode: "config"
         reason: "no_exist"
       -
+        path: "/opt/homebrew/Qt6GuiToolsConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/qt6guitools-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
         path: "/Users/krish/codingStuff/qt6-build/Qt6GuiToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
@@ -1630,12 +2504,26 @@ events:
       version: "6.12.0"
     search_context:
       CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
         - "/Users/krish/codingStuff/qt6-build"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
@@ -1667,7 +2555,7 @@ events:
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:42 (_qt_internal_find_tool_dependencies)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:19 (find_package)"
+      - "CMakeLists.txt:41 (find_package)"
     name: "Qt6WidgetsTools"
     configs:
       -
@@ -1713,6 +2601,14 @@ events:
         mode: "config"
         reason: "no_exist"
       -
+        path: "/opt/homebrew/Qt6WidgetsToolsConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/qt6widgetstools-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
         path: "/Users/krish/codingStuff/qt6-build/Qt6WidgetsToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
@@ -1726,12 +2622,26 @@ events:
       version: "6.12.0"
     search_context:
       CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
         - "/Users/krish/codingStuff/qt6-build"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
@@ -1773,12 +2683,12 @@ events:
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:19 (find_package)"
+      - "CMakeLists.txt:41 (find_package)"
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-DRmIn2"
-      binary: "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-DRmIn2"
+      source: "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-d0GXRG"
+      binary: "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-d0GXRG"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-scan-deps"
       CMAKE_CXX_FLAGS: ""
@@ -1792,15 +2702,15 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: '/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-DRmIn2'
+        Change Dir: '/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-d0GXRG'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_de5cf/fast
-        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_de5cf.dir/build.make CMakeFiles/cmTC_de5cf.dir/build
-        Building CXX object CMakeFiles/cmTC_de5cf.dir/src.cxx.o
-        /opt/homebrew/opt/llvm/bin/clang++ -DHAVE_STDATOMIC  -std=gnu++20 -arch arm64 -MD -MT CMakeFiles/cmTC_de5cf.dir/src.cxx.o -MF CMakeFiles/cmTC_de5cf.dir/src.cxx.o.d -o CMakeFiles/cmTC_de5cf.dir/src.cxx.o -c "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-DRmIn2/src.cxx"
-        Linking CXX executable cmTC_de5cf
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_de5cf.dir/link.txt --verbose=1
-        /opt/homebrew/opt/llvm/bin/clang++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_de5cf.dir/src.cxx.o -o cmTC_de5cf
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_84f78/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_84f78.dir/build.make CMakeFiles/cmTC_84f78.dir/build
+        Building CXX object CMakeFiles/cmTC_84f78.dir/src.cxx.o
+        /opt/homebrew/opt/llvm/bin/clang++ -DHAVE_STDATOMIC  -std=gnu++20 -arch arm64 -MD -MT CMakeFiles/cmTC_84f78.dir/src.cxx.o -MF CMakeFiles/cmTC_84f78.dir/src.cxx.o.d -o CMakeFiles/cmTC_84f78.dir/src.cxx.o -c "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/CMakeScratch/TryCompile-d0GXRG/src.cxx"
+        Linking CXX executable cmTC_84f78
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_84f78.dir/link.txt --verbose=1
+        /opt/homebrew/opt/llvm/bin/clang++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_84f78.dir/src.cxx.o -o cmTC_84f78
         
       exitCode: 0
   -
@@ -1815,7 +2725,7 @@ events:
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:19 (find_package)"
+      - "CMakeLists.txt:41 (find_package)"
     mode: "program"
     variable: "MACDEPLOYQT_EXECUTABLE"
     description: "Path to a program."
@@ -1830,20 +2740,33 @@ events:
     names:
       - "macdeployqt"
     candidate_directories:
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/opt/homebrew/"
       - "/Users/krish/codingStuff/qt6-build/bin/"
       - "/Users/krish/codingStuff/qt6-build/sbin/"
       - "/Users/krish/codingStuff/qt6-build/"
       - "/Users/krish/codingStuff/qt6-build/bin/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/opt/llvm/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
       - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/bin/"
       - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/sbin/"
       - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-      - "/opt/homebrew/bin/"
-      - "/opt/homebrew/sbin/"
-      - "/opt/homebrew/"
       - "/usr/local/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/"
@@ -1874,15 +2797,33 @@ events:
       - "/Applications/"
       - "/Applications/Xcode.app/Contents/Applications/"
       - "/Applications/Xcode.app/Contents/Developer/Applications/"
+    searched_directories:
+      - "/opt/homebrew/bin/macdeployqt"
+      - "/opt/homebrew/sbin/macdeployqt"
+      - "/opt/homebrew/macdeployqt"
     found: "/Users/krish/codingStuff/qt6-build/bin/macdeployqt"
     search_context:
       CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
         - "/Users/krish/codingStuff/qt6-build"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
@@ -1911,7 +2852,7 @@ events:
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:19 (find_package)"
+      - "CMakeLists.txt:41 (find_package)"
     name: "Qt6Core"
     configs:
       -
@@ -1986,12 +2927,26 @@ events:
       version: "6.12.0"
     search_context:
       CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
         - "/Users/krish/codingStuff/qt6-build"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
@@ -2032,7 +2987,7 @@ events:
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:19 (find_package)"
+      - "CMakeLists.txt:41 (find_package)"
     mode: "library"
     variable: "OPENGL_gl_LIBRARY"
     description: "OpenGL GL library"
@@ -2048,16 +3003,24 @@ events:
       - "OpenGL"
       - "GL"
     candidate_directories:
+      - "/opt/homebrew/lib/"
+      - "/opt/homebrew/"
       - "/Users/krish/codingStuff/qt6-build/lib/"
       - "/Users/krish/codingStuff/qt6-build/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/opt/llvm/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Library/Apple/usr/bin/"
       - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
       - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-      - "/opt/homebrew/lib/"
-      - "/opt/homebrew/"
       - "/usr/local/"
       - "/usr/lib/"
       - "/usr/"
@@ -2070,12 +3033,26 @@ events:
     found: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework"
     search_context:
       CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
         - "/Users/krish/codingStuff/qt6-build"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
@@ -2118,7 +3095,7 @@ events:
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:19 (find_package)"
+      - "CMakeLists.txt:41 (find_package)"
     mode: "library"
     variable: "OPENGL_glu_LIBRARY"
     description: "OpenGL GLU library"
@@ -2134,16 +3111,24 @@ events:
       - "OpenGL"
       - "GLU"
     candidate_directories:
+      - "/opt/homebrew/lib/"
+      - "/opt/homebrew/"
       - "/Users/krish/codingStuff/qt6-build/lib/"
       - "/Users/krish/codingStuff/qt6-build/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/opt/llvm/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Library/Apple/usr/bin/"
       - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
       - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-      - "/opt/homebrew/lib/"
-      - "/opt/homebrew/"
       - "/usr/local/"
       - "/usr/lib/"
       - "/usr/"
@@ -2156,12 +3141,26 @@ events:
     found: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework"
     search_context:
       CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
         - "/Users/krish/codingStuff/qt6-build"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
@@ -2204,7 +3203,7 @@ events:
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:19 (find_package)"
+      - "CMakeLists.txt:41 (find_package)"
     mode: "path"
     variable: "OPENGL_INCLUDE_DIR"
     description: "Include for OpenGL"
@@ -2220,16 +3219,29 @@ events:
       - "OpenGL/gl.h"
       - "GL/gl.h"
     candidate_directories:
+      - "/opt/homebrew/include/"
+      - "/opt/homebrew/"
       - "/Users/krish/codingStuff/qt6-build/include/"
       - "/Users/krish/codingStuff/qt6-build/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/opt/llvm/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
       - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/"
       - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-      - "/opt/homebrew/include/"
-      - "/opt/homebrew/"
       - "/usr/local/include/"
       - "/usr/local/"
       - "/usr/include/"
@@ -2258,16 +3270,29 @@ events:
       - "/Network/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/opt/homebrew/include/OpenGL.framework/Headers/gl.h"
+      - "/opt/homebrew/OpenGL.framework/Headers/gl.h"
       - "/Users/krish/codingStuff/qt6-build/include/OpenGL.framework/Headers/gl.h"
       - "/Users/krish/codingStuff/qt6-build/OpenGL.framework/Headers/gl.h"
+      - "/Users/krish/.local/bin/OpenGL.framework/Headers/gl.h"
+      - "/opt/anaconda3/bin/OpenGL.framework/Headers/gl.h"
+      - "/opt/anaconda3/condabin/OpenGL.framework/Headers/gl.h"
+      - "/opt/homebrew/opt/llvm/bin/OpenGL.framework/Headers/gl.h"
+      - "/opt/homebrew/bin/OpenGL.framework/Headers/gl.h"
+      - "/opt/homebrew/sbin/OpenGL.framework/Headers/gl.h"
+      - "/usr/local/bin/OpenGL.framework/Headers/gl.h"
+      - "/System/Cryptexes/App/usr/bin/OpenGL.framework/Headers/gl.h"
       - "/usr/bin/OpenGL.framework/Headers/gl.h"
       - "/bin/OpenGL.framework/Headers/gl.h"
       - "/usr/sbin/OpenGL.framework/Headers/gl.h"
       - "/sbin/OpenGL.framework/Headers/gl.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/OpenGL.framework/Headers/gl.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/OpenGL.framework/Headers/gl.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/OpenGL.framework/Headers/gl.h"
+      - "/opt/pmk/env/global/bin/OpenGL.framework/Headers/gl.h"
+      - "/Library/Apple/usr/bin/OpenGL.framework/Headers/gl.h"
       - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/OpenGL.framework/Headers/gl.h"
       - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/OpenGL.framework/Headers/gl.h"
-      - "/opt/homebrew/include/OpenGL.framework/Headers/gl.h"
-      - "/opt/homebrew/OpenGL.framework/Headers/gl.h"
       - "/usr/local/include/OpenGL.framework/Headers/gl.h"
       - "/usr/local/OpenGL.framework/Headers/gl.h"
       - "/usr/include/OpenGL.framework/Headers/gl.h"
@@ -2292,12 +3317,26 @@ events:
     found: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework"
     search_context:
       CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
         - "/Users/krish/codingStuff/qt6-build"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
@@ -2340,7 +3379,7 @@ events:
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:19 (find_package)"
+      - "CMakeLists.txt:41 (find_package)"
     mode: "path"
     variable: "OPENGL_GLU_INCLUDE_DIR"
     description: "Include for the OpenGL GLU library"
@@ -2356,16 +3395,29 @@ events:
       - "OpenGL/glu.h"
       - "GL/glu.h"
     candidate_directories:
+      - "/opt/homebrew/include/"
+      - "/opt/homebrew/"
       - "/Users/krish/codingStuff/qt6-build/include/"
       - "/Users/krish/codingStuff/qt6-build/"
+      - "/Users/krish/.local/bin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/opt/llvm/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
       - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/"
       - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-      - "/opt/homebrew/include/"
-      - "/opt/homebrew/"
       - "/usr/local/include/"
       - "/usr/local/"
       - "/usr/include/"
@@ -2394,16 +3446,29 @@ events:
       - "/Network/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/opt/homebrew/include/OpenGL.framework/Headers/glu.h"
+      - "/opt/homebrew/OpenGL.framework/Headers/glu.h"
       - "/Users/krish/codingStuff/qt6-build/include/OpenGL.framework/Headers/glu.h"
       - "/Users/krish/codingStuff/qt6-build/OpenGL.framework/Headers/glu.h"
+      - "/Users/krish/.local/bin/OpenGL.framework/Headers/glu.h"
+      - "/opt/anaconda3/bin/OpenGL.framework/Headers/glu.h"
+      - "/opt/anaconda3/condabin/OpenGL.framework/Headers/glu.h"
+      - "/opt/homebrew/opt/llvm/bin/OpenGL.framework/Headers/glu.h"
+      - "/opt/homebrew/bin/OpenGL.framework/Headers/glu.h"
+      - "/opt/homebrew/sbin/OpenGL.framework/Headers/glu.h"
+      - "/usr/local/bin/OpenGL.framework/Headers/glu.h"
+      - "/System/Cryptexes/App/usr/bin/OpenGL.framework/Headers/glu.h"
       - "/usr/bin/OpenGL.framework/Headers/glu.h"
       - "/bin/OpenGL.framework/Headers/glu.h"
       - "/usr/sbin/OpenGL.framework/Headers/glu.h"
       - "/sbin/OpenGL.framework/Headers/glu.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/OpenGL.framework/Headers/glu.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/OpenGL.framework/Headers/glu.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/OpenGL.framework/Headers/glu.h"
+      - "/opt/pmk/env/global/bin/OpenGL.framework/Headers/glu.h"
+      - "/Library/Apple/usr/bin/OpenGL.framework/Headers/glu.h"
       - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/OpenGL.framework/Headers/glu.h"
       - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/OpenGL.framework/Headers/glu.h"
-      - "/opt/homebrew/include/OpenGL.framework/Headers/glu.h"
-      - "/opt/homebrew/OpenGL.framework/Headers/glu.h"
       - "/usr/local/include/OpenGL.framework/Headers/glu.h"
       - "/usr/local/OpenGL.framework/Headers/glu.h"
       - "/usr/include/OpenGL.framework/Headers/glu.h"
@@ -2428,12 +3493,26 @@ events:
     found: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework"
     search_context:
       CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
         - "/Users/krish/codingStuff/qt6-build"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
@@ -2477,7 +3556,7 @@ events:
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:19 (find_package)"
+      - "CMakeLists.txt:41 (find_package)"
     name: "Qt6DBusTools"
     configs:
       -
@@ -2523,6 +3602,14 @@ events:
         mode: "config"
         reason: "no_exist"
       -
+        path: "/opt/homebrew/Qt6DBusToolsConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/qt6dbustools-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
         path: "/Users/krish/codingStuff/qt6-build/Qt6DBusToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
@@ -2536,12 +3623,26 @@ events:
       version: "6.12.0"
     search_context:
       CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
         - "/Users/krish/codingStuff/qt6-build"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
@@ -2580,7 +3681,7 @@ events:
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:19 (find_package)"
+      - "CMakeLists.txt:41 (find_package)"
     name: "Qt6DBus"
     configs:
       -
@@ -2655,12 +3756,26 @@ events:
       version: "6.12.0"
     search_context:
       CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
         - "/Users/krish/codingStuff/qt6-build"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
@@ -2694,7 +3809,7 @@ events:
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:19 (find_package)"
+      - "CMakeLists.txt:41 (find_package)"
     name: "Qt6Gui"
     configs:
       -
@@ -2769,12 +3884,26 @@ events:
       version: "6.12.0"
     search_context:
       CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
         - "/Users/krish/codingStuff/qt6-build"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
@@ -2803,7 +3932,7 @@ events:
     kind: "find_package-v1"
     backtrace:
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:19 (find_package)"
+      - "CMakeLists.txt:41 (find_package)"
     name: "Qt6Widgets"
     configs:
       -
@@ -2875,12 +4004,26 @@ events:
       version: "6.12.0"
     search_context:
       CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
         - "/Users/krish/codingStuff/qt6-build"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
@@ -2909,7 +4052,7 @@ events:
     kind: "find_package-v1"
     backtrace:
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:19 (find_package)"
+      - "CMakeLists.txt:41 (find_package)"
     name: "Qt6OpenGL"
     configs:
       -
@@ -2981,12 +4124,26 @@ events:
       version: "6.12.0"
     search_context:
       CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
         - "/Users/krish/codingStuff/qt6-build"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
@@ -3015,7 +4172,7 @@ events:
     kind: "find_package-v1"
     backtrace:
       - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:19 (find_package)"
+      - "CMakeLists.txt:41 (find_package)"
     name: "Qt6OpenGLWidgets"
     configs:
       -
@@ -3071,12 +4228,26 @@ events:
       version: "6.12.0"
     search_context:
       CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
         - "/Users/krish/codingStuff/qt6-build"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
@@ -3104,7 +4275,7 @@ events:
   -
     kind: "find_package-v1"
     backtrace:
-      - "CMakeLists.txt:19 (find_package)"
+      - "CMakeLists.txt:41 (find_package)"
     name: "Qt6"
     components:
       -
@@ -3155,6 +4326,14 @@ events:
         reason: "no_exist"
       -
         path: "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/pkgRedirects/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/qt6-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
@@ -4467,12 +5646,26 @@ events:
       version: "6.12.0"
     search_context:
       CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
         - "/Users/krish/codingStuff/qt6-build"
       ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
         - "/bin"
         - "/usr/sbin"
         - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
       CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
@@ -4501,4 +5694,106 @@ events:
         - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6"
         - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules"
         - "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/3rdparty/kwin"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindGTest.cmake:345 (find_package)"
+      - "CMakeLists.txt:86 (find_package)"
+    name: "GTest"
+    configs:
+      -
+        filename: "GTestConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "gtest-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "GTest"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/pkgRedirects/GTestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/pkgRedirects/gtest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/GTestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/gtest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/opt/homebrew/lib/cmake/GTest/GTestConfig.cmake"
+      mode: "config"
+      version: "1.17.0"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/opt/homebrew"
+        - "/Users/krish/codingStuff/qt6-build"
+      ENV{PATH}:
+        - "/Users/krish/.local/bin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
+      CMAKE_INSTALL_PREFIX: "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/Users/krish/codingStuff/2d3danimation/out/install/Clang 17.0.0 arm64-apple-darwin25.1.0"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
 ...

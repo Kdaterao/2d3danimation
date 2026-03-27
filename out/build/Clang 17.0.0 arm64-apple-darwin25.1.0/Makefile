@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = "/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/opt/homebrew/bin/ctest $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -130,6 +140,19 @@ depend:
 .PHONY : 2d3danimation/fast
 
 #=============================================================================
+# Target rules for targets named 2d3danimation_tests
+
+# Build rule for target.
+2d3danimation_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 2d3danimation_tests
+.PHONY : 2d3danimation_tests
+
+# fast build rule for target.
+2d3danimation_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/build
+.PHONY : 2d3danimation_tests/fast
+
+#=============================================================================
 # Target rules for targets named 2d3danimation_autogen_timestamp_deps
 
 # Build rule for target.
@@ -155,6 +178,32 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_autogen.dir/build.make CMakeFiles/2d3danimation_autogen.dir/build
 .PHONY : 2d3danimation_autogen/fast
 
+#=============================================================================
+# Target rules for targets named 2d3danimation_tests_autogen_timestamp_deps
+
+# Build rule for target.
+2d3danimation_tests_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 2d3danimation_tests_autogen_timestamp_deps
+.PHONY : 2d3danimation_tests_autogen_timestamp_deps
+
+# fast build rule for target.
+2d3danimation_tests_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests_autogen_timestamp_deps.dir/build.make CMakeFiles/2d3danimation_tests_autogen_timestamp_deps.dir/build
+.PHONY : 2d3danimation_tests_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named 2d3danimation_tests_autogen
+
+# Build rule for target.
+2d3danimation_tests_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 2d3danimation_tests_autogen
+.PHONY : 2d3danimation_tests_autogen
+
+# fast build rule for target.
+2d3danimation_tests_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests_autogen.dir/build.make CMakeFiles/2d3danimation_tests_autogen.dir/build
+.PHONY : 2d3danimation_tests_autogen/fast
+
 2d3danimation_autogen/mocs_compilation.o: 2d3danimation_autogen/mocs_compilation.cpp.o
 .PHONY : 2d3danimation_autogen/mocs_compilation.o
 
@@ -179,12 +228,118 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/2d3danimation_autogen/mocs_compilation.cpp.s
 .PHONY : 2d3danimation_autogen/mocs_compilation.cpp.s
 
+2d3danimation_tests_autogen/mocs_compilation.o: 2d3danimation_tests_autogen/mocs_compilation.cpp.o
+.PHONY : 2d3danimation_tests_autogen/mocs_compilation.o
+
+# target to build an object file
+2d3danimation_tests_autogen/mocs_compilation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/2d3danimation_tests_autogen/mocs_compilation.cpp.o
+.PHONY : 2d3danimation_tests_autogen/mocs_compilation.cpp.o
+
+2d3danimation_tests_autogen/mocs_compilation.i: 2d3danimation_tests_autogen/mocs_compilation.cpp.i
+.PHONY : 2d3danimation_tests_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+2d3danimation_tests_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/2d3danimation_tests_autogen/mocs_compilation.cpp.i
+.PHONY : 2d3danimation_tests_autogen/mocs_compilation.cpp.i
+
+2d3danimation_tests_autogen/mocs_compilation.s: 2d3danimation_tests_autogen/mocs_compilation.cpp.s
+.PHONY : 2d3danimation_tests_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+2d3danimation_tests_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/2d3danimation_tests_autogen/mocs_compilation.cpp.s
+.PHONY : 2d3danimation_tests_autogen/mocs_compilation.cpp.s
+
+include/2D/toonzPainterGL.o: include/2D/toonzPainterGL.cpp.o
+.PHONY : include/2D/toonzPainterGL.o
+
+# target to build an object file
+include/2D/toonzPainterGL.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/2D/toonzPainterGL.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/2D/toonzPainterGL.cpp.o
+.PHONY : include/2D/toonzPainterGL.cpp.o
+
+include/2D/toonzPainterGL.i: include/2D/toonzPainterGL.cpp.i
+.PHONY : include/2D/toonzPainterGL.i
+
+# target to preprocess a source file
+include/2D/toonzPainterGL.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/2D/toonzPainterGL.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/2D/toonzPainterGL.cpp.i
+.PHONY : include/2D/toonzPainterGL.cpp.i
+
+include/2D/toonzPainterGL.s: include/2D/toonzPainterGL.cpp.s
+.PHONY : include/2D/toonzPainterGL.s
+
+# target to generate assembly for a file
+include/2D/toonzPainterGL.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/2D/toonzPainterGL.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/2D/toonzPainterGL.cpp.s
+.PHONY : include/2D/toonzPainterGL.cpp.s
+
+include/2D/toonzShader.o: include/2D/toonzShader.cpp.o
+.PHONY : include/2D/toonzShader.o
+
+# target to build an object file
+include/2D/toonzShader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/2D/toonzShader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/2D/toonzShader.cpp.o
+.PHONY : include/2D/toonzShader.cpp.o
+
+include/2D/toonzShader.i: include/2D/toonzShader.cpp.i
+.PHONY : include/2D/toonzShader.i
+
+# target to preprocess a source file
+include/2D/toonzShader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/2D/toonzShader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/2D/toonzShader.cpp.i
+.PHONY : include/2D/toonzShader.cpp.i
+
+include/2D/toonzShader.s: include/2D/toonzShader.cpp.s
+.PHONY : include/2D/toonzShader.s
+
+# target to generate assembly for a file
+include/2D/toonzShader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/2D/toonzShader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/2D/toonzShader.cpp.s
+.PHONY : include/2D/toonzShader.cpp.s
+
+include/2D/toonzTextureManager.o: include/2D/toonzTextureManager.cpp.o
+.PHONY : include/2D/toonzTextureManager.o
+
+# target to build an object file
+include/2D/toonzTextureManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/2D/toonzTextureManager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/2D/toonzTextureManager.cpp.o
+.PHONY : include/2D/toonzTextureManager.cpp.o
+
+include/2D/toonzTextureManager.i: include/2D/toonzTextureManager.cpp.i
+.PHONY : include/2D/toonzTextureManager.i
+
+# target to preprocess a source file
+include/2D/toonzTextureManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/2D/toonzTextureManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/2D/toonzTextureManager.cpp.i
+.PHONY : include/2D/toonzTextureManager.cpp.i
+
+include/2D/toonzTextureManager.s: include/2D/toonzTextureManager.cpp.s
+.PHONY : include/2D/toonzTextureManager.s
+
+# target to generate assembly for a file
+include/2D/toonzTextureManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/2D/toonzTextureManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/2D/toonzTextureManager.cpp.s
+.PHONY : include/2D/toonzTextureManager.cpp.s
+
 include/CanvasWidget/CanvasWidget.o: include/CanvasWidget/CanvasWidget.cpp.o
 .PHONY : include/CanvasWidget/CanvasWidget.o
 
 # target to build an object file
 include/CanvasWidget/CanvasWidget.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/CanvasWidget/CanvasWidget.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/CanvasWidget/CanvasWidget.cpp.o
 .PHONY : include/CanvasWidget/CanvasWidget.cpp.o
 
 include/CanvasWidget/CanvasWidget.i: include/CanvasWidget/CanvasWidget.cpp.i
@@ -193,6 +348,7 @@ include/CanvasWidget/CanvasWidget.i: include/CanvasWidget/CanvasWidget.cpp.i
 # target to preprocess a source file
 include/CanvasWidget/CanvasWidget.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/CanvasWidget/CanvasWidget.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/CanvasWidget/CanvasWidget.cpp.i
 .PHONY : include/CanvasWidget/CanvasWidget.cpp.i
 
 include/CanvasWidget/CanvasWidget.s: include/CanvasWidget/CanvasWidget.cpp.s
@@ -201,7 +357,35 @@ include/CanvasWidget/CanvasWidget.s: include/CanvasWidget/CanvasWidget.cpp.s
 # target to generate assembly for a file
 include/CanvasWidget/CanvasWidget.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/CanvasWidget/CanvasWidget.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/CanvasWidget/CanvasWidget.cpp.s
 .PHONY : include/CanvasWidget/CanvasWidget.cpp.s
+
+include/utility/toonzGL.o: include/utility/toonzGL.cpp.o
+.PHONY : include/utility/toonzGL.o
+
+# target to build an object file
+include/utility/toonzGL.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/utility/toonzGL.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/utility/toonzGL.cpp.o
+.PHONY : include/utility/toonzGL.cpp.o
+
+include/utility/toonzGL.i: include/utility/toonzGL.cpp.i
+.PHONY : include/utility/toonzGL.i
+
+# target to preprocess a source file
+include/utility/toonzGL.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/utility/toonzGL.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/utility/toonzGL.cpp.i
+.PHONY : include/utility/toonzGL.cpp.i
+
+include/utility/toonzGL.s: include/utility/toonzGL.cpp.s
+.PHONY : include/utility/toonzGL.s
+
+# target to generate assembly for a file
+include/utility/toonzGL.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/utility/toonzGL.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/utility/toonzGL.cpp.s
+.PHONY : include/utility/toonzGL.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -227,6 +411,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+tests/test_main.o: tests/test_main.cpp.o
+.PHONY : tests/test_main.o
+
+# target to build an object file
+tests/test_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/tests/test_main.cpp.o
+.PHONY : tests/test_main.cpp.o
+
+tests/test_main.i: tests/test_main.cpp.i
+.PHONY : tests/test_main.i
+
+# target to preprocess a source file
+tests/test_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/tests/test_main.cpp.i
+.PHONY : tests/test_main.cpp.i
+
+tests/test_main.s: tests/test_main.cpp.s
+.PHONY : tests/test_main.s
+
+# target to generate assembly for a file
+tests/test_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/tests/test_main.cpp.s
+.PHONY : tests/test_main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -235,18 +443,40 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... 2d3danimation_autogen"
 	@echo "... 2d3danimation_autogen_timestamp_deps"
+	@echo "... 2d3danimation_tests_autogen"
+	@echo "... 2d3danimation_tests_autogen_timestamp_deps"
 	@echo "... 2d3danimation"
+	@echo "... 2d3danimation_tests"
 	@echo "... 2d3danimation_autogen/mocs_compilation.o"
 	@echo "... 2d3danimation_autogen/mocs_compilation.i"
 	@echo "... 2d3danimation_autogen/mocs_compilation.s"
+	@echo "... 2d3danimation_tests_autogen/mocs_compilation.o"
+	@echo "... 2d3danimation_tests_autogen/mocs_compilation.i"
+	@echo "... 2d3danimation_tests_autogen/mocs_compilation.s"
+	@echo "... include/2D/toonzPainterGL.o"
+	@echo "... include/2D/toonzPainterGL.i"
+	@echo "... include/2D/toonzPainterGL.s"
+	@echo "... include/2D/toonzShader.o"
+	@echo "... include/2D/toonzShader.i"
+	@echo "... include/2D/toonzShader.s"
+	@echo "... include/2D/toonzTextureManager.o"
+	@echo "... include/2D/toonzTextureManager.i"
+	@echo "... include/2D/toonzTextureManager.s"
 	@echo "... include/CanvasWidget/CanvasWidget.o"
 	@echo "... include/CanvasWidget/CanvasWidget.i"
 	@echo "... include/CanvasWidget/CanvasWidget.s"
+	@echo "... include/utility/toonzGL.o"
+	@echo "... include/utility/toonzGL.i"
+	@echo "... include/utility/toonzGL.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... tests/test_main.o"
+	@echo "... tests/test_main.i"
+	@echo "... tests/test_main.s"
 .PHONY : help
 
 

@@ -3,8 +3,18 @@
 
 /Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/2d3danimation_autogen/timestamp
  /Users/krish/codingStuff/2d3danimation/CMakeLists.txt
+ /Users/krish/codingStuff/2d3danimation/include/2D/toonzPainterGL.cpp
+ /Users/krish/codingStuff/2d3danimation/include/2D/toonzPainterGL.h
+ /Users/krish/codingStuff/2d3danimation/include/2D/toonzShader.cpp
+ /Users/krish/codingStuff/2d3danimation/include/2D/toonzShader.h
+ /Users/krish/codingStuff/2d3danimation/include/2D/toonzTextureManager.cpp
+ /Users/krish/codingStuff/2d3danimation/include/2D/toonzTextureManager.h
  /Users/krish/codingStuff/2d3danimation/include/CanvasWidget/CanvasWidget.cpp
  /Users/krish/codingStuff/2d3danimation/include/CanvasWidget/CanvasWidget.h
+ /Users/krish/codingStuff/2d3danimation/include/utility/toonzGL.cpp
+ /Users/krish/codingStuff/2d3danimation/include/utility/toonzGL.h
+ /Users/krish/codingStuff/2d3danimation/include/utility/toonzGeometry.h
+ /Users/krish/codingStuff/2d3danimation/include/utility/types.h
  /Users/krish/codingStuff/2d3danimation/main.cpp
  /Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/4.2.1/CMakeCCompiler.cmake
  /Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/4.2.1/CMakeCXXCompiler.cmake
@@ -278,6 +288,10 @@
  /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargetsPrecheck.cmake
  /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake
  /opt/homebrew/bin/cmake
+ /opt/homebrew/lib/cmake/GTest/GTestConfig.cmake
+ /opt/homebrew/lib/cmake/GTest/GTestConfigVersion.cmake
+ /opt/homebrew/lib/cmake/GTest/GTestTargets-release.cmake
+ /opt/homebrew/lib/cmake/GTest/GTestTargets.cmake
  /opt/homebrew/share/cmake/Modules/CMakeCInformation.cmake
  /opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake
  /opt/homebrew/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
@@ -298,11 +312,13 @@
  /opt/homebrew/share/cmake/Modules/Compiler/Clang-CXX.cmake
  /opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake
  /opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake
+ /opt/homebrew/share/cmake/Modules/FindGTest.cmake
  /opt/homebrew/share/cmake/Modules/FindOpenGL.cmake
  /opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake
  /opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake
  /opt/homebrew/share/cmake/Modules/FindThreads.cmake
  /opt/homebrew/share/cmake/Modules/GNUInstallDirs.cmake
+ /opt/homebrew/share/cmake/Modules/GoogleTest.cmake
  /opt/homebrew/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake
  /opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake
  /opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake

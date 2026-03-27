@@ -1,3 +1,5 @@
 # Hashes of file build rules.
 9f3b6d532545458fb41987269b2d851b 2d3danimation_autogen/timestamp
+d7bea2578c6e07a2c5dba0f3dd77a3dd 2d3danimation_tests_autogen/timestamp
 ff68045c687dea2550a824ff48c99ceb CMakeFiles/2d3danimation_autogen
+ff68045c687dea2550a824ff48c99ceb CMakeFiles/2d3danimation_tests_autogen

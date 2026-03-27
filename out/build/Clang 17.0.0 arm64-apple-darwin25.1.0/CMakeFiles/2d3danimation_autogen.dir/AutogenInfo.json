@@ -404,6 +404,22 @@
 		"/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsAdditionalTargetInfo.cmake",
 		"/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsVersionlessAliasTargets.cmake",
 		"/opt/homebrew/share/cmake/Modules/GNUInstallDirs.cmake",
+		"/opt/homebrew/share/cmake/Modules/GoogleTest.cmake",
+		"/opt/homebrew/share/cmake/Modules/FindGTest.cmake",
+		"/opt/homebrew/share/cmake/Modules/GoogleTest.cmake",
+		"/opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake",
+		"/opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake",
+		"/opt/homebrew/lib/cmake/GTest/GTestConfigVersion.cmake",
+		"/opt/homebrew/lib/cmake/GTest/GTestConfig.cmake",
+		"/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/opt/homebrew/share/cmake/Modules/FindThreads.cmake",
+		"/opt/homebrew/share/cmake/Modules/CheckLibraryExists.cmake",
+		"/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake",
+		"/opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake",
+		"/opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake",
+		"/opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake",
+		"/opt/homebrew/lib/cmake/GTest/GTestTargets.cmake",
+		"/opt/homebrew/lib/cmake/GTest/GTestTargets-release.cmake",
 		"/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/macos/Info.plist.app.in"
 	],
 	"CMAKE_SOURCE_DIR" : "/Users/krish/codingStuff/2d3danimation",
@@ -413,9 +429,45 @@
 	"HEADERS" : 
 	[
 		[
+			"/Users/krish/codingStuff/2d3danimation/include/2D/toonzPainterGL.h",
+			"MU",
+			"EXWU35AGG6/moc_toonzPainterGL.cpp",
+			null
+		],
+		[
+			"/Users/krish/codingStuff/2d3danimation/include/2D/toonzShader.h",
+			"MU",
+			"EXWU35AGG6/moc_toonzShader.cpp",
+			null
+		],
+		[
+			"/Users/krish/codingStuff/2d3danimation/include/2D/toonzTextureManager.h",
+			"MU",
+			"EXWU35AGG6/moc_toonzTextureManager.cpp",
+			null
+		],
+		[
 			"/Users/krish/codingStuff/2d3danimation/include/CanvasWidget/CanvasWidget.h",
 			"MU",
 			"AZFLE2LBFR/moc_CanvasWidget.cpp",
+			null
+		],
+		[
+			"/Users/krish/codingStuff/2d3danimation/include/utility/toonzGL.h",
+			"MU",
+			"BXK3T7HALT/moc_toonzGL.cpp",
+			null
+		],
+		[
+			"/Users/krish/codingStuff/2d3danimation/include/utility/toonzGeometry.h",
+			"MU",
+			"BXK3T7HALT/moc_toonzGeometry.cpp",
+			null
+		],
+		[
+			"/Users/krish/codingStuff/2d3danimation/include/utility/types.h",
+			"MU",
+			"BXK3T7HALT/moc_types.cpp",
 			null
 		]
 	],
@@ -439,7 +491,9 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"/Users/krish/codingStuff/2d3danimation/include",
+		"/Users/krish/codingStuff/2d3danimation/include/CanvasWidget",
+		"/Users/krish/codingStuff/2d3danimation/include/2D",
+		"/Users/krish/codingStuff/2d3danimation/include/utility",
 		"/Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers",
 		"/Users/krish/codingStuff/qt6-build/lib/QtCore.framework",
 		"/Users/krish/codingStuff/qt6-build/mkspecs/macx-clang",
@@ -490,7 +544,27 @@
 	"SOURCES" : 
 	[
 		[
+			"/Users/krish/codingStuff/2d3danimation/include/2D/toonzPainterGL.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/krish/codingStuff/2d3danimation/include/2D/toonzShader.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/krish/codingStuff/2d3danimation/include/2D/toonzTextureManager.cpp",
+			"MU",
+			null
+		],
+		[
 			"/Users/krish/codingStuff/2d3danimation/include/CanvasWidget/CanvasWidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/krish/codingStuff/2d3danimation/include/utility/toonzGL.cpp",
 			"MU",
 			null
 		],

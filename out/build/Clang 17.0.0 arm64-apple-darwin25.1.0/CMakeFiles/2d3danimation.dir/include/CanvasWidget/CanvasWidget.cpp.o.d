@@ -1,9 +1,9 @@
 CMakeFiles/2d3danimation.dir/include/CanvasWidget/CanvasWidget.cpp.o: \
   /Users/krish/codingStuff/2d3danimation/include/CanvasWidget/CanvasWidget.cpp \
   /Users/krish/codingStuff/2d3danimation/include/CanvasWidget/CanvasWidget.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtOpenGLWidgets.framework/Headers/QOpenGLWidget \
-  /Users/krish/codingStuff/qt6-build/lib/QtOpenGLWidgets.framework/Headers/qopenglwidget.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtOpenGLWidgets.framework/Headers/qtopenglwidgetsglobal.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/QMouseEvent \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qevent.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtguiglobal.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qglobal.h \
   /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/type_traits \
   /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__config \
@@ -838,16 +838,12 @@ CMakeFiles/2d3danimation.dir/include/CanvasWidget/CanvasWidget.cpp.o: \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qtresource.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qttranslation.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qversiontagging.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtOpenGLWidgets.framework/Headers/qtopenglwidgetsexports.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QWidget \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qwidget.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtguiglobal.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtgui-config.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtguiexports.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qtwidgets-config.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qtwidgetsexports.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qwindowdefs.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qcoreevent.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qbasictimer.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qabstracteventdispatcher.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qobject.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qobjectdefs.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qnamespace.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qcompare.h \
@@ -997,7 +993,6 @@ CMakeFiles/2d3danimation.dir/include/CanvasWidget/CanvasWidget.cpp.o: \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qtmetamacros.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qobjectdefs_impl.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qfunctionaltools_impl.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qobject.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qstring.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qchar.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qbytearray.h \
@@ -1189,36 +1184,19 @@ CMakeFiles/2d3danimation.dir/include/CanvasWidget/CanvasWidget.cpp.o: \
   /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__charconv/from_chars_result.h \
   /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__charconv/from_chars_integral.h \
   /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__charconv/to_chars.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qmargins.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qcheckedint_impl.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/q23utility.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/q20utility.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qaction.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qkeysequence.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qicon.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qsize.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qpixmap.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qpaintdevice.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qrect.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qpoint.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qcolor.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qrgb.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qrgba64.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qshareddata.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qimage.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qpixelformat.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtransform.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qpolygon.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qregion.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qeventloop.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qdeadlinetimer.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qiodevice.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qspan.h \
   /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/cassert \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/q20iterator.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qline.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qurl.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qvariant.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qdebug.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qtextstream.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qcontiguouscache.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qsharedpointer.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qshareddata.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qsharedpointer_impl.h \
   /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/set \
   /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/unordered_set \
@@ -1228,6 +1206,57 @@ CMakeFiles/2d3danimation.dir/include/CanvasWidget/CanvasWidget.cpp.o: \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qhash.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qvarlengtharray.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qalloc.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/q23utility.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/q20utility.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qeventpoint.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qvector2d.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qvectornd.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qpoint.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qcheckedint_impl.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qrect.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qmargins.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qsize.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qpointingdevice.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qinputdevice.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qscreen.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QList \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QObject \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QRect \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QSize \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QSizeF \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/QTransform \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtransform.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qpolygon.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qregion.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qwindowdefs.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qline.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qnativeinterface.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qscreen_platform.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qguiapplication.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qcoreapplication.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qcoreapplication_platform.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qinputmethod.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qlocale.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qguiapplication_platform.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qkeysequence.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtOpenGLWidgets.framework/Headers/QOpenGLWidget \
+  /Users/krish/codingStuff/qt6-build/lib/QtOpenGLWidgets.framework/Headers/qopenglwidget.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtOpenGLWidgets.framework/Headers/qtopenglwidgetsglobal.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtOpenGLWidgets.framework/Headers/qtopenglwidgetsexports.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QWidget \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qwidget.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qtwidgets-config.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qtwidgetsexports.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qaction.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qicon.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qpixmap.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qpaintdevice.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qcolor.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qrgb.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qrgba64.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qimage.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qpixelformat.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qpalette.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qbrush.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qfont.h \
@@ -1255,11 +1284,39 @@ CMakeFiles/2d3danimation.dir/include/CanvasWidget/CanvasWidget.cpp.o: \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/QOpenGLFunctions \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qopenglfunctions.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qopenglcontext.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qnativeinterface.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qopenglcontext_platform.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QTimer \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qtimer.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qbasictimer.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qabstracteventdispatcher.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qeventloop.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qdeadlinetimer.h
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/QMatrix4x4 \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qmatrix4x4.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qvector3d.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qvector4d.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qgenericmatrix.h \
+  /Users/krish/codingStuff/2d3danimation/include/utility/types.h \
+  /Users/krish/codingStuff/2d3danimation/include/2D/toonzRasterPixel.h \
+  /Users/krish/codingStuff/2d3danimation/include/2D/toonzRaster.h \
+  /Users/krish/codingStuff/2d3danimation/include/utility/toonzGeometry.h \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/iostream \
+  /Users/krish/codingStuff/2d3danimation/include/2D/toonzRasterBrush.h \
+  /Users/krish/codingStuff/2d3danimation/include/2D/toonzPainterGL.h \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/fstream \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__filesystem/path.h \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/iomanip \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/filesystem \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__filesystem/copy_options.h \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__filesystem/directory_entry.h \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__filesystem/file_status.h \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__filesystem/file_type.h \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__filesystem/perms.h \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__filesystem/file_time_type.h \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__filesystem/filesystem_error.h \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__filesystem/operations.h \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__filesystem/perm_options.h \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__filesystem/space_info.h \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__filesystem/directory_iterator.h \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__filesystem/directory_options.h \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__filesystem/path_iterator.h \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__filesystem/recursive_directory_iterator.h \
+  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__filesystem/u8path.h \
+  /Users/krish/codingStuff/2d3danimation/include/2D/toonzTextureManager.h \
+  /Users/krish/codingStuff/2d3danimation/include/2D/toonzShader.h

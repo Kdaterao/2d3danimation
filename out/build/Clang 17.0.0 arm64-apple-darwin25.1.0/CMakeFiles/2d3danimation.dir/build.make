@@ -121,11 +121,71 @@ CMakeFiles/2d3danimation.dir/include/CanvasWidget/CanvasWidget.cpp.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2d3danimation.dir/include/CanvasWidget/CanvasWidget.cpp.s"
 	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/krish/codingStuff/2d3danimation/include/CanvasWidget/CanvasWidget.cpp -o CMakeFiles/2d3danimation.dir/include/CanvasWidget/CanvasWidget.cpp.s
 
+CMakeFiles/2d3danimation.dir/include/2D/toonzPainterGL.cpp.o: CMakeFiles/2d3danimation.dir/flags.make
+CMakeFiles/2d3danimation.dir/include/2D/toonzPainterGL.cpp.o: /Users/krish/codingStuff/2d3danimation/include/2D/toonzPainterGL.cpp
+CMakeFiles/2d3danimation.dir/include/2D/toonzPainterGL.cpp.o: CMakeFiles/2d3danimation.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/2d3danimation.dir/include/2D/toonzPainterGL.cpp.o"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2d3danimation.dir/include/2D/toonzPainterGL.cpp.o -MF CMakeFiles/2d3danimation.dir/include/2D/toonzPainterGL.cpp.o.d -o CMakeFiles/2d3danimation.dir/include/2D/toonzPainterGL.cpp.o -c /Users/krish/codingStuff/2d3danimation/include/2D/toonzPainterGL.cpp
+
+CMakeFiles/2d3danimation.dir/include/2D/toonzPainterGL.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2d3danimation.dir/include/2D/toonzPainterGL.cpp.i"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/krish/codingStuff/2d3danimation/include/2D/toonzPainterGL.cpp > CMakeFiles/2d3danimation.dir/include/2D/toonzPainterGL.cpp.i
+
+CMakeFiles/2d3danimation.dir/include/2D/toonzPainterGL.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2d3danimation.dir/include/2D/toonzPainterGL.cpp.s"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/krish/codingStuff/2d3danimation/include/2D/toonzPainterGL.cpp -o CMakeFiles/2d3danimation.dir/include/2D/toonzPainterGL.cpp.s
+
+CMakeFiles/2d3danimation.dir/include/2D/toonzTextureManager.cpp.o: CMakeFiles/2d3danimation.dir/flags.make
+CMakeFiles/2d3danimation.dir/include/2D/toonzTextureManager.cpp.o: /Users/krish/codingStuff/2d3danimation/include/2D/toonzTextureManager.cpp
+CMakeFiles/2d3danimation.dir/include/2D/toonzTextureManager.cpp.o: CMakeFiles/2d3danimation.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/2d3danimation.dir/include/2D/toonzTextureManager.cpp.o"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2d3danimation.dir/include/2D/toonzTextureManager.cpp.o -MF CMakeFiles/2d3danimation.dir/include/2D/toonzTextureManager.cpp.o.d -o CMakeFiles/2d3danimation.dir/include/2D/toonzTextureManager.cpp.o -c /Users/krish/codingStuff/2d3danimation/include/2D/toonzTextureManager.cpp
+
+CMakeFiles/2d3danimation.dir/include/2D/toonzTextureManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2d3danimation.dir/include/2D/toonzTextureManager.cpp.i"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/krish/codingStuff/2d3danimation/include/2D/toonzTextureManager.cpp > CMakeFiles/2d3danimation.dir/include/2D/toonzTextureManager.cpp.i
+
+CMakeFiles/2d3danimation.dir/include/2D/toonzTextureManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2d3danimation.dir/include/2D/toonzTextureManager.cpp.s"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/krish/codingStuff/2d3danimation/include/2D/toonzTextureManager.cpp -o CMakeFiles/2d3danimation.dir/include/2D/toonzTextureManager.cpp.s
+
+CMakeFiles/2d3danimation.dir/include/2D/toonzShader.cpp.o: CMakeFiles/2d3danimation.dir/flags.make
+CMakeFiles/2d3danimation.dir/include/2D/toonzShader.cpp.o: /Users/krish/codingStuff/2d3danimation/include/2D/toonzShader.cpp
+CMakeFiles/2d3danimation.dir/include/2D/toonzShader.cpp.o: CMakeFiles/2d3danimation.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/2d3danimation.dir/include/2D/toonzShader.cpp.o"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2d3danimation.dir/include/2D/toonzShader.cpp.o -MF CMakeFiles/2d3danimation.dir/include/2D/toonzShader.cpp.o.d -o CMakeFiles/2d3danimation.dir/include/2D/toonzShader.cpp.o -c /Users/krish/codingStuff/2d3danimation/include/2D/toonzShader.cpp
+
+CMakeFiles/2d3danimation.dir/include/2D/toonzShader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2d3danimation.dir/include/2D/toonzShader.cpp.i"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/krish/codingStuff/2d3danimation/include/2D/toonzShader.cpp > CMakeFiles/2d3danimation.dir/include/2D/toonzShader.cpp.i
+
+CMakeFiles/2d3danimation.dir/include/2D/toonzShader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2d3danimation.dir/include/2D/toonzShader.cpp.s"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/krish/codingStuff/2d3danimation/include/2D/toonzShader.cpp -o CMakeFiles/2d3danimation.dir/include/2D/toonzShader.cpp.s
+
+CMakeFiles/2d3danimation.dir/include/utility/toonzGL.cpp.o: CMakeFiles/2d3danimation.dir/flags.make
+CMakeFiles/2d3danimation.dir/include/utility/toonzGL.cpp.o: /Users/krish/codingStuff/2d3danimation/include/utility/toonzGL.cpp
+CMakeFiles/2d3danimation.dir/include/utility/toonzGL.cpp.o: CMakeFiles/2d3danimation.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/2d3danimation.dir/include/utility/toonzGL.cpp.o"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2d3danimation.dir/include/utility/toonzGL.cpp.o -MF CMakeFiles/2d3danimation.dir/include/utility/toonzGL.cpp.o.d -o CMakeFiles/2d3danimation.dir/include/utility/toonzGL.cpp.o -c /Users/krish/codingStuff/2d3danimation/include/utility/toonzGL.cpp
+
+CMakeFiles/2d3danimation.dir/include/utility/toonzGL.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2d3danimation.dir/include/utility/toonzGL.cpp.i"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/krish/codingStuff/2d3danimation/include/utility/toonzGL.cpp > CMakeFiles/2d3danimation.dir/include/utility/toonzGL.cpp.i
+
+CMakeFiles/2d3danimation.dir/include/utility/toonzGL.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2d3danimation.dir/include/utility/toonzGL.cpp.s"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/krish/codingStuff/2d3danimation/include/utility/toonzGL.cpp -o CMakeFiles/2d3danimation.dir/include/utility/toonzGL.cpp.s
+
 # Object files for target 2d3danimation
 2d3danimation_OBJECTS = \
 "CMakeFiles/2d3danimation.dir/2d3danimation_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/2d3danimation.dir/main.cpp.o" \
-"CMakeFiles/2d3danimation.dir/include/CanvasWidget/CanvasWidget.cpp.o"
+"CMakeFiles/2d3danimation.dir/include/CanvasWidget/CanvasWidget.cpp.o" \
+"CMakeFiles/2d3danimation.dir/include/2D/toonzPainterGL.cpp.o" \
+"CMakeFiles/2d3danimation.dir/include/2D/toonzTextureManager.cpp.o" \
+"CMakeFiles/2d3danimation.dir/include/2D/toonzShader.cpp.o" \
+"CMakeFiles/2d3danimation.dir/include/utility/toonzGL.cpp.o"
 
 # External object files for target 2d3danimation
 2d3danimation_EXTERNAL_OBJECTS =
@@ -133,6 +193,10 @@ CMakeFiles/2d3danimation.dir/include/CanvasWidget/CanvasWidget.cpp.s: cmake_forc
 2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/2d3danimation_autogen/mocs_compilation.cpp.o
 2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/main.cpp.o
 2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/include/CanvasWidget/CanvasWidget.cpp.o
+2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/include/2D/toonzPainterGL.cpp.o
+2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/include/2D/toonzTextureManager.cpp.o
+2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/include/2D/toonzShader.cpp.o
+2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/include/utility/toonzGL.cpp.o
 2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/build.make
 2d3danimation.app/Contents/MacOS/2d3danimation: /Users/krish/codingStuff/qt6-build/lib/QtOpenGLWidgets.framework/Versions/A/QtOpenGLWidgets
 2d3danimation.app/Contents/MacOS/2d3danimation: /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/QtWidgets
@@ -140,7 +204,7 @@ CMakeFiles/2d3danimation.dir/include/CanvasWidget/CanvasWidget.cpp.s: cmake_forc
 2d3danimation.app/Contents/MacOS/2d3danimation: /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/QtGui
 2d3danimation.app/Contents/MacOS/2d3danimation: /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/QtCore
 2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable 2d3danimation.app/Contents/MacOS/2d3danimation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable 2d3danimation.app/Contents/MacOS/2d3danimation"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/2d3danimation.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

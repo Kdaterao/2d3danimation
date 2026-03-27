@@ -1,5 +1,9 @@
 /Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/2d3danimation.dir
+/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/2d3danimation_tests.dir
+/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/test.dir
 /Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/edit_cache.dir
 /Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/rebuild_cache.dir
 /Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/2d3danimation_autogen_timestamp_deps.dir
 /Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/2d3danimation_autogen.dir
+/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/2d3danimation_tests_autogen_timestamp_deps.dir
+/Users/krish/codingStuff/2d3danimation/out/build/Clang 17.0.0 arm64-apple-darwin25.1.0/CMakeFiles/2d3danimation_tests_autogen.dir

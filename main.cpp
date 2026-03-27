@@ -1,7 +1,14 @@
 #include <QApplication>
-#include <CanvasWidget/CanvasWidget.h>
+#include <CanvasWidget.h>
 
 int main(int argc, char *argv[]) {
+
+
+    QSurfaceFormat format;
+    format.setVersion(4, 1); // Request OpenGL 3.3
+    format.setProfile(QSurfaceFormat::CoreProfile); // Use Core Profile
+    QSurfaceFormat::setDefaultFormat(format);
+
 
     //----- inititialize Q application window -----
     QApplication app(argc, argv);

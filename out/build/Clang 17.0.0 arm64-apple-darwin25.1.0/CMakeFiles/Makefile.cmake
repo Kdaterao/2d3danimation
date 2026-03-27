@@ -280,6 +280,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake"
   "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargetsPrecheck.cmake"
   "/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake"
+  "/opt/homebrew/lib/cmake/GTest/GTestConfig.cmake"
+  "/opt/homebrew/lib/cmake/GTest/GTestConfigVersion.cmake"
+  "/opt/homebrew/lib/cmake/GTest/GTestTargets-release.cmake"
+  "/opt/homebrew/lib/cmake/GTest/GTestTargets.cmake"
   "/opt/homebrew/share/cmake/Modules/CMakeCInformation.cmake"
   "/opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake"
   "/opt/homebrew/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
@@ -300,11 +304,13 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/homebrew/share/cmake/Modules/Compiler/Clang-CXX.cmake"
   "/opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake"
   "/opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake"
+  "/opt/homebrew/share/cmake/Modules/FindGTest.cmake"
   "/opt/homebrew/share/cmake/Modules/FindOpenGL.cmake"
   "/opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
   "/opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake"
   "/opt/homebrew/share/cmake/Modules/FindThreads.cmake"
   "/opt/homebrew/share/cmake/Modules/GNUInstallDirs.cmake"
+  "/opt/homebrew/share/cmake/Modules/GoogleTest.cmake"
   "/opt/homebrew/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake"
   "/opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake"
   "/opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake"
@@ -336,6 +342,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   ".qt/info_plist/_2d3danimation/Info.plist"
   "CMakeFiles/2d3danimation_autogen.dir/AutogenInfo.json"
+  "CMakeFiles/2d3danimation_tests_autogen.dir/AutogenInfo.json"
   ".qt/QtDeploySupport.cmake"
   ".qt/QtDeployTargets.cmake"
   "2d3danimation.app/Contents/MacOS"
@@ -347,6 +354,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/2d3danimation.dir/DependInfo.cmake"
+  "CMakeFiles/2d3danimation_tests.dir/DependInfo.cmake"
   "CMakeFiles/2d3danimation_autogen_timestamp_deps.dir/DependInfo.cmake"
   "CMakeFiles/2d3danimation_autogen.dir/DependInfo.cmake"
+  "CMakeFiles/2d3danimation_tests_autogen_timestamp_deps.dir/DependInfo.cmake"
+  "CMakeFiles/2d3danimation_tests_autogen.dir/DependInfo.cmake"
   )
