@@ -9,7 +9,7 @@
   Smooth, jag-free strokes using Bézier curve interpolation for precise drawing.
 
 - **Color Picker & Eraser:**  
-  Seamless switching between drawing and erasing, with color selection implemented using barycentric coordinates.
+  Seamless switching between drawing and erasing, with basic color selection implemented using barycentric coordinates.
 
 - **Raster Image Pipeline:**  
   Efficient real-time processing and rendering of raster images using buffered pixel data.
