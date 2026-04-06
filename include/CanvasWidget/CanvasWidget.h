@@ -49,6 +49,8 @@ class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions {
 
 
 public:
+    int brushsize = 0; //just doin spaghetti code to let this widget know the intial brush size!
+
     explicit GLWidget(QWidget* parent = nullptr) ;
 
 protected:

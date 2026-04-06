@@ -53,10 +53,14 @@ int main(int argc, char *argv[]) {
     Brushlayout->addWidget(eraserToggle);
         
     // Brush Size 
+    int initialBrushSize = 5;
     QSlider* brushSizeSlider = new QSlider( BrushWidget);
     brushSizeSlider->setRange(1, 50 );
+    brushSizeSlider->setValue(initialBrushSize);
     brushSizeSlider->setOrientation(Qt::Horizontal);
     Brushlayout->addWidget(brushSizeSlider);
+
+    canvas->brushsize = initialBrushSize;
 
     //----- connect widgets ------
 

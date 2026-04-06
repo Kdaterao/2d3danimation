@@ -117,14 +117,7 @@ void ColorTriangleWidget::mouseMoveEvent(QMouseEvent *event){
 
 
 
-    VertexRGBM32 v0a(0.0f,  0.1f, 1.0f, 1.0f, 1.0f, 1.0f);  // Top vertex: Red
-    VertexRGBM32 v1a(-0.1f,-0.1f, 1.0f, 1.0f, 1.0f, 1.0f); // Bottom-left: Green
-    VertexRGBM32 v2a(0.1f, -0.1f, 1.0f, 1.0f, 1.0f, 1.0f);  // Bottom-right: Blue
-
-    Triangle shape2 = Triangle(v0a, v1a, v2a);
-
     rasterizer->addGeometry(shape);
-    rasterizer->addGeometry(shape2);
  }
 
 

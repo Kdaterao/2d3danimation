@@ -214,11 +214,10 @@ void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
 
      void GLWidget::initiateBrush(){
        
-        int size = 30;
         curr_color = ToonzPixelBGRM32(128,128,128,255);
         ToonzPixelBGRM32 color =  ToonzPixelBGRM32(128,128,128,255);
 
-        Brush::setBrush(Brush::RasterTypes::BRUSH_BGRM32, brush, testImage, color, size);
+        Brush::setBrush(Brush::RasterTypes::BRUSH_BGRM32, brush, testImage, color, brushsize);
    
      }
 
@@ -226,7 +225,7 @@ void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
 
 
     void GLWidget::updateBrushSize(int size){
-        
+        brushsize = size;
         brush.setSize(size);
      }
 
