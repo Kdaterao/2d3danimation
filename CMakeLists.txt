@@ -17,17 +17,28 @@ set(SOURCES
     include/2D/toonzPainterGL.cpp include/2D/toonzPainterGL.h 
     include/2D/toonzTextureManager.cpp include/2D/toonzTextureManager.h
     include/2D/toonzShader.cpp include/2D/toonzShader.h
+    include/2D/Brush.cpp include/2D/Brush.h
+    include/2D/toonzRasterBrush.cpp include/2D/toonzRasterBrush.h
+    include/2D/toonzRasterPixel.cpp include/2D/toonzRasterPixel.h
+    include/BrushWidget/BrushWidget.cpp  include/BrushWidget/BrushWidget.h
+    
 
     include/utility/toonzGeometry.h
     include/utility/types.h
-    include/utility/toonzGL.cpp include/utility/toonzGL.h
+    include/utilityUI/UIPainter.cpp include/utilityUI/UIPainter.h 
+    include/utilityUI/UIShapes.h
+    include/utility/toonzCalculations.cpp include/utility/toonzCalculations.h
+    
 
 
 )
 
 set(PROJECT_INCLUDE_DIRS
     ${CMAKE_CURRENT_SOURCE_DIR}/include/CanvasWidget
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/BrushWidget
+
     ${CMAKE_CURRENT_SOURCE_DIR}/include/2D
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/utilityUI
     ${CMAKE_CURRENT_SOURCE_DIR}/include/utility
 
 )

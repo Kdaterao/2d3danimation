@@ -3,6 +3,9 @@
 #include <iostream>
 #include <fstream>
 
+
+
+//for debugging
 void toonzPainterGL::dumpBuffer2(UCHAR* buf, int width, int height, int wrap) {
 
     std::cout<<"dumpbuffer2 running"<<std::endl;
@@ -21,14 +24,8 @@ void toonzPainterGL::dumpBuffer2(UCHAR* buf, int width, int height, int wrap) {
         }
     }
     fclose(f);
-
-
-
-    
+   
 }
-
-
-
 
 
 
@@ -39,10 +36,13 @@ void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
     //--- if too wide ---
     if (box.getLx() > maxSize.lx){
 
+
+        //std::cout<<"Box:"<<"("<<(box.x0) <<","<<(box.y0) <<")"<<","<<"("<<(box.x1) <<","<<(box.y1)<<")"<<std::endl;
+
         int midX = box.x0 + box.getLx() / 2;
-
-
-        RectTI leftBox  = RectTI(box.x0, box.y0, midX,   box.y1);  // x1 clamped
+        
+        
+        RectTI leftBox  = RectTI(box.x0, box.y0, midX,  box.y1);  // x1 clamped
         RectTI rightBox = RectTI(midX,   box.y0, box.x1,  box.y1);
 
         toonzPainterGL::PaintRaster(leftBox, rasbuffer, fbuffer);
@@ -55,24 +55,37 @@ void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
 
         int midY = box.y0 + box.getLy() / 2;
 
-
         RectTI bottomBox = RectTI(box.x0, box.y0, box.x1, midY  );
         RectTI topBox    = RectTI(box.x0, midY,   box.x1, box.y1);
 
+
+
+        
         toonzPainterGL::PaintRaster(bottomBox, rasbuffer, fbuffer);
         toonzPainterGL::PaintRaster(topBox,    rasbuffer, fbuffer);
         return;
     }
 
+
+
+    
     GLenum err;
+
+    // there is a texture 1280 error that im not sure where it is from  (though the error is not doing anything bad tbh)
+        err = glGetError();
+    if (err != GL_NO_ERROR) {
+        std::cout << "[OpenGL texture error] code=" << err << std::endl;
+    }
     //------ case 2: box is small enough to upload pixels as texture -----
    
     //debug
-    //std::cout<<"Box:"<<"("<<box.x0<<","<<box.y0<<"),"<<"("<<box.x1<<","<<box.y1<<"),"<<std::endl;
+    
+    
 
     
     // bind to widget framebuffer
     glBindFramebuffer(GL_FRAMEBUFFER, fbuffer);
+
 
     // verify(debug)
     /*
@@ -83,28 +96,42 @@ void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
     //----- Texture settings -----
 
         
-    //bind empty texture pointer (IMPORTANT DO BEFORE MIPMAP)
+    //bind empty texture pointer(must be done before mag_filter and min_filter)
     unsigned int texture1;
     glGenTextures(1, &texture1);
     glBindTexture(GL_TEXTURE_2D, texture1);
 
+
+    
     //only change this box on the screen
-    //glEnable(GL_SCISSOR_TEST);
-    //glScissor(screenWidth - box.x0 - box.getLx(), screenHeight - box.y0 - box.getLy(), box.getLx(), 200); //our buffer coordinate space is top left while opengl is bottom left.
+
+    float dpr = this->devicePixelRatioF();
+
+    glEnable(GL_SCISSOR_TEST);
+    glScissor((box.x0 ) * dpr, (screenHeight - box.y0 - box.getLy()) * dpr, box.getLx()* dpr, box.getLy()* dpr); //our buffer coordinate space is top left while opengl is bottom left. (so we flip y)
+
 
     //reads buffer with 1 byte alignment
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1); 
 
+   
 
+    
     glEnable(GL_BLEND);
+    
 
     //clamp edges
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
+    
     //configure magnify and minimize
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, magFilter);
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, minFilter);
+
+
+
+
 
     //handle premultiplcation
     if (premultiplied){ 
@@ -113,10 +140,7 @@ void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     }
     
-    err = glGetError();
-    if (err != GL_NO_ERROR) {
-        std::cout << "[OpenGL texture settings error] code=" << err << std::endl;
-    }
+
 
 
 
@@ -128,7 +152,7 @@ void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
 
 
     //create empty texture 
-    DimensionTI ts = toonzTextureManager::instance()->createEmptyTexture(box.getSize(), isRGBM);
+    DimensionTI ts = toonzTextureManager::instance()->createEmptyTexture(box.getSize(), isRGBM, fmt, type);
 
 
     //upload pixels to buffer
@@ -145,27 +169,28 @@ void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
     // print them before the call
     //std::cout << "fmt=" << fmt << " type=" << type << " wrap=" << wrap << " bpp=" << bpp << std::endl;
 
-    glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
-    //glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, width, height, fmt, type, bufferOffset);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0, GL_BGRA, GL_UNSIGNED_BYTE, bufferOffset);
+    glPixelStorei(GL_UNPACK_ROW_LENGTH, wrap); 
+    glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, width, height, fmt, GL_UNSIGNED_BYTE, bufferOffset);//fmt, type
+    //glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0, fmt, GL_UNSIGNED_BYTE, bufferOffset);
 
-     /*
+     
     err = glGetError();
     if (err != GL_NO_ERROR) {
         std::cout << "[OpenGL texture creation error] code=" << err << std::endl;
     }
 
 
-    std::cout << "[Debug] Uploading texture data:" 
+    /*std::cout << "[Debug] Uploading texture data:" 
               << "subwidth=" << width 
               << ", subheight=" << height
               << ", Rect start Coord=" << "(" << x <<"," << y <<")"
               << ", buffer offset=" << (x + y * wrap) * bpp 
               << ", wrap=" << wrap << std::endl;
+    
 
     char* pcolor = reinterpret_cast<char*>(bufferOffset);
 
-
+    
     std::cout<<"color:"<<"("
             <<(int)(unsigned char)pcolor[0]<<","
             <<(int)(unsigned char)pcolor[1]<<","
@@ -175,8 +200,8 @@ void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
             "size of one char:"<<
             sizeof(pcolor[0])<<
             std::endl;
+    
     */
-
     
     //----- create our vertice arrays -----
 
@@ -299,7 +324,7 @@ void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
 
     //----- clean up-----
 
-    //glDisable(GL_SCISSOR_TEST);
+    glDisable(GL_SCISSOR_TEST);
     glBindVertexArray(0); 
     glBindTexture(GL_TEXTURE_2D, 0);
     glDeleteTextures(1, &texture1);

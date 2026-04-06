@@ -13,7 +13,7 @@ toonzTextureManager::toonzTextureManager() : textureSize(0, 0), m_isRGBM(true) {
 toonzTextureManager *toonzTextureManager::m_instance;
 
 //--- Creates an empty texture ---
-DimensionTI toonzTextureManager::createEmptyTexture(DimensionTI reqSize, bool isRGBM) {
+DimensionTI toonzTextureManager::createEmptyTexture(DimensionTI reqSize, bool isRGBM, GLenum fmt, GLenum type) {
 
   /*
   //--- older gpus cant handle texture sizes that arent powers of two ---
@@ -25,40 +25,28 @@ DimensionTI toonzTextureManager::createEmptyTexture(DimensionTI reqSize, bool is
   assert(lx <= textureSize.lx);
   assert(ly <= textureSize.ly);
   */
-  //--- get the format and type of our texture ---
-  GLenum fmt, type;
-  getFmtAndType(isRGBM, fmt, type);
-  
+
 
   //--- create empty texture ---
   glTexImage2D(GL_TEXTURE_2D,  // target (is a 2D texture)
                0,              // is one level only
-               GL_RGBA8,              //  number of component of a pixel
-               reqSize.lx,             // size width
-               reqSize.ly,             //      height
+               GL_RGBA8,       //gpu format storage type
+               reqSize.lx,     // size width
+               reqSize.ly,     // height
                0,              // size of a border
-               fmt, type, 0);
+               fmt,            //input data format
+               type,           //input data type(UChar or UINT)
+                0);
   //--- return the dimensions of the texture ---
   return DimensionTI(reqSize.lx, reqSize.ly);
 }
 
 
-
+//add conditional statments once you think about importing images
 void toonzTextureManager::getFmtAndType(bool isRGBM, GLenum &fmt, GLenum &type){
-  /*
-  if (isRGBM) {
-    //case1: rgbm
-    fmt =  GL_BGRA_EXT;
-    type = GL_UNSIGNED_INT_8_8_8_8_REV;
-  } else {
-    //case2: grayscale
-    fmt  = GL_LUMINANCE;
-    type = GL_UNSIGNED_BYTE;
-  }
-    */
 
     fmt =  GL_BGRA;
-    type = GL_UNSIGNED_BYTE;
+    type = GL_UNSIGNED_INT_8_8_8_8_REV; //GL_UNSIGNED_BYTE is nothing works..
 
 
 }
@@ -66,6 +54,6 @@ void toonzTextureManager::getFmtAndType(bool isRGBM, GLenum &fmt, GLenum &type){
 
 DimensionTI toonzTextureManager::getMaxSize(bool isRGBM){
 
-    return DimensionTI(1000, 1000); //placeholder
+    return DimensionTI(200, 300); //placeholder
 
 }

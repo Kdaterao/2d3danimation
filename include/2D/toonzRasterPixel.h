@@ -55,18 +55,27 @@ class ToonzPixelBGRM32 {
             
         //----- operator methods -----
 
-        inline bool operator==(const ToonzPixelBGRM32 &p) const;
+        inline bool operator==(const ToonzPixelBGRM32 &p) const {
+                        return *(const UINT32 *)this == *(const UINT32 *)&p;
+                    }
+        inline bool operator!=(const ToonzPixelBGRM32 &p) const {
+                        return *(const UINT32 *)this != *(const UINT32 *)&p;
+                    }
 
-        inline bool operator!=(const ToonzPixelBGRM32 &p) const; 
+        inline bool operator<(const ToonzPixelBGRM32 &p) const {
+                        return *(const UINT32 *)this < *(const UINT32 *)&p;
+                    }
 
-        inline bool operator<(const ToonzPixelBGRM32 &p) const; 
-            
-        inline bool operator>=(const ToonzPixelBGRM32 &p) const;
+        inline bool operator>=(const ToonzPixelBGRM32 &p) const {
+                        return *(const UINT32 *)this >= *(const UINT32 *)&p;
+                    }
 
-        inline bool operator>(const ToonzPixelBGRM32 &p) const;
-
-        inline bool operator<=(const ToonzPixelBGRM32 &p) const;
-
+        inline bool operator>(const ToonzPixelBGRM32 &p) const {
+                        return *(const UINT32 *)this > *(const UINT32 *)&p;
+                    }
+        inline bool operator<=(const ToonzPixelBGRM32 &p) const {
+                        return *(const UINT32 *)this <= *(const UINT32 *)&p;
+                    }
 
         //----- default colors -----
 
@@ -82,10 +91,7 @@ class ToonzPixelBGRM32 {
         static const ToonzPixelBGRM32 Black;
         static const ToonzPixelBGRM32 Transparent;
                     
-      
-
-
-
+        
 };
 
 #endif

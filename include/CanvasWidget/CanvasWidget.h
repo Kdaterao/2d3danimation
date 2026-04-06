@@ -13,31 +13,67 @@
 #include <toonzRasterBrush.h>
 #include <toonzPainterGL.h>
 #include <toonzShader.h>
+#include <Brush.h>
+#include <variant>
+#include <toonzCalculations.h>
 
 class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions {
 
+    //temporary variable
     ToonzRasterPT<ToonzPixelBGRM32> testImage;
-    DefaultCircleBrush<ToonzPixelBGRM32> brush;
-    bool glReady = false;
-    toonzShader* shaderProgram = nullptr;      
+
+    // Canvas 
+    int width;
+    int height; 
+    toonzShader* shaderProgram = nullptr;     
     toonzPainterGL* rasterizer = nullptr; 
 
+    //brush
+    Brush::RasterBrush brush;
+    ToonzPixelBGRM32 curr_color;
+    bool eraser;
+    
 
+    // point tracking
     PointTI p1 = PointT(-1,-1);
     PointTI p2 = PointT(-1,-1);
+    PointTI p3 = PointT(-1, -1);
+    std::vector<PointTI> points;
+    int breakpoint = 0;
+
+    // canvasUpdate tracking
     bool start = false;
 
 
+    
+
+
 public:
-    explicit GLWidget(QWidget* parent = nullptr);
+    explicit GLWidget(QWidget* parent = nullptr) ;
 
 protected:
+    //------ override functions ------
     void initializeGL() override; 
-    //void resizeGL(int w, int h) override;
+    void resizeGL(int w, int h) override;
     void paintGL() override;
     void mousePressEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
+
+private:
+    void initiateBrush();
+    void initiateCanvas();
+    
+
+public slots:
+    void updateBrushColor(ToonzPixelBGRM32 Color);
+    void toggleEraser(bool enabled); 
+    void updateBrushSize (int val);
+    
+
+    void updateCanvas();
+ 
+    
 };
 
 
