@@ -17,7 +17,7 @@ public:
   static toonzTextureManager *instance();
   DimensionTI getMaxSize(bool isRGBM);
   void getFmtAndType(bool isRGBM, GLenum &fmt, GLenum &type);
-  DimensionTI createEmptyTexture(DimensionTI reqSize, bool isRGBM);
+  DimensionTI createEmptyTexture(DimensionTI reqSize, bool isRGBM, GLenum fmt, GLenum type);
 };
 
 #endif  

@@ -2,31 +2,6 @@
 
 
 
-
-//----- operator methods for 32 bit pixel -----
-
-inline bool ToonzPixelBGRM32::operator==(const ToonzPixelBGRM32 &p) const {
-                return *(const UINT32 *)this == *(const UINT32 *)&p;
-            }
-inline bool ToonzPixelBGRM32::operator!=(const ToonzPixelBGRM32 &p) const {
-                return *(const UINT32 *)this != *(const UINT32 *)&p;
-            }
-
-inline bool ToonzPixelBGRM32::operator<(const ToonzPixelBGRM32 &p) const {
-                return *(const UINT32 *)this < *(const UINT32 *)&p;
-            }
-
-inline bool ToonzPixelBGRM32::operator>=(const ToonzPixelBGRM32 &p) const {
-                return *(const UINT32 *)this >= *(const UINT32 *)&p;
-            }
-
-inline bool ToonzPixelBGRM32::operator>(const ToonzPixelBGRM32 &p) const {
-                return *(const UINT32 *)this > *(const UINT32 *)&p;
-            }
-inline bool ToonzPixelBGRM32::operator<=(const ToonzPixelBGRM32 &p) const {
-                return *(const UINT32 *)this <= *(const UINT32 *)&p;
-            }
-
 //---- default colors for 32-bit pixel -----
 
 

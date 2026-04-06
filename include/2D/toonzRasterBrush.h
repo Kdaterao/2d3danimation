@@ -133,56 +133,75 @@ Implimentation of the default circle brush
 */
 
 //----- Base Brush Class -----
+/*
+    All brushes get these variables, and the drawPixel operation!
+
+    Additionally all brushes from this class must have the "drawBrush function"
+
+*/
 
 template<class T>
 
-class Brush{
+class toonzBrush {
 
     protected:
 
         //----- Variables -----
         ToonzRasterPT<T> raster; //shared_pointer of our raster(dont need * since its a typedef of a pointer!)
         RectTI rasterSize;
-        T* color;
+        T color; // put ts on the stack
         DimensionTI brushSize;// lx and ly of brush
-        int pixelSize = sizeof(T); //size of one pixel via this brush
+        int pixelSize = sizeof(T); //data size of one pixel
         bool single; //Checks if size of brush is only one pixel 
 
         //----- Constructors -----
 
-        Brush() {};
+        toonzBrush() {};
 
-        Brush(ToonzRasterPT<T>  i_raster, T* &i_color, DimensionT<int> i_brushSize) 
+        toonzBrush(ToonzRasterPT<T>  i_raster, T i_color, DimensionT<int> i_brushSize) 
             : raster(i_raster),
               brushSize(i_brushSize),
               color(i_color) {
                 rasterSize = raster->getBounds();
               };
          
-        Brush(ToonzRasterPT<T>  i_raster, T* &i_color, float i_lx, float i_ly)
+        toonzBrush(ToonzRasterPT<T>  i_raster, T i_color, float i_lx, float i_ly)
             : raster(i_raster),
               brushSize(DimensionT<int>(i_lx, i_ly)),
               color(i_color) {
                 rasterSize = raster->getBounds();
               };
 
+        //----- deconstructor -----
 
+        ~toonzBrush(){ }
         //----- Functions -----
 
-        
+        //utility function for all children
         inline void drawPixel(int x, int y){
             UCHAR* pixel = raster->getRawData(x, y);
 
-            UCHAR* c = reinterpret_cast<UCHAR*>(color);
+            UCHAR* c = reinterpret_cast<UCHAR*>(&color);
 
             //printf("R:%d G:%d B:%d A:%d\n", c[0], c[1], c[2], c[3]);
             
-            std::memcpy(pixel, color, sizeof(T));
+            std::memcpy(pixel, &color, sizeof(T));
         }
 
-  
+        //Im doing this to enforce name
+        virtual void drawBrush(PointTI a, PointTI b) = 0; 
+        virtual void resize(int r) = 0;
 
-    
+    public:
+    //----- utility functions ------
+
+    //deletes old color and replaces it with new one
+    inline void setColor(T i_color){
+            color = i_color;
+    }
+
+
+  
 };
 
 
@@ -225,7 +244,7 @@ class Brush{
 */
 template<class T>
 
-class DefaultCircleBrush : public Brush<T> {
+class DefaultCircleBrush : public toonzBrush<T> {
 
     //----- variables -----
     std::unordered_map<int, std::array<int, 2>> fillPairs; //scanfillPairs --> store min and max x position
@@ -236,26 +255,31 @@ class DefaultCircleBrush : public Brush<T> {
     //----- Constructors -----
 
     DefaultCircleBrush() {};
-    DefaultCircleBrush(ToonzRasterPT<T>  i_raster, T* &i_color, int r) 
-        : Brush<T>(i_raster, i_color, DimensionT<int>(r,r)) {
+    DefaultCircleBrush(ToonzRasterPT<T>  i_raster, T i_color, int r) 
+        : toonzBrush<T>(i_raster, i_color, DimensionT<int>(r,r)) {
 
              HalfCircle(r);
          }; 
 
 
-
-
     //----- functions -----
 
     //handles resizing radius
-    void resize(int r) { 
+    void resize(int r) override { 
         this->brushSize.lx = r;
         this->brushSize.ly = r;
+
+        circle.clear();
+        HalfCircle(r);
     };
 
     //handles drawing operation
-    void drawBrush(PointTI a, PointTI b) { 
-        std::cout<<"running"<<std::endl;
+    void drawBrush(PointTI a, PointTI b) override { 
+
+
+        //std::cout<<"a:"<<"("<<a.x<<","<<a.y<<")"<<std::endl;
+        //std::cout<<"b:"<<"("<<b.x<<","<<b.y<<")"<<std::endl;
+
         //----- variables -----
         //radius
         int radius = this->brushSize.lx; //this brush is a square so lx and ly are same thing here
@@ -278,31 +302,36 @@ class DefaultCircleBrush : public Brush<T> {
 
         //----- build capsule -----
         /*
+            cool little capsule i made :)
             *p1 ----- p2* 
            * |        |  *
             *p4 ----- p3*
         */
         
 
-        //--- build rectangle of capsule ---
-
+        // build rectangle of capsule
         PointT p1 = PointT(int((dx_90 * radius) + x0), int((dy_90 * radius) + y0));
         PointT p2 = PointT(int((dx_90 * radius) + x1), int((dy_90 * radius) + y1));
         PointT p3 = PointT(int(-(dx_90 * radius) + x1), int(-(dy_90 * radius) + y1));
         PointT p4 = PointT(int(-(dx_90 * radius) + x0), int(-(dy_90 * radius) + y0));
 
-        std::cout<<"p1:"<<"("<<p1.x<<","<<p1.y<<")"<<std::endl;
-        std::cout<<"p2:"<<"("<<p2.x<<","<<p2.y<<")"<<std::endl;
-        std::cout<<"p3:"<<"("<<p3.x<<","<<p3.y<<")"<<std::endl;
-        std::cout<<"p4:"<<"("<<p4.x<<","<<p4.y<<")"<<std::endl;
-        drawLine(p1, p2); 
+        // debug
+        //std::cout<<"p1:"<<"("<<p1.x<<","<<p1.y<<")"<<std::endl;
+        //std::cout<<"p2:"<<"("<<p2.x<<","<<p2.y<<")"<<std::endl;
+        //std::cout<<"p3:"<<"("<<p3.x<<","<<p3.y<<")"<<std::endl;
+        //std::cout<<"p4:"<<"("<<p4.x<<","<<p4.y<<")"<<std::endl;
+
+        // draw lines and build up pairs
+        drawLine(p1, p2);
         drawLine(p3, p4);
         
-        //--- build halfcircles of the capsule ---
+        //--- build halfcircles  of the capsule ---
 
         for(const auto& point : circle){
             //std::cout<<"Circledrawn:"<<"("<<point.x + x0<<","<<point.y + y0<<")"<<std::endl;
             //std::cout<<"Circledrawn:"<<"("<<point.x + x1<<","<<point.y + y1<<")"<<std::endl;
+
+            //build up pairs
             buildPairs(point.x + x0, point.y +y0);
             buildPairs(point.x + x1, point.y +y1);
 
@@ -317,7 +346,7 @@ class DefaultCircleBrush : public Brush<T> {
             const int max = row.second[1];
 
             for(int x = min; x <= max; x++ ){
-                //std::cout<<"drawn:"<<"("<<x<<","<<y<<")"<<std::endl;
+
                 this->drawPixel(x, y);
             }
         }
@@ -340,7 +369,7 @@ class DefaultCircleBrush : public Brush<T> {
             if(x < 0){
                 x = 0;
             } 
-            if(x > this->rasterSize.x1){
+            else if(x > this->rasterSize.x1){
                 x = this->rasterSize.x1;
             }
             if(y < 0){
@@ -392,9 +421,11 @@ class DefaultCircleBrush : public Brush<T> {
         }
 
 
+
         //------ MidPoint Circle  algo------
-
-
+        /*
+            NOTE: feeds directly into the circle buffer
+        */
         void HalfCircle(int r){ 
 
             //---- starting points ----
@@ -404,7 +435,7 @@ class DefaultCircleBrush : public Brush<T> {
             int y = -r; 
             int p = -r;
 
-            while (x < -y){
+            while (x < -y){ 
             
             //----- change y or nah? -----
                 if (p > 0){
@@ -454,7 +485,7 @@ class DefaultCircleBrush : public Brush<T> {
 
             while (true) {
                 buildPairs(x0, y0);
-                 std::cout<<"linedrawn:"<<"("<<x0<<","<<y0<<")"<<std::endl;
+                 //std::cout<<"linedrawn:"<<"("<<x0<<","<<y0<<")"<<std::endl;
                 if (x0 == x1 && y0 == y1) break;
 
                 int e2 = 2 * err;

@@ -84,6 +84,12 @@ class PointT {
         PointT(T i_x, T i_y) 
             : x(i_x), 
               y(i_y) {};
+        //------ operators -------
+
+        float operator*(PointT<T>& a) const{
+
+            return float((x * a.x) + (y *a.y));
+        }
 
 };
 
@@ -134,7 +140,7 @@ class RectT {
         inline T getLy() const {
             if(y1 > y0){
 
-                return (y1- y0);
+                return (y1 - y0);
             } else {
                 return (y0 - y1);
             }
@@ -434,10 +440,6 @@ public:
   TTranslation(){};
   TTranslation(double x, double y) : TAffine(1, 0, x, 0, 1, y){};
   TTranslation(const PointTD &p) : TAffine(1, 0, p.x, 0, 1, p.y){};
-
-
-
-
 
 };
 
