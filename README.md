@@ -39,8 +39,6 @@
 - **Language:** C++  
 - **Graphics API:** OpenGL  
 
+## Notes
 
-## Installation
-1. Clone the repository:  
-   ```bash
-   git clone <your-repo-url>
+- The raster pipline was inspired by openToonz's pipline, so.. thank you opentoonz!
