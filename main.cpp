@@ -60,7 +60,7 @@ int main(int argc, char *argv[]) {
     brushSizeSlider->setOrientation(Qt::Horizontal);
     Brushlayout->addWidget(brushSizeSlider);
 
-    canvas->brushsize = initialBrushSize;
+    canvas->brushsize = initialBrushSize; 
 
     //----- connect widgets ------
 

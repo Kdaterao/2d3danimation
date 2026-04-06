@@ -56,7 +56,7 @@ void ColorTriangleWidget::getColor(QMouseEvent *event){
 
     if( u >= 0 && u <= 1 && w >= 0 && w <= 1 && v >= 0 && v <= 1 ){
 
-    std::cout<<"YAT!"<<std::endl;
+    //std::cout<<"YAT!"<<std::endl;
 
     ToonzPixelBGRM32 color = ToonzPixelBGRM32(255*u, 255*v, 255*w, 255);
     emit sendColor(color);

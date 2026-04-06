@@ -83,7 +83,7 @@ void UIPainter::Paint(GLuint fbuffer, bool normalized) {
         glBindVertexArray(vao);
 
         //----- draw image segment -----
-        std::cout<<"drawing"<<std::endl;
+        //std::cout<<"drawing"<<std::endl;
 
         glDisable(GL_BLEND);
 
