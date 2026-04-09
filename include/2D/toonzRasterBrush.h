@@ -179,13 +179,50 @@ class toonzBrush {
 
         //utility function for all children
         inline void drawPixel(int x, int y){
+
             UCHAR* pixel = raster->getRawData(x, y);
+            std::memcpy(pixel, &color, sizeof(T));
 
-            UCHAR* c = reinterpret_cast<UCHAR*>(&color);
+            //DEBUG
+            //UCHAR* c = reinterpret_cast<UCHAR*>(&color);
+            //printf("R:%d G:%d B:%d A:%d\n", c[0], c[1], c[2], c[3]);
+        }
 
+
+        //utility function for all children
+        inline void drawPixelDouble(int x, int y, int length){
+            int chunk = 0;//current chunk of pixels in canvas we have inserted
+            int xoffset = 0;
+            UCHAR* bufferStart;//first pixel point of the chunk we are copying from
+            UCHAR* currPixel;//currnet pixel point
+
+            //----- Put initial color in -----
+            currPixel = raster->getRawData(x, y);
+            std::memcpy(currPixel, &color, sizeof(T));
+            chunk = sizeof(T);
+            bufferStart = currPixel;
+            xoffset++;
+            
+            //------ Double Insert ------
+            while(xoffset*2 < length){
+                currPixel = raster->getRawData(x + xoffset, y);
+                std::memcpy(currPixel, bufferStart, chunk);
+                xoffset = xoffset * 2;
+                chunk = chunk *2;
+            }
+       
+            //----- after we can no longer double insert, we just insert the rest of the pixels(we already have a big enough buffer) ------
+            if(xoffset < length){
+                std::cout<<"xoffset: "<<xoffset<<" chunk: "<<chunk<<" length: "<<length << "rest:" << length- xoffset <<std::endl;
+                int rest = sizeof(T) * (length - xoffset);
+                currPixel = raster->getRawData(x + xoffset, y);
+                std::memcpy(currPixel, bufferStart, rest);
+            }
+            
+            //DEBUG
+            //UCHAR* c = reinterpret_cast<UCHAR*>(&color);
             //printf("R:%d G:%d B:%d A:%d\n", c[0], c[1], c[2], c[3]);
             
-            std::memcpy(pixel, &color, sizeof(T));
         }
 
         //Im doing this to enforce name
@@ -354,6 +391,98 @@ class DefaultCircleBrush : public toonzBrush<T> {
         this->fillPairs.clear(); //clear out scanfill once finished..
 
     }
+
+
+
+
+    void drawBrush(PointTF a, PointTF b) { 
+
+
+        //std::cout<<"a:"<<"("<<a.x<<","<<a.y<<")"<<std::endl;
+        //std::cout<<"b:"<<"("<<b.x<<","<<b.y<<")"<<std::endl;
+
+        //----- variables -----
+        //radius
+        int radius = this->brushSize.lx; //this brush is a square so lx and ly are same thing here
+
+        //points
+        float x0 = a.x;
+        float y0 = a.y;
+        float x1 = b.x;
+        float y1 = b.y;
+        
+        //slope
+        float dx = x1 - x0;
+        float dy = y1 -y0;
+        float length =  sqrt(dx*dx + dy*dy); // may change to double if not exact enough
+
+        //unit, perpendicular slope
+        float dx_90 = -dy / length;
+        float dy_90 = dx / length;
+
+
+        //----- build capsule -----
+        /*
+            cool little capsule i made :)
+            *p1 ----- p2* 
+           * |        |  *
+            *p4 ----- p3*
+        */
+        
+
+        // build rectangle of capsule
+        PointT p1 = PointT(int((dx_90 * radius) + x0), int((dy_90 * radius) + y0));
+        PointT p2 = PointT(int((dx_90 * radius) + x1), int((dy_90 * radius) + y1));
+        PointT p3 = PointT(int(-(dx_90 * radius) + x1), int(-(dy_90 * radius) + y1));
+        PointT p4 = PointT(int(-(dx_90 * radius) + x0), int(-(dy_90 * radius) + y0));
+
+        // debug
+        //std::cout<<"p1:"<<"("<<p1.x<<","<<p1.y<<")"<<std::endl;
+        //std::cout<<"p2:"<<"("<<p2.x<<","<<p2.y<<")"<<std::endl;
+        //std::cout<<"p3:"<<"("<<p3.x<<","<<p3.y<<")"<<std::endl;
+        //std::cout<<"p4:"<<"("<<p4.x<<","<<p4.y<<")"<<std::endl;
+
+        // draw lines and build up pairs
+        drawLine(p1, p2);
+        drawLine(p3, p4);
+        
+        //--- build halfcircles  of the capsule ---
+
+        for(const auto& point : circle){
+            //std::cout<<"Circledrawn:"<<"("<<point.x + x0<<","<<point.y + y0<<")"<<std::endl;
+            //std::cout<<"Circledrawn:"<<"("<<point.x + x1<<","<<point.y + y1<<")"<<std::endl;
+
+            //build up pairs
+            buildPairs(point.x + x0, point.y +y0);
+            buildPairs(point.x + x1, point.y +y1);
+
+        }
+
+        //------ scanfill our pairs ------
+
+
+        for(const auto& row : fillPairs){
+            const int y = row.first;
+            const int min = row.second[0];
+            const int max = row.second[1];
+
+
+
+            this->drawPixelDouble(min, y, max-min);
+
+            
+            /*
+            for(int x = min; x <= max; x++ ){
+
+                this->drawPixel(x, y);
+            }
+                */
+        }
+
+        this->fillPairs.clear(); //clear out scanfill once finished..
+
+    }
+
 
 
 

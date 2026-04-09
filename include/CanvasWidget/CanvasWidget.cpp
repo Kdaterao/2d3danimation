@@ -33,7 +33,7 @@ void GLWidget::initializeGL() {
 
     //-------test image (temporary) ------
 
-    testImage = std::make_shared<ToonzRasterT<ToonzPixelBGRM32>>(800, 600);
+    testImage = std::make_shared<ToonzRasterT<ToonzPixelBGRM32>>(canvasWidth, canvasHeight);
     testImage->createBlank();
 
     //----- initiateBrush (do before initiating opengl) ------
@@ -56,8 +56,8 @@ void GLWidget::initializeGL() {
     // rasterizer
     rasterizer = new toonzPainterGL(
         TAffine(), testImage->getRawData(),
-        800, 800, 600, 4,
-        DimensionTI(800,600),
+        canvasWidth, canvasWidth, canvasHeight, 4,
+        DimensionTI(canvasWidth, canvasHeight),
         GL_NEAREST, GL_NEAREST,
         false, shaderProgram
     );
@@ -68,10 +68,9 @@ void GLWidget::initializeGL() {
 
 
 void GLWidget::paintGL() {
-    updateCanvas();
     if (start){
     rasterizer->PaintRaster(
-        RectTI(0,0,800,600), 
+        RectTI(0,0, canvasWidth, canvasHeight), 
         testImage->getRawData(), 
         defaultFramebufferObject()
     );
@@ -114,7 +113,7 @@ void GLWidget::updateCanvas(){
             float P1y = (4*PM.y - P0.y - P2.y) / 2.0f;
             PointTF P1(P1x, P1y);
 
-            std::vector<PointTI> cache = toonzCalculate::QuadraticBezierCurve(P0, P1, P2, 0.05f); //get interpolated points
+            std::vector<PointTF> cache = toonzCalculate::QuadraticBezierCurveFloat(P0, P1, P2, 0.05f); //get interpolated points
 
             //draw interpolated points
             for(int j = 0; j + 1 < cache.size(); j++){
@@ -186,9 +185,10 @@ void GLWidget::mouseMoveEvent(QMouseEvent *event) {
                 points.push_back(p1);
                 points.push_back(p2);
                 points.push_back(p3);
-
                 breakpoint = 0;
             }
+
+            updateCanvas();
 
 
         };

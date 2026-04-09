@@ -35,6 +35,14 @@ namespace Brush {
             }, *curr);
         }
 
+
+        void drawBrush(PointTF a, PointTF b) {
+            std::visit([&](auto& bsh) {
+                bsh.drawBrush(a, b);
+            }, *curr);
+        }
+
+
         template<class T>
 
         void setColor(T color) {

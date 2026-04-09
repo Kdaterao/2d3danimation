@@ -23,8 +23,8 @@ class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions {
     ToonzRasterPT<ToonzPixelBGRM32> testImage;
 
     // Canvas 
-    int width;
-    int height; 
+    int canvasWidth = 800;
+    int canvasHeight = 600; 
     toonzShader* shaderProgram = nullptr;     
     toonzPainterGL* rasterizer = nullptr; 
 
