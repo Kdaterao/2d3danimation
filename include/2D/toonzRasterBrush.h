@@ -13,6 +13,9 @@
 #include <array>
 #include <iostream>
 
+#include <thread>
+#include <vector>
+
 
 /*
 what do we need to do?
@@ -154,6 +157,10 @@ class toonzBrush {
         int pixelSize = sizeof(T); //data size of one pixel
         bool single; //Checks if size of brush is only one pixel 
 
+
+        std::vector<T> colorBuf;
+
+
         //----- Constructors -----
 
         toonzBrush() {};
@@ -163,6 +170,7 @@ class toonzBrush {
               brushSize(i_brushSize),
               color(i_color) {
                 rasterSize = raster->getBounds();
+                colorBuf.assign(this->rasterSize.x1 + 1, color);
               };
          
         toonzBrush(ToonzRasterPT<T>  i_raster, T i_color, float i_lx, float i_ly)
@@ -170,6 +178,7 @@ class toonzBrush {
               brushSize(DimensionT<int>(i_lx, i_ly)),
               color(i_color) {
                 rasterSize = raster->getBounds();
+                colorBuf.assign(this->rasterSize.x1 + 1, color);
               };
 
         //----- deconstructor -----
@@ -213,7 +222,7 @@ class toonzBrush {
        
             //----- after we can no longer double insert, we just insert the rest of the pixels(we already have a big enough buffer) ------
             if(xoffset < length){
-                std::cout<<"xoffset: "<<xoffset<<" chunk: "<<chunk<<" length: "<<length << "rest:" << length- xoffset <<std::endl;
+                //std::cout<<"xoffset: "<<xoffset<<" chunk: "<<chunk<<" length: "<<length << "rest:" << length- xoffset <<std::endl;
                 int rest = sizeof(T) * (length - xoffset);
                 currPixel = raster->getRawData(x + xoffset, y);
                 std::memcpy(currPixel, bufferStart, rest);
@@ -223,6 +232,14 @@ class toonzBrush {
             //UCHAR* c = reinterpret_cast<UCHAR*>(&color);
             //printf("R:%d G:%d B:%d A:%d\n", c[0], c[1], c[2], c[3]);
             
+        }
+
+
+        inline void  drawPixelMemory(int x, int y, int length){
+   
+            //----- Put initial color in -----
+            UCHAR* startPixel = raster->getRawData(x, y);
+            std::memcpy(startPixel, colorBuf.data(), length * sizeof(T));
         }
 
         //Im doing this to enforce name
@@ -235,6 +252,7 @@ class toonzBrush {
     //deletes old color and replaces it with new one
     inline void setColor(T i_color){
             color = i_color;
+            colorBuf.assign(this->rasterSize.x1 + 1, color);
     }
 
 
@@ -279,13 +297,22 @@ class toonzBrush {
 
         1. Less pixel overwrites (higher efficiency)
 */
+
+
 template<class T>
 
 class DefaultCircleBrush : public toonzBrush<T> {
 
     //----- variables -----
     std::unordered_map<int, std::array<int, 2>> fillPairs; //scanfillPairs --> store min and max x position
-    std::vector<PointT<int>> circle; //holds memory of current circle points  
+    std::vector<PointT<int>> circle; //holds memory of current circle points
+    
+    std::vector<int> xMin;
+    std::vector<int> xMax;
+    int yMin;
+    int yMax;
+
+    
 
     public: 
 
@@ -296,6 +323,8 @@ class DefaultCircleBrush : public toonzBrush<T> {
         : toonzBrush<T>(i_raster, i_color, DimensionT<int>(r,r)) {
 
              HalfCircle(r);
+             xMin = std::vector<int>(this->rasterSize.y1, INT_MAX);
+             xMax = std::vector<int>(this->rasterSize.y1, INT_MIN);
          }; 
 
 
@@ -310,90 +339,21 @@ class DefaultCircleBrush : public toonzBrush<T> {
         HalfCircle(r);
     };
 
+
     //handles drawing operation
+
+    //overload
     void drawBrush(PointTI a, PointTI b) override { 
 
+        PointTF p1 = {a.x * 1.0f, a.y * 1.0f};
+        PointTF p2 = {b.x * 1.0f, b.y * 1.0f};
 
-        //std::cout<<"a:"<<"("<<a.x<<","<<a.y<<")"<<std::endl;
-        //std::cout<<"b:"<<"("<<b.x<<","<<b.y<<")"<<std::endl;
-
-        //----- variables -----
-        //radius
-        int radius = this->brushSize.lx; //this brush is a square so lx and ly are same thing here
-
-        //points
-        int x0 = a.x;
-        int y0 = a.y;
-        int x1 = b.x;
-        int y1 = b.y;
-        
-        //slope
-        int dx = x1 - x0;
-        int dy = y1 -y0;
-        float length =  sqrt(dx*dx + dy*dy); // may change to double if not exact enough
-
-        //unit, perpendicular slope
-        float dx_90 = -dy / length;
-        float dy_90 = dx / length;
-
-
-        //----- build capsule -----
-        /*
-            cool little capsule i made :)
-            *p1 ----- p2* 
-           * |        |  *
-            *p4 ----- p3*
-        */
-        
-
-        // build rectangle of capsule
-        PointT p1 = PointT(int((dx_90 * radius) + x0), int((dy_90 * radius) + y0));
-        PointT p2 = PointT(int((dx_90 * radius) + x1), int((dy_90 * radius) + y1));
-        PointT p3 = PointT(int(-(dx_90 * radius) + x1), int(-(dy_90 * radius) + y1));
-        PointT p4 = PointT(int(-(dx_90 * radius) + x0), int(-(dy_90 * radius) + y0));
-
-        // debug
-        //std::cout<<"p1:"<<"("<<p1.x<<","<<p1.y<<")"<<std::endl;
-        //std::cout<<"p2:"<<"("<<p2.x<<","<<p2.y<<")"<<std::endl;
-        //std::cout<<"p3:"<<"("<<p3.x<<","<<p3.y<<")"<<std::endl;
-        //std::cout<<"p4:"<<"("<<p4.x<<","<<p4.y<<")"<<std::endl;
-
-        // draw lines and build up pairs
-        drawLine(p1, p2);
-        drawLine(p3, p4);
-        
-        //--- build halfcircles  of the capsule ---
-
-        for(const auto& point : circle){
-            //std::cout<<"Circledrawn:"<<"("<<point.x + x0<<","<<point.y + y0<<")"<<std::endl;
-            //std::cout<<"Circledrawn:"<<"("<<point.x + x1<<","<<point.y + y1<<")"<<std::endl;
-
-            //build up pairs
-            buildPairs(point.x + x0, point.y +y0);
-            buildPairs(point.x + x1, point.y +y1);
-
-        }
-
-        //------ scanfill our pairs ------
-
-
-        for(const auto& row : fillPairs){
-            const int y = row.first;
-            const int min = row.second[0];
-            const int max = row.second[1];
-
-            for(int x = min; x <= max; x++ ){
-
-                this->drawPixel(x, y);
-            }
-        }
-
-        this->fillPairs.clear(); //clear out scanfill once finished..
-
-    }
+        drawBrush(p1, p2);
+    } 
 
 
 
+    
 
     void drawBrush(PointTF a, PointTF b) { 
 
@@ -416,9 +376,15 @@ class DefaultCircleBrush : public toonzBrush<T> {
         float dy = y1 -y0;
         float length =  sqrt(dx*dx + dy*dy); // may change to double if not exact enough
 
+        float dx_90 = 0;
+        float dy_90 = 0;
+
         //unit, perpendicular slope
-        float dx_90 = -dy / length;
-        float dy_90 = dx / length;
+        if(length != 0){
+            dx_90 = -dy / length;
+            dy_90 = dx / length;
+        }
+
 
 
         //----- build capsule -----
@@ -435,6 +401,15 @@ class DefaultCircleBrush : public toonzBrush<T> {
         PointT p2 = PointT(int((dx_90 * radius) + x1), int((dy_90 * radius) + y1));
         PointT p3 = PointT(int(-(dx_90 * radius) + x1), int(-(dy_90 * radius) + y1));
         PointT p4 = PointT(int(-(dx_90 * radius) + x0), int(-(dy_90 * radius) + y0));
+
+
+
+        yMin = std::max(0, std::min(this->rasterSize.y1, (std::min({p1.y, p2.y, p3.y, p4.y}) - radius)));
+        yMax = std::max(0, std::min(this->rasterSize.y1, (std::max({p1.y, p2.y, p3.y, p4.y}) + radius)));
+
+        //std::cout<<"ymin"<<yMin<<std::endl;
+        //std::cout<<"ymax"<<yMax<<std::endl;
+
 
         // debug
         //std::cout<<"p1:"<<"("<<p1.x<<","<<p1.y<<")"<<std::endl;
@@ -461,177 +436,130 @@ class DefaultCircleBrush : public toonzBrush<T> {
         //------ scanfill our pairs ------
 
 
-        for(const auto& row : fillPairs){
-            const int y = row.first;
-            const int min = row.second[0];
-            const int max = row.second[1];
-
-
-
-            this->drawPixelDouble(min, y, max-min);
-
-            
-            /*
-            for(int x = min; x <= max; x++ ){
-
-                this->drawPixel(x, y);
-            }
-                */
+        for(int y = yMin; y < yMax; y++){
+            if(xMin[y] == INT_MAX || xMax[y] == INT_MIN) continue;
+            this->drawPixelMemory(xMin[y], y, xMax[y] - xMin[y]);
         }
+        
 
-        this->fillPairs.clear(); //clear out scanfill once finished..
+        //------ reset ---=---
+
+
+
+        std::fill(xMin.begin() + yMin - 1, xMin.begin() + yMax + 1, INT_MAX);
+        std::fill(xMax.begin() + yMin - 1, xMax.begin() + yMax + 1, INT_MIN);
 
     }
-
-
-
-
 
 
     //----- helper functions -----
 
     private: 
 
-        //----- builds extreme pair values ------
-        void buildPairs(int x,  int y){
+
+        void buildPairs(int x,  int y){ 
+
 
             if(x < 0){
                 x = 0;
             } 
             else if(x > this->rasterSize.x1){
-                x = this->rasterSize.x1;
+                x = this->rasterSize.x1 - 1;
             }
             if(y < 0){
                 y = 0;
             }
             if(y > this->rasterSize.y1){
-                y = this->rasterSize.y1;
+                y = this->rasterSize.y1 - 1;
             }
 
-            //----- case 1: row has element ----
-            if (this->fillPairs.find(y) != this->fillPairs.end()){
-                std::array<int, 2> &row = this->fillPairs[y]; 
-                if(row[1] != INT_MIN) { //our default in the 2nd pos
-                    //----- subcase 1: row is filled -----
-                    int min = row[0];
-                    int max = row[1]; 
 
-                    //store extremes only!
-                    if( x < min){ 
-
-                        min = x;
-                        row[0] = min;
-                        row[1] = max;
-
-                    } else if (x > max) {
-                        max = x;
-                        row[0] = min;
-                        row[1] = max;
-                    }
-                } else {
-                    //----- subcase 2: array only has one element -----
-                    int element = row[0];
-                    
-                    //sort ascending order!
-                    if(element > x){
-                        row[0] = x;
-                        row[1] = element;
-
-                    } else {
-                        row[1] = x;
-                    }
-                }
-
-            } else {
-            //------ case 2: row is empty ----
-                this->fillPairs[y] = {x, INT_MIN};
-            }
-
+            xMin[y] = std::min(xMin[y], x);
+            xMax[y] = std::max(xMax[y], x);
         }
-
+        
 
 
         //------ MidPoint Circle  algo------
         /*
             NOTE: feeds directly into the circle buffer
         */
-        void HalfCircle(int r){ 
-
-            //---- starting points ----
-
-            //store circle at the (0,0) spot (top left hand corner..)
-            int x = 0; 
-            int y = -r; 
-            int p = -r;
-
-            while (x < -y){ 
-            
-            //----- change y or nah? -----
-                if (p > 0){
-                    y += 1;
-                    p += 2*(x+y) + 1;
-                } else {
-                    p += 2*x + 1;
-                }
-            
-
-            //----- add all quadrants -----
-            this->circle.push_back(PointT(x, y));
-            this->circle.push_back(PointT(x, -y));
-            this->circle.push_back(PointT(-x, y));
-            this->circle.push_back(PointT(-x, -y));
-            this->circle.push_back(PointT(y, -x));
-            this->circle.push_back(PointT(y, x));
-            this->circle.push_back(PointT(-y, -x));
-            this->circle.push_back(PointT(-y, x));
-
-            //----- next block -----
-            
-            x += 1;
-
-            }
 
 
-        }
+    void HalfCircle(int r) {
+        this->circle.clear();
+        this->circle.resize(4 + 8 * r); // allocatiing array size allows us to grab points like an array 
 
-        //------- Bresenham line algo -----
-        /*
-            Note:  This function directs all points to the buildPairs function..
-        */
-        void drawLine(PointTI a, PointTI b){  
-            int x0 = a.x;
-            int y0 = a.y;
-            int x1 = b.x;
-            int y1 = b.y;
+        int i = 0;
+        int x = r;
+        int y = 0;
+        int p = 1 - r; // initial decision parameter
 
-            int dx = abs(x1 - x0);
-            int dy = abs(y1 - y0);
+        while (y <= x) {
+            // 8 symmetric points covering the full circle
+            this->circle[i++] = PointT( x,  y);
+            this->circle[i++] = PointT(-x,  y);
+            this->circle[i++] = PointT( x, -y);
+            this->circle[i++] = PointT(-x, -y);
+            this->circle[i++] = PointT( y,  x);
+            this->circle[i++] = PointT(-y,  x);
+            this->circle[i++] = PointT( y, -x);
+            this->circle[i++] = PointT(-y, -x);
 
-            int sx = (x0 < x1) ? 1 : -1;
-            int sy = (y0 < y1) ? 1 : -1;
-
-            int err = dx - dy;
-
-            while (true) {
-                buildPairs(x0, y0);
-                 //std::cout<<"linedrawn:"<<"("<<x0<<","<<y0<<")"<<std::endl;
-                if (x0 == x1 && y0 == y1) break;
-
-                int e2 = 2 * err;
-
-                if (e2 > -dy) {
-                    err -= dy;
-                    x0 += sx;
-                }
-
-                if (e2 < dx) {
-                    err += dx;
-                    y0 += sy;
-                }
+            y++;
+            if (p < 0) {
+                p += 2 * y + 1;
+            } else {
+                x--;
+                p += 2 * (y - x) + 1;
             }
         }
 
-    };
+        this->circle.resize(i); // trim to actual count
+    }
+
+
+
+
+
+    //------- Bresenham line algo -----
+    /*
+        Note:  This function directs all points to the buildPairs function..
+    */
+    void drawLine(PointTI a, PointTI b){  
+        int x0 = a.x;
+        int y0 = a.y;
+        int x1 = b.x;
+        int y1 = b.y;
+
+        int dx = abs(x1 - x0);
+        int dy = abs(y1 - y0);
+
+        int sx = (x0 < x1) ? 1 : -1;
+        int sy = (y0 < y1) ? 1 : -1;
+
+        int err = dx - dy;
+
+        while (true) {
+            buildPairs(x0, y0);
+            //std::cout<<"linedrawn:"<<"("<<x0<<","<<y0<<")"<<std::endl;
+            if (x0 == x1 && y0 == y1) break;
+
+            int e2 = 2 * err;
+
+            if (e2 > -dy) {
+                err -= dy;
+                x0 += sx;
+            }
+
+            if (e2 < dx) {
+                err += dx;
+                y0 += sy;
+            }
+        }
+    }
+
+};
 
 
 

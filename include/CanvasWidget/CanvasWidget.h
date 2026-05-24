@@ -7,6 +7,11 @@
 #include <QTimer>
 #include <QMatrix4x4>
 
+
+#include <QPainter>
+#include <QPixmap>
+#include <QCursor>
+
 #include <types.h>
 #include <toonzRasterPixel.h>
 #include <toonzRaster.h>
@@ -27,12 +32,13 @@ class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions {
     int canvasHeight = 600; 
     toonzShader* shaderProgram = nullptr;     
     toonzPainterGL* rasterizer = nullptr; 
+    RectTI bound = RectTI{0,0,canvasWidth, canvasHeight};
 
     //brush
     Brush::RasterBrush brush;
     ToonzPixelBGRM32 curr_color;
     bool eraser;
-    
+
 
     // point tracking
     PointTI p1 = PointT(-1,-1);
@@ -43,6 +49,10 @@ class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions {
 
     // canvasUpdate tracking
     bool start = false;
+
+    bool painting = false;
+
+
 
 
     
@@ -61,10 +71,12 @@ protected:
     void mousePressEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
+   
 
 private:
     void initiateBrush();
     void initiateCanvas();
+     void updateCursor();
     
 
 public slots:

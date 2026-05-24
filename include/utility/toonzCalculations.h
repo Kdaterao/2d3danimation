@@ -18,6 +18,10 @@ namespace toonzCalculate{
     std::vector<PointTF> QuadraticBezierCurveFloat(PointTI a, PointTF b, PointTI c, float step);
 
 
+    RectTI QuadraticBezierBounds(PointTI a, PointTF b, PointTI c);
+
+
+
 
 };
 

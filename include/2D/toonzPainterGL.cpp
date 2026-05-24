@@ -273,6 +273,10 @@ void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
 
     //----- create orthorgraphic projection -----
     QMatrix4x4 projection;
+
+
+
+
     projection.ortho(0.0f, screenWidth, 0.0f, screenHeight, -1.0f, 1.0f);
 
 

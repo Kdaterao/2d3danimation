@@ -28,9 +28,12 @@ set(SOURCES
     include/utilityUI/UIPainter.cpp include/utilityUI/UIPainter.h 
     include/utilityUI/UIShapes.h
     include/utility/toonzCalculations.cpp include/utility/toonzCalculations.h
+
+
+    include/Storage/storageManager.cpp include/Storage/storageManager.h
+
+    include/tinyXML/tinyxml2.cpp include/tinyXML/tinyxml2.h
     
-
-
 )
 
 set(PROJECT_INCLUDE_DIRS
@@ -40,6 +43,11 @@ set(PROJECT_INCLUDE_DIRS
     ${CMAKE_CURRENT_SOURCE_DIR}/include/2D
     ${CMAKE_CURRENT_SOURCE_DIR}/include/utilityUI
     ${CMAKE_CURRENT_SOURCE_DIR}/include/utility
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/Storage
+
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/tinyXML
+    
 
 )
 

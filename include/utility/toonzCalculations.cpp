@@ -74,3 +74,40 @@ std::vector<PointTF> toonzCalculate::QuadraticBezierCurveFloat(PointTI a, PointT
 
     return res;
 }
+
+
+
+
+RectTI toonzCalculate::QuadraticBezierBounds(PointTI a, PointTF b, PointTI c) {
+    auto extrema = [](float a, float b, float c) -> float {
+        float denom = a - 2*b + c;
+        if (abs(denom) < 1e-6f) return -1.f; // no extrema, linear
+        return (a - b) / denom;
+    };
+
+    auto eval = [&](float t, auto ax, auto bx, auto cx) {
+        return (1-t)*(1-t)*ax + 2*(1-t)*t*bx + t*t*cx;
+    };
+
+    float tx = extrema(a.x, b.x, c.x);
+    float ty = extrema(a.y, b.y, c.y);
+
+    float minX = std::min({(float)a.x, (float)c.x});
+    float maxX = std::max({(float)a.x, (float)c.x});
+    float minY = std::min({(float)a.y, (float)c.y});
+    float maxY = std::max({(float)a.y, (float)c.y});
+
+    if (tx >= 0.f && tx <= 1.f) {
+        float x = eval(tx, a.x, b.x, c.x);
+        minX = std::min(minX, x);
+        maxX = std::max(maxX, x);
+    }
+
+    if (ty >= 0.f && ty <= 1.f) {
+        float y = eval(ty, a.y, b.y, c.y);
+        minY = std::min(minY, y);
+        maxY = std::max(maxY, y);
+    }
+
+    return RectTI{(int)minX, (int)minY, (int)maxX, (int)maxY };
+}

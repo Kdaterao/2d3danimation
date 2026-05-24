@@ -112,7 +112,7 @@ class ToonzRaster {
 
         inline PointT<double> getCenterD() const { return PointT<double>(0.5 * lx, 0.5 * ly); }
 
-        inline PointT<int> getCenter() const { return PointT(lx / 2, ly / 2); }
+        inline PointTI getCenter() const { return PointTI(lx / 2, ly / 2); }
 
         inline RectT<int> getBounds() const { return RectT<int>(0, 0, lx - 1, ly - 1); }
 

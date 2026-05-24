@@ -1,8 +1,3 @@
-#include <toonzRasterBrush.h>
-
-
-
-
 #ifndef TOONZBRUSH_H
 #define TOONZBRUSH_H
 
@@ -456,7 +451,7 @@ void drawBrush(PointTF p1, PointTF p2) {
         if(a1.y == a2.y || b1.y == b2.y){ //couldve used "b" but i just picked "a"
         //===== case 1: vertical rectangle
 
-       
+            /*
             int length;
             int xMin = std::max(0, std::min(a1.x, a2.x));
             if(xMin == a1.x){
@@ -471,329 +466,66 @@ void drawBrush(PointTF p1, PointTF p2) {
                 this->drawPixelMemory(xMin, y, length);
             }
 
+            */
         
         
 
         } else if(a1.x == a2.x || b1.x == b2.x){ //couldve used "b" but i just picked "a"
         //===== case 2: horizontal rectangle
+            
+        /*
+            int yMin = std::min( this->rasterSize.y1, std::max(0, y0 - 2*radius));
+            int yMax = std::min( this->rasterSize.y1, std::max(0, y0 + 2*radius));
+            int xMin = std::min(this->rasterSize.x1, std::max(0, a1.x));
+            int xMax = std::min(this->rasterSize.x1, std::max(0, b2.x));
+            int length = xMax - xMin;
 
-        
-            int xMin = std::max(0, a1.x);
-            int length = std::min(b1.x, this->rasterSize.x1) - xMin;
-
-            for(int y = a2.y; y <= a1.y; y++){
+            for(int y = yMin; y <= yMax; y++){
                 this->drawPixelMemory(xMin, y, length);
             }
-       
+        
+        */
 
 
         } else {
          //===== case3: tilted rectangle 
-            //--- debug statments 
             
-            assert(a1.x < b1.x && "a1 should be left of b1 in this branch");
-            assert(a2.x < b2.x && "a2 should be left of b2 in this branch");
-            assert(a1.y >= a2.y && "a1 should be above a2");
-            assert(b1.y >= b2.y && "b1 should be above b2");
-            //std::cout << "a1: (" << a1.x << ", " << a1.y << ")" << std::endl;
-            //std::cout << "a2: (" << a2.x << ", " << a2.y << ")" << std::endl;
-            //std::cout << "b1: (" << b1.x << ", " << b1.y << ")" << std::endl;
-            //std::cout << "b2: (" << b2.x << ", " << b2.y << ")" << std::endl;
-
-
-            //------ variable declaration stuff
-            int minX;
-            int minY;
-            int minDX;
-            int minDY;
-            int minSX;
-            int minSY;
-            int minErr;
-            int minX1;
-            int minY1;
-
-
-            int maxX;
-            int maxY;
-            int maxDX;
-            int maxDY;
-            int maxSX;
-            int maxSY;
-            int maxErr;
-            int maxX1;
-            int maxY1;
-
-
-            int minLastX;
-            int maxLastX;
-
-
-            int yLevel;
-
-            //----- convience lambda functions 
-            auto setBresenVariablesMin = [&](int x0, int y0, int x1, int y1){
-                minDX = std::abs(x1 - x0);
-                minSX = x0 < x1 ? 1 : -1;
-                minDY = -std::abs(y1 - y0);
-                minSY = -1; //y0 < y1 ? 1 : -1;
-                minErr = minDX + minDY; 
-            };
-
-            auto setBresenVariablesMax = [&](int x0, int y0, int x1, int y1){
-                maxDX = std::abs(x1 - x0);
-                maxSX = x0 < x1 ? 1 : -1;
-                maxDY = -std::abs(y1 - y0);
-                maxSY = -1; //y0 < y1 ? 1 : -1;
-                maxErr = maxDX + maxDY; 
-            };
-
-
-            if(a1.x < a2.x){
-
-                assert(b1.y > b2.y && b1.y > a1.y && b1.y > a2.y && "B1 should be the highest");
-
-                setBresenVariablesMin(b1.x, b1.y, a1.x, a1.y);
-                setBresenVariablesMax(b1.x, b1.y, b2.x, b2.y);
-
-                minX = std::min(this->rasterSize.x1, std::max(0, b1.x)); //clamp to raster
-                maxX = minX;
-                minX1 = a1.x;
-                maxX1 = b2.x;
-
-                minY = b1.y; // DO NOT CLAMP
-                maxY = b1.y; // DO NOT CLAMP
-                minY1 = a1.y;
-                maxY1 = b2.y;
-
-                
-
-                minLastX = minX;
-                maxLastX = maxX;
-
-                yLevel = minY;
-
-
-                while(yLevel >= a2.y){
-
-                    //----- input the current row into the raster
-
-                    //check if y level is proper
-                    
-                    if(yLevel >= 0 && yLevel < this->rasterSize.y1){
-                       std::cout<<"minX:"<<minX <<std::endl;
-                        std::cout<<"yLevel:"<<yLevel<<std::endl;
-                        std::cout<<"maxX:"<<maxX<<std::endl;
-                        std::cout<<"minSX:"<<minSX<<std::endl;
-                        std::cout<<"maxSX:"<<maxSX<<std::endl;
-                        std::cout<<"minY"<<minY<<std::endl;
-                        std::cout<<"maxY"<<maxY<<std::endl;
-            
-                        int left  = minX;
-                        int right = maxX;
-                         this->drawPixelMemory(left, yLevel, right - left); 
-
-
-                        //std::cout<<"finsihed writing"<<std::endl;
-
-                    }  
-                            
-                    //------ update yLevel 
-
-                    yLevel -= 1;
-
-
-                    //------ check if we need to change the line
-                    if(yLevel <= a1.y && minY1 == a1.y){
-                        setBresenVariablesMin(a1.x, a1.y, a2.x, a2.y);
-                        minX1 = a2.x;
-                        minY1 = a2.y;
-                        //std::cout<<"swtich!"<<std::endl;
-                    }
-                    if(yLevel <= b2.y && maxY1 == b2.y){
-                        setBresenVariablesMax( b2.x, b2.y, a2.x, a2.y);
-                        maxX1 = a2.x;
-                        maxY1 = a2.y;
-                        //std::cout<<"swtich!"<<std::endl;
-                    }
-
-
-                    //------ take step for left and right line
-
-
-                    //std::cout<<"started step"<<std::endl;
-
-                    //left side
-                    while(minY > yLevel){
-                        int e2 = 2* minErr;
-                        minLastX = std::min(this->rasterSize.x1, std::max(0, minX));
-                        if( e2 >= minDY){
-                            if(minX == minX1) break;
-                            minErr += minDY;
-                            minX += minSX;
-
-                        }
-
-                        if(e2 <= minDX){
-                            if(minY == minY1) break;
-                            minErr += minDX;
-                            minY += minSY;
-                        }
-                    }
-
-
-                    //right side 
-                    while(maxY > yLevel){
-                        
-                        int e2 = 2* maxErr;
-                        maxLastX = std::min(this->rasterSize.x1, std::max(0, maxX));
-                        if( e2 >= maxDY){
-                            if(maxX == maxX1) break;
-                            maxErr += maxDY;
-                            maxX += maxSX;
-
-                        }
-
-                        if(e2 <= maxDX){
-                            if(maxY == maxY1) break;
-                            maxErr += maxDX;
-                            maxY += maxSY;
-                        }
-
-                    }
-
-                    //std::cout<<"ended step"<<std::endl;
-
-                }
-
-
-
-
-            } else {
-
-         
-
-
-                //assert(b1.y > b2.y && b1.y > a1.y && b1.y > a2.y && "B1 should be the highest");
-
-                setBresenVariablesMin(a1.x, a1.y, a2.x, a2.y);
-                setBresenVariablesMax(a1.x, a1.y, b1.x, b1.y);
-
-                minX = std::min(this->rasterSize.x1, std::max(0, a1.x)); //clamp to raster
-                maxX = minX;
-                minX1 = a2.x;
-                maxX1 = b1.x;
-
-                minY = a1.y; // DO NOT CLAMP
-                maxY = a1.y; // DO NOT CLAMP
-                minY1 = a2.y;
-                maxY1 = b1.y;
-
-                
-
-                minLastX = minX;
-                maxLastX = maxX;
-
-                yLevel = minY;
-
-
-                while(yLevel >= b2.y){
-
-                    //----- input the current row into the raster
-
-                    //check if y level is proper
-                    
-                    if(yLevel >= 0 && yLevel < this->rasterSize.y1){
-                       std::cout<<"minX:"<<minX <<std::endl;
-                        std::cout<<"yLevel:"<<yLevel<<std::endl;
-                        std::cout<<"maxX:"<<maxX<<std::endl;
-                        std::cout<<"minSX:"<<minSX<<std::endl;
-                        std::cout<<"maxSX:"<<maxSX<<std::endl;
-                        std::cout<<"minY"<<minY<<std::endl;
-                        std::cout<<"maxY"<<maxY<<std::endl;
-            
-                        int left  = minX;
-                        int right = maxX;     
-                         this->drawPixelMemory(left, yLevel, right - left); 
-
-
-                        //std::cout<<"finsihed writing"<<std::endl;
-
-                    }  
-                            
-                    //------ update yLevel 
-
-                    yLevel -= 1;
-
-
-                    //------ check if we need to change the line
-                    if(yLevel <= a2.y && minY1 == a2.y){
-                        setBresenVariablesMin(a2.x, a2.y, b2.x, b2.y);
-                        minX1 = b2.x;
-                        minY1 = b2.y;
-                        //std::cout<<"swtich!"<<std::endl;
-                    }
-                    if(yLevel <= b1.y && maxY1 == b1.y){
-                        setBresenVariablesMax( b1.x, b1.y, b2.x, b2.y);
-                        maxX1 = b2.x;
-                        maxY1 = b2.y;
-                        //std::cout<<"swtich!"<<std::endl;
-                    }
-
-
-                    //------ take step for left and right line
-
-
-                    //std::cout<<"started step"<<std::endl;
-
-                    //left side
-                    while(minY > yLevel){
-                        int e2 = 2* minErr;
-                        minLastX = std::min(this->rasterSize.x1, std::max(0, minX));
-                        if( e2 >= minDY){
-                            minErr += minDY;
-                            minX += minSX;
-
-                        }
-
-                        if(e2 <= minDX){               
-                            minErr += minDX;
-                            minY += minSY;
-                        }
-                    }
-
-
-                    //right side 
-                    while(maxY > yLevel){
-                        
-                        int e2 = 2* maxErr;
-                        maxLastX = std::min(this->rasterSize.x1, std::max(0, maxX));
-                        if( e2 >= maxDY){
-                            if(maxX == maxX1) break;
-                            maxErr += maxDY;
-                            maxX += maxSX;
-
-                        }
-
-                        if(e2 <= maxDX){
-                            if(maxY == maxY1) break;
-                            maxErr += maxDX;
-                            maxY += maxSY;
-                        }
-
-                    }
-
-                    //std::cout<<"ended step"<<std::endl;
-
-                }
-
-        
-
-
-            }     
+         // we can split into flat top and bottom parralelogram 
+         // we then make the top and bottom into a flatbottom/flattop triagnel and then rasterize them as well 
+
+
+         //flat top and bottom parallolgram requires jsut one one line and then extending it out by 2*radius
+
+         //for the triangle we must get a third point(just the same as one of the points but to the left (or right) by 2*r)
+         // we then just use. bresenhams algo to quickly rasterize that part 
+
+         int dx = std::abs(x1 - x0);
+         int sx = x0 < x1 ? 1 : -1;
+         int dy = -std::abs(y1 - y0);
+         int sy = y0 < y1 ? 1 : -1;
+         int error = dx + dy;
+
+         while (true){
+            int xMin = std::min( this->rasterSize.x1, std::max(0, x0 - 2*radius)); //clamp
+            int xMax = std::min( this->rasterSize.x1, std::max(0, x0 + 2*radius)); //clamp
+             this->drawPixelMemory( xMin, y0, xMax - xMin);
+
+             int e2 = 2 * error;
+             if(e2 >= dy){
+                if( x0 == x1) break;
+                error += dy;
+                x0 += sx;
+             }
+             if(e2 <= dx){
+
+                if(y0 == y1) break;
+                error += dx;
+                y0 += sy;
+             }
+
+         }
+    
         }
-
-
-        
 
 
         //=================================
@@ -803,7 +535,7 @@ void drawBrush(PointTF p1, PointTF p2) {
         ////std::cout<<"("<<x0<<","<<y0<<")"<<std::endl;
         ////std::cout<<"("<<x1<<","<<y1<<")"<<std::endl;
         
-        
+        /*
         for(int i = 0; i <= 2*radius; i++){
             
             int xcaMin =  std::max(0, ((circleMin[i] - radius) + x0));
@@ -816,12 +548,13 @@ void drawBrush(PointTF p1, PointTF p2) {
             if(y0 - radius + i < this->rasterSize.y1 && y0 - radius +  i  >= 0) this->drawPixelMemory( xcaMin,  (y0 - radius+ i),  xcaMax - xcaMin); 
             if(y1 - radius + i < this->rasterSize.y1 && y1 - radius + i  >= 0) this->drawPixelMemory(  xcbMin ,  (y1 - radius+ i), xcbMax - xcbMin  ); 
         }
-
-    
-        
+        */
 
 
-       // //std::cout<<"--------"<<std::endl;
+            
+         
+
+
     
     }
 
