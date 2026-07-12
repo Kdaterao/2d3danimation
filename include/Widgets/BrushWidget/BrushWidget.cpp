@@ -96,8 +96,8 @@ void ColorTriangleWidget::mouseMoveEvent(QMouseEvent *event){
     //----- shaders ------
 
     shaderProgram = new toonzShader(
-        "/Users/krish/codingStuff/2d3danimation/include/shaders/vsColorTriangle.txt", 
-        "/Users/krish/codingStuff/2d3danimation/include/shaders/fsColorTriangle.txt"
+        "/Users/krish/codingStuff/2d3danimation/include/2D/Painter/General/Shader/ShaderScripts/vsColorTriangle.txt", 
+        "/Users/krish/codingStuff/2d3danimation/include/2D/Painter/General/Shader/ShaderScripts/fsColorTriangle.txt"
     );
 
     //----- set up rasterizer ------

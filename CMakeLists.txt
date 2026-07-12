@@ -12,44 +12,70 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON) #make compiler use 20
 #----- Specify sources(qt) and include directories -----
 
 set(SOURCES 
-    include/CanvasWidget/CanvasWidget.cpp include/CanvasWidget/CanvasWidget.h
+    include/Widgets/CanvasWidget/CanvasWidget.cpp include/Widgets/CanvasWidget/CanvasWidget.h
 
-    include/2D/toonzPainterGL.cpp include/2D/toonzPainterGL.h 
-    include/2D/toonzTextureManager.cpp include/2D/toonzTextureManager.h
-    include/2D/toonzShader.cpp include/2D/toonzShader.h
-    include/2D/Brush.cpp include/2D/Brush.h
-    include/2D/toonzRasterBrush.cpp include/2D/toonzRasterBrush.h
-    include/2D/toonzRasterPixel.cpp include/2D/toonzRasterPixel.h
-    include/BrushWidget/BrushWidget.cpp  include/BrushWidget/BrushWidget.h
+    include/2D/Painter/Canvas/painterGL.cpp include/2D/Painter/Canvas/painterGL.h 
+    include/2D/Painter/General/Texture/toonzTextureManager.cpp include/2D/Painter/General/Texture/toonzTextureManager.h
+    include/2D/Painter/General/Shader/toonzShader.cpp include/2D/Painter/General/Shader/toonzShader.h
+    include/2D/Brush/Brush.cpp include/2D/Brush/Brush.h
+    include/2D/Brush/ToonzBrush/toonzRasterBrush.cpp include/2D/Brush/ToonzBrush/toonzRasterBrush.h
+    include/2D/Brush/ToonzBrush/toonzRasterCircleBrush.h
+    include/2D/Brush/ToonzBrush/toonzRasterPixel.cpp include/2D/Brush/ToonzBrush/toonzRasterPixel.h
+    include/2D/Brush/MPLBrush/mplBrush.cpp include/2D/Brush/MPLBrush/mplBrush.h
+    include/2D/Brush/MPLBrush/mplSurfaceAdapter.cpp include/2D/Brush/MPLBrush/mplSurfaceAdapter.h
+    include/Widgets/BrushWidget/BrushWidget.cpp  include/Widgets/BrushWidget/BrushWidget.h
+
     
 
-    include/utility/toonzGeometry.h
-    include/utility/types.h
-    include/utilityUI/UIPainter.cpp include/utilityUI/UIPainter.h 
-    include/utilityUI/UIShapes.h
-    include/utility/toonzCalculations.cpp include/utility/toonzCalculations.h
+    include/2D/Raster/raster.h
+    include/2D/Raster/rasterTile.h
+    include/2D/Raster/toonzRaster.cpp include/2D/Raster/toonzRaster.h
+
+
+    include/Utility/Math/toonzGeometry.h
+    include/Utility/Types/types.h
+    include/2D/Painter/UI/UIPainter.cpp include/2D/Painter/UI/UIPainter.h 
+    include/2D/Painter/UI/UIShapes.h
+    include/Utility/Math/toonzCalculations.cpp include/Utility/Math/toonzCalculations.h
 
 
     include/Storage/storageManager.cpp include/Storage/storageManager.h
 
-    include/tinyXML/tinyxml2.cpp include/tinyXML/tinyxml2.h
+    include/Storage/tinyXML/tinyxml2.cpp include/Storage/tinyXML/tinyxml2.h
     
 )
 
 set(PROJECT_INCLUDE_DIRS
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/CanvasWidget
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/BrushWidget
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/Widgets/CanvasWidget
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/Widgets/BrushWidget
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/2D
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/utilityUI
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/utility
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Brush
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Brush/MPLBrush
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Brush/ToonzBrush
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Painter/Canvas
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Painter/General/Shader
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Painter/General/Texture
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Painter/UI
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Raster
+
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/Utility/Math
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/Utility/Types
+
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Storage
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/Storage/tinyXML
 
-
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/tinyXML
     
-
+    
 )
+
+
+#=============================
+#   PkgConfig (for dependencies without make files )
+#=============================
+
+find_package(PkgConfig REQUIRED)
+
 
 # ============================
 #       QT Setup 
@@ -57,8 +83,17 @@ set(PROJECT_INCLUDE_DIRS
 
 #----- Get Package ------
 
+# with make files 
 list(APPEND CMAKE_PREFIX_PATH "/Users/krish/codingStuff/qt6-build")#share location of qt build(just in case)
 find_package(Qt6 REQUIRED COMPONENTS Widgets OpenGL OpenGLWidgets) 
+
+# without make files (pkg)
+
+set(ENV{PKG_CONFIG_PATH}
+    "/Users/krish/codingStuff/libmypaint"
+)
+
+pkg_check_modules(MYPAINT REQUIRED IMPORTED_TARGET libmypaint-2.0)
 
 
 #----- Set up qt project -----
@@ -81,7 +116,12 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 
 
 #link libraries (must be done after qt project set up)
+
+#qt libraries 
 target_link_libraries(${PROJECT_NAME} PUBLIC  Qt6::Widgets Qt6::OpenGL Qt6::OpenGLWidgets)
+
+# link mypaint
+target_link_libraries(${PROJECT_NAME}  PUBLIC PkgConfig::MYPAINT)
 
 #----- OS build options -----
 
@@ -129,6 +169,9 @@ target_link_libraries(${PROJECT_NAME}_tests PRIVATE
     Qt6::Widgets
     Qt6::OpenGL
     Qt6::OpenGLWidgets
+
+    PkgConfig::MYPAINT
+    
 )
 
 gtest_discover_tests(${PROJECT_NAME}_tests)

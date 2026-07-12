@@ -4,7 +4,6 @@
 #include <fstream>
 #include <QMatrix4x4>
 #include <QOpenGLFunctions>
-#include <QOpenGLWidget>
 
 
 
@@ -107,20 +106,24 @@ void UIPainter::cleanUp(){
     glBindVertexArray(0); 
     glBindTexture(GL_TEXTURE_2D, 0);
 
-    //----- delete buffers + textures ------
+    //----- delete buffers ------
 
-    for(auto& vao : VAOS){
-        glDeleteBuffers(1, &vao);
+    for (auto& vao : VAOS) {
+        glDeleteVertexArrays(1, &vao);
     }
-    glDeleteVertexArrays(1, &VAO);
+    VAOS.clear();
 
-    for(auto& buf : buffers){
-        glDeleteBuffers(1, &buf);
+    for (auto& buf : buffers) {
+        glDeleteBuffers(1, &buf); //
     }
+    buffers.clear();
+    vertexCounts.clear();
 
+    //------ deletes textures ------
     for(auto& tex : textures){
         glDeleteTextures(1, &tex);
     }
+
 
 }
 

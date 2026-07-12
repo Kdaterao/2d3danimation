@@ -70,8 +70,8 @@ void GLWidget::initializeGL() {
 
     // shader
     shaderProgram = new toonzShader(
-        "/Users/krish/codingStuff/2d3danimation/include/shaders/vsCanvas.txt", 
-        "/Users/krish/codingStuff/2d3danimation/include/shaders/fsCanvas.txt"
+        "/Users/krish/codingStuff/2d3danimation/include/2D/Painter/General/Shader/ShaderScripts/vsCanvas.txt", 
+        "/Users/krish/codingStuff/2d3danimation/include/2D/Painter/General/Shader/ShaderScripts/fsCanvas.txt"
     );
 
     // rasterizer
@@ -151,7 +151,7 @@ void GLWidget::updateCanvas(){
     }
 
     bound = dirtyBound;
-    //start = true;
+
     points.clear();
 
     update();

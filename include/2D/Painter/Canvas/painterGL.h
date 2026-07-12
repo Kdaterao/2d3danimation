@@ -1,5 +1,5 @@
-#ifndef TOONZPAINTERGL_H
-#define TOONZPAINTERGL_H
+#ifndef PAINTERGL_H
+#define PAINTERGL_H
 
 #include <QOpenGLFunctions>
 #include <QOpenGLWidget>

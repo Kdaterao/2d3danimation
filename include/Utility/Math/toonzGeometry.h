@@ -213,191 +213,48 @@ public:
     }
 
     TAffine &operator=(const TAffine &a);
-    /*Moved to tgeometry.cpp
-    {
-    a11 = a.a11; a12 = a.a12; a13 = a.a13;
-    a21 = a.a21; a22 = a.a22; a23 = a.a23;
-    return *this;
-    };
-    */
-    /*!
-            Matrix multiplication.
-            <p>\f$\left(\begin{array}{cc}\bf{A}&\vec{a}\\\vec{0}&1\end{array}\right)
-            \left(\begin{array}{cc}\bf{B}&\vec{b}\\\vec{0}&1\end{array}\right)\f$</p>
 
-    */
 
     TAffine operator*(const TAffine &b) const;
 
-    /*Moved to in tgeometry.cpp
-    {
-    return TAffine (
-    a11 * b.a11 + a12 * b.a21,
-    a11 * b.a12 + a12 * b.a22,
-    a11 * b.a13 + a12 * b.a23 + a13,
-
-    a21 * b.a11 + a22 * b.a21,
-    a21 * b.a12 + a22 * b.a22,
-    a21 * b.a13 + a22 * b.a23 + a23);
-    };
-    */
 
 
     TAffine operator*=(const TAffine &b);
-    
-    /*Moved to tgeometry.cpp
-    {
-    return *this = *this * b;
-    };
-    */
-    /*!
-            Returns the inverse tansformation as:
-            <p>\f$\left(\begin{array}{ccc}\bf{A}^{-1}&-\bf{A}^{-1}&\vec{b}\\\vec{0}&\vec{0}&1\end{array}\right)\f$</p>
-    */
 
-
-    /*!
-          Returns \e true if all elements are equals.
-    */
     bool operator==(const TAffine &a) const;
-    /*Sposto in tgeometry.cpp
-    {
-    return a11==a.a11 && a12==a.a12 && a13==a.a13 &&
-    a21==a.a21 && a22==a.a22 && a23==a.a23;
-    };
-    */
 
-    /*!
-          Returns \e true if at least one element is different.
-    */
 
     bool operator!=(const TAffine &a) const;
-    /*Sposto in tgeometry.cpp
-    {
-    return a11!=a.a11 || a12!=a.a12 || a13!=a.a13 ||
-    a21!=a.a21 || a22!=a.a22 || a23!=a.a23;
-    };
-    */
-
-    /*!
-        Returns the transformed point.
-    */
 
     PointTD operator*(const PointTD &p) const;
-    /*Sposto in tgeometry.cpp
-    {
-    return PointTD(p.x*a11+p.y*a12+a13, p.x*a21+p.y*a22+a23);
-    };
-    */
 
     
-    /*
-    RectTD operator*(const RectTD &rect) const;
-    /*
-            Returns a translated matrix that change the vector (u,v) in (x,y).
-    \n	It returns a matrix of the form:
-            <p>\f$\left(\begin{array}{ccc}\bf{A}&\vec{x}-\bf{A} \vec{u}\\
-            \vec{0}&1\end{array}\right)\f$</p>
-    */
-
+    
 
     //----- functions ------
     TAffine inv() const;
-    /*Moved to tgeometry.cpp
-    {
-    if(a12 == 0.0 && a21 == 0.0)
-    {
-    assert(a11 != 0.0);
-    assert(a22 != 0.0);
-    double inv_a11 = 1.0/a11;
-    double inv_a22 = 1.0/a22;
-    return TAffine(inv_a11,0, -a13 * inv_a11,
-    0,inv_a22, -a23 * inv_a22);
-    }
-    else if(a11 == 0.0 && a22 == 0.0)
-    {
-    assert(a12 != 0.0);
-    assert(a21 != 0.0);
-    double inv_a21 = 1.0/a21;
-    double inv_a12 = 1.0/a12;
-    return TAffine(0, inv_a21, -a23 * inv_a21,
-    inv_a12, 0, -a13 * inv_a12);
-    }
-    else
-    {
-    double d = 1./det();
-    return TAffine(a22*d,-a12*d, (a12*a23-a22*a13)*d,
-    -a21*d, a11*d, (a21*a13-a11*a23)*d);
-    }
-    };
-    */
+
 
     double det() const;
-    /*Sposto in tgeometry.cpp{
-    return a11*a22-a12*a21;
-    };
-    */
 
-    /*!
-            Returns \e true if all elements are equals.
-    */
-
-
-    /*!
-            Returns \e true if the transformation is an identity,
-            i.e in the error limit \e err leaves the vectors unchanged.
-    */
 
     bool isIdentity(double err = 1.e-8) const;
-    /*Sposto in tgeometry.cpp
-    {
-    return ((a11-1.0)*(a11-1.0)+(a22-1.0)*(a22-1.0)+
-    a12*a12+a13*a13+a21*a21+a23*a23) < err;
-    };
-    */
-    /*!
-            Returns \e true if in the error limits \e err \f$\bf{A}\f$ is the
-        identity matrix.
-    */
+
 
     bool isZero(double err = 1.e-8) const;
 
     bool isTranslation(double err = 1.e-8) const;
-    /*Sposto in tgeometry.cpp
-    {
-    return ((a11-1.0)*(a11-1.0)+(a22-1.0)*(a22-1.0)+
-    a12*a12+a21*a21) < err;
-    };
-    */
-    /*!
-            Returns \e true if in the error limits the matrix \f$\bf{A}\f$ is of
-        the form:
-            <p>\f$\left(\begin{array}{cc}a&b\\-b&a\end{array}\right)\f$</p>.
-    */
+
 
     bool isIsotropic(double err = 1.e-8) const;
-    /*Sposto in tgeometry.cpp
-    {
-        return areAlmostEqual(a11, a22, err) && areAlmostEqual(a12, -a21, err);
-    };
-    */
 
 
 
-    /*!
-            Transform point without translation
-    */
     PointTD transformDirection(const PointTD &p) const;
 
-    /*!
-            Retruns the transformed box of the bounding box.
-    */
 
     TAffine place(double u, double v, double x, double y) const;
 
-    /*!
-            See above.
-    */
     TAffine place(const PointTD &pIn, const PointTD &pOut) const;
 
     inline static TAffine identity()
@@ -408,26 +265,13 @@ public:
     inline static TAffine translation(double x, double y)
         { return TAffine(1, 0, x, 0, 1, y); }
 
-        /*
-    inline static TAffine translation(const PointTD &p)
-        { return translation(p.x, p.y); }
-         */
 
     inline static TAffine scale(double sx, double sy)
         { return TAffine(sx, 0, 0, 0, sy, 0); }
     inline static TAffine scale(double s)
         { return scale(s, s); }
 
-        /*
-    inline static TAffine scale(const PointTD &center, double sx, double sy)
-        { return translation(center)*scale(sx, sy)*translation(-center); }
-    inline static TAffine scale(const PointTD &center, double s)
-        { return scale(center, s, s); }
 
-    static TAffine rotation(double angle);
-    inline static TAffine rotation(const PointTD &center, double angle)
-        { return translation(center)*rotation(angle)*translation(-center); }
-        */
 
 
     inline static TAffine shear(double sx, double sy)

@@ -16,7 +16,8 @@
 #include <toonzRasterPixel.h>
 #include <toonzRaster.h>
 #include <toonzRasterBrush.h>
-#include <toonzPainterGL.h>
+#include <toonzRasterCircleBrush.h>
+#include <painterGL.h>
 #include <toonzShader.h>
 #include <Brush.h>
 #include <variant>

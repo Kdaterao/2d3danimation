@@ -15,7 +15,8 @@
 #include <toonzRasterPixel.h>
 #include <types.h>
 #include <toonzRasterBrush.h>
-#include <toonzPainterGL.h>
+#include <toonzRasterCircleBrush.h>
+#include <painterGL.h>
 #include <toonzShader.h>
 #include <UIPainter.h>
 #include <UIShapes.h>

@@ -47,11 +47,10 @@ class ToonzRaster {
         int ly; //y-axis length
         int wrap; // length of a row
         int lockCount; //max amount of threads that can access image
-        bool isLinear; //linear images have more efficient operation algorthims than non-linear
 
 
         //--- buffer variables ---
-        ToonzRaster*parent; // pointer to a parent raster if this raster canavs does not own the buffer 
+        ToonzRaster*parent; //pointer to a parent raster if this raster canavs does not own the buffer 
         UCHAR *buffer; //pointer to buffer of the image
         bool bufferOwner; // true if this raster canvas owns a buffer and is responsible for closing it 
         
@@ -66,8 +65,8 @@ class ToonzRaster {
              wrap(i_wrap),
              buffer(i_buffer),
              parent(i_parent),
-             bufferOwner(false),
-             isLinear(false) {};
+             bufferOwner(false)
+             {};
 
 
         ToonzRaster(int i_lx, int i_ly, int i_pixelSize)
@@ -141,12 +140,7 @@ class ToonzRaster {
 
         bool isEmpty() const {return getSize() == DimensionT<int>(); };
 
-        //----- Linear toggle functions -----
 
-        bool CheckLinear() const;
-
-        void setLinear(const bool linear);
-        
         //------ Canvas transformation operations (not implimented, hold off for now as they arent necessary) ------
 
         void xMirror();

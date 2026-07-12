@@ -1,4 +1,4 @@
-#include <toonzPainterGL.h>
+#include <painterGL.h>
 #include <toonzTextureManager.h>
 #include <iostream>
 #include <fstream>
@@ -40,8 +40,7 @@ void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
         //std::cout<<"Box:"<<"("<<(box.x0) <<","<<(box.y0) <<")"<<","<<"("<<(box.x1) <<","<<(box.y1)<<")"<<std::endl;
 
         int midX = box.x0 + box.getLx() / 2;
-        
-        
+         
         RectTI leftBox  = RectTI(box.x0, box.y0, midX,  box.y1);  // x1 clamped
         RectTI rightBox = RectTI(midX,   box.y0, box.x1,  box.y1);
 
