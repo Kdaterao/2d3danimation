@@ -61,7 +61,25 @@
 struct TileCoord{
     int x;
     int y;
+
+
+    bool operator==(const TileCoord& other) const {
+        return x == other.x && y == other.y;
+    }
 };
+
+
+namespace std {
+
+template<>
+struct hash<TileCoord> {
+    size_t operator()(const TileCoord& t) const noexcept {
+        return std::hash<int>()(t.x)
+             ^ (std::hash<int>()(t.y) << 1);
+    }
+};
+
+}
 
         
 //=================================
@@ -93,6 +111,7 @@ class Raster {
 
    
     //--- buffer variables ---
+    std::vector<TileCoord> dirty = std::vector<TileCoord>();
     std::unordered_map<TileCoord, RasterTile>  tilesMap;
     UCHAR *null_tile; // empty tile for out of bounds requests 
 
@@ -121,6 +140,11 @@ class Raster {
             tiles_x = ceil((float)i_w / tile_length);
             tiles_y = ceil((float)i_h / tile_length);
 
+            int size = tile_length * tile_length * pixelSize;
+            null_tile = new UCHAR[size];
+
+
+
         };
 
         //------------------------------------------
@@ -131,15 +155,16 @@ class Raster {
 
         }
 
-
         //------------------------------------------
-        //   IMAGE ACCESS (just return buffer)
+        //   IMAGE ACCESS (just return buffer)g
         //------------------------------------------
-        inline UCHAR* getRawData(int x, int y)  {
+        UCHAR* getRawData(int x, int y, bool write)  { //---> write lets our raster know we are writing to it (allows us to mark it as dirty)
 
+            //std::cout<<"getRawData() called"<<std::endl;
 
             //----- return null tile if out of bounds -------
-            if (x >= lx| y >= ly || x < 0 || y < 0) {
+            if (x >= lx || y >= ly || x < 0 || y < 0) {
+                std::cout<<"nul till"<<std::endl;
                 return this->null_tile;
             }
 
@@ -148,12 +173,17 @@ class Raster {
             int ty = y >> tile_length_power;
 
             //------ get offset from start of tile buffer ---------
-            int xLocal = x - tx;
-            int yLocal = y - ty;
-            int offset = yLocal*tile_length + xLocal;
+            int xLocal = x - (tx * tile_length);
+            int yLocal = y - (ty * tile_length);
+            int offset = (yLocal * tile_length + xLocal) * pixelSize;
 
-          
 
+
+            //std::cout<<"actual[" <<x <<","<<y<<"]"<<std::endl;
+            //std::cout<<"tile postiion[" <<tx <<","<<ty<<"]"<<std::endl;
+            //std::cout<<"local position[" <<xLocal <<","<<yLocal<<"]"<<std::endl;
+            //std::cout<<"sizeof(T):"<<sizeof(T)<<"pixelsize:"<<pixelSize<<std::endl;
+            
             //------- try to get kv of tile from map --------
             auto it = tilesMap.find(TileCoord{tx, ty});
 
@@ -161,18 +191,89 @@ class Raster {
             //------- get a tile buffer ----------
             if (it != tilesMap.end()) {
                 // KEY EXISTS :)
-                RasterTile &tile = it->second; // .find() give key pair not the value, so we just extract it rq
-                return tile.buffer + offset;
+                
+                if(write && it->second.dirty == false){
+                    it->second.dirty = true;
+                    dirty.push_back(TileCoord{tx, ty});
+
+                }
+
+                
+
+
+                return it->second.buffer + offset;
             
             } else {
                 // KEY NOT THERE :( 
-                RasterTile tile = RasterTile{makeBuffer(),false,1};
-                tilesMap.emplace(TileCoord{tx, ty}, &tile); //we cannot copy a tile remember 
-                return tile.buffer + offset;
+                RasterTile tile = RasterTile{makeBuffer(), true, 1};
+      
+
+                auto [newIt, inserted] = tilesMap.emplace(
+                    TileCoord{tx, ty},
+                    std::move(tile)
+                );
+
+                
+                if(write){
+                    dirty.push_back(TileCoord{tx, ty});
+                }
+
+                return newIt->second.buffer + offset;
             }
             
         };
 
+        //-----------------------------------
+        //         Get Tile Offset 
+        //-----------------------------------
+
+
+
+        
+
+        //-------------------------------------
+        //        Mark dirty tiles 
+        //-------------------------------------
+
+        void unmarkDirty(int tx, int ty){
+            TileCoord key = TileCoord{tx, ty};
+            auto it = tilesMap.find(key);
+            assert(it != tilesMap.end());
+            it->second.dirty = false;
+
+        }
+
+        void markDirty(int tx, int ty)
+        {
+
+            TileCoord key = TileCoord{tx, ty};
+            auto it = tilesMap.find(key);
+            
+            assert(it != tilesMap.end());
+
+
+            if(it->second.dirty == false){
+                dirty.push_back(key);
+            }
+
+        }
+        
+        std::vector<TileCoord> *getDirty(){
+            return &dirty;
+        }
+
+
+        UCHAR *getNullTile() {
+            return null_tile;
+        }
+
+        //------------------------------------------
+        //      IMAGE FORMAT CONVERSIONS :O
+        //------------------------------------------
+
+        /*
+            TODO: maybe add some conversion methods just in case 
+        */
 
 
         //------------------------------------------
@@ -193,6 +294,8 @@ class Raster {
 
         inline int getPixelSize() const { return pixelSize; }
 
+        inline int getTileLength() const { return tile_length;}
+
 
 
     //======================================
@@ -202,8 +305,8 @@ class Raster {
     private:
 
         //----- utility to quickly make a new buffer -------
-        inline UCHAR *makeBuffer(){
-
+        UCHAR *makeBuffer(){
+            std::cout<<"pixelSize"<<pixelSize<<std::endl;
             int size = tile_length * tile_length * pixelSize;
             UCHAR* buffer = new UCHAR[size];
             memset(buffer, 255, size);
@@ -211,6 +314,9 @@ class Raster {
             return buffer;
 
         }
+
+
+        
 
 };
 

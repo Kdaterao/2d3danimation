@@ -32,13 +32,22 @@ struct RasterTile {
     RasterTile& operator=(const RasterTile&) = delete;
     
     //---- you can move it ------
-    RasterTile(RasterTile&& other) noexcept
-    {
-        buffer = other.buffer;
-        dirty = other.dirty;
-        lockCount = other.lockCount;
 
+    RasterTile(RasterTile&& other) noexcept
+        : buffer(other.buffer)
+        , dirty(other.dirty)
+        , lockCount(other.lockCount)
+    {
         other.buffer = nullptr;
+    }
+
+
+
+    RasterTile(UCHAR* buffer, bool dirty, int lockCount) noexcept
+        : buffer(buffer)
+        , dirty(dirty)
+        , lockCount(lockCount)
+    {
     }
 };
 

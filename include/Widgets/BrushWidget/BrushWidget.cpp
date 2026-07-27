@@ -58,7 +58,12 @@ void ColorTriangleWidget::getColor(QMouseEvent *event){
 
     //std::cout<<"YAT!"<<std::endl;
 
-    ToonzPixelBGRM32 color = ToonzPixelBGRM32(255*u, 255*v, 255*w, 255);
+PixelType color = PixelType(
+    255.0f * v * krish64,  // RED   → A
+    255.0f * u * krish64,  // GREEN → B
+    255.0f * w * krish64,  // BLUE  → C
+    255.0f * krish64
+);
     emit sendColor(color);
 
     }
@@ -109,9 +114,9 @@ void ColorTriangleWidget::mouseMoveEvent(QMouseEvent *event){
 
     //----- place holder triangle (will replace with better one later (like the one in opentoonz!)) -----
 
-    VertexRGBM32 v0(0.0f,  1.0f, 1.0f, 0.0f, 0.0f, 1.0f);  // Top vertex: Red
-    VertexRGBM32 v1(-1.0f, -1.0f, 0.0f, 1.0f, 0.0f, 1.0f); // Bottom-left: Green
-    VertexRGBM32 v2(1.0f, -1.0f, 0.0f, 0.0f, 1.0f, 1.0f);  // Bottom-right: Blue
+    VertexRGBM32 v0(0.0f,  1.0f, 0.0f, 1.0f, 0.0f, 1.0f);  // Top vertex: Green
+    VertexRGBM32 v1(-1.0f, -1.0f, 0.0f, 0.0f,   1.0f, 1.0f); // Bottom-left: Blue
+    VertexRGBM32 v2(1.0f, -1.0f, 1.0f, 0.0f, 0.0f, 1.0f);  // Bottom-right: Red
 
     Triangle shape = Triangle(v0, v1, v2);
 
@@ -124,5 +129,4 @@ void ColorTriangleWidget::mouseMoveEvent(QMouseEvent *event){
 
  void ColorTriangleWidget::paintGL(){
     rasterizer->Paint(defaultFramebufferObject(), true);
-
  };

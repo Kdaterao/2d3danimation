@@ -20,16 +20,23 @@ set(SOURCES
     include/2D/Brush/Brush.cpp include/2D/Brush/Brush.h
     include/2D/Brush/ToonzBrush/toonzRasterBrush.cpp include/2D/Brush/ToonzBrush/toonzRasterBrush.h
     include/2D/Brush/ToonzBrush/toonzRasterCircleBrush.h
-    include/2D/Brush/ToonzBrush/toonzRasterPixel.cpp include/2D/Brush/ToonzBrush/toonzRasterPixel.h
+
+
+    include/2D/Raster/rasterPixel.cpp include/2D/Raster/rasterPixel.h
+
+
+
     include/2D/Brush/MPLBrush/mplBrush.cpp include/2D/Brush/MPLBrush/mplBrush.h
     include/2D/Brush/MPLBrush/mplSurfaceAdapter.cpp include/2D/Brush/MPLBrush/mplSurfaceAdapter.h
+    
+    
     include/Widgets/BrushWidget/BrushWidget.cpp  include/Widgets/BrushWidget/BrushWidget.h
-
+    include/Widgets/CanvasWidget/CanvasWidget.cpp include/Widgets/CanvasWidget/CanvasWidget.h
     
 
     include/2D/Raster/raster.h
     include/2D/Raster/rasterTile.h
-    include/2D/Raster/toonzRaster.cpp include/2D/Raster/toonzRaster.h
+    include/2D/Raster/old/toonzRaster.cpp include/2D/Raster/old/toonzRaster.h
 
 
     include/Utility/Math/toonzGeometry.h
@@ -37,7 +44,7 @@ set(SOURCES
     include/2D/Painter/UI/UIPainter.cpp include/2D/Painter/UI/UIPainter.h 
     include/2D/Painter/UI/UIShapes.h
     include/Utility/Math/toonzCalculations.cpp include/Utility/Math/toonzCalculations.h
-
+    
 
     include/Storage/storageManager.cpp include/Storage/storageManager.h
 
@@ -56,7 +63,9 @@ set(PROJECT_INCLUDE_DIRS
     ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Painter/General/Shader
     ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Painter/General/Texture
     ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Painter/UI
+    
     ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Raster
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Raster/old
 
 
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Utility/Math
@@ -130,7 +139,14 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     MACOSX_BUNDLE ON
 )
 
+target_compile_options(${PROJECT_NAME} PRIVATE
+    -fsanitize=address
+    -fno-omit-frame-pointer
+)
 
+target_link_options(${PROJECT_NAME} PRIVATE
+    -fsanitize=address
+)
 
 # ============================
 #       Google Test Setup 
@@ -171,6 +187,8 @@ target_link_libraries(${PROJECT_NAME}_tests PRIVATE
     Qt6::OpenGLWidgets
 
     PkgConfig::MYPAINT
+
+    
     
 )
 

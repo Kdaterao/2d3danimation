@@ -15,14 +15,14 @@
 */
 
 
-typedef unsigned char UCHAR; //unsigned character
+typedef unsigned char UCHAR;   // 1-byte unsigned integer
 
+typedef unsigned int UINT;     // usually 4-byte unsigned integer (platform-dependent)
 
-typedef  unsigned int UINT;
-typedef  uint8_t  UINT8;   //8 bit unsigned integer
-typedef  uint16_t UINT16;  //16 bit unsigned integer
-typedef  uint32_t UINT32;  //32 bit unsigned integer
-
+typedef uint8_t  UINT8;         // 8-bit  (1-byte) unsigned integer
+typedef uint16_t UINT16;        // 16-bit (2-byte) unsigned integer
+typedef uint32_t UINT32;        // 32-bit (4-byte) unsigned integer
+typedef uint64_t UINT64;        // 64-bit (8-byte) unsigned integer
 
 
 #endif

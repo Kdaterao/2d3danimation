@@ -91,6 +91,13 @@ class PointT {
             return float((x * a.x) + (y *a.y));
         }
 
+
+        bool operator==(PointT<T>& a) const{
+
+            return (a.x == x && a.y == y);
+
+        }
+
 };
 
 

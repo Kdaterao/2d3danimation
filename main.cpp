@@ -1,6 +1,7 @@
 #include <QApplication>
 #include <CanvasWidget.h>
 #include <BrushWidget.h>
+#include <rasterPixel.h>
 
 
 #include <QObject>
@@ -29,7 +30,7 @@ int main(int argc, char *argv[]) {
     QHBoxLayout *layout = new QHBoxLayout(window)
 ;
     //----- Create window object -----
-    GLWidget *canvas = new GLWidget();
+    GLWidget  *canvas= new GLWidget();
     canvas->setMinimumSize(800, 600);
     canvas->setMaximumSize(800, 600);
     canvas->resize(800, 600); // sets window size (otherwise goes to default)

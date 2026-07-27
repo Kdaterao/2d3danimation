@@ -6,7 +6,8 @@
 
 
 //for debugging
-void toonzPainterGL::dumpBuffer2(UCHAR* buf, int width, int height, int wrap) {
+template <class T>
+void toonzPainterGL::dumpBuffer2(T* buf, int width, int height, int wrap, int num_channels) {
 
     std::cout<<"dumpbuffer2 running"<<std::endl;
     count += 1;
@@ -18,9 +19,9 @@ void toonzPainterGL::dumpBuffer2(UCHAR* buf, int width, int height, int wrap) {
     
     fprintf(f, "P6\n%d %d\n255\n", width, height);
     for (int row = 0; row < height; row++) {
-        UCHAR* rowPtr = buf + row * wrap * 4;
+        T* rowPtr = buf + row * wrap * num_channels;
         for (int col = 0; col < width; col++) {
-            fwrite(rowPtr + col * 4, 1, 3, f);
+            fwrite(rowPtr + col * num_channels, 1, 3, f);
         }
     }
     fclose(f);
@@ -147,7 +148,10 @@ void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
 
     //handle format and type of buffer
     GLenum fmt, type;
-    toonzTextureManager::instance()->getFmtAndType(isRGBM, fmt, type);
+
+    
+    toonzTextureManager::instance()->getFmtAndType(isRGBM, is32, fmt, type);
+
 
 
     //create empty texture 
@@ -161,7 +165,7 @@ void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
     int y      = box.y0;
 
 
-    UCHAR* bufferOffset = rasbuffer + (x + y * wrap) * bpp;
+    UCHAR* bufferOffset = rasbuffer;
 
     //toonzPainterGL::dumpBuffer2(bufferOffset, width, height, wrap); //debug function
 
@@ -169,8 +173,8 @@ void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
     //std::cout << "fmt=" << fmt << " type=" << type << " wrap=" << wrap << " bpp=" << bpp << std::endl;
 
     glPixelStorei(GL_UNPACK_ROW_LENGTH, wrap); 
-    glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, width, height, fmt, GL_UNSIGNED_BYTE, bufferOffset);//fmt, type
-    //glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0, fmt, GL_UNSIGNED_BYTE, bufferOffset);
+    glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, width, height, fmt, type, bufferOffset);//fmt, type
+    
 
      
     err = glGetError();

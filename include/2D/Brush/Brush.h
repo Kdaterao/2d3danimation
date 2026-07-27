@@ -4,7 +4,8 @@
 #include <toonzRasterBrush.h>
 #include <toonzRasterCircleBrush.h>
 #include <variant>
-//#include <mypaint-brush.h>
+#include <raster.h>
+#include <mplBrush.h>
 
 
 
@@ -19,13 +20,14 @@ namespace Brush {
 
         NONE,
         BRUSH_BGRM32,
-        //MPL_BRUSH
+        MPL_BRUSH
 
     };
 
+    template <class T>
     using BrushVariant = std::variant<
-            DefaultCircleBrush<ToonzPixelBGRM32>
-            //,MyPaintBrush
+            DefaultCircleBrush<T>,
+            mplBrush<T>
         >;
 
 
@@ -35,10 +37,12 @@ namespace Brush {
     //            Brush Definitions  
     //===============================================
 
+    template <class T>
+
     struct RasterBrush{
 
 
-        std::unique_ptr<BrushVariant> curr;
+        std::unique_ptr<BrushVariant<T>> curr;
 
 
 
@@ -56,7 +60,6 @@ namespace Brush {
         }
 
 
-        template<class T>
 
         void setColor(T color) {
             std::visit([&](auto& bsh) {
@@ -70,6 +73,13 @@ namespace Brush {
                 bsh.resize(r);
             }, *curr);
         }
+
+
+        void resetBrush() {
+            std::visit([&](auto& bsh) {
+                bsh.resetBrush();
+            }, *curr);
+        }
         
         
     };      
@@ -80,49 +90,37 @@ namespace Brush {
     //===============================================
     
 
+
     template<class T>
+    void setBrush( Brush::RasterTypes newType, auto &brush, RasterP<T> image, T color,int size ) {
+        brush.curr.reset();
 
-    void setBrush(Brush::RasterTypes newType, Brush::RasterBrush &brush, ToonzRasterPT<T> image, T color, int size){
-
-        switch(newType){
+        switch (newType) {
 
         case RasterTypes::NONE:
-
             break;
 
         case RasterTypes::BRUSH_BGRM32:
-             {
-                DefaultCircleBrush<ToonzPixelBGRM32> newBrush = DefaultCircleBrush<ToonzPixelBGRM32>(image, color , size);
-                if(brush.curr){
-                    *brush.curr = std::move(newBrush); // replaces with our new brush 
-                } else {
-                    brush.curr = std::make_unique<BrushVariant>(DefaultCircleBrush<ToonzPixelBGRM32>(image, color, size)); // makes a smart, unique pointer 
-                }
-                break;
-            }
+            brush.curr =
+                std::make_unique<BrushVariant<T>>(
+                    std::in_place_type<DefaultCircleBrush<T>>, // we must create brush inplace instead of bopying into our variant since the class hold a pointer to brhs!(deleting old would leave dangling pointer )
+                    image,
+                    color,
+                    size
+                );
+            break;
 
-            /*
         case RasterTypes::MPL_BRUSH:
-            {
-                auto newBrush =  MyPaintBrush(mypaint_brush_new());
-
-                if(brush.curr){
-                    brush.curr = newBrush;
-                } else {
-                    brush.curr = std::make_unique<BrushVariant>(*newBrush); // makes a smart, unique pointer 
-                }
-
-                break;
-            }
-        
-
-            */
-            
-
-     };
-    
+            brush.curr =
+                std::make_unique<BrushVariant<T>>(
+                    std::in_place_type<mplBrush<T>>,
+                    image,
+                    size,
+                    size
+                );
+            break;
+        }
     }
-
 };
 
 

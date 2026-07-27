@@ -43,11 +43,22 @@ DimensionTI toonzTextureManager::createEmptyTexture(DimensionTI reqSize, bool is
 
 
 //add conditional statments once you think about importing images
-void toonzTextureManager::getFmtAndType(bool isRGBM, GLenum &fmt, GLenum &type){
+void toonzTextureManager::getFmtAndType(bool isRGBM, bool is32, GLenum &fmt, GLenum &type){
 
-    fmt =  GL_BGRA;
-    type = GL_UNSIGNED_INT_8_8_8_8_REV; //GL_UNSIGNED_BYTE is nothing works..
 
+    //----- pixel format -------
+    if(isRGBM){
+      fmt =  GL_BGRA;
+    } else {
+      fmt = GL_RGBA;
+    }
+
+    //---- channel size -------
+    if(is32){
+      type = GL_UNSIGNED_BYTE; //1 byte per channel
+    } else {
+      type = GL_UNSIGNED_SHORT; //... short = 2 bytes
+    }
 
 }
 

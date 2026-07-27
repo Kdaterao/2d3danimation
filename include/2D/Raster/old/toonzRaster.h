@@ -53,6 +53,8 @@ class ToonzRaster {
         ToonzRaster*parent; //pointer to a parent raster if this raster canavs does not own the buffer 
         UCHAR *buffer; //pointer to buffer of the image
         bool bufferOwner; // true if this raster canvas owns a buffer and is responsible for closing it 
+
+  
         
 
 

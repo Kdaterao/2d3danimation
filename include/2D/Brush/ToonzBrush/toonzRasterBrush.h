@@ -3,9 +3,8 @@
 
 #include <types.h>
 #include <toonzGeometry.h>
-#include <toonzRasterPixel.h>
-#include <toonzRaster.h>
-
+#include <rasterPixel.h>
+#include <raster.h>
 
 #include <string.h>
 #include <unordered_map>
@@ -102,6 +101,65 @@ base brush class -> default circle brush -> Capsule, scan-line fill algo...
 */
 
 
+//---------------------------------
+//    Helper Classes for brush  
+//---------------------------------   
+        
+        
+class HalfCoord {
+  //variables(although they arent in private or public they are private by default)
+  std::unique_ptr<int[]> m_array;  
+  int m_radius;
+
+public:
+
+
+
+  //Halfcoord constructor that gives a list of half widths for every y level !
+  HalfCoord(int radius) : m_radius(radius), m_array(new int[radius + 1]) {
+    assert(radius >= 0);
+
+
+    memset(m_array.get(), 0, (m_radius + 1) * sizeof(int));
+
+
+    float dCircle = 1.25f - m_radius;  // Initialize decision variable
+    int y         = m_radius;          // Initialize scanline index
+    int x         = 0;                 // Initialize column index
+    do {
+      m_array[y] = std::max(x, m_array[y]);
+      m_array[x] = y;
+      if (dCircle <= 0) {
+        dCircle = dCircle + 2 * x + 3;
+      } else {
+        y--;
+        dCircle = dCircle + 2 * (x - y) + 5;
+      }
+      x++;
+
+    } while (y >= x);
+  }
+
+
+
+  inline int getCoord(int x) {
+    std::cout<<"x:"<<x<<std::endl;
+    std::cout<<"m_radius:"<<m_radius<<std::endl;
+    assert(0 <= x && x <= m_radius);
+    return m_array[x];
+  };
+
+
+
+
+private:
+
+  HalfCoord(const HalfCoord &) = default;
+  HalfCoord &operator=(const HalfCoord &) = default;
+};
+
+
+
 
 
 
@@ -120,7 +178,7 @@ class toonzBrush {
     protected:
 
         //----- Variables -----
-        ToonzRasterPT<T> raster; //shared_pointer of our raster(dont need * since its a typedef of a pointer!)
+        RasterP<T> raster; //shared_pointer of our raster(dont need * since its a typedef of a pointer!)
         RectTI rasterSize; //size of the raster 
         T color; // color of our brush
         DimensionTI brushSize;// lx and ly of brush
@@ -133,14 +191,14 @@ class toonzBrush {
 
         toonzBrush() {};
 
-        toonzBrush(ToonzRasterPT<T>  i_raster, T i_color, DimensionT<int> i_brushSize) 
+        toonzBrush(RasterP<T>  i_raster, T i_color, DimensionT<int> i_brushSize) 
             : raster(i_raster),
               brushSize(i_brushSize),
               color(i_color) {
                 rasterSize = raster->getBounds();
               };
          
-        toonzBrush(ToonzRasterPT<T>  i_raster, T i_color, float i_lx, float i_ly)
+        toonzBrush(RasterP<T>  *i_raster, T i_color, float i_lx, float i_ly)
             : raster(i_raster),
               brushSize(DimensionT<int>(i_lx, i_ly)),
               color(i_color) {
@@ -161,52 +219,17 @@ class toonzBrush {
         //----- Inserts only one pixel O(1) --------
 
         inline void drawPixel(int x, int y){
-            std::cout<<"("<<x<<","<<y<<")"<<std::endl;
-            UCHAR* pixel = raster->getRawData(x, y);
+            //std::cout<<"calling drawPixel()"<<std::endl;
+            //std::cout<<"("<<x<<","<<y<<")"<<std::endl;
+            UCHAR* pixel = raster->getRawData(x, y, true);
+
             std::memcpy(pixel, &color, sizeof(T));
 
+            //std::cout<<"yay"<<std::endl;
             //DEBUG
             //UCHAR* c = reinterpret_cast<UCHAR*>(&color);
             //printf("R:%d G:%d B:%d A:%d\n", c[0], c[1], c[2], c[3]);
         }
-
-        //----- Doubles pixel insert every time O(log(n)) --------
-
-        inline void drawPixelDouble(int x, int y, int length){
-            int chunk = 0;//current chunk of pixels in canvas we have inserted
-            int xoffset = 0;
-            UCHAR* bufferStart;//first pixel point of the chunk we are copying from
-            UCHAR* currPixel;//currnet pixel point
-
-            //----- Put initial color in -----
-            currPixel = raster->getRawData(x, y);
-            std::memcpy(currPixel, &color, sizeof(T));
-            chunk = sizeof(T);
-            bufferStart = currPixel;
-            xoffset++;
-            
-            //------ Double Insert ------
-            while(xoffset*2 < length){
-                currPixel = raster->getRawData(x + xoffset, y);
-                std::memcpy(currPixel, bufferStart, chunk);
-                xoffset = xoffset * 2;
-                chunk = chunk *2;
-            }
-       
-            //----- after we can no longer double insert, we just insert the rest of the pixels(we already have a big enough buffer) ------
-            if(xoffset < length){
-                //std::cout<<"xoffset: "<<xoffset<<" chunk: "<<chunk<<" length: "<<length << "rest:" << length- xoffset <<std::endl;
-                int rest = sizeof(T) * (length - xoffset);
-                currPixel = raster->getRawData(x + xoffset, y);
-                std::memcpy(currPixel, bufferStart, rest);
-            }
-            
-            //DEBUG
-            //UCHAR* c = reinterpret_cast<UCHAR*>(&color);
-            //printf("R:%d G:%d B:%d A:%d\n", c[0], c[1], c[2], c[3]);
-            
-        }
-
 
         //------------------------------
         //   DRAW BRUSH + RESIZE vF
@@ -214,6 +237,12 @@ class toonzBrush {
 
         virtual void drawBrush(PointTI a, PointTI b) = 0; 
         virtual void resize(int r) = 0;
+
+        //-----------------------------
+        //  reset brush vF
+        //-----------------------------
+
+        virtual void resetBrush() = 0;
 
 
     
@@ -229,16 +258,6 @@ class toonzBrush {
                 color = i_color;
         }
 };
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -328,7 +347,7 @@ class DefaultCircleBrush : public toonzBrush<T> {
         //----- Constructors -----
 
         DefaultCircleBrush() {};
-        DefaultCircleBrush(ToonzRasterPT<T>  i_raster, T i_color, int r) 
+        DefaultCircleBrush(RasterP<T>  i_raster, T i_color, int r) 
             : toonzBrush<T>(i_raster, i_color, DimensionT<int>(r,r)) {
 
                 HalfCircle(r);
@@ -374,15 +393,11 @@ class DefaultCircleBrush : public toonzBrush<T> {
             //radius
             int radius = this->brushSize.lx; //this brush is a square so lx and ly are same thing here
 
-            //points
-            float x0 = a.x;
-            float y0 = a.y;
-            float x1 = b.x;
-            float y1 = b.y;
+ 
             
             //slope
-            float dx = x1 - x0;
-            float dy = y1 -y0;
+            float dx = b.x - a.x;
+            float dy = b.y -a.y;
             float length =  sqrt(dx*dx + dy*dy); // may change to double if not exact enough
 
             float dx_90 = 0;
@@ -396,6 +411,154 @@ class DefaultCircleBrush : public toonzBrush<T> {
 
 
 
+            int lx = this->rasterSize.x1;
+            int ly = this->rasterSize.y1;
+
+            
+             HalfCoord halfCoord = HalfCoord(radius);
+
+
+
+
+
+            //---------------------
+            //  ONLY A CIRCLE
+            //---------------------
+                
+            if(a.x == b.x && b.x == b.y){
+ 
+                std::cout << "circle" <<std::endl;
+                int yMin = std::max((int)a.y - radius, 0);
+                int yMax = std::min((int)a.y + radius, ly - 1);
+
+                for(int y = yMin; y <= yMax; y++){
+
+                    //get half width 
+                    int deltay = abs(y - a.y);
+                    int width = halfCoord.getCoord(deltay);
+
+                    // determine min and max x positions
+                    int xMin = std::max((int)a.x - width, 0);
+                    int xMax = std::min((int)a.x + width, lx -1);
+
+                    // draw 
+                    for(int x = xMin; x <= xMax; x++){
+                        this->drawPixel(x,y);
+                    }
+                }
+                return;
+            }
+
+
+
+            //---------------------
+            //  HORIZONTAL LINE
+            //---------------------
+            if (a.y == b.y){
+                std::cout << "horiznta;" <<std::endl;
+                int yMin = std::max((int)a.y - radius, 0) - (int)a.y;
+                int yMax = std::min((int)a.y + radius, ly - 1) - (int)a.y;
+                
+                
+                if(a.x < b.x){
+                    //------ point A on the left of point B -------
+                    
+                    for(int y = yMin; y <= yMax; y++){
+
+                        // get circle half width 
+                        int deltay = abs(y);
+                        int width = halfCoord.getCoord(deltay);
+
+                        // determine min and max x positions
+                        int xMin = std::max((int)a.x - width, 0);
+                        int xMax = std::min((int)b.x + width, lx -1);
+
+                        // draw
+                        for(int x = xMin; x <= xMax; x++){
+                            this->drawPixel(x, (int)a.y + y);
+                        }
+                    }
+                    
+                } else {
+                    //------- point A on the Right of point B -------
+                    for(int y = yMin; y <= yMax; y++){
+
+                        // get circle half width 
+                        int deltay = abs(y);
+                        int width = halfCoord.getCoord(deltay);
+
+                        // determine min and max x positions 
+                        int xMin = std::max((int)b.x - width, 0);
+                        int xMax = std::min((int)a.x + width, lx - 1);
+
+                        // draw
+                        for(int x = xMin; x <= xMax; x++){
+                            this->drawPixel(x, (int)a.y + y);
+                        }
+                    }
+                }
+                return;
+            }
+
+
+            if(a.x == b.x){
+
+
+                    if(a.y < b.y){
+                    std::cout << "vertical"<< std::endl;
+                    int xMin = std::max((int)a.x - radius, 0);
+                    int xMax = std::min((int)a.x + radius, lx - 1);
+
+                    for(int x = xMin; x <= xMax; x++){
+                        
+                        //get circle halfwidth 
+                        int deltax = abs(x - (int)a.x);
+                        int width = halfCoord.getCoord(deltax);
+
+                        //determine min and max x positions
+                        int yMin = std::max((int)a.y - width, 0);
+                        int yMax = std::min((int)b.y + width, ly);
+
+                        // draw
+                        for(int y = yMin; y <= yMax; y++){
+                            this->drawPixel(x,y);
+                        }
+
+                    }
+                } else {
+
+                    std::cout << "vertical"<< std::endl;
+                    int xMin = std::max((int)a.x - radius, 0);
+                    int xMax = std::min((int)a.x + radius, lx - 1);
+
+                    for(int x = xMin; x <= xMax; x++){
+                        
+                        //get circle halfwidth 
+                        int deltax = abs(x - (int)a.x);
+                        int width = halfCoord.getCoord(deltax);
+
+                        //determine min and max x positions
+                        int yMin = std::max((int)b.y - width, 0);
+                        int yMax = std::min((int)a.y + width, ly);
+
+                        // draw
+                        for(int y = yMin; y <= yMax; y++){
+                            this->drawPixel(x,y);
+                        }
+
+                    }
+                }
+
+                    return;
+            }
+
+
+
+
+
+            
+
+
             //----- build capsule -----
             
             //  cool little capsule i made :)
@@ -405,10 +568,10 @@ class DefaultCircleBrush : public toonzBrush<T> {
 
 
             // build rectangle of capsule
-            PointT p1 = PointT(int((dx_90 * radius) + x0), int((dy_90 * radius) + y0));
-            PointT p2 = PointT(int((dx_90 * radius) + x1), int((dy_90 * radius) + y1));
-            PointT p3 = PointT(int(-(dx_90 * radius) + x1), int(-(dy_90 * radius) + y1));
-            PointT p4 = PointT(int(-(dx_90 * radius) + x0), int(-(dy_90 * radius) + y0));
+            PointT p1 = PointT(int((dx_90 * radius) + a.x), int((dy_90 * radius) + a.y));
+            PointT p2 = PointT(int((dx_90 * radius) + b.x), int((dy_90 * radius) + b.y));
+            PointT p3 = PointT(int(-(dx_90 * radius) + b.x), int(-(dy_90 * radius) + b.y));
+            PointT p4 = PointT(int(-(dx_90 * radius) + a.x), int(-(dy_90 * radius) + a.y));
 
 
 
@@ -432,12 +595,12 @@ class DefaultCircleBrush : public toonzBrush<T> {
             //--- build halfcircles  of the capsule ---
 
             for(const auto& point : circle){
-                //std::cout<<"Circledrawn:"<<"("<<point.x + x0<<","<<point.y + y0<<")"<<std::endl;
-                //std::cout<<"Circledrawn:"<<"("<<point.x + x1<<","<<point.y + y1<<")"<<std::endl;
+                //std::cout<<"Circledrawn:"<<"("<<point.x + a.x<<","<<point.y + a.y<<")"<<std::endl;
+                //std::cout<<"Circledrawn:"<<"("<<point.x + b.x<<","<<point.y + b.y<<")"<<std::endl;
 
                 //build up pairs
-                buildPairs(point.x + x0, point.y +y0);
-                buildPairs(point.x + x1, point.y +y1);
+                buildPairs(point.x + a.x, point.y +a.y);
+                buildPairs(point.x + b.x, point.y +b.y);
 
             }
 
@@ -448,6 +611,11 @@ class DefaultCircleBrush : public toonzBrush<T> {
                 if(xMin[y] == INT_MAX || xMax[y] == INT_MIN) continue;
 
                 for(int point = xMin[y]; point <= xMax[y]; point++){
+                    //----- find position in current rectangle ------
+                        
+
+                    //------ paint via a list of cutoffs with memory fill -------
+                    
                     
                     this->drawPixel(point, y);
                 }
@@ -456,9 +624,13 @@ class DefaultCircleBrush : public toonzBrush<T> {
 
             //------ reset ---=---
 
-            std::fill(xMin.begin() + yMin - 1, xMin.begin() + yMax + 1, INT_MAX);
-            std::fill(xMax.begin() + yMin - 1, xMax.begin() + yMax + 1, INT_MIN);
+            std::fill(xMin.begin() + std::max(0, yMin - 1), xMin.begin() + std::min(ly , yMax + 1), INT_MAX);
+            std::fill(xMax.begin() + std::max(0, yMin - 1), xMax.begin() + std::min(ly , yMax + 1), INT_MIN);
+        
         }
+
+
+        void resetBrush() {};
 
 
     //----- helper functions -----
@@ -472,13 +644,13 @@ class DefaultCircleBrush : public toonzBrush<T> {
             if(x < 0){
                 x = 0;
             } 
-            else if(x > this->rasterSize.x1){
+            else if(x >= this->rasterSize.x1){
                 x = this->rasterSize.x1 - 1;
             }
             if(y < 0){
                 y = 0;
             }
-            if(y > this->rasterSize.y1){
+            if(y >= this->rasterSize.y1){
                 y = this->rasterSize.y1 - 1;
             }
 

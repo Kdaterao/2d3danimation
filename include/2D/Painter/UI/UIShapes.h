@@ -1,7 +1,7 @@
 
 #include <types.h>
 #include <toonzGeometry.h>
-#include <toonzRasterPixel.h>
+#include <rasterPixel.h>
 
 
 #include <vector>

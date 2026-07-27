@@ -73,6 +73,7 @@ class toonzPainterGL: public QOpenGLWidget, protected QOpenGLFunctions{
     GLenum premultiplied; //used for displaying transparency
     DimensionTI maxSize; // max texture size
     bool isRGBM; //pixel layout
+    bool is32;
     int count = 0;
     toonzShader *shader;
 
@@ -85,7 +86,7 @@ class toonzPainterGL: public QOpenGLWidget, protected QOpenGLFunctions{
 
         toonzPainterGL() {};
 
-        toonzPainterGL(TAffine i_aff, UCHAR *i_rasBuffer, int i_wrap, int i_screenWidth, int i_screenHeight, int i_bpp,  const DimensionTI &i_rasDim, GLenum i_magFilter, GLenum i_minFilter, bool i_premultiplied, toonzShader *i_shader)
+        toonzPainterGL(TAffine i_aff, int i_wrap, int i_screenWidth, int i_screenHeight, int i_bpp,  const DimensionTI &i_rasDim, GLenum i_magFilter, GLenum i_minFilter, bool i_premultiplied, toonzShader *i_shader, bool i_isRGBM)
             : aff(i_aff),
             wrap(i_wrap),
             bpp(i_bpp),
@@ -95,12 +96,15 @@ class toonzPainterGL: public QOpenGLWidget, protected QOpenGLFunctions{
             premultiplied(i_premultiplied),
             shader(i_shader),
             screenHeight(i_screenHeight),
-            screenWidth(i_screenWidth) {
+            screenWidth(i_screenWidth),
+            isRGBM(i_isRGBM){
                 initializeOpenGLFunctions(); 
 
-                i_shader->use();
 
-                isRGBM = (bpp == 4);
+                // checks size of pixel for is32 (4 bytes = 32! )
+                is32 = (i_bpp == 4); 
+
+                i_shader->use();
                 maxSize = toonzTextureManager::instance()->getMaxSize(isRGBM);
                 std::cout<<"maxsize:"<<"lx:"<<maxSize.lx<<"ly:"<<maxSize.ly<<std::endl;
             };
@@ -109,7 +113,9 @@ class toonzPainterGL: public QOpenGLWidget, protected QOpenGLFunctions{
 
 
         void PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer);
-        void dumpBuffer2(UCHAR* buf, int width, int height, int wrap);
+
+        template <class T>
+        void dumpBuffer2(T* buf, int width, int height, int wrap, int num_channels);
 
      };
 

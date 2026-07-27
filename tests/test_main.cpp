@@ -4,8 +4,8 @@
 #include <QOpenGLFunctions>
 #include <QTimer>
 #include <types.h>
-#include <toonzRasterPixel.h>
-#include <toonzRaster.h>
+#include <rasterPixel.h>
+#include <raster.h>
 #include <toonzRasterBrush.h>
 #include <toonzRasterCircleBrush.h>
 #include <painterGL.h>
@@ -137,7 +137,7 @@ void drawLine(PointT<int> a, PointT<int> b, std::vector<PointTI> &line){
 TEST(PixelTest, sizeofpixel) {
 
 
-  ToonzPixelBGRM32 T = ToonzPixelBGRM32();
+  PixelBGRM32 T = PixelBGRM32();
   EXPECT_EQ(4, sizeof(T));
 }
 

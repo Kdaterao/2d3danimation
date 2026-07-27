@@ -12,7 +12,7 @@
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions>
 
-#include <toonzRasterPixel.h>
+#include <rasterPixel.h>
 #include <types.h>
 #include <toonzRasterBrush.h>
 #include <toonzRasterCircleBrush.h>
@@ -20,11 +20,21 @@
 #include <toonzShader.h>
 #include <UIPainter.h>
 #include <UIShapes.h>
+#include <CanvasWidget.h>
+
+
+
+
+
+
 
 class ColorTriangleWidget : public QOpenGLWidget, protected QOpenGLFunctions {
+
+
     toonzShader *shaderProgram = nullptr;
     UIPainter *rasterizer; 
-    ToonzPixelBGRM32 color;
+    PixelType color;
+
 
 
      Q_OBJECT
@@ -52,7 +62,7 @@ class ColorTriangleWidget : public QOpenGLWidget, protected QOpenGLFunctions {
 
 
     signals:
-        void sendColor(ToonzPixelBGRM32 Color);
+        void sendColor(PixelType Color);
 };
 
 

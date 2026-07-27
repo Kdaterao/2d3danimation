@@ -13,8 +13,7 @@
 #include <QCursor>
 
 #include <types.h>
-#include <toonzRasterPixel.h>
-#include <toonzRaster.h>
+#include <rasterPixel.h>
 #include <toonzRasterBrush.h>
 #include <toonzRasterCircleBrush.h>
 #include <painterGL.h>
@@ -23,21 +22,40 @@
 #include <variant>
 #include <toonzCalculations.h>
 
+#include <raster.h>
+
+
+
+#define USE_UINT16
+
+
+
+#ifdef USE_UINT16
+using PixelType = PixelRGBM64;
+inline int krish64 = 257;
+#else
+using PixelType = PixelRGBM32;
+inline int krish64 = 1;
+#endif
+
+
 class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions {
 
+
+
     //temporary variable
-    ToonzRasterPT<ToonzPixelBGRM32> testImage;
+    RasterP<PixelType> testImage;
 
     // Canvas 
     int canvasWidth = 800;
     int canvasHeight = 600; 
     toonzShader* shaderProgram = nullptr;     
     toonzPainterGL* rasterizer = nullptr; 
-    RectTI bound = RectTI{0,0,canvasWidth, canvasHeight};
+    int bpp = sizeof(PixelType);
 
     //brush
-    Brush::RasterBrush brush;
-    ToonzPixelBGRM32 curr_color;
+    Brush::RasterBrush<PixelType> brush;
+    PixelType curr_color;
     bool eraser;
 
 
@@ -53,14 +71,14 @@ class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions {
 
     bool painting = false;
 
-
+    
 
 
     
 
 
 public:
-    int brushsize = 0; //just doin spaghetti code to let this widget know the intial brush size!
+    int brushsize = 6; //just doin spaghetti code to let this widget know the intial brush size!
 
     explicit GLWidget(QWidget* parent = nullptr) ;
 
@@ -81,7 +99,7 @@ private:
     
 
 public slots:
-    void updateBrushColor(ToonzPixelBGRM32 Color);
+    void updateBrushColor(PixelType Color);
     void toggleEraser(bool enabled); 
     void updateBrushSize (int val);
     

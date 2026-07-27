@@ -27,7 +27,6 @@ GLWidget::GLWidget(QWidget* parent) : QOpenGLWidget(parent) {
 }
 
 
-
 void GLWidget::updateCursor() {
     int size = brushsize * 2 + 1; // +1 so circle has a center pixel
     QPixmap pixmap(size, size);
@@ -54,8 +53,8 @@ void GLWidget::initializeGL() {
 
     //-------test image (temporary) ------
 
-    testImage = std::make_shared<ToonzRasterT<ToonzPixelBGRM32>>(canvasWidth, canvasHeight);
-    testImage->createBlank();
+    testImage = std::make_shared<Raster<PixelType>>(canvasWidth, canvasHeight);
+    //testImage->createBlank();
 
     //----- initiateBrush (do before initiating opengl) ------
     initiateBrush();
@@ -76,27 +75,48 @@ void GLWidget::initializeGL() {
 
     // rasterizer
     rasterizer = new toonzPainterGL(
-        TAffine(), testImage->getRawData(),
-        canvasWidth, canvasWidth, canvasHeight, 4,
-        DimensionTI(canvasWidth, canvasHeight),
-        GL_NEAREST, GL_NEAREST,
-        false, shaderProgram
+        TAffine(), 
+        testImage->getTileLength(), 
+        canvasWidth, 
+        canvasHeight, 
+        sizeof(PixelType), //byte per pixel
+        DimensionTI(canvasWidth, canvasHeight), //dimensions of raster
+        GL_NEAREST,  //mag filter
+        GL_NEAREST, //min filter
+        false, // premulitplecation?
+        shaderProgram, //shader object
+        true //isrgbm
     );
 
-   glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-   //start = true;
+   glClearColor(255.0f, 255.0f, 255.0f, 255.0f);
 }
 
 
 void GLWidget::paintGL() {
+    std::vector<TileCoord> *dirty = testImage->getDirty();
 
-    rasterizer->PaintRaster(
-        RectTI{std::max(0,bound.x0 - brushsize), std::max(0, bound.y0 - brushsize), std::min(canvasWidth, bound.x1 + brushsize), std::min(canvasHeight, bound.y1 + brushsize)},
-        testImage->getRawData(), 
-        defaultFramebufferObject()
-    );
 
-    bound = RectTI(0,0, canvasWidth, canvasHeight);
+    int len = testImage->getTileLength();
+
+
+    
+    if(dirty->size() != 0){
+
+        //std::cout<<"painting tile(s)--------------------------"<<std::endl;
+
+        for(auto &tile : *dirty){
+
+            rasterizer->PaintRaster(
+                RectTI{tile.x * len , tile.y * len, (tile.x * len) + len, (tile.y * len) + len},
+                testImage->getRawData(tile.x * len, tile.y*len, false), 
+                defaultFramebufferObject()
+            );
+
+            testImage->unmarkDirty(tile.x, tile.y);
+        }
+        dirty->clear();
+    }
+    
 
 }
 
@@ -114,9 +134,7 @@ void GLWidget::resizeGL(int w, int h) {
 
 void GLWidget::updateCanvas(){
     int size = points.size();
-    
-    // accumulate dirty region across ALL segments
-    RectTI dirtyBound = {INT_MAX, INT_MAX, INT_MIN, INT_MIN};
+
 
     for(int i = 0; i + 2 < size; i += 3){
         PointTI P0 = points[i];
@@ -128,13 +146,8 @@ void GLWidget::updateCanvas(){
         PointTF P1(P1x, P1y);
 
         std::vector<PointTF> cache = toonzCalculate::QuadraticBezierCurveFloat(P0, P1, P2, 0.2f);
-        RectTI segBound = toonzCalculate::QuadraticBezierBounds(P0, P1, P2);
 
-        // expand dirty region
-        dirtyBound.x0 = std::min(dirtyBound.x0, segBound.x0);
-        dirtyBound.y0 = std::min(dirtyBound.y0, segBound.y0);
-        dirtyBound.x1 = std::max(dirtyBound.x1, segBound.x1);
-        dirtyBound.y1 = std::max(dirtyBound.y1, segBound.y1);
+
 
         int csize = cache.size();
         for(int j = 0; j + 1 < csize; j++){
@@ -144,17 +157,15 @@ void GLWidget::updateCanvas(){
 
     if(size % 3 == 2){
         brush.drawBrush(points[size-2], points[size-1]);
-        dirtyBound.x0 = std::min(dirtyBound.x0, std::min(points[size-2].x, points[size-1].x));
-        dirtyBound.y0 = std::min(dirtyBound.y0, std::min(points[size-2].y, points[size-1].y));
-        dirtyBound.x1 = std::max(dirtyBound.x1, std::max(points[size-2].x, points[size-1].x));
-        dirtyBound.y1 = std::max(dirtyBound.y1, std::max(points[size-2].y, points[size-1].y));
     }
 
-    bound = dirtyBound;
 
     points.clear();
 
+
+
     update();
+   
 }
 
 
@@ -226,7 +237,10 @@ void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
         p1 = PointT(-1, -1);
         p2 = PointT(-1, -1);
         p3 = PointT(-1, -1);
+        brush.resetBrush();
         event->accept();
+
+        
     }
 }
 
@@ -238,8 +252,8 @@ void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
 
      void GLWidget::initiateBrush(){
        
-        curr_color = ToonzPixelBGRM32(128,128,128,255);
-        ToonzPixelBGRM32 color =  ToonzPixelBGRM32(128,128,128,255);
+        curr_color = PixelType(128,128,128,255);
+        PixelType color =  PixelType(128,128,128,255);
 
         Brush::setBrush(Brush::RasterTypes::BRUSH_BGRM32, brush, testImage, color, brushsize);
         updateCursor();
@@ -255,7 +269,7 @@ void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
      }
 
      
-    void GLWidget::updateBrushColor(ToonzPixelBGRM32 Color){
+    void GLWidget::updateBrushColor(PixelType Color){
         if(eraser){
             curr_color = Color;
         } else {
@@ -269,7 +283,7 @@ void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
         if (enable) {
             eraser = true;
             // Transparent brush
-            ToonzPixelBGRM32 transparent = ToonzPixelBGRM32(255,255,255,255);
+            PixelType transparent = PixelType(255 * krish64,255 * krish64,255 * krish64, 255 * krish64);
             brush.setColor(transparent);
         }  else {
             eraser = false;

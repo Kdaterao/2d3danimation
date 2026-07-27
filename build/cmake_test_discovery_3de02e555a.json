@@ -1,0 +1,28 @@
+{
+  "tests": 2,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "PixelTest",
+      "tests": 1,
+      "testsuite": [
+        {
+          "name": "sizeofpixel",
+          "file": "\/Users\/krish\/codingStuff\/2d3danimation\/tests\/test_main.cpp",
+          "line": 137
+        }
+      ]
+    },
+    {
+      "name": "BrushTest",
+      "tests": 1,
+      "testsuite": [
+        {
+          "name": "halfcircle",
+          "file": "\/Users\/krish\/codingStuff\/2d3danimation\/tests\/test_main.cpp",
+          "line": 146
+        }
+      ]
+    }
+  ]
+}
