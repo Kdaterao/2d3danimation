@@ -1,8 +1,9 @@
-#ifndef BRUSHWIDGET_H
-#define  BRUSHWIDGET_H
+#ifndef COLORTRIANGLEWIDGET_H
+#define COLORTRIANGLEWIDGET_H
 
 
 
+#include <QObject>
 #include <QWidget>
 #include <QMouseEvent>
 #include <QVBoxLayout>

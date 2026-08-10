@@ -233,24 +233,80 @@ CMakeFiles/2d3danimation.dir/include/2D/Brush/MPLBrush/mplSurfaceAdapter.cpp.s: 
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2d3danimation.dir/include/2D/Brush/MPLBrush/mplSurfaceAdapter.cpp.s"
 	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/krish/codingStuff/2d3danimation/include/2D/Brush/MPLBrush/mplSurfaceAdapter.cpp -o CMakeFiles/2d3danimation.dir/include/2D/Brush/MPLBrush/mplSurfaceAdapter.cpp.s
 
-CMakeFiles/2d3danimation.dir/include/Widgets/BrushWidget/BrushWidget.cpp.o: CMakeFiles/2d3danimation.dir/flags.make
-CMakeFiles/2d3danimation.dir/include/Widgets/BrushWidget/BrushWidget.cpp.o: /Users/krish/codingStuff/2d3danimation/include/Widgets/BrushWidget/BrushWidget.cpp
-CMakeFiles/2d3danimation.dir/include/Widgets/BrushWidget/BrushWidget.cpp.o: CMakeFiles/2d3danimation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/2d3danimation.dir/include/Widgets/BrushWidget/BrushWidget.cpp.o"
-	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2d3danimation.dir/include/Widgets/BrushWidget/BrushWidget.cpp.o -MF CMakeFiles/2d3danimation.dir/include/Widgets/BrushWidget/BrushWidget.cpp.o.d -o CMakeFiles/2d3danimation.dir/include/Widgets/BrushWidget/BrushWidget.cpp.o -c /Users/krish/codingStuff/2d3danimation/include/Widgets/BrushWidget/BrushWidget.cpp
+CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.o: CMakeFiles/2d3danimation.dir/flags.make
+CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.o: /Users/krish/codingStuff/2d3danimation/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp
+CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.o: CMakeFiles/2d3danimation.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.o"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.o -MF CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.o.d -o CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.o -c /Users/krish/codingStuff/2d3danimation/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp
 
-CMakeFiles/2d3danimation.dir/include/Widgets/BrushWidget/BrushWidget.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2d3danimation.dir/include/Widgets/BrushWidget/BrushWidget.cpp.i"
-	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/krish/codingStuff/2d3danimation/include/Widgets/BrushWidget/BrushWidget.cpp > CMakeFiles/2d3danimation.dir/include/Widgets/BrushWidget/BrushWidget.cpp.i
+CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.i"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/krish/codingStuff/2d3danimation/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp > CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.i
 
-CMakeFiles/2d3danimation.dir/include/Widgets/BrushWidget/BrushWidget.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2d3danimation.dir/include/Widgets/BrushWidget/BrushWidget.cpp.s"
-	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/krish/codingStuff/2d3danimation/include/Widgets/BrushWidget/BrushWidget.cpp -o CMakeFiles/2d3danimation.dir/include/Widgets/BrushWidget/BrushWidget.cpp.s
+CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.s"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/krish/codingStuff/2d3danimation/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp -o CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.s
+
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.o: CMakeFiles/2d3danimation.dir/flags.make
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.o: /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.o: CMakeFiles/2d3danimation.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.o"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.o -MF CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.o.d -o CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.o -c /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp
+
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.i"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp > CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.i
+
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.s"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp -o CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.s
+
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.o: CMakeFiles/2d3danimation.dir/flags.make
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.o: /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/BrushCatalog.cpp
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.o: CMakeFiles/2d3danimation.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.o"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.o -MF CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.o.d -o CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.o -c /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/BrushCatalog.cpp
+
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.i"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/BrushCatalog.cpp > CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.i
+
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.s"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/BrushCatalog.cpp -o CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.s
+
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.o: CMakeFiles/2d3danimation.dir/flags.make
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.o: /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.o: CMakeFiles/2d3danimation.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.o"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.o -MF CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.o.d -o CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.o -c /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp
+
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.i"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp > CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.i
+
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.s"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp -o CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.s
+
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.o: CMakeFiles/2d3danimation.dir/flags.make
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.o: /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.o: CMakeFiles/2d3danimation.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.o"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.o -MF CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.o.d -o CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.o -c /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp
+
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.i"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp > CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.i
+
+CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.s"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp -o CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.s
 
 CMakeFiles/2d3danimation.dir/include/2D/Raster/old/toonzRaster.cpp.o: CMakeFiles/2d3danimation.dir/flags.make
 CMakeFiles/2d3danimation.dir/include/2D/Raster/old/toonzRaster.cpp.o: /Users/krish/codingStuff/2d3danimation/include/2D/Raster/old/toonzRaster.cpp
 CMakeFiles/2d3danimation.dir/include/2D/Raster/old/toonzRaster.cpp.o: CMakeFiles/2d3danimation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/2d3danimation.dir/include/2D/Raster/old/toonzRaster.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/2d3danimation.dir/include/2D/Raster/old/toonzRaster.cpp.o"
 	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2d3danimation.dir/include/2D/Raster/old/toonzRaster.cpp.o -MF CMakeFiles/2d3danimation.dir/include/2D/Raster/old/toonzRaster.cpp.o.d -o CMakeFiles/2d3danimation.dir/include/2D/Raster/old/toonzRaster.cpp.o -c /Users/krish/codingStuff/2d3danimation/include/2D/Raster/old/toonzRaster.cpp
 
 CMakeFiles/2d3danimation.dir/include/2D/Raster/old/toonzRaster.cpp.i: cmake_force
@@ -264,7 +320,7 @@ CMakeFiles/2d3danimation.dir/include/2D/Raster/old/toonzRaster.cpp.s: cmake_forc
 CMakeFiles/2d3danimation.dir/include/2D/Painter/UI/UIPainter.cpp.o: CMakeFiles/2d3danimation.dir/flags.make
 CMakeFiles/2d3danimation.dir/include/2D/Painter/UI/UIPainter.cpp.o: /Users/krish/codingStuff/2d3danimation/include/2D/Painter/UI/UIPainter.cpp
 CMakeFiles/2d3danimation.dir/include/2D/Painter/UI/UIPainter.cpp.o: CMakeFiles/2d3danimation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/2d3danimation.dir/include/2D/Painter/UI/UIPainter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/2d3danimation.dir/include/2D/Painter/UI/UIPainter.cpp.o"
 	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2d3danimation.dir/include/2D/Painter/UI/UIPainter.cpp.o -MF CMakeFiles/2d3danimation.dir/include/2D/Painter/UI/UIPainter.cpp.o.d -o CMakeFiles/2d3danimation.dir/include/2D/Painter/UI/UIPainter.cpp.o -c /Users/krish/codingStuff/2d3danimation/include/2D/Painter/UI/UIPainter.cpp
 
 CMakeFiles/2d3danimation.dir/include/2D/Painter/UI/UIPainter.cpp.i: cmake_force
@@ -278,7 +334,7 @@ CMakeFiles/2d3danimation.dir/include/2D/Painter/UI/UIPainter.cpp.s: cmake_force
 CMakeFiles/2d3danimation.dir/include/Utility/Math/toonzCalculations.cpp.o: CMakeFiles/2d3danimation.dir/flags.make
 CMakeFiles/2d3danimation.dir/include/Utility/Math/toonzCalculations.cpp.o: /Users/krish/codingStuff/2d3danimation/include/Utility/Math/toonzCalculations.cpp
 CMakeFiles/2d3danimation.dir/include/Utility/Math/toonzCalculations.cpp.o: CMakeFiles/2d3danimation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/2d3danimation.dir/include/Utility/Math/toonzCalculations.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/2d3danimation.dir/include/Utility/Math/toonzCalculations.cpp.o"
 	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2d3danimation.dir/include/Utility/Math/toonzCalculations.cpp.o -MF CMakeFiles/2d3danimation.dir/include/Utility/Math/toonzCalculations.cpp.o.d -o CMakeFiles/2d3danimation.dir/include/Utility/Math/toonzCalculations.cpp.o -c /Users/krish/codingStuff/2d3danimation/include/Utility/Math/toonzCalculations.cpp
 
 CMakeFiles/2d3danimation.dir/include/Utility/Math/toonzCalculations.cpp.i: cmake_force
@@ -292,7 +348,7 @@ CMakeFiles/2d3danimation.dir/include/Utility/Math/toonzCalculations.cpp.s: cmake
 CMakeFiles/2d3danimation.dir/include/Storage/storageManager.cpp.o: CMakeFiles/2d3danimation.dir/flags.make
 CMakeFiles/2d3danimation.dir/include/Storage/storageManager.cpp.o: /Users/krish/codingStuff/2d3danimation/include/Storage/storageManager.cpp
 CMakeFiles/2d3danimation.dir/include/Storage/storageManager.cpp.o: CMakeFiles/2d3danimation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/2d3danimation.dir/include/Storage/storageManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/2d3danimation.dir/include/Storage/storageManager.cpp.o"
 	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2d3danimation.dir/include/Storage/storageManager.cpp.o -MF CMakeFiles/2d3danimation.dir/include/Storage/storageManager.cpp.o.d -o CMakeFiles/2d3danimation.dir/include/Storage/storageManager.cpp.o -c /Users/krish/codingStuff/2d3danimation/include/Storage/storageManager.cpp
 
 CMakeFiles/2d3danimation.dir/include/Storage/storageManager.cpp.i: cmake_force
@@ -306,7 +362,7 @@ CMakeFiles/2d3danimation.dir/include/Storage/storageManager.cpp.s: cmake_force
 CMakeFiles/2d3danimation.dir/include/Storage/tinyXML/tinyxml2.cpp.o: CMakeFiles/2d3danimation.dir/flags.make
 CMakeFiles/2d3danimation.dir/include/Storage/tinyXML/tinyxml2.cpp.o: /Users/krish/codingStuff/2d3danimation/include/Storage/tinyXML/tinyxml2.cpp
 CMakeFiles/2d3danimation.dir/include/Storage/tinyXML/tinyxml2.cpp.o: CMakeFiles/2d3danimation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/2d3danimation.dir/include/Storage/tinyXML/tinyxml2.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/2d3danimation.dir/include/Storage/tinyXML/tinyxml2.cpp.o"
 	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2d3danimation.dir/include/Storage/tinyXML/tinyxml2.cpp.o -MF CMakeFiles/2d3danimation.dir/include/Storage/tinyXML/tinyxml2.cpp.o.d -o CMakeFiles/2d3danimation.dir/include/Storage/tinyXML/tinyxml2.cpp.o -c /Users/krish/codingStuff/2d3danimation/include/Storage/tinyXML/tinyxml2.cpp
 
 CMakeFiles/2d3danimation.dir/include/Storage/tinyXML/tinyxml2.cpp.i: cmake_force
@@ -330,7 +386,11 @@ CMakeFiles/2d3danimation.dir/include/Storage/tinyXML/tinyxml2.cpp.s: cmake_force
 "CMakeFiles/2d3danimation.dir/include/2D/Raster/rasterPixel.cpp.o" \
 "CMakeFiles/2d3danimation.dir/include/2D/Brush/MPLBrush/mplBrush.cpp.o" \
 "CMakeFiles/2d3danimation.dir/include/2D/Brush/MPLBrush/mplSurfaceAdapter.cpp.o" \
-"CMakeFiles/2d3danimation.dir/include/Widgets/BrushWidget/BrushWidget.cpp.o" \
+"CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.o" \
+"CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.o" \
+"CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.o" \
+"CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.o" \
+"CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.o" \
 "CMakeFiles/2d3danimation.dir/include/2D/Raster/old/toonzRaster.cpp.o" \
 "CMakeFiles/2d3danimation.dir/include/2D/Painter/UI/UIPainter.cpp.o" \
 "CMakeFiles/2d3danimation.dir/include/Utility/Math/toonzCalculations.cpp.o" \
@@ -351,7 +411,11 @@ CMakeFiles/2d3danimation.dir/include/Storage/tinyXML/tinyxml2.cpp.s: cmake_force
 2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/include/2D/Raster/rasterPixel.cpp.o
 2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/include/2D/Brush/MPLBrush/mplBrush.cpp.o
 2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/include/2D/Brush/MPLBrush/mplSurfaceAdapter.cpp.o
-2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/include/Widgets/BrushWidget/BrushWidget.cpp.o
+2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.o
+2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.o
+2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.o
+2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.o
+2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.o
 2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/include/2D/Raster/old/toonzRaster.cpp.o
 2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/include/2D/Painter/UI/UIPainter.cpp.o
 2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/include/Utility/Math/toonzCalculations.cpp.o
@@ -369,7 +433,7 @@ CMakeFiles/2d3danimation.dir/include/Storage/tinyXML/tinyxml2.cpp.s: cmake_force
 2d3danimation.app/Contents/MacOS/2d3danimation: /opt/homebrew/Cellar/glib/2.88.2/lib/libglib-2.0.dylib
 2d3danimation.app/Contents/MacOS/2d3danimation: /opt/homebrew/opt/gettext/lib/libintl.dylib
 2d3danimation.app/Contents/MacOS/2d3danimation: CMakeFiles/2d3danimation.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable 2d3danimation.app/Contents/MacOS/2d3danimation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable 2d3danimation.app/Contents/MacOS/2d3danimation"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/2d3danimation.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -33,6 +33,15 @@ struct mplSurfaceAdapter {
 //   INTERNAL MYPAINT METHODS 
 //===============================
 
+/*
+
+    NOTE: we convert our tile to mypaint format and then covert back to our 64 byte format 
+          this may cause a slight loss on a color channel (like 1 value off which is literally nothing considering that the range is 0-65535)
+
+*/
+
+
+
 template<class T>
 static void tile_request_start(MyPaintTiledSurface *tiled_surface, MyPaintTileRequest *request) {
     /*
@@ -55,19 +64,41 @@ static void tile_request_start(MyPaintTiledSurface *tiled_surface, MyPaintTileRe
     uint16_t *tile_pointer = NULL;
 
     if (tx >= self->ras->getLx() || ty >= self->ras->getLy() || tx < 0 || ty < 0) {
-        // Give it a tile which we will ignore writes to
+        // grab null tile 
         tile_pointer = (UINT16 *) self->ras->getNullTile();
 
     } else {
 
+        /*
+
+        // convert our pixel to mypaint format (before handing off to mypaint)
+        T *src =
+            (T*)self->ras->getRawData(
+                request->tx * 64,
+                request->ty * 64,
+                true
+                );
+        for (int i = 0; i < 64*64; i++)
+            {
+                src[i].r = src[i].r >> 1, 65535;
+                src[i].g = src[i].g >> 1, 65535;
+                src[i].b = src[i].b >> 1, 65535;
+                src[i].m = src[i].m >> 1, 65535;
+            }
+        */
+
+        
+        // pointer for request object
         tile_pointer = (UINT16 *) self->ras->getRawData(request->tx * 64, request->ty * 64, true); 
     }
 
+
+    //------ assign our tile poitner ------
     request->buffer = tile_pointer;
 }
 
 
-
+//dst[i].r = std::min(src[i*4 + 0] * 2, 65535);
 
 template<class T>
 static void tile_request_end(MyPaintTiledSurface *tiled_surface, MyPaintTileRequest *request) {
@@ -83,9 +114,23 @@ static void tile_request_end(MyPaintTiledSurface *tiled_surface, MyPaintTileRequ
         //--> uhh idrc what happens to null tile... sry!
         //though we should make sure to allot some space for it to prevent corruption !
     } else {
-        //------ convert to our desired type -----
+        //------ convert back to our pixel format -----
+
+        /*
+        T *src = (T *) request->buffer;
+
+        for (int i = 0; i < 64*64; i++)
+        {
+            src[i].r = std::min(src[i].r << 1, 65535);
+            src[i].g = std::min(src[i].g << 1, 65535);
+            src[i].b = std::min(src[i].b << 1, 65535);
+            src[i].m = std::min(src[i].m << 1, 65535);
+        }
     
+        */
+
     }
+    
 
 }
 

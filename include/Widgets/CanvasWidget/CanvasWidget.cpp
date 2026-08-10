@@ -1,6 +1,7 @@
 #include <CanvasWidget.h>
 #include <iostream>
 #include <fstream>
+#include <QString>
 
 
 
@@ -252,10 +253,25 @@ void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
 
      void GLWidget::initiateBrush(){
        
+        eraser = false;
         curr_color = PixelType(128,128,128,255);
         PixelType color =  PixelType(128,128,128,255);
 
         Brush::setBrush(Brush::RasterTypes::BRUSH_BGRM32, brush, testImage, color, brushsize);
+        updateCursor();
+     }
+
+     void GLWidget::selectBrush(const QString& brushId, Brush::RasterTypes type, int size) {
+        Q_UNUSED(brushId);
+        brushsize = size;
+        Brush::setBrush(type, brush, testImage, curr_color, brushsize);
+
+        if (eraser) {
+            PixelType transparent = PixelType(255 * krish64, 255 * krish64, 255 * krish64, 255 * krish64);
+            brush.setColor(transparent);
+        } else {
+            brush.setColor(curr_color);
+        }
         updateCursor();
      }
 

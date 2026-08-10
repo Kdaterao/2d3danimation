@@ -1,6 +1,7 @@
 #include <QApplication>
 #include <CanvasWidget.h>
-#include <BrushWidget.h>
+#include <ColorTriangleWidget.h>
+#include <ToolOptionWidget.h>
 #include <rasterPixel.h>
 
 
@@ -35,43 +36,40 @@ int main(int argc, char *argv[]) {
     canvas->setMaximumSize(800, 600);
     canvas->resize(800, 600); // sets window size (otherwise goes to default)
     
-    //----- Brush Widget -----
+    //----- Sidebar -----
 
-    QWidget *BrushWidget = new QWidget();
-    BrushWidget->setFixedSize(300, 300);
+    QWidget *sidebar = new QWidget();
+    sidebar->setFixedWidth(300);
 
-    QVBoxLayout* Brushlayout = new QVBoxLayout(BrushWidget);
-
+    QVBoxLayout* sidebarLayout = new QVBoxLayout(sidebar);
+    sidebarLayout->setContentsMargins(0, 0, 0, 0);
+    sidebarLayout->setSpacing(4);
 
     //color picker
-    ColorTriangleWidget *ColorWidget = new ColorTriangleWidget(BrushWidget);
-    ColorWidget->setFixedSize(200, 200);
+    ColorTriangleWidget *ColorWidget = new ColorTriangleWidget(sidebar);
+    ColorWidget->setFixedSize(300, 300);
             
-    Brushlayout->addWidget(ColorWidget);
+    sidebarLayout->addWidget(ColorWidget);
 
-    // Eraser toggle
-    QCheckBox* eraserToggle = new QCheckBox("Eraser", BrushWidget);
-    Brushlayout->addWidget(eraserToggle);
-        
-    // Brush Size 
     int initialBrushSize = 5;
-    QSlider* brushSizeSlider = new QSlider( BrushWidget);
-    brushSizeSlider->setRange(1, 50 );
-    brushSizeSlider->setValue(initialBrushSize);
-    brushSizeSlider->setOrientation(Qt::Horizontal);
-    Brushlayout->addWidget(brushSizeSlider);
+    ToolOptionWidget* toolOptions = new ToolOptionWidget(initialBrushSize, sidebar);
+    sidebarLayout->addWidget(toolOptions, 1);
 
     canvas->brushsize = initialBrushSize; 
 
     //----- connect widgets ------
 
     layout->addWidget(canvas);
-    layout->addWidget(BrushWidget);
+    layout->addWidget(sidebar);
+
+    window->setMinimumSize(1100, 650);
+    window->resize(1300, 650);
 
     //----- signal and slots -----
     QObject::connect(ColorWidget, &ColorTriangleWidget::sendColor, canvas, &GLWidget::updateBrushColor);
-    QObject::connect(eraserToggle, &QCheckBox::toggled, canvas, &GLWidget::toggleEraser);
-    QObject::connect(brushSizeSlider, QOverload<int>::of(&QSlider::valueChanged),canvas, &GLWidget::updateBrushSize); 
+    QObject::connect(toolOptions, &ToolOptionWidget::eraserToggled, canvas, &GLWidget::toggleEraser);
+    QObject::connect(toolOptions, &ToolOptionWidget::brushSizeChanged, canvas, &GLWidget::updateBrushSize);
+    QObject::connect(toolOptions, &ToolOptionWidget::brushSelected, canvas, &GLWidget::selectBrush); 
 
     window->show();
 

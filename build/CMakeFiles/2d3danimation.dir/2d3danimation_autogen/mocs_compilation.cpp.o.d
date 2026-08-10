@@ -1,12 +1,12 @@
 CMakeFiles/2d3danimation.dir/2d3danimation_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/Cellar/llvm/22.1.7_1/lib/clang/22/share/asan_ignorelist.txt \
   /Users/krish/codingStuff/2d3danimation/build/2d3danimation_autogen/mocs_compilation.cpp \
-  /Users/krish/codingStuff/2d3danimation/build/2d3danimation_autogen/U6SM3OTIIT/moc_BrushWidget.cpp \
-  /Users/krish/codingStuff/2d3danimation/build/2d3danimation_autogen/U6SM3OTIIT/../../../include/Widgets/BrushWidget/BrushWidget.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QWidget \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qwidget.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtguiglobal.h \
+  /Users/krish/codingStuff/2d3danimation/build/2d3danimation_autogen/L753DFQBDO/moc_ColorTriangleWidget.cpp \
+  /Users/krish/codingStuff/2d3danimation/build/2d3danimation_autogen/L753DFQBDO/../../../include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QObject \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qobject.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qobjectdefs.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qnamespace.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qglobal.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/type_traits \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__config \
@@ -849,13 +849,6 @@ CMakeFiles/2d3danimation.dir/2d3danimation_autogen/mocs_compilation.cpp.o: \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qtresource.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qttranslation.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qversiontagging.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtgui-config.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtguiexports.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qtwidgets-config.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qtwidgetsexports.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qwindowdefs.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qobjectdefs.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qnamespace.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qcompare.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qstdlibdetection.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qcomparehelpers.h \
@@ -1010,7 +1003,6 @@ CMakeFiles/2d3danimation.dir/2d3danimation_autogen/mocs_compilation.cpp.o: \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qtmetamacros.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qobjectdefs_impl.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qfunctionaltools_impl.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qobject.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qstring.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qchar.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qbytearray.h \
@@ -1194,6 +1186,15 @@ CMakeFiles/2d3danimation.dir/2d3danimation_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__charconv/from_chars_result.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__charconv/from_chars_integral.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__charconv/to_chars.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QWidget \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qwidget.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtguiglobal.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtgui-config.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtguiexports.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qtwidgets-config.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qtwidgetsexports.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qwindowdefs.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qmargins.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qcheckedint_impl.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/q23utility.h \
@@ -1259,7 +1260,6 @@ CMakeFiles/2d3danimation.dir/2d3danimation_autogen/mocs_compilation.cpp.o: \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qinputdevice.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qscreen.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QList \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QObject \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QRect \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QSize \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QSizeF \
@@ -1277,7 +1277,6 @@ CMakeFiles/2d3danimation.dir/2d3danimation_autogen/mocs_compilation.cpp.o: \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qlayout.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qlayoutitem.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qgridlayout.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QHBoxLayout \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QSlider \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qslider.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qabstractslider.h \
@@ -1289,10 +1288,6 @@ CMakeFiles/2d3danimation.dir/2d3danimation_autogen/mocs_compilation.cpp.o: \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qframe.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qpicture.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtextdocument.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QRadioButton \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qradiobutton.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QButtonGroup \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qbuttongroup.h \
   /Users/krish/codingStuff/qt6-build/lib/QtOpenGLWidgets.framework/Headers/QOpenGLWidget \
   /Users/krish/codingStuff/qt6-build/lib/QtOpenGLWidgets.framework/Headers/qopenglwidget.h \
   /Users/krish/codingStuff/qt6-build/lib/QtOpenGLWidgets.framework/Headers/qtopenglwidgetsglobal.h \
@@ -1315,12 +1310,11 @@ CMakeFiles/2d3danimation.dir/2d3danimation_autogen/mocs_compilation.cpp.o: \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qopenglfunctions.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qopenglcontext.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qopenglcontext_platform.h \
-  /Users/krish/codingStuff/2d3danimation/include/2D/Brush/Brush.h \
-  /Users/krish/codingStuff/2d3danimation/include/2D/Brush/ToonzBrush/toonzRasterBrush.h \
+  /Users/krish/codingStuff/2d3danimation/include/2D/Raster/rasterPixel.h \
   /Users/krish/codingStuff/2d3danimation/include/Utility/Types/types.h \
+  /Users/krish/codingStuff/2d3danimation/include/2D/Brush/ToonzBrush/toonzRasterBrush.h \
   /Users/krish/codingStuff/2d3danimation/include/Utility/Math/toonzGeometry.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/iostream \
-  /Users/krish/codingStuff/2d3danimation/include/2D/Raster/rasterPixel.h \
   /Users/krish/codingStuff/2d3danimation/include/2D/Raster/raster.h \
   /Users/krish/codingStuff/2d3danimation/include/2D/Raster/rasterTile.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/thread \
@@ -1334,19 +1328,7 @@ CMakeFiles/2d3danimation.dir/2d3danimation_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__stop_token/intrusive_list_view.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__stop_token/stop_token.h \
   /Users/krish/codingStuff/2d3danimation/include/2D/Brush/ToonzBrush/toonzRasterCircleBrush.h \
-  /Users/krish/codingStuff/2d3danimation/include/2D/Brush/MPLBrush/mplBrush.h \
-  /usr/local/include/libmypaint-2.0/mypaint-brush.h \
-  /usr/local/include/libmypaint-2.0/mypaint-config.h \
-  /usr/local/include/libmypaint-2.0/mypaint-surface.h \
-  /usr/local/include/libmypaint-2.0/mypaint-rectangle.h \
-  /usr/local/include/libmypaint-2.0/mypaint-glib-compat.h \
-  /usr/local/include/libmypaint-2.0/mypaint-brush-settings.h \
-  /usr/local/include/libmypaint-2.0/mypaint-brush-settings-gen.h \
-  /Users/krish/codingStuff/2d3danimation/include/2D/Brush/MPLBrush/mplSurfaceAdapter.h \
-  /usr/local/include/libmypaint-2.0/mypaint-tiled-surface.h \
-  /usr/local/include/libmypaint-2.0/mypaint-symmetry.h \
-  /usr/local/include/libmypaint-2.0/mypaint-matrix.h \
-  /Users/krish/codingStuff/2d3danimation/include/2D/Painter/UI/UIPainter.h \
+  /Users/krish/codingStuff/2d3danimation/include/2D/Painter/Canvas/painterGL.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/QMatrix4x4 \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qmatrix4x4.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qvector3d.h \
@@ -1373,6 +1355,7 @@ CMakeFiles/2d3danimation.dir/2d3danimation_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__filesystem/u8path.h \
   /Users/krish/codingStuff/2d3danimation/include/2D/Painter/General/Texture/toonzTextureManager.h \
   /Users/krish/codingStuff/2d3danimation/include/2D/Painter/General/Shader/toonzShader.h \
+  /Users/krish/codingStuff/2d3danimation/include/2D/Painter/UI/UIPainter.h \
   /Users/krish/codingStuff/2d3danimation/include/2D/Painter/UI/UIShapes.h \
   /Users/krish/codingStuff/2d3danimation/include/Widgets/CanvasWidget/CanvasWidget.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QTimer \
@@ -1383,10 +1366,36 @@ CMakeFiles/2d3danimation.dir/2d3danimation_autogen/mocs_compilation.cpp.o: \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qpen.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/QPixmap \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/QCursor \
-  /Users/krish/codingStuff/2d3danimation/include/2D/Painter/Canvas/painterGL.h \
+  /Users/krish/codingStuff/2d3danimation/include/2D/Brush/Brush.h \
+  /Users/krish/codingStuff/2d3danimation/include/2D/Brush/MPLBrush/mplBrush.h \
+  /usr/local/include/libmypaint-2.0/mypaint-brush.h \
+  /usr/local/include/libmypaint-2.0/mypaint-config.h \
+  /usr/local/include/libmypaint-2.0/mypaint-surface.h \
+  /usr/local/include/libmypaint-2.0/mypaint-rectangle.h \
+  /usr/local/include/libmypaint-2.0/mypaint-glib-compat.h \
+  /usr/local/include/libmypaint-2.0/mypaint-brush-settings.h \
+  /usr/local/include/libmypaint-2.0/mypaint-brush-settings-gen.h \
+  /Users/krish/codingStuff/2d3danimation/include/2D/Brush/MPLBrush/mplSurfaceAdapter.h \
+  /usr/local/include/libmypaint-2.0/mypaint-tiled-surface.h \
+  /usr/local/include/libmypaint-2.0/mypaint-symmetry.h \
+  /usr/local/include/libmypaint-2.0/mypaint-matrix.h \
   /Users/krish/codingStuff/2d3danimation/include/Utility/Math/toonzCalculations.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QString \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtextcursor.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtextformat.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qtmochelpers.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qtmocconstants.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/q20algorithm.h
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/q20algorithm.h \
+  /Users/krish/codingStuff/2d3danimation/build/2d3danimation_autogen/VBYBMSDPZA/moc_ToolOptionWidget.cpp \
+  /Users/krish/codingStuff/2d3danimation/build/2d3danimation_autogen/VBYBMSDPZA/../../../include/Widgets/ToolOptionWidget/ToolOptionWidget.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QStackedWidget \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+  /Users/krish/codingStuff/2d3danimation/build/2d3danimation_autogen/CTV2M3SF4E/moc_BrushPreviewCell.cpp \
+  /Users/krish/codingStuff/2d3danimation/build/2d3danimation_autogen/CTV2M3SF4E/../../../include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.h \
+  /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/BrushCatalog.h \
+  /Users/krish/codingStuff/2d3danimation/build/2d3danimation_autogen/CTV2M3SF4E/moc_BrushWidget.cpp \
+  /Users/krish/codingStuff/2d3danimation/build/2d3danimation_autogen/CTV2M3SF4E/../../../include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QGridLayout \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QScrollArea \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qscrollarea.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qabstractscrollarea.h

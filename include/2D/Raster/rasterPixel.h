@@ -325,11 +325,8 @@ class PixelRGBM64 {
         inline bool operator<=(const PixelRGBM64 &p) const {
                         return *(const UINT64 *)this <= *(const UINT64 *)&p;
                     }
-
-        //----- default colors -----
    
 };
-
 
 
 

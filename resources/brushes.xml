@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Brush catalog loaded once at startup by BrushCatalog.
+
+  Attributes per <brush>:
+    id          - unique key used internally and for selection persistence
+    name        - display name (tooltip / future label)
+    type        - engine type, must match Brush::RasterTypes:
+                    BRUSH_BGRM32  - default circle raster brush
+                    MPL_BRUSH     - MyPaint brush
+    defaultSize - initial radius passed to the canvas when this brush is selected
+    brushFile   - (optional) path to a .myb file for MPL_BRUSH entries
+    preview     - (optional) path to a raster preview image; UIPainter placeholder used if omitted
+-->
+<brushCatalog version="1">
+    <brush id="default_circle"
+           name="Circle"
+           type="BRUSH_BGRM32"
+           defaultSize="5" />
+
+    <brush id="mpl_default"
+           name="MyPaint"
+           type="MPL_BRUSH"
+           defaultSize="10" />
+
+    <brush id="mpl_soft"
+           name="Soft"
+           type="MPL_BRUSH"
+           defaultSize="15" />
+</brushCatalog>

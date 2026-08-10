@@ -141,7 +141,7 @@ class UIPainter: public QOpenGLWidget, protected QOpenGLFunctions{
 
         };
 
-
+        
         void cleanUp();
 
 

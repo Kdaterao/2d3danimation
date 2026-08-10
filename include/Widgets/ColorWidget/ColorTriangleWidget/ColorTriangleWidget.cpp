@@ -1,7 +1,9 @@
-#include <BrushWidget.h>
+#include <ColorTriangleWidget.h>
 
 
-
+//---------------------------------
+//      Color Triangle Logic      
+//---------------------------------
 
 void ColorTriangleWidget::getColor(QMouseEvent *event){
 
@@ -70,7 +72,9 @@ PixelType color = PixelType(
 
  }
 
-
+//---------------------------------
+//     Input Handling Logic      
+//---------------------------------
 
 
 void ColorTriangleWidget::mousePressEvent(QMouseEvent *event) {
@@ -89,14 +93,14 @@ void ColorTriangleWidget::mouseMoveEvent(QMouseEvent *event){
 
 }
 
-//------ visual ------
-
+//-----------------------------------
+// Color Triangle Visualization Logic    
+//-----------------------------------
 
  void ColorTriangleWidget::initializeGL() {
      //----- setup Opengl ------
     initializeOpenGLFunctions();
     setUpdateBehavior(QOpenGLWidget::PartialUpdate);//stops Qwidget from constantly overwriting the screen
-
 
     //----- shaders ------
 
@@ -105,7 +109,7 @@ void ColorTriangleWidget::mouseMoveEvent(QMouseEvent *event){
         "/Users/krish/codingStuff/2d3danimation/include/2D/Painter/General/Shader/ShaderScripts/fsColorTriangle.txt"
     );
 
-    //----- set up rasterizer ------
+    //----- set up rasterizer (UIPainter) ------
 
     rasterizer =  new UIPainter(this->width(), this->height(),  
                                 GL_NEAREST, GL_NEAREST, 
@@ -114,18 +118,14 @@ void ColorTriangleWidget::mouseMoveEvent(QMouseEvent *event){
 
     //----- place holder triangle (will replace with better one later (like the one in opentoonz!)) -----
 
-    VertexRGBM32 v0(0.0f,  1.0f, 0.0f, 1.0f, 0.0f, 1.0f);  // Top vertex: Green
-    VertexRGBM32 v1(-1.0f, -1.0f, 0.0f, 0.0f,   1.0f, 1.0f); // Bottom-left: Blue
-    VertexRGBM32 v2(1.0f, -1.0f, 1.0f, 0.0f, 0.0f, 1.0f);  // Bottom-right: Red
+    VertexRGBM32 v0(0.0f,  1.0f, 0.0f, 1.0f, 0.0f, 1.0f);  // Top, Green
+    VertexRGBM32 v1(-1.0f, -1.0f, 0.0f, 0.0f, 1.0f, 1.0f); // Bottom-left, Blue
+    VertexRGBM32 v2(1.0f, -1.0f, 1.0f, 0.0f, 0.0f, 1.0f);  // Bottom-right, Red
 
     Triangle shape = Triangle(v0, v1, v2);
-
-
-
     rasterizer->addGeometry(shape);
+
  }
-
-
 
  void ColorTriangleWidget::paintGL(){
     rasterizer->Paint(defaultFramebufferObject(), true);

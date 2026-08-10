@@ -306,7 +306,7 @@ class Raster {
 
         //----- utility to quickly make a new buffer -------
         UCHAR *makeBuffer(){
-            std::cout<<"pixelSize"<<pixelSize<<std::endl;
+            //std::cout<<"pixelSize"<<pixelSize<<std::endl;
             int size = tile_length * tile_length * pixelSize;
             UCHAR* buffer = new UCHAR[size];
             memset(buffer, 255, size);

@@ -30,8 +30,14 @@ set(SOURCES
     include/2D/Brush/MPLBrush/mplSurfaceAdapter.cpp include/2D/Brush/MPLBrush/mplSurfaceAdapter.h
     
     
-    include/Widgets/BrushWidget/BrushWidget.cpp  include/Widgets/BrushWidget/BrushWidget.h
     include/Widgets/CanvasWidget/CanvasWidget.cpp include/Widgets/CanvasWidget/CanvasWidget.h
+
+    include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.h
+
+    include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp include/Widgets/ToolOptionWidget/ToolOptionWidget.h
+    include/Widgets/ToolOptionWidget/BrushCatalog.cpp include/Widgets/ToolOptionWidget/BrushCatalog.h
+    include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.h
+    include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.h
     
 
     include/2D/Raster/raster.h
@@ -54,7 +60,9 @@ set(SOURCES
 
 set(PROJECT_INCLUDE_DIRS
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Widgets/CanvasWidget
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/Widgets/BrushWidget
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/Widgets/ColorWidget/ColorTriangleWidget
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/Widgets/ToolOptionWidget
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget
 
     ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Brush
     ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Brush/MPLBrush

@@ -23,6 +23,7 @@
 #include <toonzCalculations.h>
 
 #include <raster.h>
+#include <QString>
 
 
 
@@ -102,6 +103,7 @@ public slots:
     void updateBrushColor(PixelType Color);
     void toggleEraser(bool enabled); 
     void updateBrushSize (int val);
+    void selectBrush(const QString& brushId, Brush::RasterTypes type, int size);
     
 
     void updateCanvas();

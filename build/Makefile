@@ -603,33 +603,6 @@ include/Utility/Math/toonzCalculations.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Utility/Math/toonzCalculations.cpp.s
 .PHONY : include/Utility/Math/toonzCalculations.cpp.s
 
-include/Widgets/BrushWidget/BrushWidget.o: include/Widgets/BrushWidget/BrushWidget.cpp.o
-.PHONY : include/Widgets/BrushWidget/BrushWidget.o
-
-# target to build an object file
-include/Widgets/BrushWidget/BrushWidget.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/BrushWidget/BrushWidget.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/BrushWidget/BrushWidget.cpp.o
-.PHONY : include/Widgets/BrushWidget/BrushWidget.cpp.o
-
-include/Widgets/BrushWidget/BrushWidget.i: include/Widgets/BrushWidget/BrushWidget.cpp.i
-.PHONY : include/Widgets/BrushWidget/BrushWidget.i
-
-# target to preprocess a source file
-include/Widgets/BrushWidget/BrushWidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/BrushWidget/BrushWidget.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/BrushWidget/BrushWidget.cpp.i
-.PHONY : include/Widgets/BrushWidget/BrushWidget.cpp.i
-
-include/Widgets/BrushWidget/BrushWidget.s: include/Widgets/BrushWidget/BrushWidget.cpp.s
-.PHONY : include/Widgets/BrushWidget/BrushWidget.s
-
-# target to generate assembly for a file
-include/Widgets/BrushWidget/BrushWidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/BrushWidget/BrushWidget.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/BrushWidget/BrushWidget.cpp.s
-.PHONY : include/Widgets/BrushWidget/BrushWidget.cpp.s
-
 include/Widgets/CanvasWidget/CanvasWidget.o: include/Widgets/CanvasWidget/CanvasWidget.cpp.o
 .PHONY : include/Widgets/CanvasWidget/CanvasWidget.o
 
@@ -656,6 +629,141 @@ include/Widgets/CanvasWidget/CanvasWidget.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/CanvasWidget/CanvasWidget.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/CanvasWidget/CanvasWidget.cpp.s
 .PHONY : include/Widgets/CanvasWidget/CanvasWidget.cpp.s
+
+include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.o: include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.o
+.PHONY : include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.o
+
+# target to build an object file
+include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.o
+.PHONY : include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.o
+
+include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.i: include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.i
+.PHONY : include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.i
+
+# target to preprocess a source file
+include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.i
+.PHONY : include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.i
+
+include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.s: include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.s
+.PHONY : include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.s
+
+# target to generate assembly for a file
+include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.s
+.PHONY : include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.s
+
+include/Widgets/ToolOptionWidget/BrushCatalog.o: include/Widgets/ToolOptionWidget/BrushCatalog.cpp.o
+.PHONY : include/Widgets/ToolOptionWidget/BrushCatalog.o
+
+# target to build an object file
+include/Widgets/ToolOptionWidget/BrushCatalog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.o
+.PHONY : include/Widgets/ToolOptionWidget/BrushCatalog.cpp.o
+
+include/Widgets/ToolOptionWidget/BrushCatalog.i: include/Widgets/ToolOptionWidget/BrushCatalog.cpp.i
+.PHONY : include/Widgets/ToolOptionWidget/BrushCatalog.i
+
+# target to preprocess a source file
+include/Widgets/ToolOptionWidget/BrushCatalog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.i
+.PHONY : include/Widgets/ToolOptionWidget/BrushCatalog.cpp.i
+
+include/Widgets/ToolOptionWidget/BrushCatalog.s: include/Widgets/ToolOptionWidget/BrushCatalog.cpp.s
+.PHONY : include/Widgets/ToolOptionWidget/BrushCatalog.s
+
+# target to generate assembly for a file
+include/Widgets/ToolOptionWidget/BrushCatalog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.s
+.PHONY : include/Widgets/ToolOptionWidget/BrushCatalog.cpp.s
+
+include/Widgets/ToolOptionWidget/ToolOptionWidget.o: include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.o
+.PHONY : include/Widgets/ToolOptionWidget/ToolOptionWidget.o
+
+# target to build an object file
+include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.o
+.PHONY : include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.o
+
+include/Widgets/ToolOptionWidget/ToolOptionWidget.i: include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.i
+.PHONY : include/Widgets/ToolOptionWidget/ToolOptionWidget.i
+
+# target to preprocess a source file
+include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.i
+.PHONY : include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.i
+
+include/Widgets/ToolOptionWidget/ToolOptionWidget.s: include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.s
+.PHONY : include/Widgets/ToolOptionWidget/ToolOptionWidget.s
+
+# target to generate assembly for a file
+include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.s
+.PHONY : include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp.s
+
+include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.o: include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.o
+.PHONY : include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.o
+
+# target to build an object file
+include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.o
+.PHONY : include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.o
+
+include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.i: include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.i
+.PHONY : include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.i
+
+# target to preprocess a source file
+include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.i
+.PHONY : include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.i
+
+include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.s: include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.s
+.PHONY : include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.s
+
+# target to generate assembly for a file
+include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.s
+.PHONY : include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.s
+
+include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.o: include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.o
+.PHONY : include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.o
+
+# target to build an object file
+include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.o
+.PHONY : include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.o
+
+include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.i: include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.i
+.PHONY : include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.i
+
+# target to preprocess a source file
+include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.i
+.PHONY : include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.i
+
+include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.s: include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.s
+.PHONY : include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.s
+
+# target to generate assembly for a file
+include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.s
+.PHONY : include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -765,12 +873,24 @@ help:
 	@echo "... include/Utility/Math/toonzCalculations.o"
 	@echo "... include/Utility/Math/toonzCalculations.i"
 	@echo "... include/Utility/Math/toonzCalculations.s"
-	@echo "... include/Widgets/BrushWidget/BrushWidget.o"
-	@echo "... include/Widgets/BrushWidget/BrushWidget.i"
-	@echo "... include/Widgets/BrushWidget/BrushWidget.s"
 	@echo "... include/Widgets/CanvasWidget/CanvasWidget.o"
 	@echo "... include/Widgets/CanvasWidget/CanvasWidget.i"
 	@echo "... include/Widgets/CanvasWidget/CanvasWidget.s"
+	@echo "... include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.o"
+	@echo "... include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.i"
+	@echo "... include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.s"
+	@echo "... include/Widgets/ToolOptionWidget/BrushCatalog.o"
+	@echo "... include/Widgets/ToolOptionWidget/BrushCatalog.i"
+	@echo "... include/Widgets/ToolOptionWidget/BrushCatalog.s"
+	@echo "... include/Widgets/ToolOptionWidget/ToolOptionWidget.o"
+	@echo "... include/Widgets/ToolOptionWidget/ToolOptionWidget.i"
+	@echo "... include/Widgets/ToolOptionWidget/ToolOptionWidget.s"
+	@echo "... include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.o"
+	@echo "... include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.i"
+	@echo "... include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.s"
+	@echo "... include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.o"
+	@echo "... include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.i"
+	@echo "... include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

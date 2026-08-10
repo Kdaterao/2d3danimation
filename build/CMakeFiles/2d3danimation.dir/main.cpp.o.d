@@ -1242,24 +1242,6 @@ CMakeFiles/2d3danimation.dir/main.cpp.o: \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qvarlengtharray.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qalloc.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qguiapplication_platform.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QWidget \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qwidget.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qaction.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qkeysequence.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qicon.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qpalette.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qbrush.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qfont.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qendian.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qfontmetrics.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qfontinfo.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qfontvariableaxis.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qsizepolicy.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QLayout \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qlayout.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qlayoutitem.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qboxlayout.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qgridlayout.h \
   /Users/krish/codingStuff/2d3danimation/include/Widgets/CanvasWidget/CanvasWidget.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/QMouseEvent \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qevent.h \
@@ -1278,10 +1260,23 @@ CMakeFiles/2d3danimation.dir/main.cpp.o: \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QSizeF \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/QTransform \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qscreen_platform.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qkeysequence.h \
   /Users/krish/codingStuff/qt6-build/lib/QtOpenGLWidgets.framework/Headers/QOpenGLWidget \
   /Users/krish/codingStuff/qt6-build/lib/QtOpenGLWidgets.framework/Headers/qopenglwidget.h \
   /Users/krish/codingStuff/qt6-build/lib/QtOpenGLWidgets.framework/Headers/qtopenglwidgetsglobal.h \
   /Users/krish/codingStuff/qt6-build/lib/QtOpenGLWidgets.framework/Headers/qtopenglwidgetsexports.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QWidget \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qwidget.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qaction.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qicon.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qpalette.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qbrush.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qfont.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qendian.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qfontmetrics.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qfontinfo.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qfontvariableaxis.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qsizepolicy.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/QSurfaceFormat \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qsurfaceformat.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qopengl.h \
@@ -1367,9 +1362,13 @@ CMakeFiles/2d3danimation.dir/main.cpp.o: \
   /usr/local/include/libmypaint-2.0/mypaint-symmetry.h \
   /usr/local/include/libmypaint-2.0/mypaint-matrix.h \
   /Users/krish/codingStuff/2d3danimation/include/Utility/Math/toonzCalculations.h \
-  /Users/krish/codingStuff/2d3danimation/include/Widgets/BrushWidget/BrushWidget.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QString \
+  /Users/krish/codingStuff/2d3danimation/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QVBoxLayout \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QHBoxLayout \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qboxlayout.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qlayout.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qlayoutitem.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qgridlayout.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QSlider \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qslider.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qabstractslider.h \
@@ -1381,9 +1380,9 @@ CMakeFiles/2d3danimation.dir/main.cpp.o: \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qframe.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qpicture.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtextdocument.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QRadioButton \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qradiobutton.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QButtonGroup \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qbuttongroup.h \
   /Users/krish/codingStuff/2d3danimation/include/2D/Painter/UI/UIPainter.h \
-  /Users/krish/codingStuff/2d3danimation/include/2D/Painter/UI/UIShapes.h
+  /Users/krish/codingStuff/2d3danimation/include/2D/Painter/UI/UIShapes.h \
+  /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolOptionWidget.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QStackedWidget \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QLayout

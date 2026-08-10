@@ -54,16 +54,10 @@ class mplBrush {
             mypaint_brush_set_base_value(brush, MYPAINT_BRUSH_SETTING_COLOR_V, 1.0);
 
             mypaint_brush_set_base_value(
-    brush,
-    MYPAINT_BRUSH_SETTING_DABS_PER_SECOND,
-    10.0f
-);
-
-            std::cout << "dabspersecond"<<mypaint_brush_get_base_value(
-    brush,
-    MYPAINT_BRUSH_SETTING_DABS_PER_SECOND
-) << std::endl;
-
+                                            brush,
+                                            MYPAINT_BRUSH_SETTING_DABS_PER_SECOND,
+                                            10.0f
+                                        );
         };
 
         //-------------------------
@@ -91,7 +85,7 @@ class mplBrush {
         void drawBrush(PointTF a, PointTF b) {
 
             mypaint_surface_begin_atomic((MyPaintSurface*)surface);
-            std::cout<<"set surface!"<<std::endl;
+            //std::cout<<"set surface!"<<std::endl;
 
             mypaint_brush_new_stroke(brush);
 
@@ -111,7 +105,7 @@ class mplBrush {
 
             }
             
-            std::cout<<"yay stroke !"<<std::endl;
+            //std::cout<<"yay stroke !"<<std::endl;
 
             /* 
                 Finalize the surface operation, passing one or more invalidation
@@ -126,7 +120,7 @@ class mplBrush {
             rois.rectangles = &roi;
 
             mypaint_surface_end_atomic((MyPaintSurface *)surface, &rois);
-            std::cout<<"yay finsihed!"<<std::endl;
+            //std::cout<<"yay finsihed!"<<std::endl;
 
         }
 
@@ -211,9 +205,9 @@ class mplBrush {
 
         void setColor(T &color)
         {
-            float r = color.r / 255.0f;
-            float g = color.g / 255.0f;
-            float b = color.b / 255.0f;
+            float r = color.r / (float)T::maxChannelValue;
+            float g = color.g / (float)T::maxChannelValue;
+            float b = color.b / (float)T::maxChannelValue;
 
             float maxValue = std::max({ r, g, b });
             float minValue = std::min({ r, g, b });
@@ -250,6 +244,9 @@ class mplBrush {
                 h /= 6.0f;
             }
 
+            std::cout<<"r:"<<r<<"g:"<<g<<"b:"<<b<<std::endl;
+            std::cout<< "h:"<<h<<"s"<<s<<"v:"<<v<<std::endl;
+                        
             mypaint_brush_set_base_value(
                 brush,
                 MYPAINT_BRUSH_SETTING_COLOR_H,

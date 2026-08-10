@@ -143,8 +143,8 @@ public:
 
 
   inline int getCoord(int x) {
-    std::cout<<"x:"<<x<<std::endl;
-    std::cout<<"m_radius:"<<m_radius<<std::endl;
+    //std::cout<<"x:"<<x<<std::endl;
+    //std::cout<<"m_radius:"<<m_radius<<std::endl;
     assert(0 <= x && x <= m_radius);
     return m_array[x];
   };
@@ -255,7 +255,13 @@ class toonzBrush {
         //------ set new brush color ------
 
         inline void setColor(T i_color){
+
+            // { NOTE } set a toggle so we may switch between 15 bit myapint and our regular shi
                 color = i_color;
+                
+                color.r = color.r >> 1;
+                color.g = color.g >> 1;
+                color.b = color.b >> 1;
         }
 };
 

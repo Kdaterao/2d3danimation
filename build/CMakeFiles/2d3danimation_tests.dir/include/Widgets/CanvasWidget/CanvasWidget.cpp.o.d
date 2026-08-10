@@ -1358,4 +1358,5 @@ CMakeFiles/2d3danimation_tests.dir/include/Widgets/CanvasWidget/CanvasWidget.cpp
   /usr/local/include/libmypaint-2.0/mypaint-tiled-surface.h \
   /usr/local/include/libmypaint-2.0/mypaint-symmetry.h \
   /usr/local/include/libmypaint-2.0/mypaint-matrix.h \
-  /Users/krish/codingStuff/2d3danimation/include/Utility/Math/toonzCalculations.h
+  /Users/krish/codingStuff/2d3danimation/include/Utility/Math/toonzCalculations.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QString

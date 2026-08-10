@@ -59,6 +59,7 @@ void toonzTextureManager::getFmtAndType(bool isRGBM, bool is32, GLenum &fmt, GLe
     } else {
       type = GL_UNSIGNED_SHORT; //... short = 2 bytes
     }
+    
 
 }
 
