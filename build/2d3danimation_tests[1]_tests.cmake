@@ -1,5 +1,0 @@
-add_test([=[PixelTest.sizeofpixel]=]  /Users/krish/codingStuff/2d3danimation/build/2d3danimation_tests [==[--gtest_filter=PixelTest.sizeofpixel]==] --gtest_also_run_disabled_tests)
-set_tests_properties([=[PixelTest.sizeofpixel]=]  PROPERTIES DEF_SOURCE_LINE /Users/krish/codingStuff/2d3danimation/tests/test_main.cpp:137 WORKING_DIRECTORY /Users/krish/codingStuff/2d3danimation/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-add_test([=[BrushTest.halfcircle]=]  /Users/krish/codingStuff/2d3danimation/build/2d3danimation_tests [==[--gtest_filter=BrushTest.halfcircle]==] --gtest_also_run_disabled_tests)
-set_tests_properties([=[BrushTest.halfcircle]=]  PROPERTIES DEF_SOURCE_LINE /Users/krish/codingStuff/2d3danimation/tests/test_main.cpp:146 WORKING_DIRECTORY /Users/krish/codingStuff/2d3danimation/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-set(  2d3danimation_tests_TESTS PixelTest.sizeofpixel BrushTest.halfcircle)

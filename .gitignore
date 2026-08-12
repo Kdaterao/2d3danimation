@@ -1,10 +1,71 @@
+#----- personal notes -----
 cmakelist.md
 qt.md
 QTOpenGL.md
 premultiplecation.md
 cpp.md
 
-out
-output
+#----- build / cmake -----
+build/
+out/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+compile_commands.json
+CMakeUserPresets.json
+*.cmake
+!CMakeLists.txt
+!CMakePresets.json
 
+#----- qt / moc / autogen -----
+*_autogen/
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.qmlc
+*.jsc
 
+#----- binaries / libs -----
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+*.app
+*.out
+
+#----- debug dumps / runtime output -----
+output/
+*.ppm
+*.pgm
+*.raw
+
+#----- ide / editor -----
+.vscode/
+.idea/
+*.user
+*.user.*
+*.autosave
+*.swp
+*~
+
+#----- os -----
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+
+#----- clang / sanitizer / coverage -----
+*.dSYM/
+*.gcda
+*.gcno
+*.gcov
+default.profraw
