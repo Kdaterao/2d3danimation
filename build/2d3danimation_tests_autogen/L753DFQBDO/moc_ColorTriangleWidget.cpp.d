@@ -122,6 +122,10 @@
   /Users/krish/codingStuff/2d3danimation/include/2D/Raster/raster.h \
   /Users/krish/codingStuff/2d3danimation/include/2D/Raster/rasterPixel.h \
   /Users/krish/codingStuff/2d3danimation/include/2D/Raster/rasterTile.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/canvas.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/frame.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/layer.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/rasterLayer.h \
   /Users/krish/codingStuff/2d3danimation/include/Utility/Math/toonzCalculations.h \
   /Users/krish/codingStuff/2d3danimation/include/Utility/Math/toonzGeometry.h \
   /Users/krish/codingStuff/2d3danimation/include/Utility/Types/types.h \

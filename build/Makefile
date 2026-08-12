@@ -468,33 +468,6 @@ include/2D/Painter/UI/UIPainter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/2D/Painter/UI/UIPainter.cpp.s
 .PHONY : include/2D/Painter/UI/UIPainter.cpp.s
 
-include/2D/Raster/old/toonzRaster.o: include/2D/Raster/old/toonzRaster.cpp.o
-.PHONY : include/2D/Raster/old/toonzRaster.o
-
-# target to build an object file
-include/2D/Raster/old/toonzRaster.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/2D/Raster/old/toonzRaster.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/2D/Raster/old/toonzRaster.cpp.o
-.PHONY : include/2D/Raster/old/toonzRaster.cpp.o
-
-include/2D/Raster/old/toonzRaster.i: include/2D/Raster/old/toonzRaster.cpp.i
-.PHONY : include/2D/Raster/old/toonzRaster.i
-
-# target to preprocess a source file
-include/2D/Raster/old/toonzRaster.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/2D/Raster/old/toonzRaster.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/2D/Raster/old/toonzRaster.cpp.i
-.PHONY : include/2D/Raster/old/toonzRaster.cpp.i
-
-include/2D/Raster/old/toonzRaster.s: include/2D/Raster/old/toonzRaster.cpp.s
-.PHONY : include/2D/Raster/old/toonzRaster.s
-
-# target to generate assembly for a file
-include/2D/Raster/old/toonzRaster.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/2D/Raster/old/toonzRaster.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/2D/Raster/old/toonzRaster.cpp.s
-.PHONY : include/2D/Raster/old/toonzRaster.cpp.s
-
 include/2D/Raster/rasterPixel.o: include/2D/Raster/rasterPixel.cpp.o
 .PHONY : include/2D/Raster/rasterPixel.o
 
@@ -521,6 +494,60 @@ include/2D/Raster/rasterPixel.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/2D/Raster/rasterPixel.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/2D/Raster/rasterPixel.cpp.s
 .PHONY : include/2D/Raster/rasterPixel.cpp.s
+
+include/Scene/canvas.o: include/Scene/canvas.cpp.o
+.PHONY : include/Scene/canvas.o
+
+# target to build an object file
+include/Scene/canvas.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Scene/canvas.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Scene/canvas.cpp.o
+.PHONY : include/Scene/canvas.cpp.o
+
+include/Scene/canvas.i: include/Scene/canvas.cpp.i
+.PHONY : include/Scene/canvas.i
+
+# target to preprocess a source file
+include/Scene/canvas.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Scene/canvas.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Scene/canvas.cpp.i
+.PHONY : include/Scene/canvas.cpp.i
+
+include/Scene/canvas.s: include/Scene/canvas.cpp.s
+.PHONY : include/Scene/canvas.s
+
+# target to generate assembly for a file
+include/Scene/canvas.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Scene/canvas.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Scene/canvas.cpp.s
+.PHONY : include/Scene/canvas.cpp.s
+
+include/Scene/rasterLayer.o: include/Scene/rasterLayer.cpp.o
+.PHONY : include/Scene/rasterLayer.o
+
+# target to build an object file
+include/Scene/rasterLayer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Scene/rasterLayer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Scene/rasterLayer.cpp.o
+.PHONY : include/Scene/rasterLayer.cpp.o
+
+include/Scene/rasterLayer.i: include/Scene/rasterLayer.cpp.i
+.PHONY : include/Scene/rasterLayer.i
+
+# target to preprocess a source file
+include/Scene/rasterLayer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Scene/rasterLayer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Scene/rasterLayer.cpp.i
+.PHONY : include/Scene/rasterLayer.cpp.i
+
+include/Scene/rasterLayer.s: include/Scene/rasterLayer.cpp.s
+.PHONY : include/Scene/rasterLayer.s
+
+# target to generate assembly for a file
+include/Scene/rasterLayer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Scene/rasterLayer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Scene/rasterLayer.cpp.s
+.PHONY : include/Scene/rasterLayer.cpp.s
 
 include/Storage/storageManager.o: include/Storage/storageManager.cpp.o
 .PHONY : include/Storage/storageManager.o
@@ -656,6 +683,33 @@ include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.s
 .PHONY : include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp.s
+
+include/Widgets/TimelineWidget/TimelineWidget.o: include/Widgets/TimelineWidget/TimelineWidget.cpp.o
+.PHONY : include/Widgets/TimelineWidget/TimelineWidget.o
+
+# target to build an object file
+include/Widgets/TimelineWidget/TimelineWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.o
+.PHONY : include/Widgets/TimelineWidget/TimelineWidget.cpp.o
+
+include/Widgets/TimelineWidget/TimelineWidget.i: include/Widgets/TimelineWidget/TimelineWidget.cpp.i
+.PHONY : include/Widgets/TimelineWidget/TimelineWidget.i
+
+# target to preprocess a source file
+include/Widgets/TimelineWidget/TimelineWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.i
+.PHONY : include/Widgets/TimelineWidget/TimelineWidget.cpp.i
+
+include/Widgets/TimelineWidget/TimelineWidget.s: include/Widgets/TimelineWidget/TimelineWidget.cpp.s
+.PHONY : include/Widgets/TimelineWidget/TimelineWidget.s
+
+# target to generate assembly for a file
+include/Widgets/TimelineWidget/TimelineWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation.dir/build.make CMakeFiles/2d3danimation.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d3danimation_tests.dir/build.make CMakeFiles/2d3danimation_tests.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.s
+.PHONY : include/Widgets/TimelineWidget/TimelineWidget.cpp.s
 
 include/Widgets/ToolOptionWidget/BrushCatalog.o: include/Widgets/ToolOptionWidget/BrushCatalog.cpp.o
 .PHONY : include/Widgets/ToolOptionWidget/BrushCatalog.o
@@ -858,12 +912,15 @@ help:
 	@echo "... include/2D/Painter/UI/UIPainter.o"
 	@echo "... include/2D/Painter/UI/UIPainter.i"
 	@echo "... include/2D/Painter/UI/UIPainter.s"
-	@echo "... include/2D/Raster/old/toonzRaster.o"
-	@echo "... include/2D/Raster/old/toonzRaster.i"
-	@echo "... include/2D/Raster/old/toonzRaster.s"
 	@echo "... include/2D/Raster/rasterPixel.o"
 	@echo "... include/2D/Raster/rasterPixel.i"
 	@echo "... include/2D/Raster/rasterPixel.s"
+	@echo "... include/Scene/canvas.o"
+	@echo "... include/Scene/canvas.i"
+	@echo "... include/Scene/canvas.s"
+	@echo "... include/Scene/rasterLayer.o"
+	@echo "... include/Scene/rasterLayer.i"
+	@echo "... include/Scene/rasterLayer.s"
 	@echo "... include/Storage/storageManager.o"
 	@echo "... include/Storage/storageManager.i"
 	@echo "... include/Storage/storageManager.s"
@@ -879,6 +936,9 @@ help:
 	@echo "... include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.o"
 	@echo "... include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.i"
 	@echo "... include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.s"
+	@echo "... include/Widgets/TimelineWidget/TimelineWidget.o"
+	@echo "... include/Widgets/TimelineWidget/TimelineWidget.i"
+	@echo "... include/Widgets/TimelineWidget/TimelineWidget.s"
 	@echo "... include/Widgets/ToolOptionWidget/BrushCatalog.o"
 	@echo "... include/Widgets/ToolOptionWidget/BrushCatalog.i"
 	@echo "... include/Widgets/ToolOptionWidget/BrushCatalog.s"

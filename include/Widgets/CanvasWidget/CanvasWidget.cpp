@@ -24,6 +24,9 @@ GLWidget::GLWidget(QWidget* parent) : QOpenGLWidget(parent) {
 
     */
 
+    canvas = std::make_unique<Canvas>(canvasWidth, canvasHeight);
+
+
 
 }
 
@@ -52,11 +55,6 @@ void GLWidget::updateCursor() {
 //much of this stuff is going to reorganized later on
 void GLWidget::initializeGL() {
 
-    //-------test image (temporary) ------
-
-    testImage = std::make_shared<Raster<PixelType>>(canvasWidth, canvasHeight);
-    //testImage->createBlank();
-
     //----- initiateBrush (do before initiating opengl) ------
     initiateBrush();
 
@@ -77,7 +75,7 @@ void GLWidget::initializeGL() {
     // rasterizer
     rasterizer = new toonzPainterGL(
         TAffine(), 
-        testImage->getTileLength(), 
+        currentImage()->getTileLength(), 
         canvasWidth, 
         canvasHeight, 
         sizeof(PixelType), //byte per pixel
@@ -89,31 +87,58 @@ void GLWidget::initializeGL() {
         true //isrgbm
     );
 
-   glClearColor(255.0f, 255.0f, 255.0f, 255.0f);
+   glClearColor(0.0f, 0.0f, 0.0f, 255.0f);
 }
 
 
 void GLWidget::paintGL() {
-    std::vector<TileCoord> *dirty = testImage->getDirty();
+    std::vector<TileCoord> *dirty = currentImage()->getDirty();
 
 
-    int len = testImage->getTileLength();
+    int len = currentImage()->getTileLength();
 
 
-    
+
+    //------ switching frames, non brush updates, ect.. -------
+    if(newCanvas){
+    std::vector<TileCoord> *dirtyCanvas = canvas->getDirty();
+
+        for(auto &tile : *dirtyCanvas){
+
+            std::vector<UCHAR*> tiles = canvas->getTile(tile.x, tile.y);
+
+            for(auto &layer : tiles){
+                rasterizer->PaintRaster(
+                    RectTI{tile.x * len , tile.y * len, (tile.x * len) + len, (tile.y * len) + len},
+                    layer, 
+                    defaultFramebufferObject()
+                );
+            }
+
+            currentImage()->unmarkDirty(tile.x, tile.y);
+        }
+
+        dirty->clear();
+        newCanvas = false;
+    }
+
+
+    //------- brush/tool updates to the cnavs -------
     if(dirty->size() != 0){
-
-        //std::cout<<"painting tile(s)--------------------------"<<std::endl;
 
         for(auto &tile : *dirty){
 
-            rasterizer->PaintRaster(
-                RectTI{tile.x * len , tile.y * len, (tile.x * len) + len, (tile.y * len) + len},
-                testImage->getRawData(tile.x * len, tile.y*len, false), 
-                defaultFramebufferObject()
-            );
+            std::vector<UCHAR*> tiles = canvas->getTile(tile.x, tile.y);
 
-            testImage->unmarkDirty(tile.x, tile.y);
+            for(auto &layer : tiles){
+                rasterizer->PaintRaster(
+                    RectTI{tile.x * len , tile.y * len, (tile.x * len) + len, (tile.y * len) + len},
+                    layer, 
+                    defaultFramebufferObject()
+                );
+            }
+
+            currentImage()->unmarkDirty(tile.x, tile.y);
         }
         dirty->clear();
     }
@@ -247,27 +272,32 @@ void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
 
 
 
-//================================
-//      Brush Manager functions 
-//================================
+    //================================
+    //      Brush Handlers
+    //================================
 
+
+     //------- Create Brush Object ---------
      void GLWidget::initiateBrush(){
        
         eraser = false;
-        curr_color = PixelType(128,128,128,255);
-        PixelType color =  PixelType(128,128,128,255);
+        curr_color = PixelType(0, 0, 0, 255 * krish64);
+        PixelType color = curr_color;
 
-        Brush::setBrush(Brush::RasterTypes::BRUSH_BGRM32, brush, testImage, color, brushsize);
+        Brush::setBrush(Brush::RasterTypes::BRUSH_BGRM32, brush, currentImage(), color, brushsize);
         updateCursor();
      }
 
+
+     //------- Select new Brush Type and Size ---------
      void GLWidget::selectBrush(const QString& brushId, Brush::RasterTypes type, int size) {
         Q_UNUSED(brushId);
         brushsize = size;
-        Brush::setBrush(type, brush, testImage, curr_color, brushsize);
+        Brush::setBrush(type, brush, currentImage(), curr_color, brushsize);
 
         if (eraser) {
-            PixelType transparent = PixelType(255 * krish64, 255 * krish64, 255 * krish64, 255 * krish64);
+            // Hard erase: overwrite pixels with zero matte (see toonzBrush::drawPixel)
+            PixelType transparent = PixelType(0, 0, 0, 0);
             brush.setColor(transparent);
         } else {
             brush.setColor(curr_color);
@@ -275,16 +305,14 @@ void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
         updateCursor();
      }
 
-     
-
-
+    //------- Update Brush Size ---------
     void GLWidget::updateBrushSize(int size){
         brushsize = size;
         brush.setSize(brushsize);
         updateCursor();
      }
 
-     
+    //------- Update Brush Color ---------
     void GLWidget::updateBrushColor(PixelType Color){
         if(eraser){
             curr_color = Color;
@@ -294,12 +322,13 @@ void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
         }
      }
 
+     //------- Toggle Eraser ---------
      void GLWidget::toggleEraser(bool enable) {
 
         if (enable) {
             eraser = true;
-            // Transparent brush
-            PixelType transparent = PixelType(255 * krish64,255 * krish64,255 * krish64, 255 * krish64);
+            // Hard erase: overwrite pixels with zero matte (transparent), not white
+            PixelType transparent = PixelType(0, 0, 0, 0);
             brush.setColor(transparent);
         }  else {
             eraser = false;
@@ -307,6 +336,81 @@ void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
         }
         updateCursor();
      }
+
+
+    //================================
+    //     Timeline Handlers 
+    //================================
+
+    //------- Changing frame on same layer -------
+    void GLWidget::onTimeChanged(int time) {
+
+        //guard
+        if (!canvas) return;
+
+        //if the time has changed, update the canvas
+        if (canvas->getCurrentTime() != time) {
+            canvas->setCurrentTime(time);
+        }
+
+        //rebind brush to the new image
+        Brush::setBrush(Brush::RasterTypes::BRUSH_BGRM32, brush, currentImage(), curr_color, brushsize);
+        if (eraser) {
+            PixelType transparent = PixelType(0, 0, 0, 0);
+            brush.setColor(transparent);
+        }
+
+        //mark the canvas as dirty to trigger a re-render
+        newCanvas = true;
+        update();
+    }
+
+
+
+
+    //------- Changing active layer -------
+    
+    void GLWidget::onActiveLayerChanged(int layerIndex) {
+        //guard
+        if (!canvas) return;
+
+        //if the active layer has changed, go to it
+        if (canvas->getActiveLayerIndex() != layerIndex) {
+            canvas->setCurrentLayer(layerIndex);
+        }
+
+        //rebind brush to the new image
+        Brush::setBrush(Brush::RasterTypes::BRUSH_BGRM32, brush, currentImage(), curr_color, brushsize);
+        if (eraser) {
+            PixelType transparent = PixelType(0, 0, 0, 0);
+            brush.setColor(transparent);
+        }
+
+        //mark the canvas as dirty to trigger a re-render (may remove later)
+        newCanvas = true;
+        update();
+    }
+
+
+
+    //------- Timeline Edited -------
+
+    void GLWidget::onTimelineEdited() {
+        
+        //guard
+        if (!canvas) return;
+
+        //rebind brush to the new image (just in case)
+        Brush::setBrush(Brush::RasterTypes::BRUSH_BGRM32, brush, currentImage(), curr_color, brushsize);
+        if (eraser) {
+            PixelType transparent = PixelType(0, 0, 0, 0);
+            brush.setColor(transparent);
+        }
+
+        //mark the canvas as dirty to trigger a re-render (just in case)
+        newCanvas = true;
+        update();
+    }
 
      
 

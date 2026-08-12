@@ -178,7 +178,7 @@ class toonzBrush {
     protected:
 
         //----- Variables -----
-        RasterP<T> raster; //shared_pointer of our raster(dont need * since its a typedef of a pointer!)
+        Raster<T>* raster = nullptr; // non-owning; RasterLayer owns the Raster
         RectTI rasterSize; //size of the raster 
         T color; // color of our brush
         DimensionTI brushSize;// lx and ly of brush
@@ -191,16 +191,9 @@ class toonzBrush {
 
         toonzBrush() {};
 
-        toonzBrush(RasterP<T>  i_raster, T i_color, DimensionT<int> i_brushSize) 
+        toonzBrush(Raster<T>* i_raster, T i_color, DimensionT<int> i_brushSize) 
             : raster(i_raster),
               brushSize(i_brushSize),
-              color(i_color) {
-                rasterSize = raster->getBounds();
-              };
-         
-        toonzBrush(RasterP<T>  *i_raster, T i_color, float i_lx, float i_ly)
-            : raster(i_raster),
-              brushSize(DimensionT<int>(i_lx, i_ly)),
               color(i_color) {
                 rasterSize = raster->getBounds();
               };
@@ -243,6 +236,8 @@ class toonzBrush {
         //-----------------------------
 
         virtual void resetBrush() = 0;
+
+        virtual void startBrush() = 0;
 
 
     
@@ -353,7 +348,7 @@ class DefaultCircleBrush : public toonzBrush<T> {
         //----- Constructors -----
 
         DefaultCircleBrush() {};
-        DefaultCircleBrush(RasterP<T>  i_raster, T i_color, int r) 
+        DefaultCircleBrush(Raster<T>* i_raster, T i_color, int r) 
             : toonzBrush<T>(i_raster, i_color, DimensionT<int>(r,r)) {
 
                 HalfCircle(r);
@@ -637,6 +632,8 @@ class DefaultCircleBrush : public toonzBrush<T> {
 
 
         void resetBrush() {};
+
+        void startBrush() {};
 
 
     //----- helper functions -----

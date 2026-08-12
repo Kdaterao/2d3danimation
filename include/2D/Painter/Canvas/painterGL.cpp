@@ -317,9 +317,6 @@ void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
 
     //----- draw image segment -----
 
-
-    glDisable(GL_BLEND);
-
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0); 
 
     /*
@@ -331,6 +328,7 @@ void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
 
     //----- clean up-----
 
+    glDisable(GL_BLEND);
     glDisable(GL_SCISSOR_TEST);
     glBindVertexArray(0); 
     glBindTexture(GL_TEXTURE_2D, 0);

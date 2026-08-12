@@ -817,22 +817,42 @@ CMakeFiles/2d3danimation.dir/include/2D/Brush/MPLBrush/mplSurfaceAdapter.cpp.o: 
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__bit/endian.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__bit/has_single_bit.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__bit/rotate.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include/assert.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include/_assert.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include/_static_assert.h \
-  /Users/krish/codingStuff/2d3danimation/include/Utility/Math/toonzGeometry.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/iostream \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/ios \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__ios/fpos.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/locale_base_api.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/support/apple.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/support/bsd_like.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/vector \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__vector/comparison.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__fwd/vector.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__vector/swap.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__vector/vector.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__debug_utils/sanitizers.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/enable_insertable.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__memory/allocate_at_least.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__memory/noexcept_move_assign_container.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__memory/temp_value.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__ranges/as_rvalue_view.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__ranges/all.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__functional/compose.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__functional/perfect_forward.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__ranges/owning_view.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__ranges/range_adaptor.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__ranges/ref_view.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__split_buffer \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__vector/container_traits.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__vector/vector_bool.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__bit_reference \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__vector/pmr.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__vector/erase.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/array \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__iterator/static_bounded_iter.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/cerrno \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/clocale \
   /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include/locale.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include/_locale.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include/_locale_posix2008.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include/_types/_locale_t.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/locale \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/locale_base_api.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/support/apple.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/support/bsd_like.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include/xlocale.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include/_xlocale.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include/__xlocale.h \
@@ -847,93 +867,10 @@ CMakeFiles/2d3danimation.dir/include/2D/Brush/MPLBrush/mplSurfaceAdapter.cpp.o: 
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__mutex/once_flag.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__utility/no_destroy.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/string \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__debug_utils/sanitizers.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/enable_insertable.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__memory/allocate_at_least.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__memory/noexcept_move_assign_container.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__string/extern_template_lists.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__utility/default_three_way_comparator.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/string_view \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__fwd/string_view.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__system_error/error_category.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__system_error/error_code.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__system_error/errc.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/cerrno \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__system_error/error_condition.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__system_error/system_error.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/mutex \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__condition_variable/condition_variable.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__mutex/mutex.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__mutex/unique_lock.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__mutex/tag_types.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__system_error/throw_system_error.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__mutex/lock_guard.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__thread/id.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/system_error \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/istream \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/num.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__charconv/to_chars_integral.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__charconv/tables.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__charconv/to_chars_base_10.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__charconv/to_chars_result.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__charconv/traits.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__type_traits/make_32_64_or_128_bit.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/check_grouping.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/get_c_locale.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/pad_and_output.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/scan_keyword.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/streambuf \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__ostream/basic_ostream.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__ostream/put_character_sequence.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/bitset \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__bit_reference \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__type_traits/is_char_like_type.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/ostream \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/format \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/buffer.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/concepts.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/format_parse_context.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/format_error.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__fwd/format.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/format_to_n_result.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/container_adaptor.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/range_default_formatter.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__chrono/statically_widen.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/range_formatter.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/format_context.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/format_arg.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/format_arg_store.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/format_args.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter_output.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/parser_std_format_spec.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/format_string.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/unicode.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/extended_grapheme_cluster_table.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/indic_conjunct_break_table.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/width_estimation_table.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__fwd/queue.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__fwd/deque.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__fwd/vector.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__fwd/stack.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__ranges/ref_view.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/escaped_output_table.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/format_functions.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter_bool.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter_integral.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/array \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__iterator/static_bounded_iter.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter_char.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/write_escaped.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter_floating_point.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__charconv/chars_format.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__utility/to_underlying.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__charconv/to_chars_floating_point.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter_integer.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter_pointer.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter_string.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter_tuple.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/locale \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/messages.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include/nl_types.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include/sys/types.h \
@@ -963,14 +900,90 @@ CMakeFiles/2d3danimation.dir/include/2D/Brush/MPLBrush/mplSurfaceAdapter.cpp.o: 
   /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include/_types/_nl_item.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/money.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/check_grouping.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/ios \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__ios/fpos.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__system_error/error_category.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__system_error/error_code.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__system_error/errc.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__system_error/error_condition.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__system_error/system_error.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/mutex \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__condition_variable/condition_variable.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__mutex/mutex.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__mutex/unique_lock.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__mutex/tag_types.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__system_error/throw_system_error.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__mutex/lock_guard.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__thread/id.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/system_error \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/get_c_locale.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/pad_and_output.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/num.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__charconv/to_chars_integral.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__charconv/tables.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__charconv/to_chars_base_10.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__charconv/to_chars_result.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__charconv/traits.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__type_traits/make_32_64_or_128_bit.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/scan_keyword.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/streambuf \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/time.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/wbuffer_convert.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__locale_dir/wstring_convert.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/cstdarg \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include/assert.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include/_assert.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include/_static_assert.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/iostream \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/istream \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__ostream/basic_ostream.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__ostream/put_character_sequence.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/bitset \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__type_traits/is_char_like_type.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/ostream \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/format \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/buffer.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/concepts.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/format_parse_context.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/format_error.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__fwd/format.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/format_to_n_result.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/container_adaptor.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/range_default_formatter.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__chrono/statically_widen.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/range_formatter.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/format_context.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/format_arg.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/format_arg_store.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/format_args.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter_output.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/parser_std_format_spec.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/format_string.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/unicode.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/extended_grapheme_cluster_table.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/indic_conjunct_break_table.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/width_estimation_table.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__fwd/queue.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__fwd/deque.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__fwd/stack.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/escaped_output_table.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/format_functions.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter_bool.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter_integral.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter_char.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/write_escaped.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter_floating_point.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__charconv/chars_format.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__utility/to_underlying.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__charconv/to_chars_floating_point.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter_integer.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter_pointer.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter_string.h \
+  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__format/formatter_tuple.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/queue \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/deque \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__memory/temp_value.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__split_buffer \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/functional \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__functional/binary_negate.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__functional/bind.h \
@@ -986,22 +999,9 @@ CMakeFiles/2d3danimation.dir/include/2D/Brush/MPLBrush/mplSurfaceAdapter.cpp.o: 
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__functional/boyer_moore_searcher.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__functional/default_searcher.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__functional/not_fn.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__functional/perfect_forward.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__functional/bind_back.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__functional/bind_front.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/vector \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__vector/comparison.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__vector/swap.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__vector/vector.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__ranges/as_rvalue_view.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__ranges/all.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__functional/compose.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__ranges/owning_view.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__ranges/range_adaptor.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__vector/container_traits.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__vector/vector_bool.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__vector/pmr.h \
-  /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/__vector/erase.h \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/stack \
   /opt/homebrew/Cellar/llvm/22.1.7_1/bin/../include/c++/v1/print \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include/unistd.h
+  /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include/unistd.h \
+  /Users/krish/codingStuff/2d3danimation/include/Utility/Math/toonzGeometry.h

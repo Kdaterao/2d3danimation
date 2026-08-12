@@ -173,6 +173,7 @@
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qglobalstatic.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qhash.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qhashfunctions.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qiodevice.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qiodevicebase.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qiterable.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qiterator.h \
@@ -244,6 +245,7 @@
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qtversionchecks.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qtypeinfo.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qtypes.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qurl.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qutf8stringview.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qvariant.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qvarlengtharray.h \
@@ -264,12 +266,14 @@
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qkeysequence.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qpaintdevice.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qpalette.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qpicture.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qpixelformat.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qpixmap.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qpolygon.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qregion.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qrgb.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qrgba64.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qtextdocument.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qtgui-config.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qtguiexports.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qtguiglobal.h \
@@ -277,6 +281,7 @@
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/QCheckBox \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/QGridLayout \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/QLabel \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/QScrollArea \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/QSlider \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/QWidget \
@@ -287,6 +292,7 @@
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/qcheckbox.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/qframe.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/qgridlayout.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/qlabel.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/qlayout.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/qlayoutitem.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/qscrollarea.h \

@@ -492,12 +492,6 @@
 			null
 		],
 		[
-			"/Users/krish/codingStuff/2d3danimation/include/2D/Raster/old/toonzRaster.h",
-			"MU",
-			"36SAEY3M3N/moc_toonzRaster.cpp",
-			null
-		],
-		[
 			"/Users/krish/codingStuff/2d3danimation/include/2D/Raster/raster.h",
 			"MU",
 			"LMNYVAWB5E/moc_raster.cpp",
@@ -513,6 +507,30 @@
 			"/Users/krish/codingStuff/2d3danimation/include/2D/Raster/rasterTile.h",
 			"MU",
 			"LMNYVAWB5E/moc_rasterTile.cpp",
+			null
+		],
+		[
+			"/Users/krish/codingStuff/2d3danimation/include/Scene/canvas.h",
+			"MU",
+			"XX2T5MLNOF/moc_canvas.cpp",
+			null
+		],
+		[
+			"/Users/krish/codingStuff/2d3danimation/include/Scene/frame.h",
+			"MU",
+			"XX2T5MLNOF/moc_frame.cpp",
+			null
+		],
+		[
+			"/Users/krish/codingStuff/2d3danimation/include/Scene/layer.h",
+			"MU",
+			"XX2T5MLNOF/moc_layer.cpp",
+			null
+		],
+		[
+			"/Users/krish/codingStuff/2d3danimation/include/Scene/rasterLayer.h",
+			"MU",
+			"XX2T5MLNOF/moc_rasterLayer.cpp",
 			null
 		],
 		[
@@ -555,6 +573,12 @@
 			"/Users/krish/codingStuff/2d3danimation/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.h",
 			"MU",
 			"L753DFQBDO/moc_ColorTriangleWidget.cpp",
+			null
+		],
+		[
+			"/Users/krish/codingStuff/2d3danimation/include/Widgets/TimelineWidget/TimelineWidget.h",
+			"MU",
+			"L2Y75F2YHI/moc_TimelineWidget.cpp",
 			null
 		],
 		[
@@ -607,6 +631,7 @@
 		"/Users/krish/codingStuff/2d3danimation/include/Widgets/ColorWidget/ColorTriangleWidget",
 		"/Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget",
 		"/Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget",
+		"/Users/krish/codingStuff/2d3danimation/include/Widgets/TimelineWidget",
 		"/Users/krish/codingStuff/2d3danimation/include/2D/Brush",
 		"/Users/krish/codingStuff/2d3danimation/include/2D/Brush/MPLBrush",
 		"/Users/krish/codingStuff/2d3danimation/include/2D/Brush/ToonzBrush",
@@ -615,11 +640,11 @@
 		"/Users/krish/codingStuff/2d3danimation/include/2D/Painter/General/Texture",
 		"/Users/krish/codingStuff/2d3danimation/include/2D/Painter/UI",
 		"/Users/krish/codingStuff/2d3danimation/include/2D/Raster",
-		"/Users/krish/codingStuff/2d3danimation/include/2D/Raster/old",
 		"/Users/krish/codingStuff/2d3danimation/include/Utility/Math",
 		"/Users/krish/codingStuff/2d3danimation/include/Utility/Types",
 		"/Users/krish/codingStuff/2d3danimation/include/Storage",
 		"/Users/krish/codingStuff/2d3danimation/include/Storage/tinyXML",
+		"/Users/krish/codingStuff/2d3danimation/include/Scene",
 		"/opt/homebrew/include",
 		"/Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers",
 		"/Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework",
@@ -723,12 +748,17 @@
 			null
 		],
 		[
-			"/Users/krish/codingStuff/2d3danimation/include/2D/Raster/old/toonzRaster.cpp",
+			"/Users/krish/codingStuff/2d3danimation/include/2D/Raster/rasterPixel.cpp",
 			"MU",
 			null
 		],
 		[
-			"/Users/krish/codingStuff/2d3danimation/include/2D/Raster/rasterPixel.cpp",
+			"/Users/krish/codingStuff/2d3danimation/include/Scene/canvas.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/krish/codingStuff/2d3danimation/include/Scene/rasterLayer.cpp",
 			"MU",
 			null
 		],
@@ -754,6 +784,11 @@
 		],
 		[
 			"/Users/krish/codingStuff/2d3danimation/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/krish/codingStuff/2d3danimation/include/Widgets/TimelineWidget/TimelineWidget.cpp",
 			"MU",
 			null
 		],

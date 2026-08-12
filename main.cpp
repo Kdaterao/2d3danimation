@@ -2,6 +2,7 @@
 #include <CanvasWidget.h>
 #include <ColorTriangleWidget.h>
 #include <ToolOptionWidget.h>
+#include <TimelineWidget.h>
 #include <rasterPixel.h>
 
 
@@ -28,13 +29,18 @@ int main(int argc, char *argv[]) {
 
     QWidget *window = new QWidget();
 
-    QHBoxLayout *layout = new QHBoxLayout(window)
-;
+    QVBoxLayout *rootLayout = new QVBoxLayout(window);
+    rootLayout->setContentsMargins(8, 8, 8, 8);
+    rootLayout->setSpacing(6);
+
+    QWidget *topRow = new QWidget(window);
+    QHBoxLayout *layout = new QHBoxLayout(topRow);
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setSpacing(6);
+
     //----- Create window object -----
     GLWidget  *canvas= new GLWidget();
-    canvas->setMinimumSize(800, 600);
-    canvas->setMaximumSize(800, 600);
-    canvas->resize(800, 600); // sets window size (otherwise goes to default)
+    canvas->setFixedSize(800, 600);
     
     //----- Sidebar -----
 
@@ -57,19 +63,36 @@ int main(int argc, char *argv[]) {
 
     canvas->brushsize = initialBrushSize; 
 
-    //----- connect widgets ------
-
+    //----- Top row: canvas + sidebar -----
     layout->addWidget(canvas);
     layout->addWidget(sidebar);
+    rootLayout->addWidget(topRow, 1);
 
-    window->setMinimumSize(1100, 650);
-    window->resize(1300, 650);
+    //----- Timeline -----
+    TimelineWidget *timeline = new TimelineWidget(canvas->getCanvas(), window);
+    timeline->setMinimumHeight(140);
+    timeline->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+    rootLayout->addWidget(timeline);
+
+    // Width floor from fixed canvas + sidebar; height comes from layout (canvas 600 + timeline).
+    window->setMinimumWidth(1100);
+    window->resize(1300, 880);
 
     //----- signal and slots -----
+
+    //color widget
     QObject::connect(ColorWidget, &ColorTriangleWidget::sendColor, canvas, &GLWidget::updateBrushColor);
+    
+
+    //tool options widget
     QObject::connect(toolOptions, &ToolOptionWidget::eraserToggled, canvas, &GLWidget::toggleEraser);
     QObject::connect(toolOptions, &ToolOptionWidget::brushSizeChanged, canvas, &GLWidget::updateBrushSize);
-    QObject::connect(toolOptions, &ToolOptionWidget::brushSelected, canvas, &GLWidget::selectBrush); 
+    QObject::connect(toolOptions, &ToolOptionWidget::brushSelected, canvas, &GLWidget::selectBrush);
+
+    //timeline widget
+    QObject::connect(timeline, &TimelineWidget::timeChanged, canvas, &GLWidget::onTimeChanged);
+    QObject::connect(timeline, &TimelineWidget::activeLayerChanged, canvas, &GLWidget::onActiveLayerChanged);
+    QObject::connect(timeline, &TimelineWidget::timelineEdited, canvas, &GLWidget::onTimelineEdited);
 
     window->show();
 

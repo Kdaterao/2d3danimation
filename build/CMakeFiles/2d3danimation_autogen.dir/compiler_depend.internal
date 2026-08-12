@@ -134,12 +134,16 @@
  /Users/krish/codingStuff/2d3danimation/include/2D/Painter/UI/UIPainter.cpp
  /Users/krish/codingStuff/2d3danimation/include/2D/Painter/UI/UIPainter.h
  /Users/krish/codingStuff/2d3danimation/include/2D/Painter/UI/UIShapes.h
- /Users/krish/codingStuff/2d3danimation/include/2D/Raster/old/toonzRaster.cpp
- /Users/krish/codingStuff/2d3danimation/include/2D/Raster/old/toonzRaster.h
  /Users/krish/codingStuff/2d3danimation/include/2D/Raster/raster.h
  /Users/krish/codingStuff/2d3danimation/include/2D/Raster/rasterPixel.cpp
  /Users/krish/codingStuff/2d3danimation/include/2D/Raster/rasterPixel.h
  /Users/krish/codingStuff/2d3danimation/include/2D/Raster/rasterTile.h
+ /Users/krish/codingStuff/2d3danimation/include/Scene/canvas.cpp
+ /Users/krish/codingStuff/2d3danimation/include/Scene/canvas.h
+ /Users/krish/codingStuff/2d3danimation/include/Scene/frame.h
+ /Users/krish/codingStuff/2d3danimation/include/Scene/layer.h
+ /Users/krish/codingStuff/2d3danimation/include/Scene/rasterLayer.cpp
+ /Users/krish/codingStuff/2d3danimation/include/Scene/rasterLayer.h
  /Users/krish/codingStuff/2d3danimation/include/Storage/storageManager.cpp
  /Users/krish/codingStuff/2d3danimation/include/Storage/storageManager.h
  /Users/krish/codingStuff/2d3danimation/include/Storage/tinyXML/tinyxml2.cpp
@@ -152,6 +156,8 @@
  /Users/krish/codingStuff/2d3danimation/include/Widgets/CanvasWidget/CanvasWidget.h
  /Users/krish/codingStuff/2d3danimation/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp
  /Users/krish/codingStuff/2d3danimation/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.h
+ /Users/krish/codingStuff/2d3danimation/include/Widgets/TimelineWidget/TimelineWidget.cpp
+ /Users/krish/codingStuff/2d3danimation/include/Widgets/TimelineWidget/TimelineWidget.h
  /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/BrushCatalog.cpp
  /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/BrushCatalog.h
  /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp

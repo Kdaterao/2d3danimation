@@ -38,12 +38,12 @@ set(SOURCES
     include/Widgets/ToolOptionWidget/BrushCatalog.cpp include/Widgets/ToolOptionWidget/BrushCatalog.h
     include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.h
     include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.h
+
+    include/Widgets/TimelineWidget/TimelineWidget.cpp include/Widgets/TimelineWidget/TimelineWidget.h
     
 
     include/2D/Raster/raster.h
     include/2D/Raster/rasterTile.h
-    include/2D/Raster/old/toonzRaster.cpp include/2D/Raster/old/toonzRaster.h
-
 
     include/Utility/Math/toonzGeometry.h
     include/Utility/Types/types.h
@@ -55,6 +55,11 @@ set(SOURCES
     include/Storage/storageManager.cpp include/Storage/storageManager.h
 
     include/Storage/tinyXML/tinyxml2.cpp include/Storage/tinyXML/tinyxml2.h
+
+    include/Scene/canvas.cpp include/Scene/canvas.h
+    include/Scene/rasterLayer.cpp include/Scene/rasterLayer.h
+    include/Scene/frame.h
+    include/Scene/layer.h
     
 )
 
@@ -63,6 +68,7 @@ set(PROJECT_INCLUDE_DIRS
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Widgets/ColorWidget/ColorTriangleWidget
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Widgets/ToolOptionWidget
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/Widgets/TimelineWidget
 
     ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Brush
     ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Brush/MPLBrush
@@ -73,14 +79,14 @@ set(PROJECT_INCLUDE_DIRS
     ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Painter/UI
     
     ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Raster
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Raster/old
-
 
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Utility/Math
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Utility/Types
 
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Storage
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Storage/tinyXML
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/Scene
 
     
     

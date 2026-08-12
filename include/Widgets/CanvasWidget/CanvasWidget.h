@@ -23,6 +23,7 @@
 #include <toonzCalculations.h>
 
 #include <raster.h>
+#include <canvas.h>
 #include <QString>
 
 
@@ -44,8 +45,7 @@ class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions {
 
 
 
-    //temporary variable
-    RasterP<PixelType> testImage;
+  
 
     // Canvas 
     int canvasWidth = 800;
@@ -53,6 +53,10 @@ class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions {
     toonzShader* shaderProgram = nullptr;     
     toonzPainterGL* rasterizer = nullptr; 
     int bpp = sizeof(PixelType);
+
+
+
+
 
     //brush
     Brush::RasterBrush<PixelType> brush;
@@ -69,19 +73,24 @@ class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions {
 
     // canvasUpdate tracking
     bool start = false;
-
     bool painting = false;
 
-    
 
+    // canvas object
+    std::unique_ptr<Canvas> canvas = nullptr;
 
-    
+    RasterLayer* currentLayer() { return canvas->currentLayer(); }
+    Raster<PixelType>* currentImage() { return currentLayer()->getCurrentImage(); }
+
+    bool newCanvas = true;
 
 
 public:
     int brushsize = 6; //just doin spaghetti code to let this widget know the intial brush size!
 
     explicit GLWidget(QWidget* parent = nullptr) ;
+
+    Canvas* getCanvas() { return canvas.get(); }
 
 protected:
     //------ override functions ------
@@ -100,12 +109,18 @@ private:
     
 
 public slots:
+    //brush widget
     void updateBrushColor(PixelType Color);
     void toggleEraser(bool enabled); 
     void updateBrushSize (int val);
     void selectBrush(const QString& brushId, Brush::RasterTypes type, int size);
-    
 
+    //timeline widget
+    void onTimeChanged(int time);
+    void onActiveLayerChanged(int layerIndex);
+    void onTimelineEdited();
+
+    //canvas widget
     void updateCanvas();
  
     

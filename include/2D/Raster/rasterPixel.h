@@ -326,6 +326,11 @@ class PixelRGBM64 {
                         return *(const UINT64 *)this <= *(const UINT64 *)&p;
                     }
    
+        //----- default colors -----
+
+        static const PixelRGBM64 White;
+        static const PixelRGBM64 Black;
+        static const PixelRGBM64 Transparent;
 };
 
 

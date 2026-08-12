@@ -39,7 +39,7 @@ class mplBrush {
         //      CONSTRUCTOR    
         //-------------------------
 
-        mplBrush(RasterP<T> ras, int i_lx, int i_ly):
+        mplBrush(Raster<T>* ras, int i_lx, int i_ly):
         dim(DimensionTI{i_lx,i_ly})
         {   
             //----- create a surface adapter object -------
@@ -58,6 +58,15 @@ class mplBrush {
                                             MYPAINT_BRUSH_SETTING_DABS_PER_SECOND,
                                             10.0f
                                         );
+
+
+
+
+            mypaint_brush_set_base_value(
+                brush,
+                MYPAINT_BRUSH_SETTING_OPAQUE_LINEARIZE,
+                1.0
+            );
         };
 
         //-------------------------
@@ -86,8 +95,6 @@ class mplBrush {
 
             mypaint_surface_begin_atomic((MyPaintSurface*)surface);
             //std::cout<<"set surface!"<<std::endl;
-
-            mypaint_brush_new_stroke(brush);
 
             
             if(a == b){
@@ -124,6 +131,9 @@ class mplBrush {
 
         }
 
+        void startBrush(){
+             mypaint_brush_new_stroke(brush);
+        }
 
         void resetBrush(){
             mypaint_brush_reset(brush);

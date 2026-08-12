@@ -303,19 +303,19 @@ CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/ToolViews/Br
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.s"
 	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp -o CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.s
 
-CMakeFiles/2d3danimation_tests.dir/include/2D/Raster/old/toonzRaster.cpp.o: CMakeFiles/2d3danimation_tests.dir/flags.make
-CMakeFiles/2d3danimation_tests.dir/include/2D/Raster/old/toonzRaster.cpp.o: /Users/krish/codingStuff/2d3danimation/include/2D/Raster/old/toonzRaster.cpp
-CMakeFiles/2d3danimation_tests.dir/include/2D/Raster/old/toonzRaster.cpp.o: CMakeFiles/2d3danimation_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/2d3danimation_tests.dir/include/2D/Raster/old/toonzRaster.cpp.o"
-	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2d3danimation_tests.dir/include/2D/Raster/old/toonzRaster.cpp.o -MF CMakeFiles/2d3danimation_tests.dir/include/2D/Raster/old/toonzRaster.cpp.o.d -o CMakeFiles/2d3danimation_tests.dir/include/2D/Raster/old/toonzRaster.cpp.o -c /Users/krish/codingStuff/2d3danimation/include/2D/Raster/old/toonzRaster.cpp
+CMakeFiles/2d3danimation_tests.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.o: CMakeFiles/2d3danimation_tests.dir/flags.make
+CMakeFiles/2d3danimation_tests.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.o: /Users/krish/codingStuff/2d3danimation/include/Widgets/TimelineWidget/TimelineWidget.cpp
+CMakeFiles/2d3danimation_tests.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.o: CMakeFiles/2d3danimation_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/2d3danimation_tests.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.o"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2d3danimation_tests.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.o -MF CMakeFiles/2d3danimation_tests.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.o.d -o CMakeFiles/2d3danimation_tests.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.o -c /Users/krish/codingStuff/2d3danimation/include/Widgets/TimelineWidget/TimelineWidget.cpp
 
-CMakeFiles/2d3danimation_tests.dir/include/2D/Raster/old/toonzRaster.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2d3danimation_tests.dir/include/2D/Raster/old/toonzRaster.cpp.i"
-	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/krish/codingStuff/2d3danimation/include/2D/Raster/old/toonzRaster.cpp > CMakeFiles/2d3danimation_tests.dir/include/2D/Raster/old/toonzRaster.cpp.i
+CMakeFiles/2d3danimation_tests.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2d3danimation_tests.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.i"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/krish/codingStuff/2d3danimation/include/Widgets/TimelineWidget/TimelineWidget.cpp > CMakeFiles/2d3danimation_tests.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.i
 
-CMakeFiles/2d3danimation_tests.dir/include/2D/Raster/old/toonzRaster.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2d3danimation_tests.dir/include/2D/Raster/old/toonzRaster.cpp.s"
-	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/krish/codingStuff/2d3danimation/include/2D/Raster/old/toonzRaster.cpp -o CMakeFiles/2d3danimation_tests.dir/include/2D/Raster/old/toonzRaster.cpp.s
+CMakeFiles/2d3danimation_tests.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2d3danimation_tests.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.s"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/krish/codingStuff/2d3danimation/include/Widgets/TimelineWidget/TimelineWidget.cpp -o CMakeFiles/2d3danimation_tests.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.s
 
 CMakeFiles/2d3danimation_tests.dir/include/2D/Painter/UI/UIPainter.cpp.o: CMakeFiles/2d3danimation_tests.dir/flags.make
 CMakeFiles/2d3danimation_tests.dir/include/2D/Painter/UI/UIPainter.cpp.o: /Users/krish/codingStuff/2d3danimation/include/2D/Painter/UI/UIPainter.cpp
@@ -373,6 +373,34 @@ CMakeFiles/2d3danimation_tests.dir/include/Storage/tinyXML/tinyxml2.cpp.s: cmake
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2d3danimation_tests.dir/include/Storage/tinyXML/tinyxml2.cpp.s"
 	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/krish/codingStuff/2d3danimation/include/Storage/tinyXML/tinyxml2.cpp -o CMakeFiles/2d3danimation_tests.dir/include/Storage/tinyXML/tinyxml2.cpp.s
 
+CMakeFiles/2d3danimation_tests.dir/include/Scene/canvas.cpp.o: CMakeFiles/2d3danimation_tests.dir/flags.make
+CMakeFiles/2d3danimation_tests.dir/include/Scene/canvas.cpp.o: /Users/krish/codingStuff/2d3danimation/include/Scene/canvas.cpp
+CMakeFiles/2d3danimation_tests.dir/include/Scene/canvas.cpp.o: CMakeFiles/2d3danimation_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/2d3danimation_tests.dir/include/Scene/canvas.cpp.o"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2d3danimation_tests.dir/include/Scene/canvas.cpp.o -MF CMakeFiles/2d3danimation_tests.dir/include/Scene/canvas.cpp.o.d -o CMakeFiles/2d3danimation_tests.dir/include/Scene/canvas.cpp.o -c /Users/krish/codingStuff/2d3danimation/include/Scene/canvas.cpp
+
+CMakeFiles/2d3danimation_tests.dir/include/Scene/canvas.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2d3danimation_tests.dir/include/Scene/canvas.cpp.i"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/krish/codingStuff/2d3danimation/include/Scene/canvas.cpp > CMakeFiles/2d3danimation_tests.dir/include/Scene/canvas.cpp.i
+
+CMakeFiles/2d3danimation_tests.dir/include/Scene/canvas.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2d3danimation_tests.dir/include/Scene/canvas.cpp.s"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/krish/codingStuff/2d3danimation/include/Scene/canvas.cpp -o CMakeFiles/2d3danimation_tests.dir/include/Scene/canvas.cpp.s
+
+CMakeFiles/2d3danimation_tests.dir/include/Scene/rasterLayer.cpp.o: CMakeFiles/2d3danimation_tests.dir/flags.make
+CMakeFiles/2d3danimation_tests.dir/include/Scene/rasterLayer.cpp.o: /Users/krish/codingStuff/2d3danimation/include/Scene/rasterLayer.cpp
+CMakeFiles/2d3danimation_tests.dir/include/Scene/rasterLayer.cpp.o: CMakeFiles/2d3danimation_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/2d3danimation_tests.dir/include/Scene/rasterLayer.cpp.o"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2d3danimation_tests.dir/include/Scene/rasterLayer.cpp.o -MF CMakeFiles/2d3danimation_tests.dir/include/Scene/rasterLayer.cpp.o.d -o CMakeFiles/2d3danimation_tests.dir/include/Scene/rasterLayer.cpp.o -c /Users/krish/codingStuff/2d3danimation/include/Scene/rasterLayer.cpp
+
+CMakeFiles/2d3danimation_tests.dir/include/Scene/rasterLayer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2d3danimation_tests.dir/include/Scene/rasterLayer.cpp.i"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/krish/codingStuff/2d3danimation/include/Scene/rasterLayer.cpp > CMakeFiles/2d3danimation_tests.dir/include/Scene/rasterLayer.cpp.i
+
+CMakeFiles/2d3danimation_tests.dir/include/Scene/rasterLayer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2d3danimation_tests.dir/include/Scene/rasterLayer.cpp.s"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/krish/codingStuff/2d3danimation/include/Scene/rasterLayer.cpp -o CMakeFiles/2d3danimation_tests.dir/include/Scene/rasterLayer.cpp.s
+
 # Object files for target 2d3danimation_tests
 2d3danimation_tests_OBJECTS = \
 "CMakeFiles/2d3danimation_tests.dir/2d3danimation_tests_autogen/mocs_compilation.cpp.o" \
@@ -391,11 +419,13 @@ CMakeFiles/2d3danimation_tests.dir/include/Storage/tinyXML/tinyxml2.cpp.s: cmake
 "CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.o" \
 "CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.o" \
 "CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.o" \
-"CMakeFiles/2d3danimation_tests.dir/include/2D/Raster/old/toonzRaster.cpp.o" \
+"CMakeFiles/2d3danimation_tests.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.o" \
 "CMakeFiles/2d3danimation_tests.dir/include/2D/Painter/UI/UIPainter.cpp.o" \
 "CMakeFiles/2d3danimation_tests.dir/include/Utility/Math/toonzCalculations.cpp.o" \
 "CMakeFiles/2d3danimation_tests.dir/include/Storage/storageManager.cpp.o" \
-"CMakeFiles/2d3danimation_tests.dir/include/Storage/tinyXML/tinyxml2.cpp.o"
+"CMakeFiles/2d3danimation_tests.dir/include/Storage/tinyXML/tinyxml2.cpp.o" \
+"CMakeFiles/2d3danimation_tests.dir/include/Scene/canvas.cpp.o" \
+"CMakeFiles/2d3danimation_tests.dir/include/Scene/rasterLayer.cpp.o"
 
 # External object files for target 2d3danimation_tests
 2d3danimation_tests_EXTERNAL_OBJECTS =
@@ -416,11 +446,13 @@ CMakeFiles/2d3danimation_tests.dir/include/Storage/tinyXML/tinyxml2.cpp.s: cmake
 2d3danimation_tests: CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/BrushCatalog.cpp.o
 2d3danimation_tests: CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushWidget.cpp.o
 2d3danimation_tests: CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp.o
-2d3danimation_tests: CMakeFiles/2d3danimation_tests.dir/include/2D/Raster/old/toonzRaster.cpp.o
+2d3danimation_tests: CMakeFiles/2d3danimation_tests.dir/include/Widgets/TimelineWidget/TimelineWidget.cpp.o
 2d3danimation_tests: CMakeFiles/2d3danimation_tests.dir/include/2D/Painter/UI/UIPainter.cpp.o
 2d3danimation_tests: CMakeFiles/2d3danimation_tests.dir/include/Utility/Math/toonzCalculations.cpp.o
 2d3danimation_tests: CMakeFiles/2d3danimation_tests.dir/include/Storage/storageManager.cpp.o
 2d3danimation_tests: CMakeFiles/2d3danimation_tests.dir/include/Storage/tinyXML/tinyxml2.cpp.o
+2d3danimation_tests: CMakeFiles/2d3danimation_tests.dir/include/Scene/canvas.cpp.o
+2d3danimation_tests: CMakeFiles/2d3danimation_tests.dir/include/Scene/rasterLayer.cpp.o
 2d3danimation_tests: CMakeFiles/2d3danimation_tests.dir/build.make
 2d3danimation_tests: /opt/homebrew/lib/libgtest.a
 2d3danimation_tests: /opt/homebrew/lib/libgtest_main.a
@@ -436,7 +468,7 @@ CMakeFiles/2d3danimation_tests.dir/include/Storage/tinyXML/tinyxml2.cpp.s: cmake
 2d3danimation_tests: /opt/homebrew/Cellar/glib/2.88.2/lib/libglib-2.0.dylib
 2d3danimation_tests: /opt/homebrew/opt/gettext/lib/libintl.dylib
 2d3danimation_tests: CMakeFiles/2d3danimation_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable 2d3danimation_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/krish/codingStuff/2d3danimation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable 2d3danimation_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/2d3danimation_tests.dir/link.txt --verbose=$(VERBOSE)
 	/opt/homebrew/bin/cmake -D TEST_TARGET=2d3danimation_tests -D TEST_EXECUTABLE=/Users/krish/codingStuff/2d3danimation/build/2d3danimation_tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/Users/krish/codingStuff/2d3danimation/build -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=2d3danimation_tests_TESTS -D CTEST_FILE=/Users/krish/codingStuff/2d3danimation/build/2d3danimation_tests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_DISCOVERY_EXTRA_ARGS= -D TEST_XML_OUTPUT_DIR= -P /opt/homebrew/share/cmake/Modules/GoogleTestAddTests.cmake
 

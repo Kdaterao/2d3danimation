@@ -1286,6 +1286,12 @@ CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/ToolOptionWi
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qlayout.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qlayoutitem.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qboxlayout.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QLabel \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qlabel.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qpicture.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qiodevice.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtextdocument.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qurl.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QScrollArea \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qscrollarea.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qabstractscrollarea.h \

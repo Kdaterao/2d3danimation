@@ -1281,10 +1281,16 @@ CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/ToolViews/Br
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qlayout.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qlayoutitem.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qboxlayout.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QLabel \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qlabel.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qframe.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qpicture.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qiodevice.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtextdocument.h \
+  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qurl.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QScrollArea \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qscrollarea.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qabstractscrollarea.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qframe.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QSlider \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qslider.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qabstractslider.h \
@@ -1297,8 +1303,6 @@ CMakeFiles/2d3danimation_tests.dir/include/Widgets/ToolOptionWidget/ToolViews/Br
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qabstracteventdispatcher.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qeventloop.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qdeadlinetimer.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qiodevice.h \
-  /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qurl.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qeventpoint.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qvector2d.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qvectornd.h \

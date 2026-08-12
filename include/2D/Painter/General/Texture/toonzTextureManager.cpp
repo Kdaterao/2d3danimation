@@ -28,9 +28,13 @@ DimensionTI toonzTextureManager::createEmptyTexture(DimensionTI reqSize, bool is
 
 
   //--- create empty texture ---
+  // Match GPU storage to upload type (8-bit vs 16-bit channels)
+  GLint internalFmt = (type == GL_UNSIGNED_SHORT) ? GL_RGBA16 : GL_RGBA8;
+
+  
   glTexImage2D(GL_TEXTURE_2D,  // target (is a 2D texture)
                0,              // is one level only
-               GL_RGBA8,       //gpu format storage type
+               internalFmt,    //gpu format storage type
                reqSize.lx,     // size width
                reqSize.ly,     // height
                0,              // size of a border

@@ -1362,6 +1362,10 @@ CMakeFiles/2d3danimation.dir/main.cpp.o: \
   /usr/local/include/libmypaint-2.0/mypaint-symmetry.h \
   /usr/local/include/libmypaint-2.0/mypaint-matrix.h \
   /Users/krish/codingStuff/2d3danimation/include/Utility/Math/toonzCalculations.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/canvas.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/rasterLayer.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/frame.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/layer.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QString \
   /Users/krish/codingStuff/2d3danimation/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QVBoxLayout \
@@ -1385,4 +1389,5 @@ CMakeFiles/2d3danimation.dir/main.cpp.o: \
   /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolOptionWidget.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QStackedWidget \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+  /Users/krish/codingStuff/2d3danimation/include/Widgets/TimelineWidget/TimelineWidget.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QLayout

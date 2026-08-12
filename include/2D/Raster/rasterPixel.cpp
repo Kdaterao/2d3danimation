@@ -24,4 +24,10 @@ const PixelBGRM32 PixelBGRM32::Transparent(0, 0, 0, 0);
 
 
 //----- default colors for 32-bit pixel rgbm ------
+
+
 //----- default colors for 64-bit pixel rgbm ------
+
+const PixelRGBM64 PixelRGBM64::White(maxChannelValue, maxChannelValue, maxChannelValue, maxChannelValue);
+const PixelRGBM64 PixelRGBM64::Black(0, 0, 0, maxChannelValue);
+const PixelRGBM64 PixelRGBM64::Transparent(0, 0, 0, 0);

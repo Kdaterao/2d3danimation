@@ -1,10 +1,6 @@
 #ifndef STORAGEMANAGER_H
 #define STORAGEMANAGER_H
 
-#include <toonzRaster.h>
-
-
-
 class storageManager{
 
 
@@ -17,8 +13,6 @@ class storageManager{
 
 
     //for now these are going to really basic and just store images like an array (makes sense tho because it matches up well with image timeline)
-    template <class T>
-    ToonzRasterPT<T> loadImages();
     void storeImages();
 
 

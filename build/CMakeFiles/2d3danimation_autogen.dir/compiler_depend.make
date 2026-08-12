@@ -133,12 +133,16 @@
   /Users/krish/codingStuff/2d3danimation/include/2D/Painter/UI/UIPainter.cpp \
   /Users/krish/codingStuff/2d3danimation/include/2D/Painter/UI/UIPainter.h \
   /Users/krish/codingStuff/2d3danimation/include/2D/Painter/UI/UIShapes.h \
-  /Users/krish/codingStuff/2d3danimation/include/2D/Raster/old/toonzRaster.cpp \
-  /Users/krish/codingStuff/2d3danimation/include/2D/Raster/old/toonzRaster.h \
   /Users/krish/codingStuff/2d3danimation/include/2D/Raster/raster.h \
   /Users/krish/codingStuff/2d3danimation/include/2D/Raster/rasterPixel.cpp \
   /Users/krish/codingStuff/2d3danimation/include/2D/Raster/rasterPixel.h \
   /Users/krish/codingStuff/2d3danimation/include/2D/Raster/rasterTile.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/canvas.cpp \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/canvas.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/frame.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/layer.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/rasterLayer.cpp \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/rasterLayer.h \
   /Users/krish/codingStuff/2d3danimation/include/Storage/storageManager.cpp \
   /Users/krish/codingStuff/2d3danimation/include/Storage/storageManager.h \
   /Users/krish/codingStuff/2d3danimation/include/Storage/tinyXML/tinyxml2.cpp \
@@ -151,6 +155,8 @@
   /Users/krish/codingStuff/2d3danimation/include/Widgets/CanvasWidget/CanvasWidget.h \
   /Users/krish/codingStuff/2d3danimation/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp \
   /Users/krish/codingStuff/2d3danimation/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.h \
+  /Users/krish/codingStuff/2d3danimation/include/Widgets/TimelineWidget/TimelineWidget.cpp \
+  /Users/krish/codingStuff/2d3danimation/include/Widgets/TimelineWidget/TimelineWidget.h \
   /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/BrushCatalog.cpp \
   /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/BrushCatalog.h \
   /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolOptionWidget.cpp \
@@ -1709,19 +1715,17 @@
 
 /opt/homebrew/share/cmake/Modules/CheckLibraryExists.cmake:
 
+/opt/homebrew/share/cmake/Modules/CheckCXXSourceCompiles.cmake:
+
 /opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:
 
 /opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake:
 
 /opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake:
 
+/opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake:
+
 /opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:
-
-/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/sys/_types/_null.h:
-
-/opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake:
 
 /opt/homebrew/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake:
 
@@ -1838,8 +1842,6 @@
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/unique.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/chrono:
-
-/opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/ranges_sort.h:
 
@@ -2164,6 +2166,8 @@
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__ranges/dangling.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__thread/poll_with_backoff.h:
+
+/Users/krish/codingStuff/2d3danimation/include/Scene/frame.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__ranges/all.h:
 
@@ -2635,8 +2639,6 @@
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__filesystem/file_time_type.h:
 
-/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__filesystem/file_status.h:
-
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__type_traits/make_signed.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__atomic/check_memory_order.h:
@@ -3093,19 +3095,17 @@
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/ranges_remove.h:
 
-/Users/krish/codingStuff/2d3danimation/CMakeLists.txt:
+/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__verbose_abort:
 
-/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Core/Qt6QDarwinCalendarPermissionPluginTargetsPrecheck.cmake:
-
-/Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qversiontagging.h:
-
-/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/ranges_prev_permutation.h:
+/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/ranges_pop_heap.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/xlocale.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/ranges_partition_point.h:
 
-/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/merge.h:
+/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__iterator/reverse_iterator.h:
+
+/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/ranges_partition.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__vector/container_traits.h:
 
@@ -3118,8 +3118,6 @@
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/pop_heap.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/ranges_minmax.h:
-
-/Users/krish/codingStuff/2d3danimation/include/2D/Raster/old/toonzRaster.cpp:
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Core/Qt6QDarwinLocationPermissionPluginDependencies.cmake:
 
@@ -3341,6 +3339,8 @@
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsTargets-release.cmake:
 
+/Users/krish/codingStuff/2d3danimation/include/Scene/canvas.h:
+
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__ranges/reverse_view.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/concepts:
@@ -3363,9 +3363,9 @@
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/cstdint:
 
-/Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/QVBoxLayout:
-
 /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/qabstractslider.h:
+
+/Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/QVBoxLayout:
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsDependencies.cmake:
 
@@ -3465,6 +3465,14 @@
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargetsPrecheck.cmake:
 
+/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-release.cmake:
+
+/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/machine/_types.h:
+
+/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets.cmake:
+
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Gui/Qt6QSvgIconPluginConfig.cmake:
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfigVersion.cmake:
@@ -3549,10 +3557,6 @@
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake:
 
-/Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qcompare_impl.h:
-
-/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/ranges_partial_sort_copy.h:
-
 /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qtversionchecks.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__iterator/iterator_traits.h:
@@ -3580,14 +3584,6 @@
 /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp:
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Gui/Qt6QWebpPluginAdditionalTargetInfo.cmake:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/machine/_types.h:
-
-/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets.cmake:
-
-/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-release.cmake:
-
-/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/sys/_types/_fd_def.h:
 
@@ -3663,9 +3659,9 @@
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets.cmake:
 
-/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__chrono/hh_mm_ss.h:
-
 /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/BrushCatalog.h:
+
+/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__chrono/hh_mm_ss.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/sys/_types/_fd_isset.h:
 
@@ -3741,15 +3737,21 @@
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Core/Qt6QDarwinCameraPermissionPluginAdditionalTargetInfo.cmake:
 
+/Users/krish/codingStuff/2d3danimation/CMakeLists.txt:
+
+/Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qversiontagging.h:
+
+/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Core/Qt6QDarwinCalendarPermissionPluginTargetsPrecheck.cmake:
+
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/ranges_is_heap_until.h:
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__cstddef/max_align_t.h:
 
-/Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qtaggedpointer.h:
-
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__math/traits.h:
+
+/Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qtaggedpointer.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/generate.h:
 
@@ -3899,6 +3901,8 @@
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6VersionlessAliasTargets.cmake:
 
+/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/merge.h:
+
 /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/QPainter:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/sys/_types/_u_int16_t.h:
@@ -3911,27 +3915,13 @@
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake:
 
-/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/lower_bound.h:
-
-/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6ConfigVersion.cmake:
-
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6Config.cmake:
 
-/Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsglobal.h:
+/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__numeric/transform_reduce.h:
 
-/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__fwd/stack.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/sys/_pthread/_pthread_key_t.h:
 
-/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__ranges/owning_view.h:
-
-/Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsexports.h:
-
-/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__type_traits/is_object.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/_bounds.h:
-
-/Users/krish/codingStuff/2d3danimation/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp:
-
-/Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/qtwidgets-config.h:
+/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Gui/Qt6QICNSPluginTargetsPrecheck.cmake:
 
 /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qregion.h:
 
@@ -3962,10 +3952,6 @@
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/none_of.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/sys/_pthread/_pthread_condattr_t.h:
-
-/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/ranges_partition.h:
-
-/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__iterator/reverse_iterator.h:
 
 /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/qabstractscrollarea.h:
 
@@ -4109,6 +4095,10 @@
 
 /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qbitmap.h:
 
+/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/Qt6ConfigVersion.cmake:
+
+/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/lower_bound.h:
+
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__memory/is_sufficiently_aligned.h:
 
 /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/QSurfaceFormat:
@@ -4121,13 +4111,9 @@
 
 /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qxptype_traits.h:
 
-/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__numeric/transform_reduce.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/sys/_pthread/_pthread_key_t.h:
-
-/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Gui/Qt6QICNSPluginTargetsPrecheck.cmake:
-
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake:
+
+/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/ranges_prev_permutation.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/ranges_find_end.h:
 
@@ -4169,10 +4155,6 @@
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/FindWrapAtomic.cmake:
 
-/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__node_handle:
-
-/opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake:
-
 /Users/krish/codingStuff/2d3danimation/include/2D/Raster/raster.h:
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake:
@@ -4180,10 +4162,6 @@
 /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qsurfaceformat.h:
 
 /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qtextstream.h:
-
-/opt/homebrew/share/cmake/Modules/CheckCXXSourceCompiles.cmake:
-
-/Users/krish/codingStuff/2d3danimation/include/2D/Raster/old/toonzRaster.h:
 
 /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qtclasshelpermacros.h:
 
@@ -4202,6 +4180,12 @@
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/QtPublicSbomCycloneDXHelpers.cmake:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__format/formatter_integral.h:
+
+/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/any_of.h:
+
+/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6DBusTools/Qt6DBusToolsDependencies.cmake:
+
+/Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qsystemdetection.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__system_error/throw_system_error.h:
 
@@ -4224,6 +4208,12 @@
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/QtPublicCMakeEarlyPolicyHelpers.cmake:
 
 /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qtcore-config.h:
+
+/opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake:
+
+/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/sys/_types/_null.h:
 
 /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qshareddata.h:
 
@@ -4327,6 +4317,8 @@ CMakeFiles/4.3.2/CMakeCCompiler.cmake:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__memory/allocation_guard.h:
 
+/Users/krish/codingStuff/2d3danimation/include/Scene/canvas.cpp:
+
 /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qpicture.h:
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Gui/Qt6QSvgPluginTargetsPrecheck.cmake:
@@ -4334,10 +4326,6 @@ CMakeFiles/4.3.2/CMakeCCompiler.cmake:
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Core/Qt6QDarwinCameraPermissionPluginConfig.cmake:
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Core/Qt6QDarwinCalendarPermissionPluginDependencies.cmake:
-
-/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__verbose_abort:
-
-/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/ranges_pop_heap.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__utility/scope_guard.h:
 
@@ -4415,19 +4403,29 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__ranges/container_compatible_range.h:
 
+CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/arm/_endian.h:
+
+/Users/krish/codingStuff/2d3danimation/include/Scene/layer.h:
+
 /Users/krish/codingStuff/2d3danimation/include/2D/Brush/MPLBrush/mplBrush.cpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/sys/_types/_u_char.h:
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Gui/Qt6QICOPluginTargets-release.cmake:
 
+/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/ranges_partial_sort_copy.h:
+
+/Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qcompare_impl.h:
+
+/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__ranges/data.h:
+
+/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:
+
 /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qbytearray.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/radix_sort.h:
-
-CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/arm/_endian.h:
 
 /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qalloc.h:
 
@@ -4511,6 +4509,10 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qsharedpointer.h:
 
+/opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake:
+
+/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__node_handle:
+
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Gui/Qt6GuiVersionlessAliasTargets.cmake:
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/macos/Info.plist.app.in:
@@ -4541,6 +4543,10 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/QtPublicSbomPythonHelpers.cmake:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/sys/_types/_uid_t.h:
+
+/Users/krish/codingStuff/2d3danimation/include/Widgets/TimelineWidget/TimelineWidget.h:
+
 /Users/krish/codingStuff/2d3danimation/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/ranges_reverse_copy.h:
@@ -4554,6 +4560,16 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/qwidget.h:
 
 /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qassert.h:
+
+/Users/krish/codingStuff/2d3danimation/include/Widgets/ColorWidget/ColorTriangleWidget/ColorTriangleWidget.cpp:
+
+/Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/qtwidgets-config.h:
+
+/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__fwd/stack.h:
+
+/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__ranges/owning_view.h:
+
+/Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsexports.h:
 
 /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qiterable.h:
 
@@ -4569,10 +4585,6 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 /Users/krish/codingStuff/2d3danimation/include/Storage/tinyXML/tinyxml2.h:
 
-/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:
-
-/Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qbytearrayview.h:
-
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__format/formatter_output.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__format/formatter_char.h:
@@ -4581,6 +4593,8 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/min_element.h:
 
+/Users/krish/codingStuff/2d3danimation/include/Scene/rasterLayer.cpp:
+
 /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qicon.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__functional/binder1st.h:
@@ -4588,8 +4602,6 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake:
 
 /Users/krish/codingStuff/2d3danimation/include/2D/Raster/rasterPixel.cpp:
-
-/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__ranges/data.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__ranges/empty.h:
 
@@ -4619,23 +4631,23 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 /Users/krish/codingStuff/2d3danimation/include/2D/Painter/General/Shader/toonzShader.cpp:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/sys/_types/_u_int8_t.h:
-
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__type_traits/remove_cvref.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/machine/types.h:
 
 /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qarraydata.h:
 
+/Users/krish/codingStuff/2d3danimation/include/Scene/rasterLayer.h:
+
 /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qtresource.h:
+
+/Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsglobal.h:
 
 /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qalgorithms.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__type_traits/is_pointer.h:
 
 /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qlist.h:
-
-/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:
 
 /opt/homebrew/lib/cmake/GTest/GTestTargets-release.cmake:
 
@@ -4659,29 +4671,23 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/qrgba64.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/sys/_types/_errno_t.h:
-
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__type_traits/add_reference.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/sys/_pthread/_pthread_attr_t.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/sys/_types/_errno_t.h:
+
 /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qbytearrayalgorithms.h:
+
+/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:
+
+/Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qbytearrayview.h:
 
 /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/qlabel.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/unordered_set:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/inplace_merge.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/sys/_types/_uid_t.h:
-
-/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/any_of.h:
-
-/Users/krish/codingStuff/qt6-build/lib/cmake/Qt6DBusTools/Qt6DBusToolsDependencies.cmake:
-
-/Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qsystemdetection.h:
-
-/Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/q20type_traits.h:
 
 /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Versions/A/Headers/QOpenGLFunctions:
 
@@ -4736,6 +4742,12 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsVersionlessAliasTargets.cmake:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/sys/_types/_uintptr_t.h:
+
+/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__type_traits/is_object.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/_bounds.h:
+
+/Users/krish/codingStuff/2d3danimation/include/Widgets/TimelineWidget/TimelineWidget.cpp:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__cstddef/size_t.h:
 
@@ -4827,6 +4839,8 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/sys/_types/_u_int8_t.h:
+
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__ios/fpos.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__locale_dir/scan_keyword.h:
@@ -4839,6 +4853,8 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__algorithm/half_positive.h:
 
+/opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__filesystem/file_status.h:
+
 /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Versions/A/Headers/qsizepolicy.h:
 
 /opt/homebrew/Cellar/llvm/22.1.7_1/include/c++/v1/__atomic/to_gcc_order.h:
@@ -4846,6 +4862,8 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 /Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk/usr/include/_xlocale.h:
 
 /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/qsharedpointer_impl.h:
+
+/Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Versions/A/Headers/q20type_traits.h:
 
 /Users/krish/codingStuff/qt6-build/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargetsPrecheck.cmake:
 

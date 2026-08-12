@@ -1379,4 +1379,8 @@ CMakeFiles/2d3danimation.dir/include/Widgets/ColorWidget/ColorTriangleWidget/Col
   /usr/local/include/libmypaint-2.0/mypaint-symmetry.h \
   /usr/local/include/libmypaint-2.0/mypaint-matrix.h \
   /Users/krish/codingStuff/2d3danimation/include/Utility/Math/toonzCalculations.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/canvas.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/rasterLayer.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/frame.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/layer.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QString

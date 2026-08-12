@@ -5,8 +5,12 @@
 #include <types.h>
 #include <rasterTile.h>
 #include <unordered_map>
+#include <vector>
 #include <assert.h>
 #include <memory>
+#include <cmath>
+#include <cstring>
+#include <iostream>
 
 #include <toonzGeometry.h>
 
@@ -61,7 +65,6 @@
 struct TileCoord{
     int x;
     int y;
-
 
     bool operator==(const TileCoord& other) const {
         return x == other.x && y == other.y;
@@ -155,6 +158,7 @@ class Raster {
 
         }
 
+
         //------------------------------------------
         //   IMAGE ACCESS (just return buffer)g
         //------------------------------------------
@@ -201,35 +205,31 @@ class Raster {
                 
 
 
-                return it->second.buffer + offset;
+                return it->second.buffer.get() + offset;
             
             } else {
                 // KEY NOT THERE :( 
-                RasterTile tile = RasterTile{makeBuffer(), true, 1};
-      
 
+                // create new tile object
+                RasterTile tile = RasterTile{makeBuffer(), true, 1};
+                
+                // new part in dicitonary
                 auto [newIt, inserted] = tilesMap.emplace(
                     TileCoord{tx, ty},
                     std::move(tile)
                 );
 
                 
+                // add to dirty list
                 if(write){
                     dirty.push_back(TileCoord{tx, ty});
                 }
 
-                return newIt->second.buffer + offset;
+                return newIt->second.buffer.get() + offset;
             }
             
         };
 
-        //-----------------------------------
-        //         Get Tile Offset 
-        //-----------------------------------
-
-
-
-        
 
         //-------------------------------------
         //        Mark dirty tiles 
@@ -265,6 +265,22 @@ class Raster {
 
         UCHAR *getNullTile() {
             return null_tile;
+        }
+
+
+
+        void fill(T value)
+        {
+            const int count = tile_length * tile_length;
+            for(int i = 0; i < tiles_x; i++) {
+                for(int j = 0; j < tiles_y; j++) {
+                    UCHAR* tile = getRawData(i * tile_length, j * tile_length, true);
+                    T* pixels = reinterpret_cast<T*>(tile);
+                    for(int p = 0; p < count; p++) {
+                        pixels[p] = value;
+                    }
+                }
+            }
         }
 
         //------------------------------------------
@@ -304,18 +320,14 @@ class Raster {
 
     private:
 
-        //----- utility to quickly make a new buffer -------
-        UCHAR *makeBuffer(){
-            //std::cout<<"pixelSize"<<pixelSize<<std::endl;
+        std::unique_ptr<UCHAR[]> makeBuffer() {
             int size = tile_length * tile_length * pixelSize;
-            UCHAR* buffer = new UCHAR[size];
-            memset(buffer, 255, size);
+
+            auto buffer = std::make_unique<UCHAR[]>(size);
+            memset(buffer.get(), 0, size);
 
             return buffer;
-
         }
-
-
         
 
 };
@@ -329,7 +341,7 @@ class Raster {
 
 template <class T>
 
-using RasterP = std::shared_ptr<Raster<T>>;  // "using" does not work with "typedef" so this is the compromise
+using RasterP = std::unique_ptr<Raster<T>>;
 
 
 

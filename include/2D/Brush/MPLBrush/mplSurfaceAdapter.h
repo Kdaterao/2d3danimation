@@ -24,7 +24,7 @@ template <class T> //our pixel type
 struct mplSurfaceAdapter {
 
     MyPaintTiledSurface parent; //Basically inherited since its the first member in our struct 
-    RasterP<T> ras = nullptr; //pointer to our actual raster image 
+    Raster<T>* ras = nullptr; // non-owning; RasterLayer owns the Raster 
 
 };
 
@@ -167,7 +167,7 @@ void mplDestroy(MyPaintSurface* surface)
 
 
 template <class T>
-mplSurfaceAdapter<T> *mplSurfaceAdapter_new(RasterP<T> ras) {
+mplSurfaceAdapter<T> *mplSurfaceAdapter_new(Raster<T>* ras) {
 
     //--- check if we actaully have a raster ---
     assert(ras != nullptr);

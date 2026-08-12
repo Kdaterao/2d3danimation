@@ -1380,12 +1380,18 @@ CMakeFiles/2d3danimation.dir/2d3danimation_autogen/mocs_compilation.cpp.o: \
   /usr/local/include/libmypaint-2.0/mypaint-symmetry.h \
   /usr/local/include/libmypaint-2.0/mypaint-matrix.h \
   /Users/krish/codingStuff/2d3danimation/include/Utility/Math/toonzCalculations.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/canvas.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/rasterLayer.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/frame.h \
+  /Users/krish/codingStuff/2d3danimation/include/Scene/layer.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/QString \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtextcursor.h \
   /Users/krish/codingStuff/qt6-build/lib/QtGui.framework/Headers/qtextformat.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qtmochelpers.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/qtmocconstants.h \
   /Users/krish/codingStuff/qt6-build/lib/QtCore.framework/Headers/q20algorithm.h \
+  /Users/krish/codingStuff/2d3danimation/build/2d3danimation_autogen/L2Y75F2YHI/moc_TimelineWidget.cpp \
+  /Users/krish/codingStuff/2d3danimation/build/2d3danimation_autogen/L2Y75F2YHI/../../../include/Widgets/TimelineWidget/TimelineWidget.h \
   /Users/krish/codingStuff/2d3danimation/build/2d3danimation_autogen/VBYBMSDPZA/moc_ToolOptionWidget.cpp \
   /Users/krish/codingStuff/2d3danimation/build/2d3danimation_autogen/VBYBMSDPZA/../../../include/Widgets/ToolOptionWidget/ToolOptionWidget.h \
   /Users/krish/codingStuff/qt6-build/lib/QtWidgets.framework/Headers/QStackedWidget \

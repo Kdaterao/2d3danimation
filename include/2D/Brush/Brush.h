@@ -88,6 +88,12 @@ namespace Brush {
                 bsh.resetBrush();
             }, *curr);
         }
+
+        void startBrush() {
+            std::visit([&](auto& bsh) {
+                bsh.startBrush();
+            }, *curr);
+        }
         
         
     };      
@@ -100,7 +106,7 @@ namespace Brush {
 
 
     template<class T>
-    void setBrush( Brush::RasterTypes newType, auto &brush, RasterP<T> image, T color,int size ) {
+    void setBrush( Brush::RasterTypes newType, auto &brush, Raster<T>* image, T color,int size ) {
         brush.curr.reset();
 
         switch (newType) {
