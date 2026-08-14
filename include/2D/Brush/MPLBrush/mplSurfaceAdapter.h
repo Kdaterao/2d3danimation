@@ -49,15 +49,13 @@ static void tile_request_start(MyPaintTiledSurface *tiled_surface, MyPaintTileRe
 
 
     //----- type casting ------
-    mplSurfaceAdapter<T> *self = (mplSurfaceAdapter<T> *)tiled_surface; 
-
-
-
-    self->ras->flushBufferTile();
+    mplSurfaceAdapter<T> *self = (mplSurfaceAdapter<T> *)tiled_surface;
 
     //----- set our request->buffer to our raster buffer --------
     const int tx = request->tx;
     const int ty = request->ty;
+    const int px = tx * 64;
+    const int py = ty * 64;
 
     uint16_t *tile_pointer = NULL;
 
@@ -65,20 +63,13 @@ static void tile_request_start(MyPaintTiledSurface *tiled_surface, MyPaintTileRe
         // grab null tile 
         tile_pointer = (UINT16 *) self->ras->getNullTile();
 
+    } else if (self->eraser) {
+        // no need to overlay anything, we are just replacing with transparent pixels now
+        tile_pointer = (UINT16 *) self->ras->getRawData(px, py, true);
     } else {
-
-
-
-        if(self->eraser){
-            //no need to overlay anything, we are just replacing with transparent pixels now
-            tile_pointer = (UINT16 *) self->ras->getRawData(request->tx * 64, request->ty * 64, true); 
-        } else {
-            //need a buffer for post processing + overaly 
-            tile_pointer= (UINT16 *) self->ras->getBufferTile();
-        }
-        
+        // staging tile for post processing + overlay (accumulate across stroke)
+        tile_pointer = (UINT16 *) self->ras->getBufferTile(px, py, true);
     }
-
 
     //------ assign our tile poitner ------
     request->buffer = tile_pointer;
@@ -103,6 +94,7 @@ static void tile_request_end(MyPaintTiledSurface *tiled_surface, MyPaintTileRequ
 
         //------ convert back to our pixel format -----
 
+        /*
         // MyPaint / buffer tile is BGRM; raster destination is our pixel type T
         PixelRGBM64 *src = (PixelRGBM64 *) request->buffer;
 
@@ -112,6 +104,7 @@ static void tile_request_end(MyPaintTiledSurface *tiled_surface, MyPaintTileRequ
 
         T *dest = (T *) self->ras->getRawData(request->tx * 64, request->ty * 64, true); 
 
+
         for (int i = 0; i < 64*64; i++)
         {
             //apply opacity 
@@ -120,9 +113,12 @@ static void tile_request_end(MyPaintTiledSurface *tiled_surface, MyPaintTileRequ
             // apply our buffer tile to our raster
             dest[i].composite(src[i]);
         }
+  
 
-        // flush our buffer tile
-        self->ras->flushBufferTile();
+        // flush this staging tile
+        self->ras->flushBufferTile(TileCoord{tx, ty});
+
+        */
     }
 
 }

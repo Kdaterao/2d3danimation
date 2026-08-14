@@ -96,6 +96,32 @@ void GLWidget::paintGL() {
 
 
     int len = currentImage()->getTileLength();
+    const int activeLayer = canvas->getActiveLayerIndex();
+
+    auto paintTileStack = [&](const TileCoord& tile) {
+        auto tiles = canvas->getTile(tile.x, tile.y);
+        RectTI rect{tile.x * len , tile.y * len, (tile.x * len) + len, (tile.y * len) + len};
+        GLuint fbo = defaultFramebufferObject();
+        UCHAR *buffer = currentImage()->getBufferTile(tile.x * len, tile.y * len, false);
+
+        bool paintedBuffer = false;
+        for (auto& [layerIndex, data] : tiles) {
+            rasterizer->PaintRaster(rect, data, fbo, false);
+
+            // Preview sits on the active layer, under anything above it
+            if (layerIndex == activeLayer) {
+                rasterizer->PaintRaster(rect, buffer, fbo, true);
+                paintedBuffer = true;
+            }
+        }
+
+        // Active layer missing/invisible: still show preview above what did draw
+        if (!paintedBuffer) {
+            rasterizer->PaintRaster(rect, buffer, fbo, true);
+        }
+
+        currentImage()->unmarkDirty(tile.x, tile.y);
+    };
 
 
 
@@ -104,18 +130,7 @@ void GLWidget::paintGL() {
     std::vector<TileCoord> *dirtyCanvas = canvas->getDirty();
 
         for(auto &tile : *dirtyCanvas){
-
-            std::vector<UCHAR*> tiles = canvas->getTile(tile.x, tile.y);
-
-            for(auto &layer : tiles){
-                rasterizer->PaintRaster(
-                    RectTI{tile.x * len , tile.y * len, (tile.x * len) + len, (tile.y * len) + len},
-                    layer, 
-                    defaultFramebufferObject()
-                );
-            }
-
-            currentImage()->unmarkDirty(tile.x, tile.y);
+            paintTileStack(tile);
         }
 
         dirty->clear();
@@ -127,18 +142,7 @@ void GLWidget::paintGL() {
     if(dirty->size() != 0){
 
         for(auto &tile : *dirty){
-
-            std::vector<UCHAR*> tiles = canvas->getTile(tile.x, tile.y);
-
-            for(auto &layer : tiles){
-                rasterizer->PaintRaster(
-                    RectTI{tile.x * len , tile.y * len, (tile.x * len) + len, (tile.y * len) + len},
-                    layer, 
-                    defaultFramebufferObject()
-                );
-            }
-
-            currentImage()->unmarkDirty(tile.x, tile.y);
+            paintTileStack(tile);
         }
         dirty->clear();
     }
@@ -223,6 +227,7 @@ void GLWidget::mousePressEvent(QMouseEvent *event) {
     if (event->button() == Qt::LeftButton) {
 
         ensureDrawingFrame();
+        currentImage()->clearBufferTiles();
 
         QPoint q = event->pos();
 
@@ -251,6 +256,7 @@ void GLWidget::mouseMoveEvent(QMouseEvent *event) {
         if(p1.x == -1){
             //----- case1: no initial point -----
             ensureDrawingFrame();
+            currentImage()->clearBufferTiles();
             p1 = PointT(q.x(), q.y());
             p2 = PointT(q.x(), q.y());
             p3 = PointT(q.x(), q.y());
@@ -286,9 +292,12 @@ void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
         p2 = PointT(-1, -1);
         p3 = PointT(-1, -1);
         brush.resetBrush();
-        event->accept();
 
-        
+        float alphaScale = curr_color.m / (float)PixelType::maxChannelValue;
+        currentImage()->commitBufferTiles(alphaScale);
+        update();
+
+        event->accept();
     }
 }
 
@@ -343,6 +352,11 @@ void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
             (opacityPercent / 100.0f) * PixelType::maxChannelValue + 0.5f);
         if (!eraser) {
             brush.setColor(curr_color);
+        }
+        if (rasterizer) {
+            PaintSettings preview = rasterizer->getPreviewSettings();
+            preview.opacity = opacityPercent / 100.0f;
+            rasterizer->setPreviewSettings(preview);
         }
     }
 

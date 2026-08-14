@@ -90,8 +90,8 @@ class Canvas {
         //     TILES
         // -----------------------------
 
-        // returns the tiles in order of rendering (bottom -> top)
-        std::vector<UCHAR*> getTile(int tx, int ty);
+        // returns tiles in render order (bottom -> top). layerIndex -1 = backdrop.
+        std::vector<std::pair<int, UCHAR*>> getTile(int tx, int ty);
         std::vector<TileCoord> *getDirty();
 
 

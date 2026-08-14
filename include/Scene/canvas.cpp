@@ -263,11 +263,11 @@ void Canvas::toggleBackDrop(bool enabled) {
 //  GET TILE
 //-------------------
 
-std::vector<UCHAR*> Canvas::getTile(int tx, int ty) {
-    std::vector<UCHAR*> tiles;
+std::vector<std::pair<int, UCHAR*>> Canvas::getTile(int tx, int ty) {
+    std::vector<std::pair<int, UCHAR*>> tiles;
 
     if (backDropEnabled) {
-        tiles.push_back(backDrop.getRawData(tx * tile_length, ty * tile_length, false));
+        tiles.emplace_back(-1, backDrop.getRawData(tx * tile_length, ty * tile_length, false));
     }
 
     for (auto layerIndex : orderOfLayers) {
@@ -275,7 +275,7 @@ std::vector<UCHAR*> Canvas::getTile(int tx, int ty) {
         if (!layer->isVisible()) continue;
         auto tile = layer->getCurrentImage()->getRawData(tx * tile_length, ty * tile_length, false);
         if (tile) {
-            tiles.push_back(tile);
+            tiles.emplace_back(layerIndex, tile);
         }
     }
     if (tiles.empty()) {

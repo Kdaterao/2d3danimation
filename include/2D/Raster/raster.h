@@ -116,8 +116,8 @@ class Raster {
     //--- buffer variables ---
     std::vector<TileCoord> dirty = std::vector<TileCoord>();
     std::unordered_map<TileCoord, RasterTile>  tilesMap;
+    std::unordered_map<TileCoord, RasterTile>  bufferTilesMap; // staging tiles (MyPaint / post-process)
     UCHAR *null_tile; // empty tile for out of bounds requests 
-    UCHAR *buffer_tile; // buffer tile post processing of pixels  
 
 
     //=================================
@@ -136,8 +136,7 @@ class Raster {
         lx(i_w),
         ly(i_h),
         pixelSize(sizeof(T)),
-        null_tile(nullptr),
-        buffer_tile(nullptr)
+        null_tile(nullptr)
         {
 
             assert(i_w > 0);
@@ -151,21 +150,19 @@ class Raster {
             //initialize our null tile
             null_tile = new UCHAR[size];
             memset(null_tile, 0, size);
-
-            // staging tile for MyPaint / post-process
-            initializeBufferTile();
         };
+
+        Raster(const Raster&) = delete;
+        Raster& operator=(const Raster&) = delete;
 
         //------------------------------------------
         //   DECONSTRUCTOR 
         //------------------------------------------
 
         ~Raster(){
-            //release our memory tiles 
             delete[] null_tile;
-            delete[] buffer_tile;
             null_tile = nullptr;
-            buffer_tile = nullptr;
+            // tilesMap / bufferTilesMap cleaned up via unique_ptr in RasterTile
         }
 
 
@@ -211,7 +208,7 @@ class Raster {
                     dirty.push_back(TileCoord{tx, ty});
 
                 }
-
+                
                 
 
 
@@ -248,9 +245,13 @@ class Raster {
         void unmarkDirty(int tx, int ty){
             TileCoord key = TileCoord{tx, ty};
             auto it = tilesMap.find(key);
-            assert(it != tilesMap.end());
-            it->second.dirty = false;
-
+            if (it != tilesMap.end()) {
+                it->second.dirty = false;
+            }
+            auto bit = bufferTilesMap.find(key);
+            if (bit != bufferTilesMap.end()) {
+                bit->second.dirty = false;
+            }
         }
 
         void markDirty(int tx, int ty)
@@ -287,23 +288,90 @@ class Raster {
         //      Buffer Tile
         //-------------------------------------
 
+        // Pixel (x, y) → pointer into staging tile (lazy-create). write marks tile dirty.
+        UCHAR *getBufferTile(int x, int y, bool write) {
+            if (x >= lx || y >= ly || x < 0 || y < 0) {
+                return null_tile;
+            }
 
-        void initializeBufferTile() {
-            if (buffer_tile) return;
-            int size = tile_length * tile_length * pixelSize;
-            buffer_tile = new UCHAR[size];
-            memset(buffer_tile, 0, size);
+            const int tx = x >> tile_length_power;
+            const int ty = y >> tile_length_power;
+            TileCoord coord{tx, ty};
+
+            int xLocal = x - (tx * tile_length);
+            int yLocal = y - (ty * tile_length);
+            int offset = (yLocal * tile_length + xLocal) * pixelSize;
+
+            auto it = bufferTilesMap.find(coord);
+
+            if (it != bufferTilesMap.end()) {
+                if (write && it->second.dirty == false) {
+                    it->second.dirty = true;
+                    dirty.push_back(coord);
+                }
+                return it->second.buffer.get() + offset;
+            }
+
+            RasterTile tile = RasterTile{makeBuffer(), write, 1};
+            auto [newIt, inserted] = bufferTilesMap.emplace(coord, std::move(tile));
+            if (write) {
+                dirty.push_back(coord);
+            }
+            return newIt->second.buffer.get() + offset;
         }
 
-        UCHAR *getBufferTile(int x, int y) {
-            initializeBufferTile();
-            return buffer_tile;
+        // Zero one staging tile (by tile coord).
+        void flushBufferTile(TileCoord coord) {
+            auto it = bufferTilesMap.find(coord);
+            if (it == bufferTilesMap.end()) return;
+
+            const int size = tile_length * tile_length * pixelSize;
+            memset(it->second.buffer.get(), 0, size);
         }
 
-        void flushBufferTile() {
-            initializeBufferTile();
-            int size = tile_length * tile_length * pixelSize;
-            memset(buffer_tile, 0, size);
+        // Convenience: flush the staging tile that contains pixel (x, y).
+        void flushBufferTile(int x, int y) {
+            if (x >= lx || y >= ly || x < 0 || y < 0) return;
+            flushBufferTile(TileCoord{x >> tile_length_power, y >> tile_length_power});
+        }
+
+        // Zero every staging tile currently in the map (reuses allocations).
+        void flushAllBufferTiles() {
+            const int size = tile_length * tile_length * pixelSize;
+            for (auto& [coord, tile] : bufferTilesMap) {
+                (void)coord;
+                memset(tile.buffer.get(), 0, size);
+            }
+        }
+
+        // Drop all staging tiles (frees memory; next getBufferTile reallocates).
+        void clearBufferTiles() {
+            bufferTilesMap.clear();
+        }
+
+        // Composite every staging tile onto the real raster, then drop buffers.
+        // alphaScale is 0..1 brush/surface opacity applied to source matte before composite.
+        void commitBufferTiles(float alphaScale = 1.0f) {
+            if (bufferTilesMap.empty()) return;
+
+            const int count = tile_length * tile_length;
+            for (auto& [coord, tile] : bufferTilesMap) {
+                const int px = coord.x * tile_length;
+                const int py = coord.y * tile_length;
+
+                T* dest = reinterpret_cast<T*>(getRawData(px, py, true));
+                T* src  = reinterpret_cast<T*>(tile.buffer.get());
+
+                for (int i = 0; i < count; i++) {
+                    if (alphaScale != 1.0f) {
+                        src[i].m = static_cast<typename T::Channel>(
+                            src[i].m * alphaScale + 0.5f);
+                    }
+                    dest[i].composite(src[i]);
+                }
+            }
+
+            clearBufferTiles();
         }
 
         //-------------------------------------

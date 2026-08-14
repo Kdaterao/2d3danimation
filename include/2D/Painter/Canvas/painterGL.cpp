@@ -30,7 +30,7 @@ void toonzPainterGL::dumpBuffer2(T* buf, int width, int height, int wrap, int nu
 
 
 
-void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
+void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer, bool isPreview) {
 
     //----- Case 1: box is too big (Recursively break down boxes) -----
 
@@ -45,8 +45,8 @@ void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
         RectTI leftBox  = RectTI(box.x0, box.y0, midX,  box.y1);  // x1 clamped
         RectTI rightBox = RectTI(midX,   box.y0, box.x1,  box.y1);
 
-        toonzPainterGL::PaintRaster(leftBox, rasbuffer, fbuffer);
-        toonzPainterGL::PaintRaster(rightBox, rasbuffer, fbuffer);
+        toonzPainterGL::PaintRaster(leftBox, rasbuffer, fbuffer, isPreview);
+        toonzPainterGL::PaintRaster(rightBox, rasbuffer, fbuffer, isPreview);
         return;
     } 
 
@@ -61,8 +61,8 @@ void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
 
 
         
-        toonzPainterGL::PaintRaster(bottomBox, rasbuffer, fbuffer);
-        toonzPainterGL::PaintRaster(topBox,    rasbuffer, fbuffer);
+        toonzPainterGL::PaintRaster(bottomBox, rasbuffer, fbuffer, isPreview);
+        toonzPainterGL::PaintRaster(topBox,    rasbuffer, fbuffer, isPreview);
         return;
     }
 
@@ -78,10 +78,6 @@ void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
     }
     //------ case 2: box is small enough to upload pixels as texture -----
    
-    //debug
-    
-    
-
     
     // bind to widget framebuffer
     glBindFramebuffer(GL_FRAMEBUFFER, fbuffer);
@@ -295,10 +291,14 @@ void toonzPainterGL::PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer) {
     shader->use();
 
     //----- set uniforms  -----
+    const PaintSettings& settings = isPreview ? previewSettings : tileSettings;
 
     shader->setInt("texture1", 0);
     shader->set4X4M("projection", projection);
     shader->set4X4M("model", model);
+    shader->setFloat("uOpacity", settings.opacity);
+    shader->setFloat("uColorScale", settings.colorScale);
+    shader->setVec3("uTint", settings.tintR, settings.tintG, settings.tintB);
 
     
     //needed for textures ig

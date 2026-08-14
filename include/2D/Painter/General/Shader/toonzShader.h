@@ -33,6 +33,10 @@ public:
 
     void setFloat(const std::string &name, float value)  { glUniform1f(glGetUniformLocation(ID, name.c_str()), value); };
 
+    void setVec3(const std::string &name, float x, float y, float z) {
+        glUniform3f(glGetUniformLocation(ID, name.c_str()), x, y, z);
+    };
+
     void set4X4M(const std::string &name,  QMatrix4x4 &value) {glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, value.constData()); };
 
 private:

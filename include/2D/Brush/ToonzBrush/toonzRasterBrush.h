@@ -213,13 +213,15 @@ class toonzBrush {
         //----- Inserts only one pixel O(1) --------
 
         inline void drawPixel(int x, int y){
-            UCHAR* raw = raster->getRawData(x, y, true);
-            T* pixel = reinterpret_cast<T*>(raw);
+            
+
 
             if(eraser){
+                UCHAR* raw = raster->getRawData(x, y, true);
                 std::memset(raw, 0, sizeof(T)); // transparent
             } else {
-                pixel->composite(color);
+                T* pixel = reinterpret_cast<T*>(raster->getBufferTile(x, y, true));
+                std::memcpy(pixel, &color, sizeof(T));
             }
         }
 

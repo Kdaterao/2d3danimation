@@ -58,7 +58,11 @@ Cases:
             Simply dont render it 
 
 */
-
+struct PaintSettings {
+    float opacity = 1.0f;                              // overall / alpha gain
+    float colorScale = 2.0f;                           // RGBM half-range display scale (scales to 16bit)
+    float tintR = 1.0f, tintG = 1.0f, tintB = 1.0f;    // RGB multiply
+};
 
 class toonzPainterGL: public QOpenGLWidget, protected QOpenGLFunctions{
 
@@ -77,8 +81,8 @@ class toonzPainterGL: public QOpenGLWidget, protected QOpenGLFunctions{
     int count = 0;
     toonzShader *shader;
 
-
-
+    PaintSettings tileSettings;     // regular raster tiles
+    PaintSettings previewSettings;  // buffer / tool preview tiles
 
     public:
 
@@ -111,8 +115,12 @@ class toonzPainterGL: public QOpenGLWidget, protected QOpenGLFunctions{
 
     //----- methods -----
 
+        void setTileSettings(const PaintSettings& settings) { tileSettings = settings; }
+        void setPreviewSettings(const PaintSettings& settings) { previewSettings = settings; }
+        PaintSettings& getTileSettings() { return tileSettings; }
+        PaintSettings& getPreviewSettings() { return previewSettings; }
 
-        void PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer);
+        void PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer, bool isPreview);
 
         template <class T>
         void dumpBuffer2(T* buf, int width, int height, int wrap, int num_channels);
