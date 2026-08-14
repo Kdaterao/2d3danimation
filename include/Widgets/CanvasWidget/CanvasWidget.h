@@ -42,8 +42,7 @@ inline int krish64 = 1;
 
 
 class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions {
-
-
+    Q_OBJECT
 
   
 
@@ -60,8 +59,11 @@ class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions {
 
     //brush
     Brush::RasterBrush<PixelType> brush;
-    PixelType curr_color;
+    
+    // state variables
     bool eraser;
+    PixelType curr_color;
+    Brush::RasterTypes curr_brushType;
 
 
     // point tracking
@@ -105,7 +107,9 @@ protected:
 private:
     void initiateBrush();
     void initiateCanvas();
-     void updateCursor();
+    void updateCursor();
+    // Re-apply color / size / eraser after recreating the brush engine
+    void applyBrushState();
     
 
 public slots:
@@ -113,6 +117,7 @@ public slots:
     void updateBrushColor(PixelType Color);
     void toggleEraser(bool enabled); 
     void updateBrushSize (int val);
+    void updateBrushOpacity(int opacityPercent); // 0–100
     void selectBrush(const QString& brushId, Brush::RasterTypes type, int size);
 
     //timeline widget
@@ -122,7 +127,14 @@ public slots:
 
     //canvas widget
     void updateCanvas();
+
+signals:
+    // Emitted when drawing creates/edits timeline structure (e.g. auto-add frame)
+    void timelineContentChanged();
  
+private:
+    // If playhead sits on empty time, add a frame there and rebind the brush.
+    void ensureDrawingFrame();
     
 };
 

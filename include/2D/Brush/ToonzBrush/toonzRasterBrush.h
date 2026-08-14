@@ -183,6 +183,7 @@ class toonzBrush {
         T color; // color of our brush
         DimensionTI brushSize;// lx and ly of brush
         int pixelSize = sizeof(T); //data size of one pixel
+        bool eraser = false; //our eraser value (default to false)
 
 
         //-----------------------------
@@ -212,32 +213,25 @@ class toonzBrush {
         //----- Inserts only one pixel O(1) --------
 
         inline void drawPixel(int x, int y){
-            //std::cout<<"calling drawPixel()"<<std::endl;
-            //std::cout<<"("<<x<<","<<y<<")"<<std::endl;
-            UCHAR* pixel = raster->getRawData(x, y, true);
+            UCHAR* raw = raster->getRawData(x, y, true);
+            T* pixel = reinterpret_cast<T*>(raw);
 
-            std::memcpy(pixel, &color, sizeof(T));
-
-            //std::cout<<"yay"<<std::endl;
-            //DEBUG
-            //UCHAR* c = reinterpret_cast<UCHAR*>(&color);
-            //printf("R:%d G:%d B:%d A:%d\n", c[0], c[1], c[2], c[3]);
+            if(eraser){
+                std::memset(raw, 0, sizeof(T)); // transparent
+            } else {
+                pixel->composite(color);
+            }
         }
 
         //------------------------------
-        //   DRAW BRUSH + RESIZE vF
+        //  Virtual fucntions 
         //------------------------------
 
         virtual void drawBrush(PointTI a, PointTI b) = 0; 
         virtual void resize(int r) = 0;
-
-        //-----------------------------
-        //  reset brush vF
-        //-----------------------------
-
         virtual void resetBrush() = 0;
-
         virtual void startBrush() = 0;
+        virtual void toggleEraser(bool value) = 0;
 
 
     
@@ -368,6 +362,10 @@ class DefaultCircleBrush : public toonzBrush<T> {
             HalfCircle(r);
         };
 
+
+        void toggleEraser(bool value) override {
+            this->eraser = value;
+        }
 
         //handles drawing operation
 

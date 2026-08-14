@@ -5,6 +5,8 @@
 #include <mypaint-tiled-surface.h>
 #include <types.h>
 #include <raster.h>
+#include <rasterPixel.h>
+#include <algorithm>
 #include <assert.h>
 /*
 
@@ -24,23 +26,17 @@ template <class T> //our pixel type
 struct mplSurfaceAdapter {
 
     MyPaintTiledSurface parent; //Basically inherited since its the first member in our struct 
-    Raster<T>* ras = nullptr; // non-owning; RasterLayer owns the Raster 
-
+    Raster<T>* ras = nullptr; // non-owning; RasterLayer owns the Raster
+    
+    //----- post processing variables ------
+    UINT16 alpha = 65535; //our alpha value (default to 65535)
+    bool eraser = false; //our eraser value (default to false)
 };
 
 
 //===============================
 //   INTERNAL MYPAINT METHODS 
 //===============================
-
-/*
-
-    NOTE: we convert our tile to mypaint format and then covert back to our 64 byte format 
-          this may cause a slight loss on a color channel (like 1 value off which is literally nothing considering that the range is 0-65535)
-
-*/
-
-
 
 template<class T>
 static void tile_request_start(MyPaintTiledSurface *tiled_surface, MyPaintTileRequest *request) {
@@ -57,6 +53,8 @@ static void tile_request_start(MyPaintTiledSurface *tiled_surface, MyPaintTileRe
 
 
 
+    self->ras->flushBufferTile();
+
     //----- set our request->buffer to our raster buffer --------
     const int tx = request->tx;
     const int ty = request->ty;
@@ -69,27 +67,16 @@ static void tile_request_start(MyPaintTiledSurface *tiled_surface, MyPaintTileRe
 
     } else {
 
-        /*
 
-        // convert our pixel to mypaint format (before handing off to mypaint)
-        T *src =
-            (T*)self->ras->getRawData(
-                request->tx * 64,
-                request->ty * 64,
-                true
-                );
-        for (int i = 0; i < 64*64; i++)
-            {
-                src[i].r = src[i].r >> 1, 65535;
-                src[i].g = src[i].g >> 1, 65535;
-                src[i].b = src[i].b >> 1, 65535;
-                src[i].m = src[i].m >> 1, 65535;
-            }
-        */
 
+        if(self->eraser){
+            //no need to overlay anything, we are just replacing with transparent pixels now
+            tile_pointer = (UINT16 *) self->ras->getRawData(request->tx * 64, request->ty * 64, true); 
+        } else {
+            //need a buffer for post processing + overaly 
+            tile_pointer= (UINT16 *) self->ras->getBufferTile();
+        }
         
-        // pointer for request object
-        tile_pointer = (UINT16 *) self->ras->getRawData(request->tx * 64, request->ty * 64, true); 
     }
 
 
@@ -109,28 +96,34 @@ static void tile_request_end(MyPaintTiledSurface *tiled_surface, MyPaintTileRequ
     const int ty = request->ty;
 
     if (tx >= self->ras->getLx() || ty >= self->ras->getLy() || tx < 0 || ty < 0) {
-        // Wipe any changes done to the null tile
-        
-        //--> uhh idrc what happens to null tile... sry!
-        //though we should make sure to allot some space for it to prevent corruption !
-    } else {
+        // dont really need to wipe null tile we'll delete it no matter what 
+    } else if(self->eraser == false) {
+
+        // [NOTE] only do post processing if we are not in eraser mode
+
         //------ convert back to our pixel format -----
 
-        /*
-        T *src = (T *) request->buffer;
+        // MyPaint / buffer tile is BGRM; raster destination is our pixel type T
+        PixelRGBM64 *src = (PixelRGBM64 *) request->buffer;
+
+
+        const int tx = request->tx;
+        const int ty = request->ty;
+
+        T *dest = (T *) self->ras->getRawData(request->tx * 64, request->ty * 64, true); 
 
         for (int i = 0; i < 64*64; i++)
         {
-            src[i].r = std::min(src[i].r << 1, 65535);
-            src[i].g = std::min(src[i].g << 1, 65535);
-            src[i].b = std::min(src[i].b << 1, 65535);
-            src[i].m = std::min(src[i].m << 1, 65535);
-        }
-    
-        */
+            //apply opacity 
+            src[i].m =  src[i].m  * (self->alpha / (float) PixelRGBM64::maxChannelValue);
 
+            // apply our buffer tile to our raster
+            dest[i].composite(src[i]);
+        }
+
+        // flush our buffer tile
+        self->ras->flushBufferTile();
     }
-    
 
 }
 

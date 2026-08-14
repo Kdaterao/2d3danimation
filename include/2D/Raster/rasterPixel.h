@@ -301,7 +301,39 @@ class PixelRGBM64 {
         PixelRGBM64(UINT64 mask) 
             : PixelRGBM64() { *(UINT64 *)this = mask; }; 
 
-            
+        //----- methods ------------
+
+        //overlays a pixel onto our own pixel
+        void composite(PixelRGBM64 &p) {
+
+            // Must be float division — integer (m / 65535) is 0 for any m < 65535
+            float srcA  = p.m / (float)maxChannelValue;
+            float destA = m / (float)maxChannelValue;
+
+            float outA = srcA + destA * (1.0f - srcA);
+
+            if (outA > 0.0f)
+            {
+                r = (
+                    p.r * srcA +
+                    r * destA * (1.0f - srcA)
+                ) / outA;
+
+                g = (
+                    p.g * srcA +
+                    g * destA * (1.0f - srcA)
+                ) / outA;
+
+                b = (
+                    p.b * srcA +
+                    b * destA * (1.0f - srcA)
+                ) / outA;
+            }
+
+            m = outA * maxChannelValue;
+
+        }
+
         //----- operator methods -----
 
         inline bool operator==(const PixelRGBM64 &p) const {

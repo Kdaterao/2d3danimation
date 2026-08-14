@@ -1,5 +1,6 @@
 #include <BrushWidget.h>
 #include <BrushPreviewCell.h>
+#include <QHBoxLayout>
 #include <QVBoxLayout>
 
 static const char* kBrushCatalogPath =
@@ -11,15 +12,23 @@ BrushWidget::BrushWidget(int initialBrushSize, QWidget* parent)
     BrushCatalog::loadFromFile(kBrushCatalogPath);
 
     m_eraserToggle = new QCheckBox("Eraser", this);
+
+    m_sizeLabel = new QLabel(QStringLiteral("Size"), this);
     m_sizeSlider = new QSlider(Qt::Horizontal, this);
     m_sizeSlider->setRange(1, 50);
     m_sizeSlider->setValue(initialBrushSize);
+
+    m_opacityLabel = new QLabel(QStringLiteral("Opacity"), this);
+    m_opacitySlider = new QSlider(Qt::Horizontal, this);
+    m_opacitySlider->setRange(0, 100);
+    m_opacitySlider->setValue(100);
 
     m_selectedLabel = new QLabel(this);
     m_selectedLabel->setAlignment(Qt::AlignCenter);
 
     connect(m_eraserToggle, &QCheckBox::toggled, this, &BrushWidget::eraserToggled);
     connect(m_sizeSlider, &QSlider::valueChanged, this, &BrushWidget::brushSizeChanged);
+    connect(m_opacitySlider, &QSlider::valueChanged, this, &BrushWidget::brushOpacityChanged);
 
     auto* scrollArea = new QScrollArea(this);
     scrollArea->setWidgetResizable(true);
@@ -52,10 +61,19 @@ BrushWidget::BrushWidget(int initialBrushSize, QWidget* parent)
     scrollArea->setWidget(container);
     scrollArea->setFixedHeight(240);
 
+    auto* sizeRow = new QHBoxLayout();
+    sizeRow->addWidget(m_sizeLabel);
+    sizeRow->addWidget(m_sizeSlider, 1);
+
+    auto* opacityRow = new QHBoxLayout();
+    opacityRow->addWidget(m_opacityLabel);
+    opacityRow->addWidget(m_opacitySlider, 1);
+
     auto* layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(m_eraserToggle);
-    layout->addWidget(m_sizeSlider);
+    layout->addLayout(sizeRow);
+    layout->addLayout(opacityRow);
     layout->addWidget(m_selectedLabel);
     layout->addWidget(scrollArea);
 

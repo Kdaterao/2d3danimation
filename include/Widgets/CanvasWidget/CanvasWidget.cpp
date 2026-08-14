@@ -199,9 +199,30 @@ void GLWidget::updateCanvas(){
 //     Mouse Input Handler 
 //================================
 
+void GLWidget::ensureDrawingFrame() {
+    if (!canvas) return;
+    RasterLayer* layer = currentLayer();
+    if (!layer) return;
+
+    const int t = canvas->getCurrentTime();
+    if (layer->hasFrameAtTime(t)) return;
+
+    // Empty slot at playhead → create a new frame (and image) before painting
+    layer->addFrame(t);
+    layer->switchFrame(layer->frameIndexAtTime(t));
+
+    Brush::setBrush(curr_brushType, brush, currentImage(), curr_color, brushsize);
+    applyBrushState();
+
+    newCanvas = true;
+    emit timelineContentChanged();
+}
+
 void GLWidget::mousePressEvent(QMouseEvent *event) {
 
     if (event->button() == Qt::LeftButton) {
+
+        ensureDrawingFrame();
 
         QPoint q = event->pos();
 
@@ -229,6 +250,7 @@ void GLWidget::mouseMoveEvent(QMouseEvent *event) {
 
         if(p1.x == -1){
             //----- case1: no initial point -----
+            ensureDrawingFrame();
             p1 = PointT(q.x(), q.y());
             p2 = PointT(q.x(), q.y());
             p3 = PointT(q.x(), q.y());
@@ -276,32 +298,34 @@ void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
     //      Brush Handlers
     //================================
 
+     void GLWidget::applyBrushState() {
+        brush.setColor(curr_color);
+        brush.setSize(brushsize);
+        brush.toggleEraser(eraser);
+     }
 
      //------- Create Brush Object ---------
      void GLWidget::initiateBrush(){
        
         eraser = false;
         curr_color = PixelType(0, 0, 0, 255 * krish64);
-        PixelType color = curr_color;
+        curr_brushType = Brush::RasterTypes::BRUSH_BGRM32;
 
-        Brush::setBrush(Brush::RasterTypes::BRUSH_BGRM32, brush, currentImage(), color, brushsize);
+        Brush::setBrush(curr_brushType, brush, currentImage(), curr_color, brushsize);
+        applyBrushState();
         updateCursor();
      }
 
 
      //------- Select new Brush Type and Size ---------
      void GLWidget::selectBrush(const QString& brushId, Brush::RasterTypes type, int size) {
+        
         Q_UNUSED(brushId);
         brushsize = size;
-        Brush::setBrush(type, brush, currentImage(), curr_color, brushsize);
+        curr_brushType = type;
 
-        if (eraser) {
-            // Hard erase: overwrite pixels with zero matte (see toonzBrush::drawPixel)
-            PixelType transparent = PixelType(0, 0, 0, 0);
-            brush.setColor(transparent);
-        } else {
-            brush.setColor(curr_color);
-        }
+        Brush::setBrush(curr_brushType, brush, currentImage(), curr_color, brushsize);
+        applyBrushState();
         updateCursor();
      }
 
@@ -312,26 +336,31 @@ void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
         updateCursor();
      }
 
+    //------- Update Brush Opacity ---------
+    void GLWidget::updateBrushOpacity(int opacityPercent) {
+        opacityPercent = std::clamp(opacityPercent, 0, 100);
+        curr_color.m = static_cast<typename PixelType::Channel>(
+            (opacityPercent / 100.0f) * PixelType::maxChannelValue + 0.5f);
+        if (!eraser) {
+            brush.setColor(curr_color);
+        }
+    }
+
     //------- Update Brush Color ---------
     void GLWidget::updateBrushColor(PixelType Color){
-        if(eraser){
-            curr_color = Color;
-        } else {
-            curr_color = Color;
-            brush.setColor(Color);
+        // Keep opacity from the slider; color triangle always sends full alpha
+        Color.m = curr_color.m;
+        curr_color = Color;
+        if (!eraser) {
+            brush.setColor(curr_color);
         }
      }
 
      //------- Toggle Eraser ---------
      void GLWidget::toggleEraser(bool enable) {
-
-        if (enable) {
-            eraser = true;
-            // Hard erase: overwrite pixels with zero matte (transparent), not white
-            PixelType transparent = PixelType(0, 0, 0, 0);
-            brush.setColor(transparent);
-        }  else {
-            eraser = false;
+        eraser = enable;
+        brush.toggleEraser(eraser);
+        if (!eraser) {
             brush.setColor(curr_color);
         }
         updateCursor();
@@ -354,11 +383,8 @@ void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
         }
 
         //rebind brush to the new image
-        Brush::setBrush(Brush::RasterTypes::BRUSH_BGRM32, brush, currentImage(), curr_color, brushsize);
-        if (eraser) {
-            PixelType transparent = PixelType(0, 0, 0, 0);
-            brush.setColor(transparent);
-        }
+        Brush::setBrush(curr_brushType, brush, currentImage(), curr_color, brushsize);
+        applyBrushState();
 
         //mark the canvas as dirty to trigger a re-render
         newCanvas = true;
@@ -380,11 +406,8 @@ void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
         }
 
         //rebind brush to the new image
-        Brush::setBrush(Brush::RasterTypes::BRUSH_BGRM32, brush, currentImage(), curr_color, brushsize);
-        if (eraser) {
-            PixelType transparent = PixelType(0, 0, 0, 0);
-            brush.setColor(transparent);
-        }
+        Brush::setBrush(curr_brushType, brush, currentImage(), curr_color, brushsize);
+        applyBrushState();
 
         //mark the canvas as dirty to trigger a re-render (may remove later)
         newCanvas = true;
@@ -401,11 +424,8 @@ void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
         if (!canvas) return;
 
         //rebind brush to the new image (just in case)
-        Brush::setBrush(Brush::RasterTypes::BRUSH_BGRM32, brush, currentImage(), curr_color, brushsize);
-        if (eraser) {
-            PixelType transparent = PixelType(0, 0, 0, 0);
-            brush.setColor(transparent);
-        }
+        Brush::setBrush(curr_brushType, brush, currentImage(), curr_color, brushsize);
+        applyBrushState();
 
         //mark the canvas as dirty to trigger a re-render (just in case)
         newCanvas = true;

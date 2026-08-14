@@ -26,6 +26,7 @@ signals:
     void brushSelected(const QString& brushId, Brush::RasterTypes type, int defaultSize);
     void eraserToggled(bool enabled);
     void brushSizeChanged(int size);
+    void brushOpacityChanged(int opacityPercent); // 0–100
 
 private:
     QStackedWidget* m_stack = nullptr;

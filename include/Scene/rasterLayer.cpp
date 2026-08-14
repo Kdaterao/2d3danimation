@@ -52,6 +52,13 @@ int RasterLayer::frameIndexAtTime(int t) const {
     return fallback;
 }
 
+bool RasterLayer::hasFrameAtTime(int t) const {
+    for (const Frame& f : frames) {
+        if (f.startIndex <= t && t < f.endIndex) return true;
+    }
+    return false;
+}
+
 
 //===============================================
 //              ADD FRAME

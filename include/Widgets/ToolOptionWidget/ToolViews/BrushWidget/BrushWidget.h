@@ -29,6 +29,9 @@ private:
     QGridLayout* m_grid = nullptr;
     QCheckBox* m_eraserToggle = nullptr;
     QSlider* m_sizeSlider = nullptr;
+    QSlider* m_opacitySlider = nullptr;
+    QLabel* m_sizeLabel = nullptr;
+    QLabel* m_opacityLabel = nullptr;
     QLabel* m_selectedLabel = nullptr;
     std::vector<BrushPreviewCell*> m_cells;
     QString m_selectedId;
@@ -38,6 +41,7 @@ signals:
     void brushSelected(const QString& brushId, Brush::RasterTypes type, int defaultSize);
     void eraserToggled(bool enabled);
     void brushSizeChanged(int size);
+    void brushOpacityChanged(int opacityPercent); // 0–100
 };
 
 #endif

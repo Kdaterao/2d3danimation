@@ -117,6 +117,7 @@ class Raster {
     std::vector<TileCoord> dirty = std::vector<TileCoord>();
     std::unordered_map<TileCoord, RasterTile>  tilesMap;
     UCHAR *null_tile; // empty tile for out of bounds requests 
+    UCHAR *buffer_tile; // buffer tile post processing of pixels  
 
 
     //=================================
@@ -134,7 +135,9 @@ class Raster {
         Raster(int i_w, int i_h) :
         lx(i_w),
         ly(i_h),
-        pixelSize(sizeof(T))
+        pixelSize(sizeof(T)),
+        null_tile(nullptr),
+        buffer_tile(nullptr)
         {
 
             assert(i_w > 0);
@@ -144,10 +147,13 @@ class Raster {
             tiles_y = ceil((float)i_h / tile_length);
 
             int size = tile_length * tile_length * pixelSize;
+
+            //initialize our null tile
             null_tile = new UCHAR[size];
+            memset(null_tile, 0, size);
 
-
-
+            // staging tile for MyPaint / post-process
+            initializeBufferTile();
         };
 
         //------------------------------------------
@@ -155,7 +161,11 @@ class Raster {
         //------------------------------------------
 
         ~Raster(){
-
+            //release our memory tiles 
+            delete[] null_tile;
+            delete[] buffer_tile;
+            null_tile = nullptr;
+            buffer_tile = nullptr;
         }
 
 
@@ -232,7 +242,7 @@ class Raster {
 
 
         //-------------------------------------
-        //        Mark dirty tiles 
+        //      DIRTY TILES UTILIY
         //-------------------------------------
 
         void unmarkDirty(int tx, int ty){
@@ -263,12 +273,44 @@ class Raster {
         }
 
 
+        //-------------------------------------
+        //      NULL TILE UTILIY
+        //-------------------------------------
+
         UCHAR *getNullTile() {
             return null_tile;
         }
 
 
 
+        //-------------------------------------
+        //      Buffer Tile
+        //-------------------------------------
+
+
+        void initializeBufferTile() {
+            if (buffer_tile) return;
+            int size = tile_length * tile_length * pixelSize;
+            buffer_tile = new UCHAR[size];
+            memset(buffer_tile, 0, size);
+        }
+
+        UCHAR *getBufferTile(int x, int y) {
+            initializeBufferTile();
+            return buffer_tile;
+        }
+
+        void flushBufferTile() {
+            initializeBufferTile();
+            int size = tile_length * tile_length * pixelSize;
+            memset(buffer_tile, 0, size);
+        }
+
+        //-------------------------------------
+        //          FILL UTILIY
+        //-------------------------------------
+
+        //fils our entire raster with a single value
         void fill(T value)
         {
             const int count = tile_length * tile_length;

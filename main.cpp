@@ -87,12 +87,14 @@ int main(int argc, char *argv[]) {
     //tool options widget
     QObject::connect(toolOptions, &ToolOptionWidget::eraserToggled, canvas, &GLWidget::toggleEraser);
     QObject::connect(toolOptions, &ToolOptionWidget::brushSizeChanged, canvas, &GLWidget::updateBrushSize);
+    QObject::connect(toolOptions, &ToolOptionWidget::brushOpacityChanged, canvas, &GLWidget::updateBrushOpacity);
     QObject::connect(toolOptions, &ToolOptionWidget::brushSelected, canvas, &GLWidget::selectBrush);
 
     //timeline widget
     QObject::connect(timeline, &TimelineWidget::timeChanged, canvas, &GLWidget::onTimeChanged);
     QObject::connect(timeline, &TimelineWidget::activeLayerChanged, canvas, &GLWidget::onActiveLayerChanged);
     QObject::connect(timeline, &TimelineWidget::timelineEdited, canvas, &GLWidget::onTimelineEdited);
+    QObject::connect(canvas, &GLWidget::timelineContentChanged, timeline, &TimelineWidget::refresh);
 
     window->show();
 

@@ -17,6 +17,8 @@ ToolOptionWidget::ToolOptionWidget(int initialBrushSize, QWidget* parent)
             this, &ToolOptionWidget::eraserToggled);
     connect(m_brushView, &BrushWidget::brushSizeChanged,
             this, &ToolOptionWidget::brushSizeChanged);
+    connect(m_brushView, &BrushWidget::brushOpacityChanged,
+            this, &ToolOptionWidget::brushOpacityChanged);
 
     auto* layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);

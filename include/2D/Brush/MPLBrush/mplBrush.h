@@ -139,6 +139,13 @@ class mplBrush {
             mypaint_brush_reset(brush);
         }
 
+
+        void toggleEraser( bool value ){
+            surface->eraser = value;
+            // MyPaint must erase into the tile when we skip the overlay path
+            setEraser(value ? 1.0f : 0.0f);
+        }
+
         //--------------------------
         //  BRUSH ATTRIBUTE ACCESS (MYPaint Specific)
         //---------------------------
@@ -215,6 +222,13 @@ class mplBrush {
 
         void setColor(T &color)
         {
+
+            //grab alpha from our color 
+            auto alpha = color.m;
+
+            surface->alpha = alpha;
+
+            //convert our color to hsv format
             float r = color.r / (float)T::maxChannelValue;
             float g = color.g / (float)T::maxChannelValue;
             float b = color.b / (float)T::maxChannelValue;

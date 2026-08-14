@@ -76,11 +76,12 @@ namespace Brush {
 
         void setEraserMode(bool enabled) {
             std::visit([&](auto& bsh) {
-                using BrushT = std::decay_t<decltype(bsh)>;
-                if constexpr (std::is_same_v<BrushT, mplBrush<T>>) {
-                    bsh.setEraser(enabled ? 1.0f : 0.0f);
-                }
+                bsh.toggleEraser(enabled);
             }, *curr);
+        }
+
+        void toggleEraser(bool enabled) {
+            setEraserMode(enabled);
         }
 
         void resetBrush() {

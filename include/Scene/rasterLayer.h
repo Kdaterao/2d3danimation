@@ -86,6 +86,7 @@ public:
     const std::vector<Frame>& getFrames() const { return frames; }
     int frameCount() const { return (int)frames.size(); }
     int frameIndexAtTime(int t) const; //very useful if using setters below
+    bool hasFrameAtTime(int t) const; // true if some frame covers [start, end)
 
     //------ SETTERS -------
 
