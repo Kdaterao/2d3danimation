@@ -1,10 +1,14 @@
 #version 330 core
 layout (location = 0) in vec3 aPos;
 layout (location = 1) in vec2 aTex;
+layout (location = 2) in vec4 iRect; // x0, y0, lx, ly  (rectangle on actaul canvas)
+layout (location = 3) in vec4 iUV;   // u0, v0, u1, v1  (recantgangle on atls texture)
 out vec2 TexCoord;
 uniform mat4 projection;
-uniform mat4 model;
+uniform float uScreenHeight;
 void main() {
-    gl_Position = projection * model * vec4(aPos, 1.0);
-    TexCoord = aTex;
+    float x = iRect.x + (aPos.x + 0.5) * iRect.z;
+    float y = uScreenHeight - iRect.y - iRect.w * 0.5 + aPos.y * iRect.w;
+    gl_Position = projection * vec4(x, y, 0.0, 1.0);
+    TexCoord = vec2(mix(iUV.x, iUV.z, aTex.x), mix(iUV.y, iUV.w, aTex.y)); 
 }

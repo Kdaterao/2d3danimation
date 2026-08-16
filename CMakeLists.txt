@@ -40,6 +40,8 @@ set(SOURCES
     include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.cpp include/Widgets/ToolOptionWidget/ToolViews/BrushWidget/BrushPreviewCell.h
 
     include/Widgets/TimelineWidget/TimelineWidget.cpp include/Widgets/TimelineWidget/TimelineWidget.h
+
+    include/Animation/AnimationManager.cpp include/Animation/AnimationManager.h
     
 
     include/2D/Raster/raster.h
@@ -50,6 +52,7 @@ set(SOURCES
     include/2D/Painter/UI/UIPainter.cpp include/2D/Painter/UI/UIPainter.h 
     include/2D/Painter/UI/UIShapes.h
     include/Utility/Math/toonzCalculations.cpp include/Utility/Math/toonzCalculations.h
+    include/Utility/Debug/pipelineLogger.h
     
 
     include/Storage/storageManager.cpp include/Storage/storageManager.h
@@ -70,6 +73,8 @@ set(PROJECT_INCLUDE_DIRS
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Widgets/ToolOptionWidget/ToolViews/BrushWidget
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Widgets/TimelineWidget
 
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/Animation
+
     ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Brush
     ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Brush/MPLBrush
     ${CMAKE_CURRENT_SOURCE_DIR}/include/2D/Brush/ToonzBrush
@@ -82,6 +87,7 @@ set(PROJECT_INCLUDE_DIRS
 
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Utility/Math
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Utility/Types
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/Utility/Debug
 
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Storage
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Storage/tinyXML

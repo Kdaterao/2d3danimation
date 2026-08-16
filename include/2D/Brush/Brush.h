@@ -6,6 +6,7 @@
 #include <variant>
 #include <raster.h>
 #include <mplBrush.h>
+#include <pipelineLogger.h>
 
 
 
@@ -47,6 +48,12 @@ namespace Brush {
 
 
         void drawBrush(PointTI a, PointTI b) {
+            //---- debug ------
+            PipelineScope _draw(PipelineStage::DrawBrush); 
+            PipelineLogger::instance().addSegment(
+                static_cast<float>(a.x), static_cast<float>(a.y),
+                static_cast<float>(b.x), static_cast<float>(b.y));
+            //---- actaul logic -----
             std::visit([&](auto& bsh) {
                 bsh.drawBrush(a, b);
             }, *curr);
@@ -54,6 +61,10 @@ namespace Brush {
 
 
         void drawBrush(PointTF a, PointTF b) {
+            //---- debug ------
+            PipelineScope _draw(PipelineStage::DrawBrush); // debug
+            PipelineLogger::instance().addSegment(a.x, a.y, b.x, b.y);
+            //---- actaul logic -----
             std::visit([&](auto& bsh) {
                 bsh.drawBrush(a, b);
             }, *curr);

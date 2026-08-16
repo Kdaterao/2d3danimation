@@ -46,12 +46,12 @@ class UIPainter: public QOpenGLWidget, protected QOpenGLFunctions{
     GLenum premultiplied; //used for displaying transparency
     float zlayer = 0.0;
 
-    toonzShader *shader;
-    std::vector<GLuint> VAOS;
-    std::vector<GLuint> buffers;
-    std::vector<GLuint> textures;
-    std::vector<int> vertexCounts;
-    GLuint VAO;
+    toonzShader *shader; //shader object
+    std::vector<GLuint> VAOS; // vao ids
+    std::vector<GLuint> buffers; //buffer ids
+    std::vector<GLuint> textures; //texture ids
+    std::vector<int> vertexCounts; //used for strde
+    GLuint VAO; // current vao 
 
 
     int count = 0; //debugging purposes
@@ -145,110 +145,6 @@ class UIPainter: public QOpenGLWidget, protected QOpenGLFunctions{
         void cleanUp();
 
 
-
-
-
-
-
-
-        /*
-        void testPipline(GLuint fbuffer) {
-
-             glBindFramebuffer(GL_FRAMEBUFFER, fbuffer);
-
-
-            float vertices[] =              { 0.0f, 0.5f, 0.0f,      1.0f, 0.0f, 0.0f, 1.0f, // top-middle
-                                            -0.5f, -0.5f, 0.0f,     0.0f, 1.0f, 0.0f, 1.0f, // bottom-right
-                                            0.5f, -0.5f, 0.0f,     0.0f, 0.0f, 1.0f, 1.0f // top-left
-
-                                            };
-
-
-            //----- create Vertex Buffer Object -----
-
-                        
-            unsigned int  VBO, VAO;
-
-            glGenVertexArrays(1, &VAO); 
-            glBindVertexArray(VAO);
-
-            glGenBuffers(1, &VBO);
-            glBindBuffer(GL_ARRAY_BUFFER, VBO);
-
-            //specify data of EBO and VAO
-            glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-            // position attribute
-            glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)0);
-            glEnableVertexAttribArray(0);
-
-            // color attribute
-            glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)(3* sizeof(float)));
-            glEnableVertexAttribArray(1);
-
-            //ends the binding of the Array buffer
-            glBindBuffer(GL_ARRAY_BUFFER, 0); 
-
-            //------ update layer -----
-            int vertexCount = 3; // 6 floats per vertex
-            vertexCounts.push_back(vertexCount);
-            buffers.push_back(VBO);
-            VAOS.push_back(VAO);
-            zlayer += 1.0;
-
-             GLenum err = glGetError();
-            if (err != GL_NO_ERROR) {
-                std::cout << "[OpenGL asdf after Error] code=" << err << std::endl;
-            }
-
-
-            
-            //----- create orthorgraphic projection -----
-            QMatrix4x4 projection;
-            //projection.ortho(0.0f, screenWidth, 0.0f, screenHeight, -1.0f, 1.0f);
-            projection.setToIdentity();
-
-            QMatrix4x4 model;
-            model.translate(
-                screenWidth/2,                
-                screenHeight/2, 
-                1.0f
-            );
-            model.setToIdentity();
-
-            //----- set shader -----
-            shader->use();
-
-            //----- set uniforms  -----
-
-            shader->set4X4M("projection", projection);
-            shader->set4X4M("model", model);
-
-            
-
-            //----- draw our layers -----
-            int i = 0;
-            for(auto& vao : VAOS){
-                glBindVertexArray(vao);
-
-                //----- draw image segment -----
-                std::cout<<"drawing"<<std::endl;
-
-                glDisable(GL_BLEND);
-
-                glDrawArrays(GL_TRIANGLES, 0, vertexCounts[i]);
-                i++;
-
-                        
-                GLenum err = glGetError();
-                if (err != GL_NO_ERROR) {
-                    std::cout << "[OpenGL drawing Error] code=" << err << std::endl;
-                }
-
-            }
-
-        }
-        */
      };
 
 

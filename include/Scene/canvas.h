@@ -80,6 +80,7 @@ class Canvas {
 
         int getCurrentTime() const;
         void setCurrentTime(int t);
+        int playbackEnd() const;
 
         // -----------------------------
         //     BACKDROP

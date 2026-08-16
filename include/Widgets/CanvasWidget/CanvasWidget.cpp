@@ -2,6 +2,8 @@
 #include <iostream>
 #include <fstream>
 #include <QString>
+#include <unordered_map>
+#include <utility>
 
 
 
@@ -14,15 +16,16 @@
 //================================
 
 GLWidget::GLWidget(QWidget* parent) : QOpenGLWidget(parent) {
-
-    /*
-    // Simple render loop (~60 FPS)
+    
+    
+    // Simple render loop (~80 FPS)
     QTimer* PaintTimer = new QTimer(this);
     connect(PaintTimer, &QTimer::timeout, 
             this, QOverload<>::of(&GLWidget::update)); //connect
-    PaintTimer->start(16); //starts timer which a timeout specified
+    PaintTimer->start(8); //may need to alter this for reducing or increasing idle time
 
-    */
+    
+    
 
     canvas = std::make_unique<Canvas>(canvasWidth, canvasHeight);
 
@@ -91,64 +94,265 @@ void GLWidget::initializeGL() {
 }
 
 
+void GLWidget::paintEvent(QPaintEvent *event) {
+    {
+        PipelineScope _paintEvent(PipelineStage::PaintEvent);
+        QOpenGLWidget::paintEvent(event);
+    }
+    PipelineLogger::instance().endFrame();
+}
+
+
+
+
+
 void GLWidget::paintGL() {
-    std::vector<TileCoord> *dirty = currentImage()->getDirty();
+
+    {
+
+    //----- debug timer ------------
+    PipelineScope _paintGL(PipelineStage::PaintGL); // <----- DEBUG
 
 
+    //------ get objects + layer info + grab dirty tiles ------------------------
+    std::vector<TileCoord> *dirty = currentImage()->getDirty(); // dirty tiles for the current image 
     int len = currentImage()->getTileLength();
     const int activeLayer = canvas->getActiveLayerIndex();
+    GLuint fbo = defaultFramebufferObject();
 
-    auto paintTileStack = [&](const TileCoord& tile) {
+    std::vector<TileCoord> coords;
+    if (newCanvas) {
+        //----- case 1: new canvas (everything is dirty-----
+        coords = *canvas->getDirty();
+        dirty->clear();
+        newCanvas = false;
+    } else if (!dirty->empty()) {
+        //----- case 2: dirty tiles -----
+        coords = *dirty; 
+        dirty->clear();
+    }
+
+    //---- HANDLE  ------------------------
+    const int tilesThisFrame = (int)coords.size();
+    if (coords.empty()) {
+        //----- case 1: no dirty tiles -----
+        PipelineLogger::instance().addPaintGLTiles(0);
+    } else {
+        //----- case 2: dirty tiles -----
+
+        //define batches (these are handled differntly and thus are store seperately)
+        std::unordered_map<int, std::vector<RasterPaintTile>> layerBatches; // batches for each layer (less texture uploads!)
+        std::vector<RasterPaintTile> previewBatch; // preview batch for the current image (buffer of what our brush JUST did)
+
+        std::vector<std::pair<Raster<PixelType>*, int>> onionPrev; // onion skin previous frames
+        std::vector<std::pair<Raster<PixelType>*, int>> onionNext; // onion skin next frames
+        std::vector<std::vector<RasterPaintTile>> onionPrevBatches; // batches for each onion skin previous frame
+        std::vector<std::vector<RasterPaintTile>> onionNextBatches; // batches for each onion skin next frame
+
+
+
+
+
+    //--------- BUILD BATCHES -----------------------------
+
+    //---- Preprocess Onion skin for batching later on -------
+    {
+    PipelineScope _batch(PipelineStage::BatchBuild); // debug
+    
+    //grab current layer object 
+    RasterLayer* onionLayer = currentLayer(); 
+
+    //handle onion skin
+    if (onionLayer && (onionBefore > 0 || onionAfter > 0)) {
+
+        PipelineScope _onion(PipelineStage::Onion);// DEBUG 
+
+        //grab current frame index and frames
+        const int fi = onionLayer->getCurrentFrameIndex();
+        const auto& frames = onionLayer->getFrames();
+
+        //handle onion skin frames 
+        if (fi >= 0 && fi < (int)frames.size()) {
+            const int currentImg = frames[fi].imageIndex;
+            int seen = currentImg;
+
+            //handle previous frames
+            for (int i = fi - 1; i >= 0 && (int)onionPrev.size() < onionBefore; --i) {
+                if (frames[i].imageIndex == seen) continue;
+                seen = frames[i].imageIndex;
+                Raster<PixelType>* img = onionLayer->getImageAtFrame(i); // grab the image at the frame
+                if (img) onionPrev.push_back({img, (int)onionPrev.size() + 1}); // add to the previous frames vector
+            }
+
+            seen = currentImg; // reset for the next loop
+
+            //handle next frames
+            for (int i = fi + 1; i < (int)frames.size() && (int)onionNext.size() < onionAfter; ++i) {
+                if (frames[i].imageIndex == seen) continue;
+                seen = frames[i].imageIndex;
+                Raster<PixelType>* img = onionLayer->getImageAtFrame(i); // grab the image at the frame
+                if (img) onionNext.push_back({img, (int)onionNext.size() + 1}); // add to the next frames vector
+            }
+        }
+    }
+
+    onionPrevBatches.resize(onionPrev.size());
+    onionNextBatches.resize(onionNext.size());
+
+
+
+
+    //---- BATCH TILES (BUFFER + NON BUFFER + ONION SKIN) --------
+    UCHAR* nullTile = currentImage()->getNullTile();
+    for (const TileCoord& tile : coords) {
+        PipelineScope _stack(PipelineStage::TileStack); // DEBUG
+
+        //define rect for the tile
+        RectTI rect{tile.x * len, tile.y * len, (tile.x * len) + len, (tile.y * len) + len};
+
+        //--- NON BUFFER TILES
         auto tiles = canvas->getTile(tile.x, tile.y);
-        RectTI rect{tile.x * len , tile.y * len, (tile.x * len) + len, (tile.y * len) + len};
-        GLuint fbo = defaultFramebufferObject();
-        UCHAR *buffer = currentImage()->getBufferTile(tile.x * len, tile.y * len, false);
 
-        bool paintedBuffer = false;
         for (auto& [layerIndex, data] : tiles) {
-            rasterizer->PaintRaster(rect, data, fbo, false);
+            layerBatches[layerIndex].push_back(RasterPaintTile{rect, data});
+        }
 
-            // Preview sits on the active layer, under anything above it
-            if (layerIndex == activeLayer) {
-                rasterizer->PaintRaster(rect, buffer, fbo, true);
-                paintedBuffer = true;
+
+        //---- BUFFER TILES
+        {
+            PipelineScope _preview(PipelineStage::PreviewLookup);
+            UCHAR* buffer = currentImage()->getBufferTile(tile.x * len, tile.y * len, false);
+            if (buffer != nullTile) {
+                previewBatch.push_back(RasterPaintTile{rect, buffer});
             }
         }
 
-        // Active layer missing/invisible: still show preview above what did draw
-        if (!paintedBuffer) {
-            rasterizer->PaintRaster(rect, buffer, fbo, true);
+
+
+        //---- ONION SKIN
+        for (size_t i = 0; i < onionPrev.size(); ++i) {
+            UCHAR* data = onionPrev[i].first->getRawData(tile.x * len, tile.y * len, false);
+            onionPrevBatches[i].push_back(RasterPaintTile{rect, data});
+        }
+        for (size_t i = 0; i < onionNext.size(); ++i) {
+            UCHAR* data = onionNext[i].first->getRawData(tile.x * len, tile.y * len, false);
+            onionNextBatches[i].push_back(RasterPaintTile{rect, data});
         }
 
+        //---- UNMARK DIRTY TILE
         currentImage()->unmarkDirty(tile.x, tile.y);
+    }
+    }
+
+
+
+
+
+    //---- ONION SKIN HELPERS ---------------------
+    //settings
+    auto onionSettings = [](bool previous, int distance) {
+        PaintSettings s;
+        s.opacity = 0.4f / (float)distance;
+        if (previous) {
+            s.tintR = 1.0f; s.tintG = 0.3f; s.tintB = 0.3f;
+        } else {
+            s.tintR = 0.3f; s.tintG = 1.0f; s.tintB = 0.35f;
+        }
+        return s;
+    };
+
+    //paint onion skin
+    auto paintOnion = [&]() {
+        PipelineScope _onion(PipelineStage::Onion);
+        for (int i = (int)onionPrev.size() - 1; i >= 0; --i) {
+            rasterizer->PaintRasterTiles(
+                kLayerKeyOnion, onionPrevBatches[i], fbo, onionSettings(true, onionPrev[i].second));
+        }
+        for (int i = (int)onionNext.size() - 1; i >= 0; --i) {
+            rasterizer->PaintRasterTiles(
+                kLayerKeyOnion, onionNextBatches[i], fbo, onionSettings(false, onionNext[i].second));
+        }
     };
 
 
 
-    //------ switching frames, non brush updates, ect.. -------
-    if(newCanvas){
-    std::vector<TileCoord> *dirtyCanvas = canvas->getDirty();
 
-        for(auto &tile : *dirtyCanvas){
-            paintTileStack(tile);
-        }
 
-        dirty->clear();
-        newCanvas = false;
+    //---------- DEFINE LAYER ORDER FOR PAINTING -----------------
+    std::vector<int> paintOrder;
+
+    //---- BACKDROP LAYER
+    //NOTE: [ Defined in Canvas.h ]
+    if (layerBatches.count(kLayerKeyBackdrop)) { 
+        paintOrder.push_back(kLayerKeyBackdrop);
     }
 
 
-    //------- brush/tool updates to the cnavs -------
-    if(dirty->size() != 0){
+    //---- OTHER LAYERS 
+    for (int layerIndex : canvas->layerOrder()) {
+        if (layerBatches.count(layerIndex)) paintOrder.push_back(layerIndex);
+    }
 
-        for(auto &tile : *dirty){
-            paintTileStack(tile);
+
+
+    //----------- PAINT LAYERS -----------------
+
+    bool paintedActive = false;
+    for (int layerIndex : paintOrder) { 
+
+        // onion skin (if current layer)
+        if (layerIndex == activeLayer) {
+            paintOnion();
+            paintedActive = true;
         }
-        dirty->clear();
+
+        // layer
+        rasterizer->PaintRasterTiles(layerIndex, layerBatches[layerIndex], fbo, false);
+
+        // preview batch (if current layer)
+        if (layerIndex == activeLayer && !previewBatch.empty()) { // preview batch
+            rasterizer->PaintRasterTiles(kLayerKeyPreview, previewBatch, fbo, true);
+        }
+
+    }
+
+
+    //---- ONION SKIN (if we didnt paint and just switch frames) ---------
+    if (!paintedActive) {
+        paintOnion();
+        if (!previewBatch.empty()) {
+            rasterizer->PaintRasterTiles(kLayerKeyPreview, previewBatch, fbo, true);
+        }
+    }
+
+    //---- LOG TILES PAINTED (DEBUGGING)--------
+    PipelineLogger::instance().addPaintGLTiles(tilesThisFrame);
+    }
+
+    //---- SYNC GPU (FOR DEBUGGING) --------
+    if (PipelineLogger::enabled()) {
+        PipelineScope _gpu(PipelineStage::GpuSync);
+        glFinish();
+    }
+    }
+
+
+    //---- COMMIT BUFFER TILES IF OUR STROKE IS COMPLETE (important for alpha scaling) --------
+    if(strokeComplete){
+        float alphaScale = curr_color.m / (float)PixelType::maxChannelValue;
+        currentImage()->commitBufferTiles(alphaScale);
+        currentImage()->clearBufferTiles();
+        strokeComplete = false;
     }
     
 
 }
+
+
+
+
+
+
 
 
 
@@ -158,11 +362,12 @@ void GLWidget::resizeGL(int w, int h) {
 
 
 //================================
-//     Canvas Update Handler
+//     Canvas Handlers
 //================================
 
 
 void GLWidget::updateCanvas(){
+    PipelineScope _update(PipelineStage::UpdateCanvas);
     int size = points.size();
 
 
@@ -175,35 +380,30 @@ void GLWidget::updateCanvas(){
         float P1y = (4*PM.y - P0.y - P2.y) / 2.0f;
         PointTF P1(P1x, P1y);
 
-        std::vector<PointTF> cache = toonzCalculate::QuadraticBezierCurveFloat(P0, P1, P2, 0.2f);
-
-
+        std::vector<PointTF> cache;
+        {
+            PipelineScope _bezier(PipelineStage::Bezier);
+            cache = toonzCalculate::QuadraticBezierCurveFloat(P0, P1, P2, 0.2);
+        }
 
         int csize = cache.size();
         for(int j = 0; j + 1 < csize; j++){
             brush.drawBrush(cache[j], cache[j+1]);
+            update();
         }
     }
 
     if(size % 3 == 2){
         brush.drawBrush(points[size-2], points[size-1]);
+        update();
     }
-
-
     points.clear();
-
-
-
-    update();
-   
+    
 }
 
 
-//================================
-//     Mouse Input Handler 
-//================================
-
 void GLWidget::ensureDrawingFrame() {
+    PipelineScope _ensure(PipelineStage::EnsureFrame); // debug
     if (!canvas) return;
     RasterLayer* layer = currentLayer();
     if (!layer) return;
@@ -222,17 +422,23 @@ void GLWidget::ensureDrawingFrame() {
     emit timelineContentChanged();
 }
 
+
+//================================
+//     Mouse Input Handler 
+//================================
+
 void GLWidget::mousePressEvent(QMouseEvent *event) {
+    PipelineScope _press(PipelineStage::MousePress); // debug
 
     if (event->button() == Qt::LeftButton) {
 
-        ensureDrawingFrame();
-        currentImage()->clearBufferTiles();
+        
 
         QPoint q = event->pos();
 
         if(p1.x == -1){
             //----- case1: no initial point -----
+            ensureDrawingFrame();
             p1 = PointT(q.x(), q.y());
             p2 = PointT(q.x(), q.y());
             p3 = PointT(q.x(), q.y());
@@ -247,6 +453,7 @@ void GLWidget::mousePressEvent(QMouseEvent *event) {
 
 
 void GLWidget::mouseMoveEvent(QMouseEvent *event) {
+    PipelineScope _move(PipelineStage::MouseMove); // debug
 
 
     if (event->buttons() & Qt::LeftButton) {
@@ -256,7 +463,6 @@ void GLWidget::mouseMoveEvent(QMouseEvent *event) {
         if(p1.x == -1){
             //----- case1: no initial point -----
             ensureDrawingFrame();
-            currentImage()->clearBufferTiles();
             p1 = PointT(q.x(), q.y());
             p2 = PointT(q.x(), q.y());
             p3 = PointT(q.x(), q.y());
@@ -287,16 +493,16 @@ void GLWidget::mouseMoveEvent(QMouseEvent *event) {
 
 
 void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
+    PipelineScope _release(PipelineStage::MouseRelease); // debug
     if(event->button() == Qt::LeftButton) {
         p1 = PointT(-1, -1);
         p2 = PointT(-1, -1);
         p3 = PointT(-1, -1);
         brush.resetBrush();
 
-        float alphaScale = curr_color.m / (float)PixelType::maxChannelValue;
-        currentImage()->commitBufferTiles(alphaScale);
+        strokeComplete = true;
+        updateCanvas();
         update();
-
         event->accept();
     }
 }
@@ -442,6 +648,13 @@ void GLWidget::mouseReleaseEvent(QMouseEvent *event) {
         applyBrushState();
 
         //mark the canvas as dirty to trigger a re-render (just in case)
+        newCanvas = true;
+        update();
+    }
+
+    void GLWidget::onOnionSkinChanged(int before, int after) {
+        onionBefore = std::max(0, before);
+        onionAfter = std::max(0, after);
         newCanvas = true;
         update();
     }

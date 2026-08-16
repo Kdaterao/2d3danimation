@@ -88,37 +88,9 @@ static void tile_request_end(MyPaintTiledSurface *tiled_surface, MyPaintTileRequ
 
     if (tx >= self->ras->getLx() || ty >= self->ras->getLy() || tx < 0 || ty < 0) {
         // dont really need to wipe null tile we'll delete it no matter what 
-    } else if(self->eraser == false) {
+    } else {
+        // post processing done elsewhere now
 
-        // [NOTE] only do post processing if we are not in eraser mode
-
-        //------ convert back to our pixel format -----
-
-        /*
-        // MyPaint / buffer tile is BGRM; raster destination is our pixel type T
-        PixelRGBM64 *src = (PixelRGBM64 *) request->buffer;
-
-
-        const int tx = request->tx;
-        const int ty = request->ty;
-
-        T *dest = (T *) self->ras->getRawData(request->tx * 64, request->ty * 64, true); 
-
-
-        for (int i = 0; i < 64*64; i++)
-        {
-            //apply opacity 
-            src[i].m =  src[i].m  * (self->alpha / (float) PixelRGBM64::maxChannelValue);
-
-            // apply our buffer tile to our raster
-            dest[i].composite(src[i]);
-        }
-  
-
-        // flush this staging tile
-        self->ras->flushBufferTile(TileCoord{tx, ty});
-
-        */
     }
 
 }

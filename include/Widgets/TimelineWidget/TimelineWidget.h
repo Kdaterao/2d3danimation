@@ -4,7 +4,9 @@
 #include <QWidget>
 
 class Canvas;
+class AnimationManager;
 class QPushButton;
+class QSpinBox;
 
 class TimelineWidget : public QWidget {
     Q_OBJECT
@@ -22,6 +24,7 @@ signals:
     void timeChanged(int time);
     void activeLayerChanged(int layerIndex);
     void timelineEdited();
+    void onionSkinChanged(int before, int after);
 
 public slots:
     void refresh();
@@ -91,6 +94,11 @@ private:
 
     QPushButton* m_addLayerBtn = nullptr;
     QPushButton* m_addFrameBtn = nullptr;
+    QPushButton* m_playBtn = nullptr;
+    QSpinBox* m_fpsSpin = nullptr;
+    QSpinBox* m_onionBeforeSpin = nullptr;
+    QSpinBox* m_onionAfterSpin = nullptr;
+    AnimationManager* m_anim = nullptr;
 
     int m_toolbarHeight = 32;
     int m_headerHeight = 22;

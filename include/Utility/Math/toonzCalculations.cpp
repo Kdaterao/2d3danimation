@@ -2,6 +2,9 @@
 #include <toonzCalculations.h>
 
 
+//============================
+//      BEZIER CURVES
+//=============================
 
 
 std::vector<PointTI> toonzCalculate::QuadraticBezierCurve(PointTI a, PointTI b, PointTI c, float step) {
@@ -110,4 +113,28 @@ RectTI toonzCalculate::QuadraticBezierBounds(PointTI a, PointTF b, PointTI c) {
     }
 
     return RectTI{(int)minX, (int)minY, (int)maxX, (int)maxY };
+}
+
+
+
+//============================
+//      DISTANCE
+//=============================
+
+float toonzCalculate::Distance(PointTI a, PointTI  b){
+    
+    int A2 = (a.x - b.x) * (a.x - b.x);
+    int B2 = (a.y - b.y) * (a.y - b.y);
+
+    return (float)std::sqrt(A2 + B2);
+
+}
+
+float toonzCalculate::Distance(PointTF a, PointTF b){
+
+        float A2 = (a.x - b.x) * (a.x - b.x);
+        float B2 = (a.y - b.y) * (a.y - b.y);
+
+        return std::sqrt(A2 + B2);
+        
 }

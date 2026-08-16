@@ -428,7 +428,7 @@ class DefaultCircleBrush : public toonzBrush<T> {
                 
             if(a.x == b.x && b.x == b.y){
  
-                std::cout << "circle" <<std::endl;
+                //std::cout << "circle" <<std::endl;
                 int yMin = std::max((int)a.y - radius, 0);
                 int yMax = std::min((int)a.y + radius, ly - 1);
 
@@ -456,7 +456,7 @@ class DefaultCircleBrush : public toonzBrush<T> {
             //  HORIZONTAL LINE
             //---------------------
             if (a.y == b.y){
-                std::cout << "horiznta;" <<std::endl;
+                //std::cout << "horiznta;" <<std::endl;
                 int yMin = std::max((int)a.y - radius, 0) - (int)a.y;
                 int yMax = std::min((int)a.y + radius, ly - 1) - (int)a.y;
                 
@@ -506,7 +506,7 @@ class DefaultCircleBrush : public toonzBrush<T> {
 
 
                     if(a.y < b.y){
-                    std::cout << "vertical"<< std::endl;
+                    //std::cout << "vertical"<< std::endl;
                     int xMin = std::max((int)a.x - radius, 0);
                     int xMax = std::min((int)a.x + radius, lx - 1);
 
@@ -553,11 +553,6 @@ class DefaultCircleBrush : public toonzBrush<T> {
                     return;
             }
 
-
-
-
-
-            
 
 
             //----- build capsule -----

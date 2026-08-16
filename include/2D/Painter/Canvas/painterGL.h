@@ -8,6 +8,8 @@
 #include <assert.h>
 #include <iostream>
 #include <fstream>
+#include <unordered_map>
+#include <vector>
 
 #include <toonzGeometry.h>
 #include <toonzTextureManager.h>
@@ -58,11 +60,28 @@ Cases:
             Simply dont render it 
 
 */
+
+
+//========== Paint Settings ==============
+
 struct PaintSettings {
     float opacity = 1.0f;                              // overall / alpha gain
     float colorScale = 2.0f;                           // RGBM half-range display scale (scales to 16bit)
     float tintR = 1.0f, tintG = 1.0f, tintB = 1.0f;    // RGB multiply
 };
+
+//========== Raster Paint Tile ==============
+struct RasterPaintTile {
+    RectTI box;
+    UCHAR *data = nullptr;
+};
+
+//==========  Layer Keys for layer textures ==============
+static constexpr int kLayerKeyBackdrop = -1;
+static constexpr int kLayerKeyPreview = -2;
+static constexpr int kLayerKeyOnion = -3;
+static constexpr int kLayerKeyScratch = -4;
+
 
 class toonzPainterGL: public QOpenGLWidget, protected QOpenGLFunctions{
 
@@ -83,6 +102,33 @@ class toonzPainterGL: public QOpenGLWidget, protected QOpenGLFunctions{
 
     PaintSettings tileSettings;     // regular raster tiles
     PaintSettings previewSettings;  // buffer / tool preview tiles
+
+    //========== Quad VAO ==============
+    bool quadReady = false;
+    GLuint quadVAO = 0;
+    GLuint quadVBO = 0;
+    GLuint quadEBO = 0;
+    GLuint instanceVBO = 0; // instance data for each tile
+
+    //========== Layer Textures ==============
+    struct LayerTexture {
+        GLuint id = 0;
+        int w = 0;
+        int h = 0;
+        GLenum fmt = 0;
+        GLenum type = 0;
+    };
+
+    std::unordered_map<int, LayerTexture> layerTextures; // layer textures for each layer key
+
+    //======= atlas =============
+    std::vector<UCHAR> atlasScratch; // scratch buffer for atlas texture
+    std::vector<float> instanceScratch; // scratch buffer for instance data
+
+    //====== projection ========
+    QMatrix4x4 projection; // projection matrix for the canvas
+    int projectionWidth = 0; // width of the projection
+    int projectionHeight = 0; // height of the projection
 
     public:
 
@@ -113,14 +159,34 @@ class toonzPainterGL: public QOpenGLWidget, protected QOpenGLFunctions{
                 std::cout<<"maxsize:"<<"lx:"<<maxSize.lx<<"ly:"<<maxSize.ly<<std::endl;
             };
 
+        ~toonzPainterGL() {
+            destroyLayerTextures();
+            destroyQuadVAO();
+        }
+
     //----- methods -----
+
+
+        //-------------------
+        // Tile Paint Settings 
+        //-------------------
 
         void setTileSettings(const PaintSettings& settings) { tileSettings = settings; }
         void setPreviewSettings(const PaintSettings& settings) { previewSettings = settings; }
         PaintSettings& getTileSettings() { return tileSettings; }
         PaintSettings& getPreviewSettings() { return previewSettings; }
-
+        
+        //--------------------
+        //  Paint methods 
+        //--------------------
+        void ensureQuadVAO();
+        void destroyQuadVAO();
+        LayerTexture& ensureLayerTexture(int layerKey, int width, int height, GLenum fmt, GLenum type);
+        void destroyLayerTextures();
         void PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer, bool isPreview);
+        void PaintRaster(RectTI box, UCHAR *rasbuffer, GLuint fbuffer, const PaintSettings& settings);
+        void PaintRasterTiles(int layerKey, const std::vector<RasterPaintTile>& tiles, GLuint fbuffer, bool isPreview);
+        void PaintRasterTiles(int layerKey, const std::vector<RasterPaintTile>& tiles, GLuint fbuffer, const PaintSettings& settings);
 
         template <class T>
         void dumpBuffer2(T* buf, int width, int height, int wrap, int num_channels);

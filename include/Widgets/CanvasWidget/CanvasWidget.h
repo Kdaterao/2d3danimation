@@ -2,6 +2,7 @@
 #define CANVASWIDGET_H
 
 #include <QMouseEvent>
+#include <QPaintEvent>
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions>
 #include <QTimer>
@@ -24,6 +25,7 @@
 
 #include <raster.h>
 #include <canvas.h>
+#include <pipelineLogger.h>
 #include <QString>
 
 
@@ -73,18 +75,22 @@ class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions {
     std::vector<PointTI> points;
     int breakpoint = 0;
 
+
     // canvasUpdate tracking
     bool start = false;
     bool painting = false;
-
+    bool strokeComplete = false;
 
     // canvas object
     std::unique_ptr<Canvas> canvas = nullptr;
 
-    RasterLayer* currentLayer() { return canvas->currentLayer(); }
+    RasterLayer* currentLayer() { return canvas->currentLayer(); } 
     Raster<PixelType>* currentImage() { return currentLayer()->getCurrentImage(); }
 
     bool newCanvas = true;
+
+    int onionBefore = 1;
+    int onionAfter = 1;
 
 
 public:
@@ -98,6 +104,7 @@ protected:
     //------ override functions ------
     void initializeGL() override; 
     void resizeGL(int w, int h) override;
+    void paintEvent(QPaintEvent *event) override;
     void paintGL() override;
     void mousePressEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
@@ -124,6 +131,7 @@ public slots:
     void onTimeChanged(int time);
     void onActiveLayerChanged(int layerIndex);
     void onTimelineEdited();
+    void onOnionSkinChanged(int before, int after);
 
     //canvas widget
     void updateCanvas();

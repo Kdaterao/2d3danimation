@@ -1,4 +1,5 @@
 #include <canvas.h>
+#include <pipelineLogger.h>
 
 
 
@@ -231,6 +232,22 @@ void Canvas::setCurrentTime(int t) {
 }
 
 
+//-------------------
+//  PLAYBACK END
+//-------------------
+
+int Canvas::playbackEnd() const {
+    int end = 0;
+    for (const auto& layer : Layers) {
+        if (!layer) continue;
+        for (const Frame& f : layer->getFrames()) {
+            end = std::max(end, f.endIndex);
+        }
+    }
+    return end;
+}
+
+
 
 
 //===============================================
@@ -264,6 +281,7 @@ void Canvas::toggleBackDrop(bool enabled) {
 //-------------------
 
 std::vector<std::pair<int, UCHAR*>> Canvas::getTile(int tx, int ty) {
+    PipelineScope _getTile(PipelineStage::GetTile); // debug
     std::vector<std::pair<int, UCHAR*>> tiles;
 
     if (backDropEnabled) {

@@ -22,6 +22,11 @@ namespace toonzCalculate{
 
 
 
+    float Distance(PointTI a, PointTI  b);
+    float Distance(PointTF a, PointTF b);
+
+
+
 
 };
 

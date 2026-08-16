@@ -1,5 +1,6 @@
 #include <TimelineWidget.h>
 
+#include <AnimationManager.h>
 #include <canvas.h>
 #include <rasterLayer.h>
 #include <frame.h>
@@ -12,6 +13,7 @@
 #include <QMenu>
 #include <QPainter>
 #include <QPushButton>
+#include <QSpinBox>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QResizeEvent>
@@ -37,8 +39,37 @@ TimelineWidget::TimelineWidget(Canvas* canvas, QWidget* parent)
 
     m_addLayerBtn = new QPushButton("+ Layer", toolbar);
     m_addFrameBtn = new QPushButton("+ Frame", toolbar);
+    m_playBtn = new QPushButton("Play", toolbar);
+    m_fpsSpin = new QSpinBox(toolbar);
+    m_fpsSpin->setRange(1, 60);
+    m_fpsSpin->setValue(24);
+    m_fpsSpin->setSuffix(" fps");
+    m_fpsSpin->setButtonSymbols(QAbstractSpinBox::UpDownArrows);
+    m_fpsSpin->setFixedWidth(90);
+
+    m_onionBeforeSpin = new QSpinBox(toolbar);
+    m_onionBeforeSpin->setRange(0, 10);
+    m_onionBeforeSpin->setValue(1);
+    m_onionBeforeSpin->setPrefix("← ");
+    m_onionBeforeSpin->setToolTip("Onion skin frames before");
+    m_onionBeforeSpin->setFixedWidth(70);
+
+    m_onionAfterSpin = new QSpinBox(toolbar);
+    m_onionAfterSpin->setRange(0, 10);
+    m_onionAfterSpin->setValue(1);
+    m_onionAfterSpin->setPrefix("→ ");
+    m_onionAfterSpin->setToolTip("Onion skin frames after");
+    m_onionAfterSpin->setFixedWidth(70);
+
+    m_anim = new AnimationManager(m_canvas, this);
+    m_anim->setFps(m_fpsSpin->value());
+
     toolbarLayout->addWidget(m_addLayerBtn);
     toolbarLayout->addWidget(m_addFrameBtn);
+    toolbarLayout->addWidget(m_playBtn);
+    toolbarLayout->addWidget(m_fpsSpin);
+    toolbarLayout->addWidget(m_onionBeforeSpin);
+    toolbarLayout->addWidget(m_onionAfterSpin);
     toolbarLayout->addStretch(1);
 
     root->addWidget(toolbar);
@@ -46,10 +77,28 @@ TimelineWidget::TimelineWidget(Canvas* canvas, QWidget* parent)
 
     connect(m_addLayerBtn, &QPushButton::clicked, this, &TimelineWidget::addLayer);
     connect(m_addFrameBtn, &QPushButton::clicked, this, &TimelineWidget::addFrameAtPlayhead);
+    connect(m_playBtn, &QPushButton::clicked, m_anim, &AnimationManager::toggle);
+    connect(m_fpsSpin, &QSpinBox::valueChanged, m_anim, &AnimationManager::setFps);
+    connect(m_anim, &AnimationManager::timeChanged, this, [this](int t) {
+        emit timeChanged(t);
+        refresh();
+    });
+    connect(m_anim, &AnimationManager::playingChanged, this, [this](bool playing) {
+        m_playBtn->setText(playing ? "Stop" : "Play");
+    });
+    connect(m_onionBeforeSpin, &QSpinBox::valueChanged, this, [this](int) {
+        emit onionSkinChanged(m_onionBeforeSpin->value(), m_onionAfterSpin->value());
+    });
+    connect(m_onionAfterSpin, &QSpinBox::valueChanged, this, [this](int) {
+        emit onionSkinChanged(m_onionBeforeSpin->value(), m_onionAfterSpin->value());
+    });
 }
 
 void TimelineWidget::setCanvas(Canvas* canvas) {
     m_canvas = canvas;
+    if (m_anim) {
+        m_anim->setCanvas(canvas);
+    }
     refresh();
 }
 
@@ -387,6 +436,12 @@ void TimelineWidget::keyPressEvent(QKeyEvent* event) {
             return;
         case Qt::Key_Right:
             stepFrame(+1);
+            event->accept();
+            return;
+        case Qt::Key_Space:
+            if (m_anim) {
+                m_anim->toggle();
+            }
             event->accept();
             return;
         case Qt::Key_Delete:

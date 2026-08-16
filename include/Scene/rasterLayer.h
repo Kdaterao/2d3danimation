@@ -69,6 +69,15 @@ public:
         return images[currentImageIndex].get();
     };
 
+    Raster<PixelType>* getImageAtFrame(int frameIndex) {
+        if (frameIndex < 0 || frameIndex >= (int)frames.size()) return nullptr;
+        const int ii = frames[frameIndex].imageIndex;
+        if (ii < 0 || ii >= (int)images.size()) return nullptr;
+        return images[ii].get();
+    }
+
+    int getCurrentFrameIndex() const { return currentFrameIndex; }
+
     // switches to a new frame
     void switchFrame(int frameIndex) {
         if (frameIndex < 0 || frameIndex >= (int)frames.size()) return;

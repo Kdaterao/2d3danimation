@@ -305,6 +305,7 @@ class PixelRGBM64 {
 
         //overlays a pixel onto our own pixel
         void composite(PixelRGBM64 &p) {
+            if (p.m == 0) return; // skip if overlayed pixel is transparent 
 
             // Must be float division — integer (m / 65535) is 0 for any m < 65535
             float srcA  = p.m / (float)maxChannelValue;

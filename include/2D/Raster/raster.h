@@ -13,6 +13,7 @@
 #include <iostream>
 
 #include <toonzGeometry.h>
+#include <pipelineLogger.h>
 
 /*
 
@@ -243,6 +244,7 @@ class Raster {
         //-------------------------------------
 
         void unmarkDirty(int tx, int ty){
+            PipelineScope _unmark(PipelineStage::UnmarkDirty); // debug
             TileCoord key = TileCoord{tx, ty};
             auto it = tilesMap.find(key);
             if (it != tilesMap.end()) {
@@ -290,10 +292,15 @@ class Raster {
 
         // Pixel (x, y) → pointer into staging tile (lazy-create). write marks tile dirty.
         UCHAR *getBufferTile(int x, int y, bool write) {
+
+
+            //----- check if out of bounds --------
+            
             if (x >= lx || y >= ly || x < 0 || y < 0) {
                 return null_tile;
             }
 
+            //----- get tile coord (tile_length must be power of 2)-----
             const int tx = x >> tile_length_power;
             const int ty = y >> tile_length_power;
             TileCoord coord{tx, ty};
@@ -304,23 +311,39 @@ class Raster {
 
             auto it = bufferTilesMap.find(coord);
 
+
+
+            //----- give tile buffer pointer  + coord  --------
+
             if (it != bufferTilesMap.end()) {
-                if (write && it->second.dirty == false) {
+                //CASE 1: Tile already exists 
+                
+                //Case 1A: we are writing to tile and it is not dirty
+                if (write && it->second.dirty == false) { 
                     it->second.dirty = true;
                     dirty.push_back(coord);
                 }
                 return it->second.buffer.get() + offset;
-            }
 
-            RasterTile tile = RasterTile{makeBuffer(), write, 1};
-            auto [newIt, inserted] = bufferTilesMap.emplace(coord, std::move(tile));
-            if (write) {
-                dirty.push_back(coord);
+            } else {
+                
+                //CASE 1b: Tile does not exist 
+                if (write) {
+                    RasterTile tile = RasterTile{makeBuffer(), true, 1};
+                    auto [newIt, inserted] = bufferTilesMap.emplace(coord, std::move(tile));
+                    dirty.push_back(coord);
+                    return newIt->second.buffer.get() + offset;
+                } else {
+                    //CASE 2b: we are not writing to tile
+                    return null_tile;
+                }
+
             }
-            return newIt->second.buffer.get() + offset;
         }
 
-        // Zero one staging tile (by tile coord).
+
+
+        // Convience: Zeros one staging tile (by tile coord).
         void flushBufferTile(TileCoord coord) {
             auto it = bufferTilesMap.find(coord);
             if (it == bufferTilesMap.end()) return;
@@ -335,34 +358,56 @@ class Raster {
             flushBufferTile(TileCoord{x >> tile_length_power, y >> tile_length_power});
         }
 
-        // Zero every staging tile currently in the map (reuses allocations).
+        // Convience: Zeros every staging tile currently in the map (reuses allocations).
         void flushAllBufferTiles() {
+            PipelineScope _flush(PipelineStage::FlushBuffers);
             const int size = tile_length * tile_length * pixelSize;
             for (auto& [coord, tile] : bufferTilesMap) {
                 (void)coord;
                 memset(tile.buffer.get(), 0, size);
+                tile.dirty = false;
             }
         }
 
-        // Drop all staging tiles (frees memory; next getBufferTile reallocates).
+        // Convience: Deletes all staging tiles (frees memory; next getBufferTile reallocates).
         void clearBufferTiles() {
+            PipelineScope _clear(PipelineStage::ClearBuffers);
             bufferTilesMap.clear();
         }
 
-        // Composite every staging tile onto the real raster, then drop buffers.
-        // alphaScale is 0..1 brush/surface opacity applied to source matte before composite.
-        void commitBufferTiles(float alphaScale = 1.0f) {
-            if (bufferTilesMap.empty()) return;
 
-            const int count = tile_length * tile_length;
+
+
+        //CONVIENCE: Composite every staging tile onto the real raster, then zero buffers (keep allocations).
+        void commitBufferTiles(float alphaScale = 1.0f) {
+
+            PipelineScope _commit(PipelineStage::Commit); // debug
+
+            //------ CASE 1: No Tiles to Commit ----------
+
+            if (bufferTilesMap.empty()) return; // 
+
+
+            //------ CASE 2: Tile to Commit ----------
+
+
+            const int count = tile_length * tile_length; // number of pixels in a tile
+
+            //iteratie through all buffertiles
             for (auto& [coord, tile] : bufferTilesMap) {
+
+                //define pixel coord + dest pointer + scr pointrer
                 const int px = coord.x * tile_length;
                 const int py = coord.y * tile_length;
 
-                T* dest = reinterpret_cast<T*>(getRawData(px, py, true));
+                T* dest = reinterpret_cast<T*>(getRawData(px, py, false)); // keep false here, rerending causes laggy strokes 
                 T* src  = reinterpret_cast<T*>(tile.buffer.get());
 
+                //iterate through all pixels in the tile
                 for (int i = 0; i < count; i++) {
+                    //skip if pixel is transparent
+                    if (src[i].m == 0) continue;
+                    //apply alpha scale if not full opacity
                     if (alphaScale != 1.0f) {
                         src[i].m = static_cast<typename T::Channel>(
                             src[i].m * alphaScale + 0.5f);
@@ -371,8 +416,10 @@ class Raster {
                 }
             }
 
-            clearBufferTiles();
+            flushAllBufferTiles();
         }
+
+        
 
         //-------------------------------------
         //          FILL UTILIY

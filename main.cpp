@@ -16,7 +16,10 @@ int main(int argc, char *argv[]) {
     //our specs
     QSurfaceFormat format;
     format.setVersion(3, 3); // Request OpenGL 4.1
+    format.setSwapInterval(0);                      // 0 = No VSync (removes the 30ms block)
     format.setProfile(QSurfaceFormat::CoreProfile); // Use Core Profile
+
+
 
     //set specs as our default 
     QSurfaceFormat::setDefaultFormat(format); 
@@ -74,7 +77,7 @@ int main(int argc, char *argv[]) {
     timeline->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     rootLayout->addWidget(timeline);
 
-    // Width floor from fixed canvas + sidebar; height comes from layout (canvas 600 + timeline).
+    // Width floor from fixed canvas + sidebar; height from canvas + timeline.
     window->setMinimumWidth(1100);
     window->resize(1300, 880);
 
@@ -94,6 +97,7 @@ int main(int argc, char *argv[]) {
     QObject::connect(timeline, &TimelineWidget::timeChanged, canvas, &GLWidget::onTimeChanged);
     QObject::connect(timeline, &TimelineWidget::activeLayerChanged, canvas, &GLWidget::onActiveLayerChanged);
     QObject::connect(timeline, &TimelineWidget::timelineEdited, canvas, &GLWidget::onTimelineEdited);
+    QObject::connect(timeline, &TimelineWidget::onionSkinChanged, canvas, &GLWidget::onOnionSkinChanged);
     QObject::connect(canvas, &GLWidget::timelineContentChanged, timeline, &TimelineWidget::refresh);
 
     window->show();
