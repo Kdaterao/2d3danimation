@@ -15,12 +15,13 @@
   Efficient real-time processing and rendering of raster images using buffered pixel data.
 
 - **Responsive UI:**  
-  Real-time input handling for a fluid and low-latency drawing experience.
+  Real-time input handling for a fluid and low-latency drawing experience
+
+- **Timeline + playback :**  
+   Layers + frames + playback all implimeneted allowing for animations to be created
 
 
-## Planned Features(Listed based on Priority)
-- Raster 
-- Timeline-based 2D animation controls.  
+## Planned Features(Listed based on Priority) 
 - Basic 3D object manipulation and rendering
 - Physics Engine
 - Timeline-based 2D/3D animation controls. 
